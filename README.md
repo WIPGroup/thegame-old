@@ -12,6 +12,9 @@ Jde o hru na tržní systém, kdy mají týmy na notebooku webovou aplikaci s po
 
 # Workflow (prozatimni, subject to change):
 * [x] Vymyslet nazev
+* [ ] Pridat databazi na GH
+* [ ] Administrace
+  * [ ] Pridavani tymu a jejich sprava
 * [ ] Generovani kodu, ktere se pak vytisknou a budou symbolizovat ruzne veci
 * [ ] Redeem techto kodu
 * [ ] Stranka s prubeznymi vysledky a ruzne statisky, grafy
@@ -20,4 +23,3 @@ Jde o hru na tržní systém, kdy mají týmy na notebooku webovou aplikaci s po
   * [ ] Nabidka a poptavka vsem za urcitou cenu
   * [ ] Nabidka casove omezena, na konci se proda tomu kdo nabidl nejvic
 * [ ] Crafting (mozna)
-* [ ] Administrace
