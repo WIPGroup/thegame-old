@@ -12,7 +12,7 @@ Jde o hru na tržní systém, kdy mají týmy na notebooku webovou aplikaci s po
 
 # Workflow (prozatimni, subject to change):
 * [x] Vymyslet nazev
-* [x] Pridat databazi na GH
+* [ ] Pridat databazi na GH
 * [ ] Administrace
   * [ ] Pridavani tymu a jejich sprava
 * [ ] Generovani kodu, ktere se pak vytisknou a budou symbolizovat ruzne veci

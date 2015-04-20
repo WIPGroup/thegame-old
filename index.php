@@ -16,15 +16,10 @@ if ($_SESSION['hrac'] != '')
 <body>
 <h1>Trh</h1>
 <?php
-/*if ($_SESSION['hrac'] != '')
+if ($_SESSION['hrac'] != '')
 	include "trh.php";
 else
-	include "login.php";*/
-
-$dotaz = "SELECT * FROM polozky";
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-$zaznam = mysql_fetch_array($vysledek);
-print_r($zaznam);
+	include "login.php";
 ?>
 </body>
 </html>
