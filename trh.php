@@ -21,7 +21,7 @@ echo $vlastnictvi[0];
 ?>
 
 <table border="1">
-<tr><td>Název</td><td>Cena</td><td>Množství</td><td>Koupit</td><td>Prodat</td></tr>
+<tr><td>Názov</td><td>Cena</td><td>Množstvo</td><td>Kúpiť</td><td>Predať</td></tr>
 <?php
 $dotaz = "SELECT * FROM polozky";
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
