@@ -23,4 +23,6 @@ Jde o hru na trzn¡ syst‚m, kdy maj¡ tymy na notebooku webovou aplikaci s polozka
   * [ ] Nabidka a jeji potvrzeni, odmitnuti, zmena ceny s urcitym clovekem za pevnou cenu
   * [ ] Nabidka a poptavka vsem za urcitou cenu
   * [ ] Nabidka casove omezena, na konci se proda tomu kdo nabidl nejvic
-* [ ] Crafting (mozna)
+* [ ] Crafting str nka
+  * [ ] Ucraftit
+  * [ ] Seznam receptu
