@@ -5,14 +5,7 @@ Bude se jednat o webovy server na `PHP`, ktery bude slouzit k ...
 # Workflow (prozatimni, subject to change):
 * [x] Vymyslet nazev
 * [x] Pridat databazi na GH
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-* [ ] Vytvaret podrony log vseho co se dejo
->>>>>>> c1f95256673934ea41f94d4de2ee0eb550df8cc3
-=======
 * [ ] **Vytvaret podrony log vseho co se deje**
->>>>>>> 358409fdbdeaa35e511108e67a69430144a8ef2d
 * [ ] Administrace
   * [ ] Pridavani tymu a jejich sprava
 * [ ] Generovani kodu, ktere se pak vytisknou a budou symbolizovat ruzne veci
