@@ -32,10 +32,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo $vlastnictvi[$zaznam['id']];
 	echo '</td><td>';
 	if ($zaznam['cena'] <= $vlastnictvi[0])
-		echo '<a href="index.php?buy='.$zaznam['id'].'">Koupit</a>';
+		echo '<a href="index.php?buy='.$zaznam['id'].'">Kúpiť</a>';
 	echo "</td><td>";
 	if ($vlastnictvi[$zaznam['id']] > 0)
-		echo '<a href="index.php?sell='.$zaznam['id'].'">Prodat</a>';
+		echo '<a href="index.php?sell='.$zaznam['id'].'">Predať</a>';
 	echo "</td></tr>";
 }
 ?>
