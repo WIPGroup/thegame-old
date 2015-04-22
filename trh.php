@@ -24,13 +24,8 @@ if ($_GET['trade'] != '')
 print_r($vlastnictvi);
 ?>
 
-<<<<<<< HEAD
 <!--table border="1">
 <tr><td>Název</td><td>Cena</td><td>Množství</td><td>Koupit</td><td>Prodat</td></tr>
-=======
-<table border="1">
-<tr><td>Názov</td><td>Cena</td><td>Množstvo</td><td>Kúpiť</td><td>Predať</td></tr>
->>>>>>> c12eee2ef3bdd238031686f3a8674ca2ad84f91f
 <?php
 $dotaz = "SELECT * FROM polozky";
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
