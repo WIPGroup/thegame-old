@@ -2,6 +2,8 @@ Bude se jednat o webovy server na `PHP`, ktery bude slouzit k ...
 
 # Na trellu jsou navrhy, sem prepisujte veci ktere sou napevno rozhodnute
 
+# antre417rct.org
+
 # Workflow (prozatimni, subject to change):
 * [x] Vymyslet nazev
 * [x] Pridat databazi na GH
