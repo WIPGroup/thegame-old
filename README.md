@@ -15,7 +15,7 @@ Pokud vam to nebude vyhovovat muzeme samozrejme prejit na jiny.
 * [ ] Generovani kodu, ktere se pak vytisknou a budou symbolizovat ruzne veci
 * [ ] Redeem techto kodu
 * [ ] Stranka s prubeznymi vysledky a ruzne statisky, grafy
-* [ ] Trading stranka
+* [x] Trading stranka
   * [ ] Nabidka a jeji potvrzeni, odmitnuti, zmena ceny s urcitym clovekem za pevnou cenu
   * [ ] Nabidka a poptavka vsem za urcitou cenu
   * [ ] Nabidka casove omezena, na konci se proda tomu kdo nabidl nejvic
