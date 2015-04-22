@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Pon 20. dub 2015, 10:38
--- Verze serveru: 5.5.41-0ubuntu0.14.10.1
--- Verze PHP: 5.5.12-2ubuntu4.3
+-- Vytvořeno: Stř 22. dub 2015, 21:20
+-- Verze serveru: 5.5.43-0ubuntu0.14.10.1
+-- Verze PHP: 5.5.12-2ubuntu4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,14 +31,39 @@ CREATE TABLE IF NOT EXISTS `hraci` (
   `jmeno` varchar(50) NOT NULL,
   `heslo` varchar(100) NOT NULL,
   `vlastnictvi` varchar(100) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Vypisuji data pro tabulku `hraci`
 --
 
 INSERT INTO `hraci` (`id`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'jirvoz', 'thelinuxforce', '100;1;3');
+(1, 'root', 'root', '100;8;8'),
+(2, 'test1', 'test1', '100;0;0'),
+(3, 'test2', 'test2', '100;0;0');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `obchod`
+--
+
+CREATE TABLE IF NOT EXISTS `obchod` (
+`id` int(11) NOT NULL,
+  `hrac` int(11) NOT NULL,
+  `predmet` int(11) NOT NULL,
+  `mnozstvi` int(11) NOT NULL,
+  `penize` int(11) NOT NULL,
+  `smer` varchar(1) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Vypisuji data pro tabulku `obchod`
+--
+
+INSERT INTO `obchod` (`id`, `hrac`, `predmet`, `mnozstvi`, `penize`, `smer`) VALUES
+(1, 1, 1, 4, 12, 'p'),
+(2, 1, 1, 2, 5, 'k');
 
 -- --------------------------------------------------------
 
@@ -71,6 +96,12 @@ ALTER TABLE `hraci`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id` (`id`), ADD KEY `id_2` (`id`);
 
 --
+-- Klíče pro tabulku `obchod`
+--
+ALTER TABLE `obchod`
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
+
+--
 -- Klíče pro tabulku `polozky`
 --
 ALTER TABLE `polozky`
@@ -84,7 +115,12 @@ ALTER TABLE `polozky`
 -- AUTO_INCREMENT pro tabulku `hraci`
 --
 ALTER TABLE `hraci`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pro tabulku `obchod`
+--
+ALTER TABLE `obchod`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pro tabulku `polozky`
 --
