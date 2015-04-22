@@ -14,7 +14,7 @@ if ($_SESSION['hrac'] != '')
 ?>
 </head>
 <body>
-<h1>Trh</h1>
+<h1>TheGame - Trh</h1>
 <?php
 if ($_SESSION['hrac'] != '')
 	include "trh.php";
