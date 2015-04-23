@@ -3,7 +3,7 @@ Bude se jednat o webovy server na `PHP`, ktery bude slouzit k ...
 # Na trellu jsou navrhy, sem prepisujte veci ktere sou napevno rozhodnute
 
 # http://antre.417rct.org
-V `master` je funkcni kod, ktery se uploadne na vyse uvedenou stranku, do `development` davejte vse, jakmile to bude fungovat tak merge. Vice in Gitflow Workflow: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+V `deploy` je funkcni kod, ktery se uploadne na vyse uvedenou stranku, do `master` davejte vse, jakmile to bude fungovat tak merge. Vice in Gitflow Workflow: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 Pokud vam to nebude vyhovovat muzeme samozrejme prejit na jiny.
 
 # Workflow (prozatimni, subject to change):
