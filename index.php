@@ -8,12 +8,17 @@ require "login.php";
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+ @import "<TeamCity_server_URL>/css/status/externalStatus.css";
+</style>
 <?php
 if ($prihlasen)
 	echo '<meta http-equiv="refresh" content="10; url=index.php">';
 ?>
 </head>
 <body>
+<script type="text/javascript" src="94.125.220.136/externalStatus.html?js=1&projectId=TheGame">
+</script>
 <h1>TheGame - Trh</h1>
 <?php
 if ($prihlasen)
