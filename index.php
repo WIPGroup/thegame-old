@@ -9,7 +9,7 @@ require "login.php";
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
- @import "<TeamCity_server_URL>/css/status/externalStatus.css";
+ @import "94.125.220.136/css/status/externalStatus.css";
 </style>
 <?php
 if ($prihlasen)
