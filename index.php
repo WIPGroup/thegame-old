@@ -1,3 +1,9 @@
+<?php
+session_start();
+require "dblogin.php";
+
+require "login.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
