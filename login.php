@@ -1,8 +1,10 @@
 <?php
-	$prihlasen = false;
+$prihlasen = false;
+
 if ($_SESSION['hrac'] != '')
 {
-	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_SESSIO['hrac'].'" AND heslo="'.$_SESSION['heslo'].'"';  //heslo se bude později hashovat
+	//heslo se bude možná později hashovat
+	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_SESSION['hrac'].'" AND heslo="'.$_SESSION['heslo'].'"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	
@@ -17,7 +19,7 @@ else if ($_POST['hrac'] != '')
 	
 	if (count($zaznam) > 1)
 	{
-		$_SESSION['hrac'] = $zaznam['id'];
+		$_SESSION['hrac'] = $zaznam['idhrace'];
 		$_SESSION['heslo'] = $zaznam['heslo'];
 		$prihlasen = true;
 	}

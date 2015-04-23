@@ -15,6 +15,10 @@ require "login.php";
 if ($prihlasen)
 	echo '<meta http-equiv="refresh" content="10; url=index.php">';
 ?-->
+<?php
+if ($_GET['trade'] != '' || $_GET[''] != '')
+	echo '<meta http-equiv="refresh" content="0; url=index.php">';
+?>
 </head>
 <body>
 <h1>TheGame - Trh</h1>
