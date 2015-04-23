@@ -9,13 +9,6 @@ session_start();
  @import "http://94.125.220.136/css/status/externalStatus.css";
 </style>
 <?php
-<<<<<<< HEAD
-=======
-require "dblogin.php";
-
-require "login.php";
-
->>>>>>> 8eb3f00c78a52f5c3f6f9514677575ff1b177100
 if ($_GET['trade'] != '' || $_GET[''] != '')
 	echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
