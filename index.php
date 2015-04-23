@@ -1,9 +1,3 @@
-<?php
-session_start();
-require "dblogin.php";
-
-require "login.php";
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +10,13 @@ if ($prihlasen)
 	echo '<meta http-equiv="refresh" content="10; url=index.php">';
 ?-->
 <?php
+
+session_start();
+require "dblogin.php";
+
+require "login.php";
+
+
 if ($_GET['trade'] != '' || $_GET[''] != '')
 	echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
