@@ -25,6 +25,7 @@ if ($_GET['trade'] != '' || $_GET[''] != '')
 <hr>
 <h1>TheGame - Trh</h1>
 <?php
+echo "hi";
 if ($prihlasen)
 	include "trh.php";
 else
