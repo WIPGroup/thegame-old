@@ -2,7 +2,7 @@
 	$prihlasen = false;
 if ($_SESSION['hrac'] != '')
 {
-	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_SESSION['hrac'].'" AND heslo="'.$_SESSION['heslo'].'"';	//heslo se bude později hashovat
+	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_SESSIO['hrac'].'" AND heslo="'.$_SESSION['heslo'].'"';  //heslo se bude později hashovat
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	

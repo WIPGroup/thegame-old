@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Stř 22. dub 2015, 21:20
+-- Vytvořeno: Čtv 23. dub 2015, 08:28
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`id`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '100;8;8'),
+(1, 'root', 'root', '100;12;8'),
 (2, 'test1', 'test1', '100;0;0'),
 (3, 'test2', 'test2', '100;0;0');
 
@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `obchod` (
 --
 
 INSERT INTO `obchod` (`id`, `hrac`, `predmet`, `mnozstvi`, `penize`, `smer`) VALUES
-(1, 1, 1, 4, 12, 'p'),
-(2, 1, 1, 2, 5, 'k');
+(1, 1, 1, 4, 10, 'p'),
+(2, 1, 1, 2, 6, 'k');
 
 -- --------------------------------------------------------
 

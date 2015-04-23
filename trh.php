@@ -4,66 +4,81 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 $hrac = mysql_fetch_array($vysledek);
 $vlastnictvi = explode(';', $hrac['vlastnictvi']);
 
-/*if ($_GET['buy'] != '')
-{
-	$vlastnictvi[$_GET['buy']]++;
-	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE jmeno="'.$_SESSION['hrac'].'"';
-	mysql_query($dotaz);
-}
-if ($_GET['sell'] != '')
-{
-	$vlastnictvi[$_GET['sell']]--;
-	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE jmeno="'.$_SESSION['hrac'].'"';
-	mysql_query($dotaz);
-}*/
-
+//pokud se nakupuje
 if ($_GET['trade'] != '')
 {
 	//uskutečnit obchod
+	$dotaz = 'SELECT * FROM obchod WHERE id='.$_GET['trade'];
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	$zaznam = mysql_fetch_array($vysledek);
+	if (count($zaznam) > 1)
+	{
+		//hrac kupuje
+		if ($zaznam['smer'] == 'p' && $vlastnictvi[0] >= $zaznam['penize'])
+		{
+			$vlastnictvi[$zaznam['predmet']] += $zaznam['mnozstvi'];
+			$vlastnictvi[0] -= $zaznam['penize'];
+			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE id="'.$_SESSION['hrac'].'"';
+			mysql_query($dotaz);
+			//TODO:odstranit nabídku
+		}
+		//hráč prodává
+		else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi'])
+		{
+			$vlastnictvi[$zaznam['predmet']] -= $zaznam['mnozstvi'];
+			$vlastnictvi[0] += $zaznam['penize'];
+			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE id="'.$_SESSION['hrac'].'"';
+			mysql_query($dotaz);
+			//TODO:odstranit nabídku
+		}
+		else
+			echo "Obchod se nepovedl.";
+	}
+	else
+		echo "Obchod se nepovedl.";
 }
 print_r($vlastnictvi);
 ?>
-
-<!--table border="1">
-<tr><td>Název</td><td>Cena</td><td>Množství</td><td>Koupit</td><td>Prodat</td></tr>
-<?php
-$dotaz = "SELECT * FROM polozky";
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-while ($zaznam = mysql_fetch_array($vysledek))
-{
-	echo '<tr><td>'.$zaznam['nazev'].'</td>';
-	echo '<td>'.$zaznam['cena'].'</td><td>';
-	echo $vlastnictvi[$zaznam['id']];
-	echo '</td><td>';
-	if ($zaznam['cena'] <= $vlastnictvi[0])
-		echo '<a href="index.php?buy='.$zaznam['id'].'">Kúpiť</a>';
-	echo "</td><td>";
-	if ($vlastnictvi[$zaznam['id']] > 0)
-		echo '<a href="index.php?sell='.$zaznam['id'].'">Predať</a>';
-	echo "</td></tr>";
-}
-?>
-</table-->
-
+<br>
+Prodám:
 <table border="1">
 <tr><td>Předmět</td><td>Množství</td><td>Cena</td><td>Hráč</td><td>Akce</td></tr>
 <?php
-//nabídky a poptávky
-$dotaz = "SELECT * FROM obchod";
+//nabídky
+$dotaz = 'SELECT * FROM obchod WHERE smer="p"';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<tr><td>'.$zaznam['predmet'].'<stvi/td>';
+	echo '<tr><td>'.$zaznam['predmet'].'</td>';
 	echo '<td>'.$zaznam['mnozstvi'].'</td>';
 	echo '<td>'.$zaznam['penize'].'</td>';
 	echo '<td>'.$zaznam['hrac'].'</td>';
 	echo '<td>';
-	if ($zaznam['smer'] == 'p')
-		if ($zaznam['penize'] <= $vlastnictvi[0])
-			echo '<a href="index.php?trade='.$zaznam['id'].'">Koupit</a>';
-	else if ($zaznam['smer'] == 'k')
-		if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']])
-			echo '<a href="index.php?trade='.$zaznam['id'].'">Koupit</a>';
+	if ($zaznam['penize'] <= $vlastnictvi[0])
+		echo '<a href="index.php?trade='.$zaznam['id'].'">Koupit</a>';
+	echo "</td></tr>";
+
+}
+?>
+</table>
+
+Koupím:
+<table border="1">
+<tr><td>Předmět</td><td>Množství</td><td>Cena</td><td>Hráč</td><td>Akce</td></tr>
+<?php
+//poptávky
+$dotaz = 'SELECT * FROM obchod WHERE smer="k"';
+$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+while ($zaznam = mysql_fetch_array($vysledek))
+{
+	echo '<tr><td>'.$zaznam['predmet'].'</td>';
+	echo '<td>'.$zaznam['mnozstvi'].'</td>';
+	echo '<td>'.$zaznam['penize'].'</td>';
+	echo '<td>'.$zaznam['hrac'].'</td>';
+	echo '<td>';
+	
+	if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']])
+		echo '<a href="index.php?trade='.$zaznam['id'].'">Prodat</a>';
 	echo "</td></tr>";
 
 }
