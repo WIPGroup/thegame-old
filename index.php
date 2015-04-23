@@ -21,6 +21,8 @@ if ($_GET['trade'] != '' || $_GET[''] != '')
 ?>
 </head>
 <body>
+<script type="text/javascript" src="http://94.125.220.136/externalStatus.html?js=1&projectId=TheGame"></script>
+<hr>
 <h1>TheGame - Trh</h1>
 <?php
 if ($prihlasen)
@@ -29,6 +31,5 @@ else
 	include "form.php";
 ?>
 <br><br>
-<script type="text/javascript" src="http://94.125.220.136/externalStatus.html?js=1&projectId=TheGame"></script>
 </body>
 </html>
