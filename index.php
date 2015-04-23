@@ -9,7 +9,7 @@ require "login.php";
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
- @import "94.125.220.136/css/status/externalStatus.css";
+ @import "http://94.125.220.136/css/status/externalStatus.css";
 </style>
 <?php
 if ($prihlasen)
@@ -17,7 +17,7 @@ if ($prihlasen)
 ?>
 </head>
 <body>
-<script type="text/javascript" src="94.125.220.136/externalStatus.html?js=1&projectId=TheGame">
+<script type="text/javascript" src="http://94.125.220.136/externalStatus.html?js=1&projectId=TheGame">
 </script>
 <h1>TheGame - Trh</h1>
 <?php
