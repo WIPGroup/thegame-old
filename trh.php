@@ -42,9 +42,6 @@ if ($_GET['trade'] != '')
 if ($_GET['smer'] == 'p' || if ($_GET['smer'] == 'k')
 {
 	
-})
-{
-	
 }
 
 print_r($vlastnictvi);
