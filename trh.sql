@@ -87,8 +87,8 @@ CREATE TABLE IF NOT EXISTS `veci` (
 --
 
 INSERT INTO `veci` (`idveci`, `nazev`) VALUES
-(1, 'Dřevo'),
-(2, 'Písek');
+(1, 'Drevo'),
+(2, 'Piesok');
 
 --
 -- Klíče pro exportované tabulky

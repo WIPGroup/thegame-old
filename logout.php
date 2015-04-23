@@ -10,6 +10,6 @@ $_SESSION['heslo'] = '';
 <meta http-equiv="refresh" content="0; url=index.php">
 </head>
 <body>
-odhlašování...
+odhlasovanie...
 </body>
 </html>
