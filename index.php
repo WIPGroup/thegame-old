@@ -7,14 +7,14 @@ require "login.php";
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
  @import "http://94.125.220.136/css/status/externalStatus.css";
 </style>
-<?php
+<!--?php
 if ($prihlasen)
 	echo '<meta http-equiv="refresh" content="10; url=index.php">';
-?>
+?-->
 </head>
 <body>
 <h1>TheGame - Trh</h1>
@@ -24,7 +24,7 @@ if ($prihlasen)
 else
 	include "form.php";
 ?>
-<br/>
+<br><br>
 <script type="text/javascript" src="http://94.125.220.136/externalStatus.html?js=1&projectId=TheGame"></script>
 </body>
 </html>

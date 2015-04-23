@@ -20,7 +20,7 @@ if ($_GET['trade'] != '')
 			$vlastnictvi[0] -= $zaznam['penize'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE id="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
-			//TODO:odstranit nabídku
+			//TODO: odstranit nabídku (po zprovoznění tvorby nabídek)
 		}
 		//hráč prodává
 		else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi'])
@@ -29,7 +29,7 @@ if ($_GET['trade'] != '')
 			$vlastnictvi[0] += $zaznam['penize'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE id="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
-			//TODO:odstranit nabídku
+			//TODO: odstranit nabídku (po zprovoznění tvorby nabídek)
 		}
 		else
 			echo "Obchod se nepovedl.";
@@ -37,6 +37,16 @@ if ($_GET['trade'] != '')
 	else
 		echo "Obchod se nepovedl.";
 }
+
+//TODO: začlenění nabídky do databáze
+if ($_GET['smer'] == 'p' || if ($_GET['smer'] == 'k')
+{
+	
+})
+{
+	
+}
+
 print_r($vlastnictvi);
 ?>
 <br>
@@ -54,6 +64,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td>'.$zaznam['penize'].'</td>';
 	echo '<td>'.$zaznam['hrac'].'</td>';
 	echo '<td>';
+	
 	if ($zaznam['penize'] <= $vlastnictvi[0])
 		echo '<a href="index.php?trade='.$zaznam['id'].'">Koupit</a>';
 	echo "</td></tr>";
@@ -84,4 +95,23 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 ?>
 </table>
+<br>
+Vytvořit nabídku:
+<form action="index.php" method="POST">
+	<input type="radio" name="smer" value="p" checked>Prodám
+	<input type="radio" name="smer" value="k">Koupím
+	<br>
+	<label for="predmet">Co </label>
+	<input type="text" name="predmet" id="predmet">
+	<?php
+	//TODO: udělat select s názvy výrobků
+	?>
+	<label for="mnozstvi"> v množství </label>
+	<input type="number" name="mnozstvi" id="mnozstvi" min="1" max="100" value="1">
+	<br>
+	<label for="penize"> za </label>
+	<input type="number" name="penize" id="penize" min="0" max="10000" value="1"> peněz
+	<input type="submit" value="Nabídnout">
+</form>
+<br>
 <a href="logout.php" title="Odhlásit">Odhlásit</a>
