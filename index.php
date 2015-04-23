@@ -11,18 +11,7 @@ require "login.php";
 <style type="text/css">
  @import "http://94.125.220.136/css/status/externalStatus.css";
 </style>
-<!--?php
-if ($prihlasen)
-	echo '<meta http-equiv="refresh" content="10; url=index.php">';
-?-->
 <?php
-
-session_start();
-require "dblogin.php";
-
-require "login.php";
-
-
 if ($_GET['trade'] != '' || $_GET[''] != '')
 	echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
