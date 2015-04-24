@@ -12,7 +12,7 @@ session_start();
 require "dblogin.php";
 
 require "login.php";
-if ($_GET['trade'] != '' || $_GET[''] != '')
+if (isset($_GET['trade']) || isset($_GET['']))
 	echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
 </head>

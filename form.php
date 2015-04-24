@@ -1,5 +1,5 @@
 <?php
-if ($_POST['hrac'] != '')
+if (isset($_POST['hrac']))
 	echo "Špatné přihlašovací jmého/heslo.";
 ?>
 <form action="index.php" method="POST">

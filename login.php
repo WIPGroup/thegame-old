@@ -11,7 +11,7 @@ if ($_SESSION['hrac'] != '')
 	if (count($zaznam))
 		$prihlasen = true;
 }
-else if ($_POST['hrac'] != '')
+else if (isset($_POST['hrac']))
 {
 	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_POST['hrac'].'" AND heslo="'.$_POST['heslo'].'"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));

@@ -1,5 +1,5 @@
 <?php
-if ($_GET['trade'] != '')
+if (isset($_GET['trade']))
 {
 	//uskutečnit obchod
 	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['trade'];
@@ -36,7 +36,9 @@ if ($_GET['trade'] != '')
 		echo "Obchod se nepovedl.";
 }
 //TODO: začlenění nabídky do databáze
-else if ($_GET['smer'] == 'p')	//prodej
+else if (isset($_GET['smer']))
+{
+if($_GET['smer'] == 'p')	//prodej
 {
 	if ($vlastnictvi[$_GET['predmet']] >= $_GET['mnozstvi'])
 	{
@@ -57,5 +59,6 @@ else if ($_GET['smer'] == 'k')	//pohledávka
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
 	}
+}
 }
 ?>
