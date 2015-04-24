@@ -10,9 +10,9 @@ include "trade.php";
 print_r($vlastnictvi);
 ?>
 <br>
-Prodám:
+Predám:
 <table border="1">
-<tr><td>Hráč</td><td>nabízí</td><td>v množství</td><td>za tolik peňez</td><td>Akce</td></tr>
+<tr><td>Hráč</td><td>ponúka</td><td>v množstve</td><td>za toľko peňazí</td><td>Akcia</td></tr>
 <?php
 //nabídky
 $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="p" AND predmet=idveci AND hrac=idhrace';
@@ -33,9 +33,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 ?>
 </table>
 
-Koupím:
+Kúpim:
 <table border="1">
-<tr><td>Hráč</td><td>shání</td><td>v množství</td><td>za tolik peňez</td><td>Akce</td></tr>
+<tr><td>Hráč</td><td>zháňa</td><td>v množstve</td><td>za toľko peňazí</td><td>Akcia</td></tr>
 <?php
 //poptávky
 $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="k" AND predmet=idveci AND hrac=idhrace';
@@ -56,12 +56,12 @@ while ($zaznam = mysql_fetch_array($vysledek))
 ?>
 </table>
 <br>
-Vytvořit nabídku:
+Vytvoriť požiadavku:
 <form action="index.php" method="GET">
-	<input type="radio" name="smer" value="p" checked>Prodám
-	<input type="radio" name="smer" value="k">Koupím
+	<input type="radio" name="smer" value="p" checked>Predám
+	<input type="radio" name="smer" value="k">Kúpim
 	<br>
-	<label for="predmet">Co </label>
+	<label for="predmet">čo </label>
 	<select name="predmet" id="predmet">
 	<?php
 		$dotaz = 'SELECT * FROM veci';
@@ -79,12 +79,12 @@ Vytvořit nabídku:
 	<?php
 	//TODO: generovat select z databáze
 	?>
-	<label for="mnozstvi"> v množství </label>
+	<label for="mnozstvi"> v množstve </label>
 	<input type="number" name="mnozstvi" id="mnozstvi" min="1" max="1000" value="1">
 	<br>
 	<label for="cena"> za </label>
-	<input type="number" name="cena" id="cena" min="0" max="100000" value="1"> peněz
-	<input type="submit" value="Nabídnout">
+	<input type="number" name="cena" id="cena" min="0" max="100000" value="1"> peňazí
+	<input type="submit" value="Odoslať">
 </form>
 <br>
-<a href="logout.php" title="Odhlásit">Odhlásit</a>
+<a href="logout.php" title="Odhlásiť">Odhlásiť</a>
