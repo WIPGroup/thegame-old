@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['hrac'] = '';
-$_SESSION['heslo'] = '';
+unset($_SESSION['hrac']);
+unset($_SESSION['heslo']);
 ?>
 <!DOCTYPE html>
 <html>
