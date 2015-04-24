@@ -1,7 +1,7 @@
 <?php
 $prihlasen = false;
 
-if ($_SESSION['hrac'] != '')
+if (isset($_SESSION['hrac']))
 {
 	//heslo se bude možná později hashovat
 	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_SESSION['hrac'].'" AND heslo="'.$_SESSION['heslo'].'"';
