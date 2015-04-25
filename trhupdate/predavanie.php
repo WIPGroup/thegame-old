@@ -19,7 +19,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($zaznam['cena'] <= $vlastnictvi[0])
 		echo '<a href="#" onclick="obchodovanie('.$zaznam['idnab'].');return false;">Kúpiť</a>';
 	echo '</td><td>';
-	echo '<a href="#" onclick="drop('.$zaznam['idnab'].')">Zrušiť</a>';
+	echo '<a href="#" onclick="drop('.$zaznam['idnab'].');return false;">Zrušiť</a>';
 	echo "</td></tr>";
 }
 echo'</table>';
