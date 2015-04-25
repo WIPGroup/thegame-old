@@ -10,10 +10,8 @@ session_start();
 </style>
 <?php
 require "dblogin.php";
-
 require "login.php";
-if (isset($_GET['trade']) || isset($_GET['']))
-	echo '<meta http-equiv="refresh" content="0; url=index.php">';
+if (isset($_GET['trade']) || isset($_GET[''])) echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
 <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 <script src="scripts.js"></script>
@@ -23,10 +21,8 @@ if (isset($_GET['trade']) || isset($_GET['']))
 <hr>
 <h1>TheGame - Trh</h1>
 <?php
-if ($prihlasen)
-	include "trh.php";
-else
-	include "form.php";
+if ($prihlasen) include "trh.php";
+else include "form.php";
 ?>
 </body>
 </html>

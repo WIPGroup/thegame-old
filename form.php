@@ -1,6 +1,5 @@
 <?php
-if (isset($_POST['hrac']))
-	echo "Špatné přihlašovací jmého/heslo.";
+if (isset($_POST['hrac'])) echo "Špatné přihlašovací jmého/heslo.";
 ?>
 <form action="index.php" method="POST">
 	<label for="hrac">Tým:</label>
