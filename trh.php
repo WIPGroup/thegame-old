@@ -13,7 +13,7 @@ Kúpim:
 </span>
 <br>
 Vytvoriť požiadavku:
-<form action="index.php" method="GET">
+<form id="nabidka">
 	<input type="radio" name="smer" value="p" checked>Predám
 	<input type="radio" name="smer" value="k">Kúpim
 	<br>
