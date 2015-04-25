@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "trhvariables.php";
-include "trade.php";
+include "../connectvlastnictvi.php";
+include "../trade.php";
 echo '<table border="1">';
 echo '<tr><td>Hráč</td><td>ponúka</td><td>v množstve</td><td>za toľko peňazí</td><td>Akcia</td></tr>';
 
@@ -17,7 +17,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td>';
 	
 	if ($zaznam['cena'] <= $vlastnictvi[0])
-		echo '<a href="#" onclick="kupit('.$zaznam['idnab'].');return false;">Koupit</a>';
+		echo '<a href="#" onclick="obchodovanie('.$zaznam['idnab'].');return false;">Kúpiť</a>';
 	echo "</td></tr>";
 
 }

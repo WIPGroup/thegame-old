@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "trhvariables.php";
+include "../connectvlastnictvi.php";
 echo '<table border="1">';
 echo '<tr><td>Peniaze</td><td>'.$vlastnictvi[0].'</td></tr>';
 $dotaz = 'SELECT * FROM veci';

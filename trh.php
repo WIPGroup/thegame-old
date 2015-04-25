@@ -1,15 +1,15 @@
 <?php
 //engine nakupování
-include "trhvariables.php";
+include "connectvlastnictvi.php";
 include "trade.php";
 ?>
 <div id="vlastnictvi">
 </div>
 Predám:
-<span id="predaj">
+<span id="predavanie">
 </span>
 Kúpim:
-<span id="kupit">
+<span id="kupovanie">
 </span>
 <br>
 Vytvoriť požiadavku:

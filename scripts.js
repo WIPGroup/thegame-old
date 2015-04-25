@@ -1,40 +1,37 @@
 function reloadArray()
 {
 		$.ajax({
-            url : "vlastnictvi.php",
+            url : "trhupdate/vlastnictvi.php",
             success : function (data) {
                 $("#vlastnictvi").html(data);
             }
         });
 }
-function reloadPredaj()
+function reloadPredavanie()
 {
         $.ajax({
-            url : "predajcontent.php",
+            url : "trhupdate/predavanie.php",
             success : function (data) {
-                $("#predaj").html(data);
+                $("#predavanie").html(data);
             }
         });
 }
-function reloadKupit()
+function reloadKupovanie()
 {
         $.ajax({
-            url : "kupitcontent.php",
+            url : "trhupdate/kupovanie.php",
             success : function (data) {
-                $("#kupit").html(data);
+                $("#kupovanie").html(data);
             }
         });
 }
-function kupit(idnab){
- 	$.get( "index.php", { trade: idnab } ).done(reloadEverything());
-}
-function predaj(idnab){
+function obchodovanie(idnab){
  	$.get( "index.php", { trade: idnab } ).done(reloadEverything());
 }
 function reloadEverything(){
 setTimeout(function(){
-reloadKupit();
-reloadPredaj();
+reloadKupovanie();
+reloadPredavanie();
 reloadArray();
 },100);
 }
