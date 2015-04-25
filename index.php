@@ -15,6 +15,8 @@ require "login.php";
 if (isset($_GET['trade']) || isset($_GET['']))
 	echo '<meta http-equiv="refresh" content="0; url=index.php">';
 ?>
+<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+<script src="scripts.js"></script>
 </head>
 <body>
 <script type="text/javascript" src="http://94.125.220.136/externalStatus.html?js=1&projectId=TheGame"></script>

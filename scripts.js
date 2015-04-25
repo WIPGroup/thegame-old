@@ -32,8 +32,10 @@ function predaj(idnab){
  	$.get( "index.php", { trade: idnab } ).done(reloadEverything());
 }
 function reloadEverything(){
+setTimeout(function(){
 reloadKupit();
 reloadPredaj();
 reloadArray();
+},100);
 }
 $(reloadEverything);

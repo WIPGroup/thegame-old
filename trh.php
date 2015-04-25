@@ -4,8 +4,6 @@ include "trhvariables.php";
 include "trade.php";
 ?>
 <br>
-<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-<script src="scripts.js"></script>
 <div id="vlastnictvi">
 </div>
 Predám:
