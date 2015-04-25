@@ -1,11 +1,13 @@
-#BUILD system rozbity
+#BUILD system velke zmeny
 
-# http://antre.417rct.org
+# http://antre.417rct.org/(nazev_branche)
+**Pozor, case sensitive**
 
 ## Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
-* dalsi branche muzete vytvaret pro pokusy a tak podobne, pokud planujete je mit dlouhodobe, doplnte jejich popis
+* `ex_(username)` personalni experimentalni branch
+* dalsi branche muzete vytvaret pro pokusy a tak podobne, pokud planujete je mit dlouhodobe, doplnte jejich popis, nedelejte nazvy moc dlouhe, pak sou blbe videt v teamcity
 
 ## Workflow (obsolete, needs update):
 * [x] Vymyslet nazev
