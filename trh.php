@@ -36,5 +36,5 @@ include "trade.php";
 			</div>
 		</form>
 	</div>
-	<span id="predaj" class="col-md-5"></span>
-	<span id="kupit" class="col-md-5"></span>
+	<span id="predavanie" class="col-md-5"></span>
+	<span id="kupovanie" class="col-md-5"></span>
