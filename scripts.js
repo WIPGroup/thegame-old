@@ -26,17 +26,14 @@ function reloadKupit()
         });
 }
 function kupit(idnab){
- 	$.get( "index.php", { trade: idnab } );
-	reloadKupit();
-	reloadPredaj();
-	reloadArray();
+ 	$.get( "index.php", { trade: idnab } ).done(reloadEverything());
 }
 function predaj(idnab){
- 	$.get( "index.php", { trade: idnab } );
-	reloadKupit();
-	reloadPredaj();
-	reloadArray();
+ 	$.get( "index.php", { trade: idnab } ).done(reloadEverything());
 }
-$(reloadArray());
-$(reloadPredaj());
-$(reloadKupit());
+function reloadEverything(){
+reloadKupit();
+reloadPredaj();
+reloadArray();
+}
+$(reloadEverything);
