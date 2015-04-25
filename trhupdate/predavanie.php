@@ -15,8 +15,8 @@ while ($zaznam = mysql_fetch_array($vysledek)) {
   echo '<td>' . $zaznam['mnozstvi'] . '</td>';
   echo '<td>' . $zaznam['cena'] . '</td>';
   echo '<td>';
-  if ($zaznam['cena'] <= $vlastnictvi[0]) echo '<a href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</a>';//TODO: misto a chceme button
-  echo '<a href="#" onclick="drop(' . $zaznam['idnab'] . ');return false;">Zrušiť</a></td></tr>';
+  if ($zaznam['cena'] <= $vlastnictvi[0]) echo '<button type="button" class="btn btn-success" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>';//TODO: misto a chceme button
+  echo '<button type="button" class="btn btn-warning" href="#" onclick="drop(' . $zaznam['idnab'] . ');return false;">Zrušiť</button></td></tr>';
 }
 echo '</table>';
 ?>
