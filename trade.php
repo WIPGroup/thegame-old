@@ -14,7 +14,7 @@ if (isset($_GET['trade'])) {
       //TODO:připsat získané vlastnictví autoru nabídky
       //$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
       //mysql_query($dotaz);
-      
+
     }
     //hráč prodává
     else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi']) {
@@ -25,7 +25,7 @@ if (isset($_GET['trade'])) {
       //TODO:připsat získané vlastnictví autoru nabídky
       //$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
       //mysql_query($dotaz);
-      
+
     } else echo "Obchod se nepovedl.";
   } else echo "Obchod se nepovedl.";
 }
