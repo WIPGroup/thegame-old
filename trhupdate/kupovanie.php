@@ -3,7 +3,7 @@ session_start();
 include "../connectvlastnictvi.php";
 include "../trade.php";
 echo '<table style="background-color: #fff" class="table table-bordered table-responsive table-hover">';
-echo '<tr><th>Hráč</th><th>Hľadá</th><th>Množstvo</th><th>Cena</th><th></th>';
+echo '<tr><th>Hráč</th><th>Hľadá</th><th>Množstvo</th><th>Cena</th><th></th></tr>';
 $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="k" AND predmet=idveci AND hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek)) {
