@@ -1,60 +1,17 @@
 <?php
-$dotaz = 'SELECT * FROM hraci WHERE idhrace='.$_SESSION['hrac'];
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-$hrac = mysql_fetch_array($vysledek);
-$vlastnictvi = explode(';', $hrac['vlastnictvi']);
-
 //engine nakupování
+include "trhvariables.php";
 include "trade.php";
-
-print_r($vlastnictvi);
 ?>
 <br>
+<div id="vlastnictvi">
+</div>
 Predám:
-<table border="1">
-<tr><td>Hráč</td><td>ponúka</td><td>v množstve</td><td>za toľko peňazí</td><td>Akcia</td></tr>
-<?php
-//nabídky
-$dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="p" AND predmet=idveci AND hrac=idhrace';
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-while ($zaznam = mysql_fetch_array($vysledek))
-{
-	echo '<tr><td>'.$zaznam['jmeno'].'</td>';
-	echo '<td>'.$zaznam['nazev'].'</td>';
-	echo '<td>'.$zaznam['mnozstvi'].'</td>';
-	echo '<td>'.$zaznam['cena'].'</td>';
-	echo '<td>';
-	
-	if ($zaznam['cena'] <= $vlastnictvi[0])
-		echo '<a href="index.php?trade='.$zaznam['idnab'].'">Koupit</a>';
-	echo "</td></tr>";
-
-}
-?>
-</table>
-
+<span id="predaj">
+</span>
 Kúpim:
-<table border="1">
-<tr><td>Hráč</td><td>zháňa</td><td>v množstve</td><td>za toľko peňazí</td><td>Akcia</td></tr>
-<?php
-//poptávky
-$dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="k" AND predmet=idveci AND hrac=idhrace';
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-while ($zaznam = mysql_fetch_array($vysledek))
-{
-	echo '<tr><td>'.$zaznam['jmeno'].'</td>';
-	echo '<td>'.$zaznam['nazev'].'</td>';
-	echo '<td>'.$zaznam['mnozstvi'].'</td>';
-	echo '<td>'.$zaznam['cena'].'</td>';
-	echo '<td>';
-	
-	if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']])
-		echo '<a href="index.php?trade='.$zaznam['idnab'].'">Prodat</a>';
-	echo "</td></tr>";
-
-}
-?>
-</table>
+<span id="kupit">
+</span>
 <br>
 Vytvoriť požiadavku:
 <form action="index.php" method="GET">
