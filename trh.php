@@ -3,7 +3,6 @@
 include "trhvariables.php";
 include "trade.php";
 ?>
-<br>
 <div id="vlastnictvi">
 </div>
 Predám:

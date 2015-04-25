@@ -28,6 +28,5 @@ if ($prihlasen)
 else
 	include "form.php";
 ?>
-<br><br>
 </body>
 </html>
