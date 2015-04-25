@@ -61,4 +61,8 @@ else if ($_GET['smer'] == 'k')	//pohledávka
 	}
 }
 }
+if (isset($_GET['drop'])){ //tlacitko zrušiť
+$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['drop'];
+mysql_query($dotaz);
+}
 ?>

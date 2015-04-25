@@ -28,6 +28,9 @@ function reloadKupovanie()
 function obchodovanie(idnab){
  	$.get( "index.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
+function drop(idnab){
+ 	$.get( "index.php", { drop: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
+}
 function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
 setTimeout(function(){
 reloadKupovanie();
