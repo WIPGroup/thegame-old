@@ -1,4 +1,4 @@
-#BUILD system velke zmeny
+[![Build Status](https://travis-ci.org/AntreTeam/TheGame.svg?branch=master)](https://travis-ci.org/AntreTeam/TheGame)
 
 # http://antre.417rct.org/(nazev_branche)
 **Pozor, case sensitive**
