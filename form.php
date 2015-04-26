@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Nesprávne meno alebo heslo!</div>';
+if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissable col-md-10 col-md-offset-1"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Nesprávne meno alebo heslo!</div>';
 ?>
 <!--
 <div style="width:300px;margin-left: auto;margin-right: auto;">
