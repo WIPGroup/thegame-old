@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Nesprávne meno alebo heslo!</div>';
 ?>
+<!--
 <div style="width:300px;margin-left: auto;margin-right: auto;">
 <form action="index.php" method="POST" class="form-signin">
 	<h2 class="form-signin-heading">Prosím, prihlásťe sa</h2>
@@ -11,8 +12,8 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Prihlásiť</button>
 </form>
 </div>
-
-<div class="login-panel panel panel-default">
+-->
+<div class="login-panel panel panel-default col-md-4 col-md-offset-4">
 	<div class="panel-heading">
 		<h2 class="panel-title">Prosím, prihlásťe sa</h2>
 	</div>
@@ -20,12 +21,12 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 		<form role="form">
 			<fieldset>
 				<div class="form-group">
-					<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+					<input class="form-control" placeholder="Hráč" name="hrac" id="hrac" type="text" autofocus required>
 				</div>
 				<div class="form-group">
-					<input class="form-control" placeholder="Password" name="password" type="password" value="">
+					<input class="form-control" placeholder="Heslo" name="heslo" id="heslo" type="password" required>
 				</div>
-				<a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+				<button type="submit" class="btn btn-lg btn-success btn-block">Prihlásiť</a>
 			</fieldset>
 		</form>
 	</div>
