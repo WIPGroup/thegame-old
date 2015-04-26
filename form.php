@@ -13,7 +13,7 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 </form>
 </div>
 -->
-<div class="login-panel panel panel-default col-md-4 col-md-offset-4">
+<div class="login-panel panel panel-default col-md-2 col-md-offset-6">
 	<div class="panel-heading">
 		<h2 class="panel-title">Prosím, prihlásťe sa</h2>
 	</div>
@@ -26,7 +26,7 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 				<div class="form-group">
 					<input class="form-control" placeholder="Heslo" name="heslo" id="heslo" type="password" required>
 				</div>
-				<button type="submit" class="btn btn-lg btn-success btn-block">Prihlásiť</a>
+				<button type="submit" class="btn btn-lg btn-success btn-block">Prihlásiť</button>
 			</fieldset>
 		</form>
 	</div>
