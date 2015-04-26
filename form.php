@@ -13,12 +13,12 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 </form>
 </div>
 -->
-<div class="login-panel panel panel-default col-md-2 col-md-offset-6">
+<div class="login-panel panel panel-default col-md-2 col-md-offset-5">
 	<div class="panel-heading">
 		<h2 class="panel-title">Prosím, prihlásťe sa</h2>
 	</div>
 	<div class="panel-body">
-		<form role="form">
+		<form role="form" action="index.php" method="POST" class="form-signin">
 			<fieldset>
 				<div class="form-group">
 					<input class="form-control" placeholder="Hráč" name="hrac" id="hrac" type="text" autofocus required>
