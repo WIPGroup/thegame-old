@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/AntreTeam/TheGame.svg?branch=master)](https://travis-ci.org/AntreTeam/TheGame)
-
+[![Build Status](https://travis-ci.org/AntreTeam/TheGame.svg?branch=master)](https://travis-ci.org/AntreTeam/TheGame) [![Build Status](http://94.125.220.136/app/rest/builds/buildType:%28id:TheGame_GetFromGitHubUploadToFtpAllBranches%29/statusIcon)](http://94.125.220.136/project.html?projectId=TheGame&tab=projectOverview)
 # http://antre.417rct.org/(nazev_branche)
 **Pozor, case sensitive**
 
