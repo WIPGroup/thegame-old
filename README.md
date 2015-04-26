@@ -9,6 +9,16 @@
 * `ex_(username)` personalni experimentalni branch
 * dalsi branche muzete vytvaret pro pokusy a tak podobne, pokud planujete je mit dlouhodobe, doplnte jejich popis, nedelejte nazvy moc dlouhe, pak sou blbe videt v teamcity
 
+## Možnosti obchodování
+* [ ] Vytváření nabídky
+  * [x] Vybrat co se nakupuje/prodává
+  * [x] Cena
+  * [x] Po kolika kusech se prodává
+  * [ ] Omezení kolik se toho celkově má prodat
+  * [ ] Věci na trhu se odečtou z vlastnictví, aby se s nimi nedalo delat nic jineho
+  * [ ] Když někdo něco koupí/prodá, tak se to prodejci/zakaznikovy odecte/pricte (penize i surovina)
+  * [ ] při kliknutí na koupit/prodat se zobrazí dialog s potvrzením, příp. dotazem na množství
+
 ## Workflow (obsolete, needs update):
 * [x] Vymyslet nazev
 * [x] Pridat databazi na GH
