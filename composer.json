@@ -1,0 +1,6 @@
+{
+    "require": {
+        "netglue/zf2-ssl-module": "dev-master",
+        "monolog/monolog": "1.13.*@dev"
+    }
+}
