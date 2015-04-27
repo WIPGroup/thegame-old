@@ -1,0 +1,4 @@
+* text eol=lf
+*.php text
+*.js text
+*.html text
