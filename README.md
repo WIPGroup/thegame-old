@@ -1,8 +1,4 @@
-[![Build Status](http://94.125.220.136/app/rest/builds/buildType:%28id:TheGame_GetFromGitHubUploadToFtpAllBranches%29/statusIcon)](http://94.125.220.136/project.html?projectId=TheGame&tab=projectOverview)
-# http://antre.417rct.org/(nazev_branche) build branche
-# http://antre.417rct.org/refs/pull/(cislo)/head buildnuty pull request
-# http://antre.417rct.org/refs/pull/(cislo)/merge build mergnuteho pull requestu
-**Pozor, case sensitive**
+#build system zatim nefunguje
 
 ## Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
