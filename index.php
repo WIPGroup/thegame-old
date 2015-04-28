@@ -24,6 +24,8 @@ session_start();
           TheGame
         </a>
       </div>
+      <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'><img src='https://ci.gitlab.com/projects/2263/status.png?ref=master' /></a>
+      <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=latest-working'><img src='https://ci.gitlab.com/projects/2263/status.png?ref=latest-working' /></a>
       <?php
       if ($prihlasen)
       echo '<form action="logout.php" class="navbar-form navbar-right"><button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button></form>'
