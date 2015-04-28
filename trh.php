@@ -29,7 +29,7 @@ include "trade.php";
 					<?php
 					//TODO: generovat select z databáze
 					?>
-					<input type="number" name="mnozstvi" id="mnozstvi" min="1" max="1000" class="form-control" placeholder="Množství">
+					<input type="number" name="mnozstvi" id="mnozstvi" min="1" max="1000" class="form-control" placeholder="Množstvo">
 					<input type="number" class="form-control" name="cena" id="cena" 	min="0" max="100000" placeholder="Cena">
 					<button type="submit" class="btn btn-primary">Odoslať</button>
 				</div>
