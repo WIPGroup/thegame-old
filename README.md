@@ -1,12 +1,11 @@
-#build system zatim nefunguje
-
-## Branches
+Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master) Latest-working [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=latest-working)](https://ci.gitlab.com/projects/2263?ref=latest-working)
+# Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
 * `ex_(username)` personalni experimentalni branch
 * dalsi branche muzete vytvaret pro pokusy a tak podobne, pokud planujete je mit dlouhodobe, doplnte jejich popis, nedelejte nazvy moc dlouhe, pak sou blbe videt v teamcity
 
-## Možnosti obchodování
+# Možnosti obchodování
 * [ ] Vytváření nabídky
   * [x] Vybrat co se nakupuje/prodává
   * [x] Cena
@@ -16,7 +15,7 @@
   * [ ] Když někdo něco koupí/prodá, tak se to prodejci/zakaznikovy odecte/pricte (penize i surovina)
   * [ ] při kliknutí na koupit/prodat se zobrazí dialog s potvrzením, příp. dotazem na množství
 
-## Workflow (obsolete, needs update):
+# Workflow (obsolete, needs update):
 * [x] Vymyslet nazev
 * [x] Pridat databazi na GH
 * [ ] **Vytvaret podrony log vseho co se deje**
