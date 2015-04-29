@@ -19,22 +19,38 @@ session_start();
     <script src="scripts.js"></script>
   </head>
   <body style="background-color: #eee;padding-top: 70px">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <img src="favicon.ico">
-          TheGame
-        </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="favicon.ico" style="display: inline"/>TheGame</a>
       </div>
-      <ul class="nav navbar-nav">
-      <li><a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'><img src='https://ci.gitlab.com/projects/2263/status.png?ref=master' /></a></li>
-      <li><a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=latest-working'><img src='https://ci.gitlab.com/projects/2263/status.png?ref=latest-working' /></a></li></ul>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav">
+          <li>
+            <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'>
+              <img src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
+            </a>
+          </li>
+          <li>
+            <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=latest-working'>
+              <img src='https://ci.gitlab.com/projects/2263/status.png?ref=latest-working' />
+            </a>
+          </li>
+          <li>
+            <li class="active"><a href="#">Trade</a></li>
+          </li>
+        </ul>
         <?php
         if ($prihlasen) {
-            echo '<ul class="nav navbar-nav navbar-right"><li><form action="logout.php" class="navbar-form navbar-right"><button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button></form></li>';
+            include "hrac_menu.php";
         }
         ?>
-      <li><p class="navbar-text navbar-right">Prihlásený ako (user)</p></li></ul><!--TODO: PHP magic-->
+      </div>
     </nav>
     <?php
     if ($prihlasen) {
