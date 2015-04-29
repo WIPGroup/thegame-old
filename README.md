@@ -13,7 +13,7 @@ Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=mast
   * [ ] Omezení kolik se toho celkově má prodat
   * [ ] Věci na trhu se odečtou z vlastnictví, aby se s nimi nedalo delat nic jineho
   * [ ] Když někdo něco koupí/prodá, tak se to prodejci/zakaznikovy odecte/pricte (penize i surovina)
-  * [ ] při kliknutí na koupit/prodat se zobrazí dialog s potvrzením, příp. dotazem na množství
+  * [ ] při kliknutí na koupit/prodat se zobrazí dialog s potvrzením, příp. dotazem na množství #18
 
 # Workflow (obsolete, needs update):
 * [x] Vymyslet nazev
