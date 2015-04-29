@@ -1,4 +1,4 @@
-Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master) Latest-working [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=latest-working)](https://ci.gitlab.com/projects/2263?ref=latest-working)
+Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)
 # Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
