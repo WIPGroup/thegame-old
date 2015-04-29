@@ -7,7 +7,7 @@
             <li><a href="#">Trade History</a></li>
             <li><a href="#">Statistics</a></li>
             <li class="divider"></li>
-            <li><a href="#"><form action="logout.php" class="navbar-form navbar-right"><button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button></form></a></li>
+            <li><form action="logout.php" class="navbar-form navbar-right"><button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button></form></li>
           </ul>
         </li>
       </ul>
