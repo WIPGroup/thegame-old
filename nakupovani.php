@@ -38,8 +38,10 @@ include "trade.php";
 					</div>
 				</div>
 			</td></tr>
-			<tr colspan="2">
-				<button type="submit" class="btn btn-primary btn-block">Odoslať</button>
+			<tr>
+				<td colspan="2">
+					<button type="submit" class="btn btn-primary btn-block">Odoslať</button>
+				</td>
 			</tr>
 			</table>
 		</div>
