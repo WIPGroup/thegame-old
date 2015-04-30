@@ -53,6 +53,7 @@ else if (isset($_GET['cancel']))
 	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['cancel'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
+	
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
 	{
 		$vlastnictvi[$zaznam['nabizi']] += $zaznam['mnoznabizi'];
