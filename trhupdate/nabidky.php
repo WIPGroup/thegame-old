@@ -41,11 +41,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>';
 	}
 	else if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
-		echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;" ';
-		if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
-			echo 'disabled ';
-		}
-		echo '>Kúpiť</button>';
+		echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>';
+	}
+	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
+		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
 	}
 	echo "</td></tr>";
 }
