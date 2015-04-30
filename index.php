@@ -12,7 +12,7 @@ session_start();
 	</head>
 	<body style="background-color: #eee;padding-top: 70px">
 		<?php
-		include "components/navbar.php"
+		include "components/navbar.php";
 		if ($prihlasen)
 		{
 			echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
