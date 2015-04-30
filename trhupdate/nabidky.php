@@ -22,9 +22,19 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']])
 		echo ' class="danger"';
 	echo '><td>' . $zaznam['jmeno'] . '</td>';
-	echo '<td>' . $veci[$zaznam['nabizi']] . '</td>';
+	
+	if ($zaznam['nabizi'] == 0)
+		echo '<td>Peníze</td>';
+	else
+		echo '<td>' . $veci[$zaznam['nabizi']] . '</td>';
+	
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
-	echo '<td>' . $veci[$zaznam['chce']] . '</td>';
+	
+	if ($zaznam['chce'] == 0)
+		echo '<td>Peníze</td>';
+	else
+		echo '<td>' . $veci[$zaznam['chce']] . '</td>';
+		
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
