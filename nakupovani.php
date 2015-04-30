@@ -22,6 +22,8 @@ include "trade.php";
 					</select>
 				</label>
 				<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+			</div>
+			<div class="input-group">
 				<label>Chci:
 					<select name="chce" id="chce" class="form-control">
 						<?php
@@ -30,11 +32,10 @@ include "trade.php";
 					</select>
 				</label>
 				<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
-				<button type="submit" class="btn btn-primary">Odoslať</button>
 			</div>
+			<button type="submit" class="btn btn-primary">Odoslať</button>
 		</div>
 	</form>
-	<div id="vlastnictvi">
-	</div>
+	<div id="vlastnictvi"></div>
 </div>
 <span id="nabidky" class="col-md-10"></span>
