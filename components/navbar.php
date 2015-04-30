@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="favicon.ico" style="display: inline"/>TheGame</a>
+  </div>
+  <div class="collapse navbar-collapse" id="main-nav">
+    <ul class="nav navbar-nav">
+      <li>
+        <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'>
+          <img src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
+        </a>
+      </li>
+      <li>
+        <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=latest-working'>
+          <img src='https://ci.gitlab.com/projects/2263/status.png?ref=latest-working' />
+        </a>
+      </li>
+      <li>
+        <li class="active"><a href="index.php">Úvod</a></li>
+      </li>
+      <li>
+        <li class="active"><a href="trh.php">Trh</a></li>
+      </li>
+      <li>
+        <li class="active"><a href="crafting.php">Výroba</a></li>
+      </li>
+    </ul>
+    <?php
+    if ($prihlasen) {
+        include "components/hrac_menu.php";
+    }
+    ?>
+  </div>
+</nav>
