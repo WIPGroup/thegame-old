@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TheGame</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <link rel="shortcut icon" href="favicon.ico">

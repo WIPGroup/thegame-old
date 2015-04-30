@@ -6,18 +6,18 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#"><img src="favicon.ico" style="display: inline"/>TheGame</a>
+    <a class="navbar-brand" href="#"><img src="favicon.ico" style="display: inline" alt=""/>TheGame</a>
   </div>
   <div class="collapse navbar-collapse" id="main-nav">
     <ul class="nav navbar-nav">
       <li>
-        <li><a href="index.php">Úvod</a></li>
+        <a href="index.php">Úvod</a>
       </li>
       <li>
-        <li class="active"><a href="trh.php">Trh</a></li> <!-- PHP magic: at ma classu active ta, ktera ma byt aktivni-->
+        <a href="trh.php">Trh</a> <!-- PHP magic: at ma classu active to 'li', ktera ma byt aktivni-->
       </li>
       <li>
-        <li><a href="crafting.php">Výroba</a></li>
+        <a href="crafting.php">Výroba</a>
       </li>
     </ul>
     <?php
