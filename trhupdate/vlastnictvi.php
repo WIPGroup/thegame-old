@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../connectvlastnictvi.php";
+include "../vlastnictvi.php";
 echo '<div><table style="background-color: #fff" class="table table-bordered table-responsive table-hover">';
 echo '<tr><td>Peniaze</td><td>'.$vlastnictvi[0].'</td></tr>';
 $dotaz = 'SELECT * FROM veci';

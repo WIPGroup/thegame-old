@@ -40,7 +40,7 @@ session_start();
 						</a>
 					</li>
 					<li>
-						<li class="active"><a href="#">Trade</a></li>
+						<li class="active"><a href="#">Trh</a></li>
 					</li>
 				</ul>
 				<?php

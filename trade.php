@@ -5,43 +5,37 @@ if (isset($_GET['trade']))
 	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['trade'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
-	//TODO: předělat na věc za věc
 	if (count($zaznam) > 1)
 	{
-		
-	}
-	/*if (count($zaznam) > 1)
-	{
-		//hrac kupuje
-		if ($zaznam['smer'] == 'p' && $vlastnictvi[0] >= $zaznam['cena'])
+		if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']])
 		{
-			$vlastnictvi[$zaznam['predmet']]+= $zaznam['mnozstvi'];
-			$vlastnictvi[0]-= $zaznam['cena'];
+			//přidělení a odebrání surovin kupujícímu
+			$vlastnictvi[$zaznam['nabizi']] += $zaznam['mnoznabizi'];
+			$vlastnictvi[$zaznam['chce']] -= $zaznam['mnozchce'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
-			//TODO:připsat získané vlastnictví autoru nabídky
-			//$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
-			//mysql_query($dotaz);
-
-		}
-		//hráč prodává
-		else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi'])
-		{
-			$vlastnictvi[$zaznam['predmet']]-= $zaznam['mnozstvi'];
-			$vlastnictvi[0]+= $zaznam['cena'];
-			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+			
+			//přidělení surovin prodávajícímu (autoru nabídky)
+			$dotaz = 'SELECT * FROM hraci WHERE idhrace=' . $zaznam['hrac'];
+			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+			$autor = mysql_fetch_array($vysledek);
+			$vlastautor = explode(';', $autor['vlastnictvi']);
+			
+			$vlastautor[$zaznam['chce']] += $zaznam['mnozchce'];
+			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastautor).'" WHERE idhrace="'.$zaznam['hrac'].'"';
 			mysql_query($dotaz);
-			//TODO:připsat získané vlastnictví autoru nabídky
-			//$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
-			//mysql_query($dotaz);
-
+			
+			//odstranění nabídky
+			$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
+			mysql_query($dotaz);
 		}
 		else
-			echo "Obchod se nepovedl.";
+			echo "Nemáš dostatečné množství na uskutečnění obchodu.";
 	}
-	else*/
-		echo "Obchod se nepovedl.";
+	else
+		echo "Nabídka už neexistuje.";
 }
+//vytvořit nabídku
 else if (isset($_GET['nabizi']))
 {
 	if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
@@ -61,7 +55,10 @@ else if (isset($_GET['cancel']))
 	$zaznam = mysql_fetch_array($vysledek);
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
 	{
-		//TODO: vrátit hráči, co nabídl
+		$vlastnictvi[$zaznam['nabizi']] += $zaznam['mnoznabizi'];
+		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$zaznam['hrac'].'"';
+		mysql_query($dotaz);
+		
 		$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['cancel'];
 		mysql_query($dotaz);
 	}

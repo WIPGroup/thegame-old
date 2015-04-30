@@ -1,6 +1,6 @@
 <?php
 //engine nakupování
-include "connectvlastnictvi.php";
+include "vlastnictvi.php";
 include "trade.php";
 ?>
 <div class="col-md-2">

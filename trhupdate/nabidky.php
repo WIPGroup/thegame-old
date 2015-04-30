@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "../connectvlastnictvi.php";
+include "../vlastnictvi.php";
 include "../trade.php";
 
 $dotaz = 'SELECT * FROM veci';
