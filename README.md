@@ -7,12 +7,12 @@ Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=mast
 
 Prístupy:
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
-
+```
 http://417rct.org/phpMyAdmin/
 $user='rctorg_antre';
 $passwd='F}6Z?6tX-H&E';
 $databaze='rctorg_antre';
-
+```
 
 # Možnosti obchodování
 * [ ] Vytváření nabídky
