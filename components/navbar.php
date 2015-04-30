@@ -16,18 +16,13 @@
         </a>
       </li>
       <li>
-        <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=latest-working'>
-          <img src='https://ci.gitlab.com/projects/2263/status.png?ref=latest-working' />
-        </a>
+        <li><a href="index.php">Úvod</a></li>
       </li>
       <li>
-        <li class="active"><a href="index.php">Úvod</a></li>
+        <li class="active"><a href="trh.php">Trh</a></li> <!-- PHP magic: at ma classu active ta, ktera ma byt aktivni-->
       </li>
       <li>
-        <li class="active"><a href="trh.php">Trh</a></li>
-      </li>
-      <li>
-        <li class="active"><a href="crafting.php">Výroba</a></li>
+        <li><a href="crafting.php">Výroba</a></li>
       </li>
     </ul>
     <?php
