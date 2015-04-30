@@ -2,21 +2,17 @@
 //engine nakupování
 include "vlastnictvi.php";
 include "trade.php";
+	$selectitems = '<option value="0">Peníze</option>'."\n";
+	$dotaz = 'SELECT * FROM veci';
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	while ($zaznam = mysql_fetch_array($vysledek))
+	{
+		$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
+	}
 ?>
 <div class="col-md-2">
-	<div id="vlastnictvi">
-	</div>
 	<form id="nabidka">
 		<div class="form-group">
-			<?php
-				$selectitems = '<option value="0">Peníze</option>'."\n";
-				$dotaz = 'SELECT * FROM veci';
-				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-				while ($zaznam = mysql_fetch_array($vysledek))
-				{
-					$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
-				}
-			?>
 			<div class="input-group">
 				<label>Nabízím:
 					<select name="nabizi" id="nabizi" class="form-control">
@@ -38,5 +34,7 @@ include "trade.php";
 			</div>
 		</div>
 	</form>
+	<div id="vlastnictvi">
+	</div>
 </div>
 <span id="nabidky" class="col-md-10"></span>
