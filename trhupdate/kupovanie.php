@@ -1,12 +1,16 @@
 <?php
 session_start();
+
 include "../connectvlastnictvi.php";
 include "../trade.php";
+
 echo '<table style="background-color: #fff" class="table table-bordered table-responsive table-hover">';
 echo '<tr><th>Hráč</th><th>Hľadá</th><th>Množstvo</th><th>Cena</th><th></th></tr>';
+
 $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="k" AND predmet=idveci AND hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
-while ($zaznam = mysql_fetch_array($vysledek)) {
+while ($zaznam = mysql_fetch_array($vysledek))
+{
 	echo '<tr>';
 	if ($zaznam['mnozstvi'] > $vlastnictvi[$zaznam['predmet']])
 		echo ' class="danger"';
@@ -15,9 +19,12 @@ while ($zaznam = mysql_fetch_array($vysledek)) {
 	echo '<td>' . $zaznam['mnozstvi'] . '</td>';
 	echo '<td>' . $zaznam['cena'] . '</td>';
 	echo '<td>';
-	if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']]) echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Predať</button></td><td>';
+	
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
-		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button></td></tr>';
+		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>';
+	else if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']])
+		echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Predať</button>';
+	echo "</td></tr>";
 }
 echo '</table>';
 ?>

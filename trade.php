@@ -1,12 +1,15 @@
 <?php
-if (isset($_GET['trade'])) {
+if (isset($_GET['trade']))
+{
 	//uskutečnit obchod
 	$dotaz = 'SELECT * FROM obchod WHERE idnab=' . $_GET['trade'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
-	if (count($zaznam) > 1) {
+	if (count($zaznam) > 1)
+	{
 		//hrac kupuje
-		if ($zaznam['smer'] == 'p' && $vlastnictvi[0] >= $zaznam['cena']) {
+		if ($zaznam['smer'] == 'p' && $vlastnictvi[0] >= $zaznam['cena'])
+		{
 			$vlastnictvi[$zaznam['predmet']]+= $zaznam['mnozstvi'];
 			$vlastnictvi[0]-= $zaznam['cena'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="' . join(';', $vlastnictvi) . '" WHERE idhrace="' . $_SESSION['hrac'] . '"';
@@ -17,7 +20,8 @@ if (isset($_GET['trade'])) {
 
 		}
 		//hráč prodává
-		else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi']) {
+		else if ($zaznam['smer'] == 'k' && $vlastnictvi[$zaznam['predmet']] >= $zaznam['mnozstvi'])
+		{
 			$vlastnictvi[$zaznam['predmet']]-= $zaznam['mnozstvi'];
 			$vlastnictvi[0]+= $zaznam['cena'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="' . join(';', $vlastnictvi) . '" WHERE idhrace="' . $_SESSION['hrac'] . '"';
@@ -26,8 +30,12 @@ if (isset($_GET['trade'])) {
 			//$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
 			//mysql_query($dotaz);
 
-		} else echo "Obchod se nepovedl.";
-	} else echo "Obchod se nepovedl.";
+		}
+		else
+			echo "Obchod se nepovedl.";
+	}
+	else
+		echo "Obchod se nepovedl.";
 }
 else if (isset($_GET['smer'])) {
 	if ($_GET['smer'] == 'p') //prodej
@@ -39,7 +47,8 @@ else if (isset($_GET['smer'])) {
 			$dotaz = 'UPDATE hraci SET vlastnictvi="' . join(';', $vlastnictvi) . '" WHERE idhrace="' . $_SESSION['hrac'] . '"';
 			mysql_query($dotaz);
 		}
-	} else if ($_GET['smer'] == 'k') //pohledávka
+	}
+	else if ($_GET['smer'] == 'k') //pohledávka
 	{
 		if ($vlastnictvi[0] >= $_GET['cena']) {
 			$vlastnictvi[0]-= $_GET['cena'];
@@ -50,14 +59,19 @@ else if (isset($_GET['smer'])) {
 		}
 	}
 }
-if (isset($_GET['cancel'])) { //tlacitko zrušiť
+//zrušit nabídku
+if (isset($_GET['cancel']))
+{
 	$dotaz = 'SELECT * FROM obchod WHERE idnab=' . $_GET['cancel'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
 	{
+		//TODO: vrátit hráči, co nabídl
 		$dotaz = 'DELETE FROM obchod WHERE idnab=' . $_GET['cancel'];
 		mysql_query($dotaz);
 	}
+	else
+		echo "Zrušení se nepodařilo.";
 }
 ?>
