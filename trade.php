@@ -6,6 +6,10 @@ if (isset($_GET['trade']))
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	//TODO: předělat na věc za věc
+	if (count($zaznam) > 1)
+	{
+		
+	}
 	/*if (count($zaznam) > 1)
 	{
 		//hrac kupuje

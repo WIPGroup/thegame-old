@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Čtv 23. dub 2015, 19:09
+-- Vytvořeno: Čtv 30. dub 2015, 19:08
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '76;20;8'),
+(1, 'root', 'root', '84;15;8'),
 (2, 'test1', 'test1', '100;0;0'),
 (3, 'test2', 'test2', '94;0;0');
 
@@ -51,25 +51,21 @@ INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
 CREATE TABLE IF NOT EXISTS `obchod` (
 `idnab` int(11) NOT NULL,
   `hrac` int(11) NOT NULL,
-  `predmet` int(11) NOT NULL,
-  `mnozstvi` int(11) NOT NULL,
-  `cena` int(11) NOT NULL,
-  `smer` varchar(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `nabizi` int(11) NOT NULL,
+  `mnoznabizi` int(11) NOT NULL,
+  `chce` int(11) NOT NULL,
+  `mnozchce` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
 --
 
-INSERT INTO `obchod` (`idnab`, `hrac`, `predmet`, `mnozstvi`, `cena`, `smer`) VALUES
-(1, 1, 1, 4, 10, 'p'),
-(2, 1, 1, 2, 6, 'k'),
-(3, 1, 1, 1, 1, 'p'),
-(6, 1, 1, 1, 4, 'p'),
-(7, 1, 1, 1, 2, 'k'),
-(8, 3, 1, 1, 1, 'p'),
-(9, 3, 1, 1, 1, 'k'),
-(10, 3, 1, 1, 1, 'k');
+INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce`) VALUES
+(11, 3, 1, 1, 2, 1),
+(13, 2, 2, 5, 1, 10),
+(14, 2, 1, 1000, 2, 1000),
+(16, 1, 1, 2, 2, 10);
 
 -- --------------------------------------------------------
 
@@ -87,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `veci` (
 --
 
 INSERT INTO `veci` (`idveci`, `nazev`) VALUES
-(1, 'Drevo'),
-(2, 'Piesok');
+(1, 'Dřevo'),
+(2, 'Písek');
 
 --
 -- Klíče pro exportované tabulky
@@ -125,7 +121,7 @@ MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pro tabulku `veci`
 --
