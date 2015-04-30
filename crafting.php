@@ -59,7 +59,7 @@ session_start();
 		<?php
 		if ($prihlasen)
 		{
-			include "nakupovani.php";
+			echo "Výroba nových předmětů z jiných.";
 		}
 		else
 		{

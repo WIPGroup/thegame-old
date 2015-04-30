@@ -40,7 +40,13 @@ session_start();
 						</a>
 					</li>
 					<li>
-						<li class="active"><a href="#">Trh</a></li>
+						<li class="active"><a href="index.php">Úvod</a></li>
+					</li>
+					<li>
+						<li class="active"><a href="trh.php">Trh</a></li>
+					</li>
+					<li>
+						<li class="active"><a href="crafting.php">Výroba</a></li>
 					</li>
 				</ul>
 				<?php
@@ -51,10 +57,14 @@ session_start();
 			</div>
 		</nav>
 		<?php
-		if ($prihlasen) {
-				include "trh.php";
-		} else {
-				include "form.php";
+		if ($prihlasen)
+		{
+			echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
+			//include "trh.php";
+		}
+		else
+		{
+			include "form.php";
 		}
 		?>
 	</body>
