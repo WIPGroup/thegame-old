@@ -11,15 +11,15 @@ $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="k" AND predmet=idveci AN
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<tr>';
-	if ($zaznam['mnozstvi'] > $vlastnictvi[$zaznam['predmet']])
+	echo '<tr';
+	if ($zaznam['mnozstvi'] > $vlastnictvi[$zaznam['predmet']]) //TODO: PHP magic, nema smysl oznacovat radek, ktery si vytvoril, cervene
 		echo ' class="danger"';
-	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
+	echo '><td>' . $zaznam['jmeno'] . '</td>';
 	echo '<td>' . $zaznam['nazev'] . '</td>';
 	echo '<td>' . $zaznam['mnozstvi'] . '</td>';
 	echo '<td>' . $zaznam['cena'] . '</td>';
 	echo '<td>';
-	
+
 	if ($zaznam['hrac'] == $_SESSION['hrac'])
 		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>';
 	else if ($zaznam['mnozstvi'] <= $vlastnictvi[$zaznam['predmet']])
