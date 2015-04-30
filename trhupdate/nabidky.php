@@ -22,26 +22,30 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']])
 		echo ' class="danger"';
 	echo '><td>' . $zaznam['jmeno'] . '</td>';
-	
+
 	if ($zaznam['nabizi'] == 0)
 		echo '<td>Peníze</td>';
 	else
 		echo '<td>' . $veci[$zaznam['nabizi']] . '</td>';
-	
+
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
-	
+
 	if ($zaznam['chce'] == 0)
 		echo '<td>Peníze</td>';
 	else
 		echo '<td>' . $veci[$zaznam['chce']] . '</td>';
-		
+
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
-	if ($zaznam['hrac'] == $_SESSION['hrac'])
+	if ($zaznam['hrac'] == $_SESSION['hrac']) {
 		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>';
+	}
+	echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;" ';
+	if ($zaznam['hrac'] == $_SESSION['hrac'])
+		echo '';
 	else if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']])
-		echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>';
-	echo "</td></tr>";
+		echo 'disabled ';
+	echo ">Kúpiť</button></td></tr>";
 }
 echo '</table>';
 ?>
