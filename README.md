@@ -14,29 +14,4 @@ $passwd='F}6Z?6tX-H&E';
 $databaze='rctorg_antre';
 ```
 
-# Možnosti obchodování
-* [ ] Vytváření nabídky
-  * [x] Vybrat co se nakupuje/prodává
-  * [x] Cena
-  * [x] Po kolika kusech se prodává
-  * [ ] Omezení kolik se toho celkově má prodat
-  * [ ] Věci na trhu se odečtou z vlastnictví, aby se s nimi nedalo delat nic jineho
-  * [ ] Když někdo něco koupí/prodá, tak se to prodejci/zakaznikovy odecte/pricte (penize i surovina)
-  * [ ] při kliknutí na koupit/prodat se zobrazí dialog s potvrzením, příp. dotazem na množství #18
-
-# Workflow (obsolete, needs update):
-* [x] Vymyslet nazev
-* [x] Pridat databazi na GH
-* [ ] **Vytvaret podrony log vseho co se deje**
-* [ ] Administrace
-  * [ ] Pridavani tymu a jejich sprava
-* [ ] Generovani kodu, ktere se pak vytisknou a budou symbolizovat ruzne veci
-* [ ] Redeem techto kodu
-* [ ] Stranka s prubeznymi vysledky a ruzne statisky, grafy
-* [x] Trading stranka
-  * [ ] Nabidka a jeji potvrzeni, odmitnuti, zmena ceny s urcitym clovekem za pevnou cenu
-  * [ ] Nabidka a poptavka vsem za urcitou cenu
-  * [ ] Nabidka casove omezena, na konci se proda tomu kdo nabidl nejvic
-* [ ] Crafting stranka
-  * [ ] Ucraftit
-  * [ ] Seznam receptu
+# [WIKI](wikis/home)
