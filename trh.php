@@ -7,31 +7,37 @@ include "trade.php";
 	<div id="vlastnictvi"></div>
 		<form id="nabidka">
 			<div class="form-group">
-				<div class="checkbox">
+				<!--div class="checkbox">
 					<label><input type="radio" name="smer" value="p" checked>Predám</label>
 					<label><input type="radio" name="smer" value="k">Kúpim</label>
-				</div>
+				</div-->
+				<?php
+					$selectitems = '';
+					$dotaz = 'SELECT * FROM veci';
+					$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+					while ($zaznam = mysql_fetch_array($vysledek))
+					{
+						$selectitems = $selectitems.'<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
+					}
+				?>
 				<div class="input-group">
-					<select name="predmet" id="predmet" class="form-control">
+				<label>Nabízím:
+					<select name="nabizi" id="nabizi" class="form-control">
 						<?php
-						$dotaz = 'SELECT * FROM veci';
-						$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-						while ($zaznam = mysql_fetch_array($vysledek))
-						{
-							echo '<option value="';
-							echo $zaznam['idveci'];
-							echo '">';
-							echo $zaznam['nazev'];
-							echo '</option>';
-						}
+							echo $selectitems;
 						?>
-					</select>
-					<input type="number" name="mnozstvi" id="mnozstvi" min="1" max="1000" class="form-control" placeholder="Množstvo">
-					<input type="number" class="form-control" name="cena" id="cena" 	min="0" max="100000" placeholder="Cena">
+					</select></label>
+					<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" class="form-control" placeholder="Množstvo">
+					<label>Chci:
+					<select name="chce" id="chce" class="form-control">
+						<?php
+							echo $selectitems;
+						?>
+					</select></label>
+					<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" class="form-control" placeholder="Množstvo">
 					<button type="submit" class="btn btn-primary">Odoslať</button>
 				</div>
 			</div>
 		</form>
 	</div>
-	<span id="predavanie" class="col-md-5"></span>
-	<span id="kupovanie" class="col-md-5"></span><!--jirvoz: na co je dobré toto?-->
+	<span id="nabidky" class="col-md-5"></span>

@@ -10,13 +10,14 @@ function reloadArray()                //obnoveni tabulky vlastnictvi
 function reloadPredavanie()
 {
         $.ajax({
-            url : "trhupdate/predavanie.php",
+            //url : "trhupdate/predavanie.php",
+            url : "trhupdate/nabidky.php",
             success : function (data) {
-                $("#predavanie").html(data);
+                $("#nabidky").html(data);
             }
         });
 }
-function reloadKupovanie()
+/*function reloadKupovanie()
 {
         $.ajax({
             url : "trhupdate/kupovanie.php",
@@ -24,7 +25,7 @@ function reloadKupovanie()
                 $("#kupovanie").html(data);
             }
         });
-}
+}*/
 function obchodovanie(idnab){
  	$.get( "index.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
@@ -33,7 +34,7 @@ function cancel(idnab){
 }
 function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
 setTimeout(function(){
-reloadKupovanie();
+//reloadKupovanie();
 reloadPredavanie();
 reloadArray();
 },100);
