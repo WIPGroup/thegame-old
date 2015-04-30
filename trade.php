@@ -29,7 +29,6 @@ if (isset($_GET['trade'])) {
 		} else echo "Obchod se nepovedl.";
 	} else echo "Obchod se nepovedl.";
 }
-//TODO: začlenění nabídky do databáze
 else if (isset($_GET['smer'])) {
 	if ($_GET['smer'] == 'p') //prodej
 	{
@@ -51,8 +50,14 @@ else if (isset($_GET['smer'])) {
 		}
 	}
 }
-if (isset($_GET['drop'])) { //tlacitko zrušiť
-	$dotaz = 'DELETE FROM obchod WHERE idnab=' . $_GET['drop'];
-	mysql_query($dotaz);
+if (isset($_GET['cancel'])) { //tlacitko zrušiť
+	$dotaz = 'SELECT * FROM obchod WHERE idnab=' . $_GET['cancel'];
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	$zaznam = mysql_fetch_array($vysledek);
+	if ($zaznam['hrac'] == $_SESSION['hrac'])
+	{
+		$dotaz = 'DELETE FROM obchod WHERE idnab=' . $_GET['cancel'];
+		mysql_query($dotaz);
+	}
 }
 ?>
