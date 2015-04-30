@@ -13,28 +13,31 @@ include "trade.php";
 <div class="col-md-2">
 	<form id="nabidka">
 		<div class="form-group">
-			<div class="input-group panel panel-primary">
-				<div class="panel-heading">Nabízím:</div>
-				<div class="panel-body">
-					<select name="nabizi" id="nabizi" class="form-control">
-						<?php
+			<table><tr><td>
+				<div class="input-group panel panel-primary">
+					<div class="panel-heading">Nabízím:</div>
+					<div class="panel-body">
+						<select name="nabizi" id="nabizi" class="form-control">
+							<?php
+								echo $selectitems;
+								?>
+						</select>
+						<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+					</div>
+				</div>
+			</td><td>
+				<div class="input-group panel panel-primary">
+					<div class="panel-heading">Nabízím:</div>
+					<div class="panel-body">
+						<select name="chce" id="chce" class="form-control">
+							<?php
 							echo $selectitems;
 							?>
-					</select>
-					<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+						</select>
+					<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+					</div>
 				</div>
-			</div>
-			<div class="input-group panel panel-primary">
-				<div class="panel-heading">Nabízím:</div>
-				<div class="panel-body">
-					<select name="chce" id="chce" class="form-control">
-						<?php
-						echo $selectitems;
-						?>
-					</select>
-				<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
-				</div>
-			</div>
+			</td></tr></table>
 			<button type="submit" class="btn btn-primary">Odoslať</button>
 		</div>
 	</form>
