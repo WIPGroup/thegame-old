@@ -11,11 +11,6 @@
   <div class="collapse navbar-collapse" id="main-nav">
     <ul class="nav navbar-nav">
       <li>
-        <a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'>
-          <img src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
-        </a>
-      </li>
-      <li>
         <li><a href="index.php">Úvod</a></li>
       </li>
       <li>

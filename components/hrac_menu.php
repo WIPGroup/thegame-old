@@ -1,4 +1,9 @@
 <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
+	<li>
+		<a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'>
+			<img src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
+		</a>
+	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
 	<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
