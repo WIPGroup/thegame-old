@@ -27,7 +27,7 @@ include "trade.php";
 				</div>
 			</td><td>
 				<div class="input-group panel panel-primary">
-					<div class="panel-heading">Nabízím:</div>
+					<div class="panel-heading">Prodam:</div>
 					<div class="panel-body">
 						<select name="chce" id="chce" class="form-control">
 							<?php
@@ -37,8 +37,11 @@ include "trade.php";
 					<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
 					</div>
 				</div>
-			</td></tr></table>
-			<button type="submit" class="btn btn-primary">Odoslať</button>
+			</td></tr>
+			<tr colspan="2">
+				<button type="submit" class="btn btn-primary btn-block">Odoslať</button>
+			</tr>
+			</table>
 		</div>
 	</form>
 	<div id="vlastnictvi"></div>
