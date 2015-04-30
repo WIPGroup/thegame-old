@@ -11,10 +11,10 @@ $dotaz = 'SELECT * FROM obchod, veci, hraci WHERE smer="p" AND predmet=idveci AN
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<tr>';
-	if ($zaznam['cena'] > $vlastnictvi[0])
+	echo '<tr';
+	if ($zaznam['cena'] > $vlastnictvi[0])  //TODO: PHP magic, nema smysl oznacovat radek, ktery si vytvoril, cervene
 		echo ' class="danger"';
-	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
+	echo '><td>' . $zaznam['jmeno'] . '</td>';
 	echo '<td>' . $zaznam['nazev'] . '</td>';
 	echo '<td>' . $zaznam['mnozstvi'] . '</td>';
 	echo '<td>' . $zaznam['cena'] . '</td>';
