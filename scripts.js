@@ -18,10 +18,10 @@ function reloadNabidky()
         });
 }
 function obchodovanie(idnab){
- 	$.get( "index.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+ 	$.get( "trh.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
 function cancel(idnab){
- 	$.get( "index.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
+ 	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
 }
 function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
 setTimeout(function(){
@@ -34,7 +34,7 @@ $(function() { //odeslani formulare s nabidkou
             $.ajax({ 
                 data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
                 type: "GET", 
-                url: "index.php", 
+                url: "trh.php", 
                 success: function(data) { 
 					reloadEverything(); //po odeslani se znovu nacte interface
                 }

@@ -36,7 +36,7 @@ if (isset($_GET['trade']))
 		echo "Nabídka už neexistuje.";
 }
 //vytvořit nabídku
-else if (isset($_GET['nabizi']))
+else if (isset($_GET['mnoznabizi']))
 {
 	if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
