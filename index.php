@@ -47,7 +47,7 @@ session_start();
 				</ul>
 				<?php
 				if ($prihlasen) {
-						include "hrac_menu.php";
+						include "components/hrac_menu.php";
 				}
 				?>
 			</div>
