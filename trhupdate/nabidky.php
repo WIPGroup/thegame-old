@@ -34,10 +34,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
 	if ($zaznam['hrac'] == $_SESSION['hrac']) {
-		echo '<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>';
+		echo '<button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#zrus">Zrušiť</button>';
 	}
 	else if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
-		echo '<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>';
+		echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#kup">Kúpiť</button>';
 	}
 	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
 		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
@@ -46,6 +46,23 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 echo '</tbody></table>';
 ?>
+
+<div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť</button>
+		</div>
+	</div>
+</div>
+
+<div id="kup" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>
+		</div>
+	</div>
+</div>
+
 <script>
 $(document).ready( function () {
 		$('#main').DataTable();

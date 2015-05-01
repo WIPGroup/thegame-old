@@ -60,4 +60,11 @@ include "trade.php";
 	<div id="vlastnictvi">
 	</div>
 </div>
-<span id="nabidky" class="col-lg-9 col-lg-offset-3"></span>
+<div class="panel panel-default col-lg-9 col-lg-offset-3">
+	<div class="panel-heading">
+		<h2 class="panel-title">Tržiště:</h2>
+	</div>
+	<div class="panel-body">
+		<span id="nabidky"></span>
+	</div>
+</div>
