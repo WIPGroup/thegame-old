@@ -11,16 +11,13 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 }
 
-echo '<table id="main"><thead><tr><th>Hráč</th><th>Nabízí</th><th>V množstvu</th><th>A chce</th><th>V množstvu</th><th></th></tr></thead><tbody>';
+echo '<table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>V množstvu</th><th>A chce</th><th>V množstvu</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<tr';
-	if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']])
-		echo ' class="danger"';
-	echo '><td>' . $zaznam['jmeno'] . '</td>';
+	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
 
 	if ($zaznam['nabizi'] == 0)
 		echo '<td>Peníze</td>';
