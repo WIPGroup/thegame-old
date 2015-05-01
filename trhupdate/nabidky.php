@@ -11,8 +11,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 }
 
-echo '<table style="background-color: #fff" class="table table-bordered table-responsive table-hover">';
-echo '<tr><th>Hráč</th><th>Nabízí</th><th>V množstvu</th><th>A chce</th><th>V množstvu</th><th></th></tr>';
+echo '<table id="main"><thead><tr><th>Hráč</th><th>Nabízí</th><th>V množstvu</th><th>A chce</th><th>V množstvu</th><th></th></tr></thead><tbody>';
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -48,5 +47,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	}
 	echo "</td></tr>";
 }
-echo '</table>';
+echo '</tbody></table>';
 ?>
+<script>
+$(document).ready( function () {
+		$('#main').DataTable();
+} );
+</script>
