@@ -19,7 +19,7 @@ session_start();
 		}
 		else
 		{
-			include "form.php";
+			include "components/form.php";
 		}
 		?>
 	</body>

@@ -15,11 +15,11 @@ session_start();
 		include "components/navbar.php";
 		if ($prihlasen)
 		{
-			echo "Výroba nových předmětů z jiných.";
+			echo "<h1>Výroba nových předmětů z jiných</h1>";
 		}
 		else
 		{
-			include "form.php";
+			include "components/form.php";
 		}
 		?>
 	</body>

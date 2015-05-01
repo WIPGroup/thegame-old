@@ -16,11 +16,12 @@ session_start();
 		if ($prihlasen)
 		{
 			echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
+			echo "<div id=\"vlastnictvi\"></div>";
 			//include "trh.php";
 		}
 		else
 		{
-			include "form.php";
+			include "components/form.php";
 		}
 		?>
 	</body>
