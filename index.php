@@ -10,7 +10,7 @@ session_start();
 		include "components/head.php"
 		?>
 	</head>
-	<body style="background-color: #eee;padding-top: 70px">
+	<body>
 		<?php
 		include "components/navbar.php";
 		if ($prihlasen)
