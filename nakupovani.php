@@ -19,7 +19,7 @@ include "trade.php";
 						<h2 class="panel-title">Zadat objednávku:</h2>
 					</div>
 					<div class="panel-body">
-						<div class="input-group panel panel-primary col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="input-group panel panel-primary col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: left">
 							<div class="panel-heading">Nabízím:</div>
 							<div class="panel-body">
 								<select name="nabizi" id="nabizi" class="form-control">
