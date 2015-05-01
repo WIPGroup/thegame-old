@@ -10,7 +10,7 @@ include "trade.php";
 		$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
 	}
 ?>
-<div class="col-md-2">
+<div class="col-md-2" style="position: fixed">
 	<form id="nabidka">
 		<div class="form-group">
 			<div class="panel panel-default">
@@ -60,4 +60,4 @@ include "trade.php";
 	<div id="vlastnictvi">
 	</div>
 </div>
-<span id="nabidky" class="col-md-10"></span>
+<span id="nabidky" class="col-md-10 col-md-offset-2"></span>
