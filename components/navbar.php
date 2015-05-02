@@ -23,7 +23,7 @@
 				<a href="research.php">Výzkum</a>
 			</li>
 			<li>
-				<a href="research.php">ADMIN</a>
+				<a href="admin.php">ADMIN</a>
 			</li>
 		</ul>
 		<?php
