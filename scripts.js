@@ -1,19 +1,21 @@
-function reloadArray(){               //obnoveni tabulky vlastnictvi
-	$.ajax({
-		url : "trhupdate/vlastnictvi.php", //vykona se to co je v url
-        success : function (data){  //prijdou zpatky nejake data
-            $("#vlastnictvi").html(data);  //data se hodi do neceho s id vlastnictvi, easy
-        }
-    });
+function reloadArray()                //obnoveni tabulky vlastnictvi
+{
+		$.ajax({
+            url : "trhupdate/vlastnictvi.php", //vykona se to co je v url
+            success : function (data) {  //prijdou zpatky nejake data
+                $("#vlastnictvi").html(data);  //data se hodi do neceho s id vlastnictvi, easy
+            }
+        });
 }
-function reloadNabidky(){
-    $.ajax({
+function reloadNabidky()
+{
+        $.ajax({
             //url : "trhupdate/predavanie.php",
-        url : "trhupdate/nabidky.php",
-        success : function (data) {
-            $("#nabidky").html(data);
-        }
-    });
+            url : "trhupdate/nabidky.php",
+            success : function (data) {
+                $("#nabidky").html(data);
+            }
+        });
 }
 function obchodovanie(idnab){
  	$.get( "trh.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
@@ -22,10 +24,10 @@ function cancel(idnab){
  	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
 }
 function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
-	setTimeout(function(){
-	reloadNabidky();
-	reloadArray();
-	},100);
+setTimeout(function(){
+reloadNabidky();
+reloadArray();
+},100);
 }
 $(function() { //odeslani formulare s nabidkou
         $('#nabidka').submit(function() { 
@@ -39,21 +41,5 @@ $(function() { //odeslani formulare s nabidkou
             });
         return false;  //zastavi normalni submit, tj. zadny refresh
     });
-	reloadEverything(); //po nacteni stranky se nacte interface, easy enough
-	$('#main').DataTable();
-	$('.oteviranikoupeni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		$('.potvrzenikoupeni').click(function(){
-			obchodovanie(aktualniid);
-		});
-	});	
-	$('.oteviranizruseni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		$('.potvrzenizruseni').click(function(){
-			cancel(aktualniid);
-		});
-	});
 });
-
+$(reloadEverything); //po nacteni stranky se nacte interface, easy enough
