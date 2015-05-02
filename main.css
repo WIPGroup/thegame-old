@@ -12,8 +12,8 @@ body {
 	height: 24px;
 }
 td {
-	align: center;
+	text-align: center;
 }
 th {
-	align: center;
+	text-align: center;
 }
