@@ -51,7 +51,7 @@ echo '</tbody></table>';
 				<p>Časem sem dáme i úpravy</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-warning btn-block potvrzenizruseni" href="#">Zrušiť položku</button>
+				<button type="button" class="btn btn-warning btn-block potvrzenizruseni" data-toggle="modal" data-target="#zrus" href="#">Zrušiť položku</button>
 			</div>
 		</div>
 	</div>
@@ -71,7 +71,7 @@ echo '</tbody></table>';
 				<p>Info o tom čo kupuješ a tak</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success btn-block potvrzenikoupeni" href="#">Kúpiť položku</button>
+				<button type="button" class="btn btn-success btn-block potvrzenikoupeni" data-toggle="modal" data-target="#kup" href="#">Kúpiť položku</button>
 			</div>
 		</div>
 	</div>
