@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
 	<?php
-	inlude "components/navbar.php";
+	include "components/navbar.php";
 	if ($prihlasen)
 	{
 		include "components/sestava.php"; //pro kazdou sestavu jednou
