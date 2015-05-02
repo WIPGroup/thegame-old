@@ -83,11 +83,7 @@ $(document).ready( function () {
 });
 $('.oteviranikoupeni').click(function(){
 	
-	console.log(this.data('idnab'));
+	console.log($(this).data('idnab'));
 	//$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
-});
-$('.oteviranizruseni').click(function(){
-	console.log(this.data('idnab'));
-//	$('.potvrzenizruseni').click(cancel(aktualniid));
 });
 </script>
