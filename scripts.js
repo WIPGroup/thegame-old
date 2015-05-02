@@ -42,20 +42,3 @@ $(function() { //odeslani formulare s nabidkou
 });
 $(reloadEverything()); //po nacteni stranky se nacte interface, easy enough
 
-$(document).ready(function (){
-	$('#main').DataTable();
-	$('.oteviranikoupeni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		$('.potvrzenikoupeni').click(function(){
-			obchodovanie(aktualniid);
-		});
-	});	
-	$('.oteviranizruseni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		$('.potvrzenizruseni').click(function(){
-			cancel(aktualniid);
-		});
-	});
-});
