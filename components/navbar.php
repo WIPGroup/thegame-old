@@ -20,7 +20,7 @@
 				<a href="crafting.php">Výroba</a>
 			</li>
 			<li>
-				<a href="#">Výzkum</a>
+				<a href="research.php">Výzkum</a>
 			</li>
 		</ul>
 		<?php
