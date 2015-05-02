@@ -10,7 +10,7 @@ include "trade.php";
 		$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
 	}
 ?>
-<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" id="objednavka" style="min-width: 450px">
+<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" id="objednavka">
 	<div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
 		<form id="nabidka">
 			<div class="form-group">
