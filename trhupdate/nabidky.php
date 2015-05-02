@@ -81,15 +81,13 @@ echo '</tbody></table>';
 $(document).ready( function () {
 		$('#main').DataTable();
 });
-var aktulaniid;
 $('.oteviranikoupeni').click(function(){
-	aktualniid = this.data('idnab');
-	console.log(aktualniid);
-	$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
+	
+	console.log(this.data('idnab'));
+	//$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
 });
 $('.oteviranizruseni').click(function(){
-	aktualniid = this.data('idnab');
-	console.log(aktualniid);
-	$('.potvrzenizruseni').click(cancel(aktualniid));
+	console.log(this.data('idnab'));
+//	$('.potvrzenizruseni').click(cancel(aktualniid));
 });
 </script>
