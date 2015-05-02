@@ -22,5 +22,6 @@ th {
 	width: 52px;
 	height: 52px;
 	background-repeat:no-repeat;
-	background-size:52px 520px;"
+	background-size:52px 52px;
+	background-position:center center;
 }
