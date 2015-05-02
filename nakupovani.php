@@ -2,7 +2,7 @@
 //engine nakupování
 include "vlastnictvi.php";
 include "trade.php";
-	$selectitems = '<option value="0">Peníze</option>'."\n";
+	$selectitems = '';
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
