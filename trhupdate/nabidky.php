@@ -19,11 +19,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
 
-	echo '<td id="item" background="icons/' . $veci[$zaznam['nabizi']] . '.png"></td>';
+	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)"></td>';
 
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
 
-	echo '<td id="item" background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
+	echo '<td id="tableimage" background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
 
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 
