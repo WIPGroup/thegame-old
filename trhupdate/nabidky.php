@@ -78,12 +78,17 @@ echo '</tbody></table>';
 </div>
 
 <script>
-$(document).ready( function () {
-		$('#main').DataTable();
-});
-$('.oteviranikoupeni').click(function(){
-	
-	console.log($(this).data('idnab'));
-	//$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
+$(document).ready(function (){
+	$('#main').DataTable();
+	$('.oteviranikoupeni').click(function(){
+		var aktualniid = $(this).data('idnab');
+		console.log(aktualniid);
+		$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
+	});	
+	$('.oteviranizruseni').click(function(){
+		var aktualniid = this.data('idnab');
+		console.log(aktualniid);
+		$('.potvrzenizruseni').click(cancel(aktualniid));
+	});
 });
 </script>
