@@ -19,13 +19,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
 
-	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)"></td>';
+	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)">' . $zaznam['mnoznabizi'] . '</td>';
 
-	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
-
-	echo '<td id="tableimage" background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
-
-	echo '<td>' . $zaznam['mnozchce'] . '</td>';
+	echo '<td id="tableimage" background="icons/' . $veci[$zaznam['chce']] . '.png">' . $zaznam['mnozchce'] . '</td>';
 
 	echo '<td>';
 	if ($zaznam['hrac'] == $_SESSION['hrac']) {
