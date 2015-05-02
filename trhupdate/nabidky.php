@@ -52,7 +52,7 @@ echo '</tbody></table>';
 				<p>Časem sem dáme i úpravy</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel(' . $zaznam['idnab'] . ');return false;">Zrušiť položku</button>
+				<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel('<?php echo "$zaznam['idnab']"; ?>');return false;">Zrušiť položku</button>
 			</div>
 		</div>
 	</div>
@@ -72,7 +72,7 @@ echo '</tbody></table>';
 				<p>Info o tom čo kupuješ a tak</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie(' . $zaznam['idnab'] . ');return false;">Kúpiť</button>
+				<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie('<?php echo "$zaznam['idnab']"; ?>');return false;">Kúpiť</button>
 			</div>
 		</div>
 	</div>
