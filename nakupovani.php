@@ -48,7 +48,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 </div>
 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="vlastnictvi">
 </div>
-<div class="panel panel-default col-lg-4 col-lg-offset-3 col-md-12 col-sm-12 col-xs-12" id="trziste">
+<div class="panel panel-default col-lg-4 col-md-12 col-sm-12 col-xs-12" id="trziste">
 	<div class="panel-heading">
 		<h2 class="panel-title">Tržiště:</h2>
 	</div>
