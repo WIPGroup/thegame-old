@@ -18,18 +18,10 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
-
-	if ($zaznam['nabizi'] == 0)
-		echo '<td><img id="item" src="icons/Money.png"></img> Peníze</td>';
-	else
-		echo '<td><img id="item" src="icons/' . $veci[$zaznam['nabizi']] . '.png"></img> ' . $veci[$zaznam['nabizi']] . '</td>';
+	echo '<td background="icons/' . $veci[$zaznam['nabizi']] . '.png"></td>';
 
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
-
-	if ($zaznam['chce'] == 0)
-		echo '<td><img id="item" src="icons/Money.png"></img> Peníze</td>';
-	else
-		echo '<td><img id="item" src="icons/' . $veci[$zaznam['chce']] . '.png"></img> ' . $veci[$zaznam['chce']] . '</td>';
+	echo '<td background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
 
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
