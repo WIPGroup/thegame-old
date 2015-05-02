@@ -1,8 +1,8 @@
-@media screen and (min-width:1200px){
+/*@media screen and (min-width:1200px){
 	#objednavka{
 		position: fixed
 	}
-}
+}*/
 body {
 	background-color: #eee;
 	padding-top: 70px;
@@ -30,8 +30,8 @@ th {
 	color:white;
 	padding:5px;
 	text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
