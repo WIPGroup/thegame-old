@@ -1,4 +1,4 @@
-<?php include_once("analyticstracking.php") ?>
+<?php include_once("components/analyticstracking.php") ?>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
