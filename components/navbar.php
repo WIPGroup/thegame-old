@@ -22,6 +22,9 @@
 			<li>
 				<a href="research.php">Výzkum</a>
 			</li>
+			<li>
+				<a href="admin.php">ADMIN</a>
+			</li>
 		</ul>
 		<?php
 		if ($prihlasen) {
