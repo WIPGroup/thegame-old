@@ -39,6 +39,21 @@ $(function() { //odeslani formulare s nabidkou
             });
         return false;  //zastavi normalni submit, tj. zadny refresh
     });
+	reloadEverything(); //po nacteni stranky se nacte interface, easy enough
+	$('#main').DataTable();
+	$('.oteviranikoupeni').click(function(){
+		var aktualniid = $(this).data('idnab');
+		console.log(aktualniid);
+		$('.potvrzenikoupeni').click(function(){
+			obchodovanie(aktualniid);
+		});
+	});	
+	$('.oteviranizruseni').click(function(){
+		var aktualniid = $(this).data('idnab');
+		console.log(aktualniid);
+		$('.potvrzenizruseni').click(function(){
+			cancel(aktualniid);
+		});
+	});
 });
-$(reloadEverything()); //po nacteni stranky se nacte interface, easy enough
 
