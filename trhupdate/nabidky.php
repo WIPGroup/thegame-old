@@ -26,10 +26,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
 	if ($zaznam['hrac'] == $_SESSION['hrac']) {
-		echo '<button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#zrus">Zrušiť</button>';
+		echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-toggle="modal" data-target="#zrus" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
 	}
 	else if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
-		echo '<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#kup">Kúpiť</button>';
+		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-toggle="modal" data-target="#kup"  data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
 	}
 	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
 		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
@@ -38,7 +38,6 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 echo '</tbody></table>';
 ?>
-
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
@@ -52,7 +51,7 @@ echo '</tbody></table>';
 				<p>Časem sem dáme i úpravy</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-warning btn-block" href="#" onclick="cancel('<?php echo "$zaznam['idnab']"; ?>');return false;">Zrušiť položku</button>
+				<button type="button" class="btn btn-warning btn-block potvrzenizruseni" href="#">Zrušiť položku</button>
 			</div>
 		</div>
 	</div>
@@ -72,7 +71,7 @@ echo '</tbody></table>';
 				<p>Info o tom čo kupuješ a tak</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success btn-block" href="#" onclick="obchodovanie('<?php echo "$zaznam['idnab']"; ?>');return false;">Kúpiť</button>
+				<button type="button" class="btn btn-success btn-block potvrzenikoupeni" href="#">Kúpiť položku</button>
 			</div>
 		</div>
 	</div>
@@ -81,5 +80,16 @@ echo '</tbody></table>';
 <script>
 $(document).ready( function () {
 		$('#main').DataTable();
-} );
+});
+var aktulaniid;
+$('.oteviranikoupeni').click(function(){
+	aktualniid = this.data('idnab');
+	console.log(aktualniid);
+	$('.potvrzenikoupeni').click(obchodovanie(aktualniid));
+});
+$('.oteviranizruseni').click(function(){
+	aktualniid = this.data('idnab');
+	console.log(aktualniid);
+	$('.potvrzenizruseni').click(cancel(aktualniid));
+});
 </script>
