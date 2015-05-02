@@ -23,6 +23,7 @@ session_start();
 		{
 			include "components/form.php";
 		}
+		include "components/footer.php";
 		?>
 	</body>
 </html>
