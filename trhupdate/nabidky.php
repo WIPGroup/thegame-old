@@ -22,14 +22,14 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($zaznam['nabizi'] == 0)
 		echo '<td>Peníze</td>';
 	else
-		echo '<td>' . $veci[$zaznam['nabizi']] . '</td>';
+		echo '<td><img style="height: 16px; width: 16px" src="icons/'.$zaznam['nabizi'].'.png"></img>' . $veci[$zaznam['nabizi']] . '</td>';
 
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
 
 	if ($zaznam['chce'] == 0)
 		echo '<td>Peníze</td>';
 	else
-		echo '<td>' . $veci[$zaznam['chce']] . '</td>';
+		echo '<td><img style="height: 16px; width: 16px" src="icons/'.$zaznam['chce'].'.png"></img>' . $veci[$zaznam['chce']] . '</td>';
 
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
 	echo '<td>';
