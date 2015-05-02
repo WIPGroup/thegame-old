@@ -1,11 +1,12 @@
-/*@media screen and (min-width:1200px){
+@media (min-width: @screen-lg-min) {
 	#objednavka{
 		position: fixed
 	}
-}*/
+}
 body {
 	background-color: #eee;
 	padding-top: 70px;
+	width: 1200px;
 }
 #item {
 	width: 52px;
