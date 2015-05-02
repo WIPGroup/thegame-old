@@ -6,7 +6,8 @@
 body {
 	background-color: #eee;
 	padding-top: 70px;
-	width: 1200px;
+	max-width: 1200px;
+	text-align: center;
 }
 #item {
 	width: 52px;
