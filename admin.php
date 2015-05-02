@@ -15,7 +15,7 @@ session_start();
 		include "components/navbar.php";
 		if ($prihlasen)
 		{
-			include "log.php";
+			include "components/log.php";
 		}
 		else
 		{
