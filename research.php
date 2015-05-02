@@ -15,11 +15,9 @@ session_start();
 	include "components/navbar.php";
 	if ($prihlasen)
 	{
-		echo '<div class="col-xs-12">';
 		include "components/sestava.php"; //pro kazdou sestavu jednou
 		include "components/sestava.php";
 		include "components/progress.php";
-		echo '</div>';
 		include "components/researchtree.php";
 	}
 	else
