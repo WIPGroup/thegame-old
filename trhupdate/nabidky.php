@@ -27,7 +27,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
 
 	if ($zaznam['chce'] == 0)
-		echo '<td>Peníze</td>';
+		echo '<td><img id="item" src="icons/Money.png"></img> Peníze</td>';
 	else
 		echo '<td><img id="item" src="icons/' . $veci[$zaznam['chce']] . '.png"></img> ' . $veci[$zaznam['chce']] . '</td>';
 
