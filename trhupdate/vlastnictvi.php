@@ -5,7 +5,7 @@
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek)) {
-		echo '<button class="btn btn-default col-lg-4"><img style="height: 16px; width: 16px" src="icons/'.$zaznam['nazev'].'.png"></img><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> '.$zaznam['nazev'].'</button>'; //'<tr><td>'.$zaznam['nazev'].'</td><td>'.$vlastnictvi[$zaznam['idveci']].'</td></tr>';
+		echo '<button class="btn btn-default col-lg-4"><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> <img style="height: 16px; width: 16px" src="icons/'.$zaznam['nazev'].'.png"></img> '.$zaznam['nazev'].'</button>'; //'<tr><td>'.$zaznam['nazev'].'</td><td>'.$vlastnictvi[$zaznam['idveci']].'</td></tr>';
 	} //</table>
 	echo '</div></div>';
 ?>
