@@ -18,12 +18,15 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
-	echo '<td background="icons/' . $veci[$zaznam['nabizi']] . '.png"></td>';
+
+	echo '<td id="item" background="icons/' . $veci[$zaznam['nabizi']] . '.png"></td>';
 
 	echo '<td>' . $zaznam['mnoznabizi'] . '</td>';
-	echo '<td background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
+
+	echo '<td id="item" background="icons/' . $veci[$zaznam['chce']] . '.png"></td>';
 
 	echo '<td>' . $zaznam['mnozchce'] . '</td>';
+
 	echo '<td>';
 	if ($zaznam['hrac'] == $_SESSION['hrac']) {
 		echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-toggle="modal" data-target="#zrus" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
@@ -86,7 +89,7 @@ $(document).ready(function (){
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
-	});	
+	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);

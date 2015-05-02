@@ -8,11 +8,12 @@ body {
 	padding-top: 70px;
 }
 #item {
-	width: 24px;
-	height: 24px;
+	width: 52px;
+	height: 52px;
 }
 td {
 	text-align: center;
+	vertical-align: middle;
 }
 th {
 	text-align: center;
