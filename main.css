@@ -7,3 +7,13 @@ body {
 	background-color: #eee;
 	padding-top: 70px;
 }
+#item {
+	width: 24px;
+	height: 24px;
+}
+td {
+	align: center;
+}
+th {
+	align: center;
+}
