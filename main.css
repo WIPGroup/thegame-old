@@ -6,8 +6,8 @@
 body {
 	background-color: #eee;
 	padding-top: 70px;
-	padding-left: auto;
-	padding-right: auto;
+	margin-left: auto;
+	margin-right: auto; /* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
 	max-width: 1200px;
 	text-align: center;
 }
