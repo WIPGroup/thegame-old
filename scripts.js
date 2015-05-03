@@ -27,6 +27,7 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 		reloadNabidky();
 		reloadInv();
 	},100).done(handleTrziste());
+	console.log('reloadeverythingcomplete');
 }
 function handleTrziste(){
 	$('#main').DataTable({
@@ -67,6 +68,7 @@ function handleTrziste(){
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
+	console.log('handletrzistecomplete');
 }
 $(function() { //odeslani formulare s nabidkou
 	$('#nabidka').submit(function() {
@@ -81,5 +83,6 @@ $(function() { //odeslani formulare s nabidkou
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 	reloadEverything();	
+	console.log('pageloaded');
 });
 
