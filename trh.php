@@ -7,7 +7,7 @@ session_start();
 		<?php
 		require "dblogin.php";
 		require "login.php";
-		include "components/head.php";
+		require "components/head.php";
 		?>
 	</head>
 	<body>
@@ -21,6 +21,7 @@ session_start();
 		{
 			include "components/form.php";
 		}
+		require "components/footer.php";
 		?>
 	</body>
 </html>
