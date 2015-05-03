@@ -9,5 +9,8 @@ if ($prihlasen){
 } else {
 	include "components/form.php";
 }
-require "components/footer.php";
 ?>
+<script src="js/scripts.js"></script>
+<script src="js/trh.js"></script>
+</body>
+</html>
