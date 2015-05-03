@@ -1,1 +1,1 @@
-<script src="trh.js"></script>
+<script src="scripts.js"></script>
