@@ -78,7 +78,11 @@ echo '</tbody></table>';
 
 <script>
 $(document).ready(function (){
-	$('#main').DataTable();
+	$('#main').DataTable({
+		"language": {
+			"url": "dataTables.slovak.lang"
+		}
+	});
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
