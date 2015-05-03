@@ -26,7 +26,10 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	setTimeout(function(){
 		reloadNabidky();
 		reloadInv();
-	},100).done(handleTrziste());
+	},50);
+	setTimeout(function(){
+		handleTrziste();
+	},75);
 	console.log('reloadeverythingcomplete');
 }
 function handleTrziste(){
