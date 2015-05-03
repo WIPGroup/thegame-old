@@ -26,20 +26,9 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	setTimeout(function(){
 		reloadNabidky();
 		reloadInv();
-	},100);
+	},100).done(handleTrziste());
 }
-$(function() { //odeslani formulare s nabidkou
-	$('#nabidka').submit(function() {
-		$.ajax({
-			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
-			type: "GET",
-			url: "trh.php",
-			success: function(data) {
-				reloadEverything(); //po odeslani se znovu nacte interface
-			}
-		});
-		return false;  //zastavi normalni submit, tj. zadny refresh
-	});
+function handleTrziste(){
 	$('#main').DataTable({
 		"language": {
 			"sEmptyTable":     "Nie sú k dispozícii žiadne dáta",
@@ -67,19 +56,30 @@ $(function() { //odeslani formulare s nabidkou
 	});
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
-	reloadEverything(); //po nacteni stranky se nacte interface, easy enough
+}
+$(function() { //odeslani formulare s nabidkou
+	$('#nabidka').submit(function() {
+		$.ajax({
+			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
+			type: "GET",
+			url: "trh.php",
+			success: function(data) {
+				reloadEverything(); //po odeslani se znovu nacte interface
+			}
+		});
+		return false;  //zastavi normalni submit, tj. zadny refresh
+	});
+	reloadEverything();	
 });
 
