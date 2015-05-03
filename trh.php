@@ -9,5 +9,6 @@ if ($prihlasen){
 } else {
 	include "components/form.php";
 }
+require "js/index.js";
 require "components/footer.php";
 ?>
