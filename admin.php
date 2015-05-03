@@ -5,11 +5,11 @@ require "dblogin.php";
 require "login.php";
 include "components/navbar.php";
 if ($prihlasen){
-	include "nakupovani.php";
+	include "components/log.php";
 } else {
 	include "components/form.php";
 }
 ?>
-<script src="js/trh.js"></script>
 </body>
 </html>
+

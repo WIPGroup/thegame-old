@@ -1,0 +1,41 @@
+@media (min-width: @screen-lg-min) {
+	#objednavka{
+		position: fixed
+	}
+}
+body {
+	background-color: #eee;
+	padding-top: 70px;
+	margin-left: auto;
+	margin-right: auto; /* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
+	max-width: 1200px;
+	text-align: center;
+}
+#item {
+	width: 52px;
+	height: 52px;
+}
+td {
+	text-align: center;
+	vertical-align: middle;
+}
+th {
+	text-align: center;
+}
+#tableimage {
+	width: 52px;
+	height: 52px;
+	background-repeat:no-repeat;
+	background-size:52px 52px;
+	background-position:center center;
+	text-align:right;
+	vertical-align:bottom;
+	padding:5px;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+#main_filter input{
+	width:75px;
+}

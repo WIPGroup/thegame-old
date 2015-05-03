@@ -5,11 +5,14 @@ require "dblogin.php";
 require "login.php";
 include "components/navbar.php";
 if ($prihlasen){
-	include "nakupovani.php";
+	include "components/sestava.php"; //pro kazdou sestavu jednou
+	include "components/sestava.php";
+	include "components/progress.php";
+	include "components/researchtree.php";
 } else {
 	include "components/form.php";
 }
 ?>
-<script src="js/trh.js"></script>
 </body>
 </html>
+

@@ -1,26 +1,15 @@
 <?php
 session_start();
+require "components/head.php";
+require "dblogin.php";
+require "login.php";
+include "components/navbar.php";
+if ($prihlasen){
+	echo "<h1>Výroba nových předmětů z jiných</h1>";
+} else {
+	include "components/form.php";
+}
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<?php
-		require "dblogin.php";
-		require "login.php";
-		include "components/head.php";
-		?>
-	</head>
-	<body style="background-color: #eee;padding-top: 70px">
-		<?php
-		include "components/navbar.php";
-		if ($prihlasen)
-		{
-			echo "Výroba nových předmětů z jiných.";
-		}
-		else
-		{
-			include "form.php";
-		}
-		?>
-	</body>
+</body>
 </html>
+
