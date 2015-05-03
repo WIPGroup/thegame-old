@@ -48,11 +48,13 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		</div>
 	</form>
 </div>
-<div class="panel panel-default col-lg-4 col-md-12 col-sm-12 col-xs-12" id="trziste">
-	<div class="panel-heading">
-		<h2 class="panel-title">Tržiště:</h2>
-	</div>
-	<div class="panel-body">
-		<span id="nabidky"></span>
+<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+	<div class="panel panel-default" id="trziste">
+		<div class="panel-heading">
+			<h2 class="panel-title">Tržiště:</h2>
+		</div>
+		<div class="panel-body">
+			<span id="nabidky"></span>
+		</div>
 	</div>
 </div>
