@@ -13,6 +13,7 @@ function reloadNabidky()
 		url : "trhupdate/nabidky.php",
 		success : function (data) {
 			$("#nabidky").html(data);
+			fixTrziste();
 		}
 	});
 }
