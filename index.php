@@ -6,7 +6,7 @@ require "login.php";
 include "components/navbar.php";
 if ($prihlasen){
 	echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
-	echo "<div id=\"vlastnictvi\"></div>";
+	echo "<div id=\"inventar\"></div>";
 	//include "trh.php";
 } else {
 	include "components/form.php";

@@ -10,7 +10,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
 }
 ?>
-<div class="col-lg-4 col-md-6 col-sm-8 col-xs-12" id="vlastnictvi">
+<div class="col-lg-4 col-md-6 col-sm-8 col-xs-12" id="inventar">
 </div>
 <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
 	<form id="nabidka">
