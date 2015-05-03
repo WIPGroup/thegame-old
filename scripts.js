@@ -40,6 +40,10 @@ $(function() { //odeslani formulare s nabidkou
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
+});
+$(reloadEverything); //po nacteni stranky se nacte interface, easy enough
+
+$(document).ready(function (){
 	$('#main').DataTable({
 		"language": {
 			"sEmptyTable":     "Nie sú k dispozícii žiadne dáta",
@@ -80,6 +84,4 @@ $(function() { //odeslani formulare s nabidkou
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
-	reloadEverything(); //po nacteni stranky se nacte interface, easy enough
 });
-
