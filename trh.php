@@ -10,7 +10,6 @@ if ($prihlasen){
 	include "components/form.php";
 }
 ?>
-<script src="js/scripts.js"></script>
 <script src="js/trh.js"></script>
 </body>
 </html>

@@ -13,8 +13,6 @@ if ($prihlasen){
 	include "components/form.php";
 }
 ?>
-<script src="js/scripts.js"></script>
-
 </body>
 </html>
 
