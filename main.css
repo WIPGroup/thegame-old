@@ -43,3 +43,6 @@ th {
 	margin-left: auto;
 	margin-right: auto;
 }
+#main_filter input{
+	width:75px;
+}
