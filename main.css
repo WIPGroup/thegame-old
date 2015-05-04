@@ -40,5 +40,5 @@ th {
 	width:75px;
 }
 body.modal {
-    overflow-y: hidden;
+    overflow-y: hidden; /* možná ten modal už nebude skákat */
 }
