@@ -3,8 +3,8 @@ function toggleTable(n){
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
-	//$("#trzistetabs>li").removeClass('active');
-	//$("#"+aktualniTab+"tab").addClass('active');
+	$("#trzistetabs>li").removeClass('active');
+	$("#"+aktualniTab+"tab").addClass('active');
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
