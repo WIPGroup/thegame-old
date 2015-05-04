@@ -52,6 +52,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	<div class="panel panel-default" id="trziste">
 		<div class="panel-heading">
 			<h2 class="panel-title">Tržiště:</h2>
+			<button type="button" onClick="reloadEverything();" style="float:right;" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
 		</div>
 		<ul class="nav nav-tabs" id="trzistetabs">
 			<li role="presentation" onClick="toggleTable('main');" id="maintab"><a href="#">Vše</a></li> <!-- Každý tab musí mít onclick toggleTable('idtabulky') a mit id='idtab'-->
