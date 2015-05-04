@@ -1,9 +1,18 @@
+function toggleTable(n){
+	console.log('toggleTable na '+n);
+	$("#nabidky>div").hide();
+	$("#nabidky #"+n+"container").show();
+	aktualniTab=n;
+	$("#trzistetabs>li").removeClass('active');
+	$("#"+aktualniTab+"tab").addClass('active');
+}
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#inventar").html(data);  //data se hodi do neceho s id vlastnictvi, easy
+			console.log('reloadInv');
 		}
 	});
 }
@@ -13,7 +22,9 @@ function reloadNabidky()
 		url : "components/nabidky.php",
 		success : function (data) {
 			$("#nabidky").html(data);
+			toggleTable(aktualniTab);
 			fixTrziste();
+			console.log('reloadNabidky');
 		}
 	});
 }
@@ -23,51 +34,27 @@ function obchodovanie(idnab){
 function cancel(idnab){
 	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
 }
-function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
-	setTimeout(function(){
-		reloadNabidky();
-		reloadInv();
-	},100);
+function reloadEverything(){ 
+	reloadNabidky();
+	reloadInv();
+	console.log('reloadEverything');
 }
 function fixTrziste(){
-	$('#main').DataTable({
-		"language": {
-			"sEmptyTable":     "Nie sú k dispozícii žiadne dáta",
-			"sInfo":           "Záznamy _START_ až _END_ z celkom _TOTAL_",
-			"sInfoEmpty":      "Záznamy 0 až 0 z celkom 0 ",
-			"sInfoFiltered":   "(vyfiltrované spomedzi _MAX_ záznamov)",
-			"sInfoPostFix":    "",
-			"sInfoThousands":  ",",
-			"sLengthMenu":     "Zobraz _MENU_ záznamov",
-			"sLoadingRecords": "Načítavam...",
-			"sProcessing":     "Spracúvam...",
-			"sSearch":         "Hľadať:",
-			"sZeroRecords":    "Nenašli sa žiadne vyhovujúce záznamy",
-			"oPaginate": {
-				"sFirst":    "Prvá",
-				"sLast":     "Posledná",
-				"sNext":     "Nasledujúca",
-				"sPrevious": "Predchádzajúca"
-			},
-			"oAria": {
-				"sSortAscending":  ": aktivujte na zoradenie stĺpca vzostupne",
-				"sSortDescending": ": aktivujte na zoradenie stĺpca zostupne"
-			}
-		}
-	});
+	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
+		console.log('ID tohoto trade je '+aktualniid);
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
+		console.log('ID tohoto trade je '+aktualniid);
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
+	console.log('fixTrziste');
 }

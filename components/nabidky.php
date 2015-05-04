@@ -11,7 +11,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 }
 
-echo '<table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
+echo '<div id="maincontainer"><table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -35,9 +35,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	}
 	echo "</td></tr>";
 }
-echo '</tbody></table>';
-//TODO pridelat tabulky na zaklade TABu v nakupovani.php, kazda se specifickym ID <table id="t1"></table> <table id="t2"></table><table id="t3"></table><table id="moje"></table>
-
+echo '</tbody></table></div>';
+echo '<div id="t1container"><table id="t1"><tr><td>T1<td></tr></table></div>';  //TODO jura udělej to stejně jako tu horní tabulku s tím že template je takový: tabulce dáš id např t1 a dáš ji do divu s t1container, nachystal jsem ti to tady
+echo '<div id="t2container"><table id="t2"><tr><td>T2<td></tr></table></div>';
+echo '<div id="t3container"><table id="t3"><tr><td>T3<td></tr></table></div>';
+echo '<div id="mojecontainer"><table id="moje"><tr><td>moje<td></tr></table></div>';
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
