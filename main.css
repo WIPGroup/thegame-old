@@ -39,3 +39,6 @@ th {
 #nabidky input{
 	width:75px;
 }
+body.modal {
+    overflow-y: hidden;
+}
