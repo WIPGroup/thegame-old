@@ -3,6 +3,8 @@ function toggleTable(n){
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
+	$("#trzistetabs li").removeClass('active');
+	$(#+"aktualniTab"+"tab")
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
@@ -39,6 +41,21 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	},100);
 }
 function fixTrziste(){
+	$('#main').DataTable({
+		"language": slovencina
+	});
+	$('#t1').DataTable({
+		"language": slovencina
+	});
+	$('#t2').DataTable({
+		"language": slovencina
+	});
+	$('#t3').DataTable({
+		"language": slovencina
+	});
+	$('#moje').DataTable({
+		"language": slovencina
+	});
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
