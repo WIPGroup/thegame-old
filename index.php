@@ -7,6 +7,7 @@ include "components/navbar.php";
 if ($prihlasen){
 	echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
 	echo "<div id=\"inventar\"></div>";
+	include "components/redeem.php";
 	//include "trh.php";
 } else {
 	include "components/form.php";
@@ -15,5 +16,3 @@ if ($prihlasen){
 <script src="js/index.js"></script>
 </body>
 </html>
-
-

@@ -8,8 +8,8 @@ if ($prihlasen){
 	include "components/log.php";
 } else {
 	include "components/form.php";
+	//TODO: tvorba kuponů, seznam
 }
 ?>
 </body>
 </html>
-
