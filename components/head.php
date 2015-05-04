@@ -3,6 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>TheGame</title>
+	<link href="bower_components/pace/themes/blue/pace-theme-center-atom.css" rel="stylesheet" />
+	<script src="bower_components/pace/pace.js"></script>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="main.css">
