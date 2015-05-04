@@ -36,6 +36,8 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo "</td></tr>";
 }
 echo '</tbody></table>';
+//TODO pridelat tabulky na zaklade TABu v nakupovani.php, kazda se specifickym ID
+
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">

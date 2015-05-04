@@ -54,7 +54,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>
 		<ul class="nav nav-tabs">
-			<li role="presentation" onClick="reloadEverything();" class="active"><a href="#">Vše</a></li>
+			<li role="presentation" onClick="reloadEverything();" class="active"><a href="#">Vše</a></li> <!--TODO: kazdemu tabu funkci JS prepnuti divu uvnitr spanu nabidky -->
 			<li role="presentation" onClick="reloadEverything();" ><a href="#">T1-Suroviny</a></li>
 			<li role="presentation" onClick="reloadEverything();" ><a href="#">T2-Součástky</a></li>
 			<li role="presentation" onClick="reloadEverything();" ><a href="#">T3-Komponenty</a></li>
