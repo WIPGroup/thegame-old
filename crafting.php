@@ -57,7 +57,7 @@ if ($prihlasen)
 				$splnuje = false;
 		
 		if ($splnuje)
-			echo '<td><a href="crafting.php?craft='.$zaznam['idreceptu'].'">Tlačítko vyrobit</a></td>';	//TODO: hezké tlačítko vyrobit + get na craft.php
+			echo '<td><a href="#" onClick="craft('.$zaznam['idreceptu'].');">Tlačítko vyrobit</a></td>';	//TODO: hezké tlačítko vyrobit + get na craft.php
 		else
 			echo '<td>Nelze vyrobit.</td>'; //TODO: šedé tlačítko
 		echo '</tr>';
