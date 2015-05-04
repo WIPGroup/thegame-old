@@ -4,11 +4,14 @@ require "components/head.php";
 require "dblogin.php";
 require "login.php";
 include "components/navbar.php";
-if ($prihlasen){
+if ($prihlasen && $_SESSION['hrac'] == 1)
+{
 	include "components/log.php";
-} else {
-	include "components/form.php";
-	//TODO: tvorba kuponů, seznam
+	//tvorba kuponů
+}
+else
+{
+	echo "Tady nemáš co dělat.";
 }
 ?>
 </body>

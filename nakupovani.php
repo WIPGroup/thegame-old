@@ -54,11 +54,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>
 		<ul class="nav nav-tabs">
-			<li role="presentation" onClick="reloadEverything();" class="active"><a href="#">Vše</a></li>
-			<li role="presentation" onClick="reloadEverything();" ><a href="#">T1-Suroviny</a></li>
-			<li role="presentation" onClick="reloadEverything();" ><a href="#">T2-Součástky</a></li>
-			<li role="presentation" onClick="reloadEverything();" ><a href="#">T3-Komponenty</a></li>
-			<li role="presentation" onClick="reloadEverything();" ><a href="#">Moje nabídky</a></li>
+			<li role="presentation" onClick="toggleTable(main);" class="active"><a href="#">Vše</a></li> <!--TODO: kazdemu tabu funkci JS prepnuti tabulky uvnitr spanu nabidky -->
+			<li role="presentation" ><a href="#">T1-Suroviny</a></li>
+			<li role="presentation" ><a href="#">T2-Součástky</a></li>
+			<li role="presentation" ><a href="#">T3-Komponenty</a></li>
+			<li role="presentation" ><a href="#">Moje nabídky</a></li>
 		</ul>
 		<div class="panel-body">
 			<span id="nabidky"></span>
