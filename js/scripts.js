@@ -3,8 +3,7 @@ function toggleTable(n){
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
-	$("#trzistetabs li").removeClass('active');
-	$(#+"aktualniTab"+"tab")
+
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
