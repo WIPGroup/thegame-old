@@ -6,7 +6,7 @@
 	<link href="bower_components/pace/themes/blue/pace-theme-barber-shop.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.js"></script>
 	<link href="bower_components/offline/themes/offline-theme-slide.css" rel="stylesheet" />
-	<link href="bower_components/offline/themes/offline-langauge-english.css" rel="stylesheet" />
+	<link href="bower_components/offline/themes/offline-language-english.css" rel="stylesheet" />
 	<script src="bower_components/offline/offline.min.js"></script>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
