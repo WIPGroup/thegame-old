@@ -42,7 +42,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 							<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Odoslať</button>
+					<button type="submit" class="btn btn-default btn-block">Odoslať</button>
 				</div>
 			</div>
 		</div>
@@ -53,6 +53,13 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		<div class="panel-heading">
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>
+		<ul class="nav nav-tabs">
+			<li role="presentation" onClick="reloadEverything();" class="active"><a href="#">Vše</a></li>
+			<li role="presentation" onClick="reloadEverything();" ><a href="#">T1-Suroviny</a></li>
+			<li role="presentation" onClick="reloadEverything();" ><a href="#">T2-Součástky</a></li>
+			<li role="presentation" onClick="reloadEverything();" ><a href="#">T3-Komponenty</a></li>
+			<li role="presentation" onClick="reloadEverything();" ><a href="#">Moje nabídky</a></li>
+		</ul>
 		<div class="panel-body">
 			<span id="nabidky"></span>
 		</div>
