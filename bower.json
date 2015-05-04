@@ -1,0 +1,12 @@
+{
+  "name": "TheGame",
+  "version": "0.0.0",
+  "authors": [
+    "AntreTeam"
+  ],
+  "license": "none",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "datatables": "~1.10.7"
+  }
+}
