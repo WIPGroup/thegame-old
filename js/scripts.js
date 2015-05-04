@@ -3,6 +3,8 @@ function toggleTable(n){
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
+	//$("#trzistetabs>li").removeClass('active');
+	//$("#"+aktualniTab+"tab").addClass('active');
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
@@ -38,10 +40,6 @@ function reloadEverything(){
 }
 function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
-	$('#t1').DataTable();
-	$('#t2').DataTable();
-	$('#t3').DataTable();
-	$('#moje').DataTable();
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
