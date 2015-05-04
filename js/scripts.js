@@ -1,5 +1,5 @@
 function toggleTable(n){
-	console.log(n);
+	console.log('toggleTable na 'n);
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
@@ -12,6 +12,7 @@ function reloadInv()                //obnoveni tabulky vlastnictvi
 		url : "components/inventar.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#inventar").html(data);  //data se hodi do neceho s id vlastnictvi, easy
+			console.log('reloadInv');
 		}
 	});
 }
@@ -42,16 +43,14 @@ function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		console.log('kliknuti');
+		console.log('ID tohoto trade je 'aktualniid);
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log(aktualniid);
-		console.log('kliknuti');
+		console.log('ID tohoto trade je 'aktualniid);
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});
