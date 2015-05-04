@@ -23,9 +23,14 @@
 			<li>
 				<a href="research.php">Výzkum</a>
 			</li>
-			<li>
-				<a href="admin.php">ADMIN</a>
-			</li>
+			<?php
+			if ($prihlasen && $_SESSION['hrac'] == 1)
+			{
+				echo "<li>";
+				echo '<a href="admin.php">ADMIN</a>';
+				echo "</li>";
+			}
+			?>
 		</ul>
 		<?php
 		if ($prihlasen) {
