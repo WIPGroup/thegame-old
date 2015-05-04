@@ -1,6 +1,6 @@
 function toggleTable(n){
 	console.log(n);
-	$("#nabidky table").hide();
+	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
 }
