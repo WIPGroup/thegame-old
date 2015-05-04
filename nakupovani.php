@@ -54,11 +54,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>
 		<ul class="nav nav-tabs">
-			<li role="presentation" onClick="toggleTable(main);" class="active"><a href="#">Vše</a></li>
-			<li role="presentation" onClick="toggleTable(t1);><a href="#">T1-Suroviny</a></li>
-			<li role="presentation" onClick="toggleTable(t2);><a href="#">T2-Součástky</a></li>
-			<li role="presentation" onClick="toggleTable(t3);><a href="#">T3-Komponenty</a></li>
-			<li role="presentation" onClick="toggleTable(moje);><a href="#">Moje nabídky</a></li>
+			<li role="presentation" class="active"><a href="#" onClick="toggleTable(main);">Vše</a></li>
+			<li role="presentation"><a href="#" onClick="toggleTable(t1);">T1-Suroviny</a></li>
+			<li role="presentation"><a href="#" onClick="toggleTable(t2);">T2-Součástky</a></li>
+			<li role="presentation"><a href="#" onClick="toggleTable(t3);">T3-Komponenty</a></li>
+			<li role="presentation"><a href="#" onClick="toggleTable(moje);">Moje nabídky</a></li>
 		</ul>
 		<div class="panel-body">
 			<span id="nabidky"></span>

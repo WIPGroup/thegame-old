@@ -37,9 +37,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 echo '</tbody></table>';
 echo '<table id="t1"><tr><td>T1<td></tr></table>';
-echo '<table id="t2"><tr><td>T1<td></tr></table>';
-echo '<table id="t3"><tr><td>T1<td></tr></table>';
-echo '<table id="moje"><tr><td>T1<td></tr></table>';
+echo '<table id="t2"><tr><td>T2<td></tr></table>';
+echo '<table id="t3"><tr><td>T3<td></tr></table>';
+echo '<table id="moje"><tr><td>moje<td></tr></table>';
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
