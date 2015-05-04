@@ -11,7 +11,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 }
 
-echo '<table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
+echo '<div id="maincontainer"><table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -35,11 +35,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	}
 	echo "</td></tr>";
 }
-echo '</tbody></table>';
-echo '<table id="t1"><tr><td>T1<td></tr></table>';
-echo '<table id="t2"><tr><td>T2<td></tr></table>';
-echo '<table id="t3"><tr><td>T3<td></tr></table>';
-echo '<table id="moje"><tr><td>moje<td></tr></table>';
+echo '</tbody></table></div>';
+echo '<div id="t1container"><table id="t1"><tr><td>T1<td></tr></table></div>';
+echo '<div id="t2container"><table id="t2"><tr><td>T2<td></tr></table></div>';
+echo '<div id="t3container"><table id="t3"><tr><td>T3<td></tr></table></div>';
+echo '<div id="moje"><table id="moje"><tr><td>moje<td></tr></table></div>';
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">

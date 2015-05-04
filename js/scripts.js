@@ -1,7 +1,7 @@
 function toggleTable(n){
 	console.log(n);
 	$("#nabidky table").hide();
-	$("#nabidky #"+n).show();
+	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
