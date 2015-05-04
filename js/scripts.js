@@ -1,3 +1,9 @@
+function toggleTable(n){
+	console.log(n);
+	$("#nabidky table").hide();
+	$("#nabidky #"+n).show();
+	aktualniTab=n;
+}
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
 	$.ajax({
@@ -71,10 +77,4 @@ function fixTrziste(){
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
-}
-function toggleTable(n){
-	console.log(n);
-	$("#nabidky table").hide();
-	$("#nabidky #"+n).show();
-	aktualniTab=n;
 }
