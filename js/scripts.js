@@ -37,6 +37,7 @@ function cancel(idnab){
 function reloadEverything(){ 
 	reloadNabidky();
 	reloadInv();
+	$('.modal-backdrop.fade.in').hide();
 	console.log('reloadEverything');
 }
 function fixTrziste(){
