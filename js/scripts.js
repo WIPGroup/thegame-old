@@ -37,7 +37,7 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	},100);
 }
 function fixTrziste(){
-	$('#main').DataTable({
+	$('#main,#t1,#t2,#t3,#moje').DataTable({
 		"language": {
 			"sEmptyTable":     "Nie sú k dispozícii žiadne dáta",
 			"sInfo":           "Záznamy _START_ až _END_ z celkom _TOTAL_",
