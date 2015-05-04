@@ -13,4 +13,3 @@ $(function() { //odeslani formulare s nabidkou
 	});
 });
 $(reloadEverything()); //po nacteni stranky se nacte interface, easy enough
-$(toggleTable(aktualniTab));
