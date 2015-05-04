@@ -21,6 +21,7 @@ function reloadNabidky()
 			$("#nabidky").html(data);
 			toggleTable(aktualniTab);
 			fixTrziste();
+			console.log('reloadNabidky');
 		}
 	});
 }
@@ -34,6 +35,7 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	setTimeout(function(){
 		reloadNabidky();
 		reloadInv();
+		console.log('reloadEverything');
 	},100);
 }
 function fixTrziste(){
@@ -65,6 +67,7 @@ function fixTrziste(){
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
+		console.log('kliknuti');
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
@@ -72,9 +75,11 @@ function fixTrziste(){
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
+		console.log('kliknuti');
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
+	console.log('fixTrziste');
 }

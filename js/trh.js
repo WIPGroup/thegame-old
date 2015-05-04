@@ -1,4 +1,4 @@
-var aktualniTab = 't1';
+var aktualniTab = 'main';
 $(function() { //odeslani formulare s nabidkou
 	$('#nabidka').submit(function() {
 		$.ajax({
