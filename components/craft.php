@@ -18,8 +18,6 @@ if (isset($_GET['craft']))
 		if ($splnuje)
 		{
 			//spuštění výroby
-			echo 'INSERT INTO vyroba (hrac, recept, hotovo) VALUES ('.$_SESSION['hrac'].', '.$_GET['craft'].', '.(time() + $_GET['doba']).')';
-			mysql_query($dotaz);
 			$dotaz = 'INSERT INTO vyroba (hrac, recept, hotovo) VALUES ('.$_SESSION['hrac'].', '.$_GET['craft'].', '.(time() + $zaznam['doba']).')';
 			mysql_query($dotaz);
 			
