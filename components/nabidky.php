@@ -38,9 +38,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 echo '</tbody></table></div>';
 
-echo '</tbody></table></div>'; //TODO jura udělej to stejně jako tu horní tabulku s tím že template je takový: tabulce dáš id např t1 a dáš ji do divu s t1container, nachystal jsem ti to tady
-
-echo '<div id="mojecontainer"><table id="moje"><tr><td>moje<td></tr></table></div>';
+echo '<div id="mojecontainer"><table id="moje"><tr><td>moje<td></tr></table></div>';  //TODO jura udělej to stejně jako tu horní tabulku s tím že template je takový: tabulce dáš id moje a dáš ji do divu s id mojecontainer, nachystal jsem ti to tady
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
