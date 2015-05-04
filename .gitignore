@@ -1,5 +1,6 @@
 # Jurovy testovaci soubory
 dotaz.php
+log.txt
 
 # Project-specific ignores
 dblogin.php
