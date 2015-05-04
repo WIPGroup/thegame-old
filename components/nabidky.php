@@ -36,7 +36,33 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo "</td></tr>";
 }
 echo '</tbody></table></div>';
-echo '<div id="t1container"><table id="t1"><tr><td>T1<td></tr></table></div>';
+//druha tabulka
+
+echo '<div id="t1container"><table id="t1" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
+
+$dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
+$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+while ($zaznam = mysql_fetch_array($vysledek))
+{
+	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
+
+	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="' . $veci[$zaznam['nabizi']] . '"><span class="badge">' . $zaznam['mnoznabizi'] . '</span><span class="sr-only">' . $veci[$zaznam['nabizi']] . '</span></td>';
+
+	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
+
+	echo '<td>';
+	if ($zaznam['hrac'] == $_SESSION['hrac']) {
+		echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-toggle="modal" data-target="#zrus" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
+	}
+	else if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
+		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-toggle="modal" data-target="#kup"  data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
+	}
+	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
+		echo '<button type="button" class="btn btn-default btn-block" disabled>Kúpiť</button>';
+	}
+	echo "</td></tr>";
+}
+echo '</tbody></table></div>';
 echo '<div id="t2container"><table id="t2"><tr><td>T2<td></tr></table></div>';
 echo '<div id="t3container"><table id="t3"><tr><td>T3<td></tr></table></div>';
 echo '<div id="mojecontainer"><table id="moje"><tr><td>moje<td></tr></table></div>';
