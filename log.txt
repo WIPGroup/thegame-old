@@ -1,0 +1,2 @@
+--This is the so long awaited magic log file--
+time: log1

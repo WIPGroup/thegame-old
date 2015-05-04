@@ -28,6 +28,9 @@ if (isset($_GET['trade']))
 			//odstranění nabídky
 			$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
 			mysql_query($dotaz);
+			
+			//log
+			file_put_contents("log.txt", date()."Hráč ".$_SESSION['hrac']." koupil od hráče ".$zaznam['']." ".$zaznam['nabizi']."(".$zaznam['mnoznabizi']."x) za ".$zaznam['chce']."(".$zaznam['mnozchce']."x).\n", FILE_APPEND | LOCK_EX);
 		}
 		else
 			echo "Nemáš dostatečné množství na uskutečnění obchodu.";
