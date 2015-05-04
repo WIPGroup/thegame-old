@@ -5,6 +5,9 @@ log.txt
 # Project-specific ignores
 dblogin.php
 
+#bat kraviny
+install_dependencies.bat
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

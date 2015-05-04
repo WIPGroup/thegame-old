@@ -1,4 +1,7 @@
 <?php
+session_start();
+include "../vlastnictvi.php";
+
 if (isset($_GET['craft']))
 {
 	//započat výrobu

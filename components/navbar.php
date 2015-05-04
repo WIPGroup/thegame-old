@@ -15,7 +15,7 @@
 				<a href="index.php">Úvod</a>
 			</li>
 			<li>
-				<a href="trh.php">Trh</a> <!-- PHP magic: at ma classu active to 'li', ktera ma byt aktivni-->
+				<a href="trh.php">Trh</a>
 			</li>
 			<li>
 				<a href="crafting.php">Výroba</a>

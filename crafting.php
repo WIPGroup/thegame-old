@@ -7,27 +7,11 @@ include "components/navbar.php";
 include "vlastnictvi.php";
 if ($prihlasen)
 {
-	//TODO: udělat ajax na výrobu
-	include "components/craft.php";
+	include "components/updatevyrob.php";
 	
-	include "components/updatevyroby.php";
-	echo "<h3>Moje výroba:</h3>";
+	include "components/seznamvyrob.php";	//TODO: refreshovat ajaxem
 	
-	$dotaz = 'SELECT * FROM veci';
-	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-	while ($zaznam = mysql_fetch_array($vysledek))
-	{
-		$veci[$zaznam['idveci']] = $zaznam['nazev'];
-	}
-	
-	$dotaz = 'SELECT * FROM vyroba, recepty WHERE recept=idreceptu AND hrac='.$_SESSION['hrac'];
-	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-	while ($zaznam = mysql_fetch_array($vysledek))
-	{
-		echo $veci[$zaznam['vyrobek']].', hotovo za '.($zaznam['hotovo']-time()).' s ('.date('G:i:s j.n.Y', $zaznam['hotovo']).').<br>';
-	}
-	
-	//TODO: vypsat inventář
+	include "components/inventar.php";	//TODO: lépe rozmístit na stránce
 	
 	echo "<h3>Recepty:</h3>";
 	echo '<table border="1">';
@@ -37,7 +21,7 @@ if ($prihlasen)
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
-		//TODO: přepsat do bootstrap tabulky a obrázky předmětů
+		//TODO: přidat obrázky předmětů
 		echo '<tr>';
 		echo '<td>'.$veci[$zaznam['vyrobek']].'</td><td>';
 		
@@ -57,9 +41,9 @@ if ($prihlasen)
 				$splnuje = false;
 		
 		if ($splnuje)
-			echo '<td><button class="btn btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Tlačítko vyrobit</button></td>';	//TODO: hezké tlačítko vyrobit + get na craft.php
+			echo '<td><button class="btn btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Tlačítko vyrobit</button></td>';
 		else
-			echo '<td><button class="btn btn-default" disabled></button> </td>'; //TODO: šedé tlačítko
+			echo '<td><button class="btn btn-default" disabled></button> </td>';
 		echo '</tr>';
 	}
 	echo '</table>';
