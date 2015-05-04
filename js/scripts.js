@@ -3,7 +3,6 @@ function toggleTable(n){
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
-
 }
 function reloadInv()                //obnoveni tabulky vlastnictvi
 {
@@ -40,6 +39,7 @@ function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychl
 	},100);
 }
 function fixTrziste(){
+	$('#main').DataTable();
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
