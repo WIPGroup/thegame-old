@@ -54,7 +54,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>
 		<ul class="nav nav-tabs" id="trzistetabs">
-			<li role="presentation" onClick="toggleTable('main');" id="maintab"><a href="#">Vše</a></li>
+			<li role="presentation" onClick="toggleTable('main');" id="maintab"><a href="#">Vše</a></li> <!-- Každý tab musí mít onclick toggleTable('idtabulky') a mit id='idtab'-->
 			<li role="presentation" onClick="toggleTable('t1');" id="t1tab"><a href="#">T1-Suroviny</a></li>
 			<li role="presentation" onClick="toggleTable('t2');" id="t2tab"><a href="#">T2-Součástky</a></li>
 			<li role="presentation" onClick="toggleTable('t3');" id="t3tab"><a href="#">T3-Komponenty</a></li>
