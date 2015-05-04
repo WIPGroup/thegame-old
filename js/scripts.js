@@ -1,5 +1,5 @@
 function toggleTable(n){
-	console.log('toggleTable na 'n);
+	console.log('toggleTable na '+n);
 	$("#nabidky>div").hide();
 	$("#nabidky #"+n+"container").show();
 	aktualniTab=n;
@@ -43,14 +43,14 @@ function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log('ID tohoto trade je 'aktualniid);
+		console.log('ID tohoto trade je '+aktualniid);
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniid = $(this).data('idnab');
-		console.log('ID tohoto trade je 'aktualniid);
+		console.log('ID tohoto trade je '+aktualniid);
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});
