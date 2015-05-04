@@ -8,6 +8,7 @@
   "dependencies": {
     "bootstrap": "~3.3.4",
     "datatables": "~1.10.7",
-    "pace": "~1.0.2"
+    "pace": "~1.0.2",
+    "offline": "~0.7.11"
   }
 }
