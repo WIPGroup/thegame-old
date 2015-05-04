@@ -31,7 +31,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-toggle="modal" data-target="#kup"  data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
 	}
 	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
-		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
+		echo '<button type="button" class="btn btn-default btn-block" disabled>Kúpiť</button>';
 	}
 	echo "</td></tr>";
 }
