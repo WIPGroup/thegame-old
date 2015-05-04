@@ -19,8 +19,8 @@ function reloadNabidky()
 		url : "components/nabidky.php",
 		success : function (data) {
 			$("#nabidky").html(data);
-			fixTrziste();
 			toggleTable(aktualniTab);
+			fixTrziste();
 		}
 	});
 }
