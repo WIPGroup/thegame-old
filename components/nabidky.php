@@ -39,7 +39,7 @@ echo '</tbody></table></div>';
 echo '<div id="t1container"><table id="t1"><tr><td>T1<td></tr></table></div>';
 echo '<div id="t2container"><table id="t2"><tr><td>T2<td></tr></table></div>';
 echo '<div id="t3container"><table id="t3"><tr><td>T3<td></tr></table></div>';
-echo '<div id="moje"><table id="moje"><tr><td>moje<td></tr></table></div>';
+echo '<div id="mojecontainer"><table id="moje"><tr><td>moje<td></tr></table></div>';
 ?>
 <div id="zrus" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
