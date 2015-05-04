@@ -31,12 +31,12 @@ function obchodovanie(idnab){
 function cancel(idnab){
 	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
 }
-function reloadEverything(){  //reloadnuti interface s delayem 100ms kvuli rychlosti zpracovani pozadavku
+function reloadEverything(){  //reloadnuti interface s delayem 25ms kvuli rychlosti zpracovani pozadavku
 	setTimeout(function(){
 		reloadNabidky();
 		reloadInv();
 		console.log('reloadEverything');
-	},100);
+	},25);
 }
 function fixTrziste(){
 	$('#main').DataTable();
