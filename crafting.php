@@ -7,11 +7,9 @@ include "components/navbar.php";
 include "vlastnictvi.php";
 if ($prihlasen)
 {
-	include "components/updatevyrob.php";
+	include "components/inventar.php";	//TODO: lépe rozmístit na stránce
 	
 	include "components/seznamvyrob.php";	//TODO: refreshovat ajaxem
-	
-	include "components/inventar.php";	//TODO: lépe rozmístit na stránce
 	
 	echo "<h3>Recepty:</h3>";
 	echo '<table border="1">';
