@@ -37,7 +37,11 @@ function reloadEverything(){
 	console.log('reloadEverything');
 }
 function fixTrziste(){
-	$('#main').DataTable();
+	$('#main').DataTable(); //todo Preklad
+	$('#t1').DataTable();
+	$('#t2').DataTable();
+	$('#t3').DataTable();
+	$('#moje').DataTable();
 	$('.oteviranikoupeni').click(function(){
 		var aktualniid = $(this).data('idnab');
 		console.log(aktualniid);
