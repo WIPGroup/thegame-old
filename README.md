@@ -3,7 +3,6 @@ Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=mast
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
 * `ex_(username)` personalni experimentalni branch
-* dalsi branche muzete vytvaret pro pokusy a tak podobne, pokud planujete je mit dlouhodobe, doplnte jejich popis, nedelejte nazvy moc dlouhe, pak sou blbe videt v teamcity
 
 Prístupy:
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
@@ -15,3 +14,8 @@ $databaze='rctorg_antre';
 ```
 
 # [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home)
+
+Pokud budete chtit pouzit ikony zvazte vybrat neco z:
+- http://getbootstrap.com/components/#glyphicons
+- http://google.github.io/material-design-icons/ (pridam na pozadani)
+- http://fontawesome.io/cheatsheet/ (pridam na pozadani)
