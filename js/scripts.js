@@ -14,6 +14,7 @@ function reloadNabidky()
 		success : function (data) {
 			$("#nabidky").html(data);
 			fixTrziste();
+			toggleTable(aktualniTab);
 		}
 	});
 }
@@ -70,4 +71,9 @@ function fixTrziste(){
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
+}
+function toggleTable(n){
+	$("#nabidky table").hide();
+	$("#nabidky #"+n).show();
+	aktualniTab=n;
 }
