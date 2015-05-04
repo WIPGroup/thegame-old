@@ -11,6 +11,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 }
 
+//všechny nabídky
 echo '<div id="maincontainer"><table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>'; //POZOR, pouziva https://datatables.net/manual/
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace';
@@ -36,6 +37,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo "</td></tr>";
 }
 echo '</tbody></table></div>';
+
 echo '<div id="t1container"><table id="t1"><tr><td>T1<td></tr></table></div>';  //TODO jura udělej to stejně jako tu horní tabulku s tím že template je takový: tabulce dáš id např t1 a dáš ji do divu s t1container, nachystal jsem ti to tady
 echo '<div id="t2container"><table id="t2"><tr><td>T2<td></tr></table></div>';
 echo '<div id="t3container"><table id="t3"><tr><td>T3<td></tr></table></div>';
