@@ -7,7 +7,7 @@ include "components/navbar.php";
 include "vlastnictvi.php";
 if ($prihlasen)
 {
-	include "components/inventar.php";	//TODO: lépe rozmístit na stránce
+	echo '<span id="inventar"></span>';	//TODO: lépe rozmístit na stránce
 	
 	echo '<span id="seznamvyrob"></span>';
 	
