@@ -9,7 +9,6 @@
     "bootstrap": "~3.3.4",
     "datatables": "~1.10.7",
     "pace": "~1.0.2",
-    "offline": "~0.7.11",
-    "bootswatch-dist": "spacelab"
+    "offline": "~0.7.11"
   }
 }
