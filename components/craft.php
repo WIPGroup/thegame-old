@@ -31,6 +31,14 @@ if (isset($_GET['craft']))
 			}
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
+			
+			//názvy věcí pro log
+			$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['vyrobek'];
+			$vysl = mysql_query($dotaz) or die(mysql_error($db));
+			$zazn = mysql_fetch_array($vysl);
+			//log
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$zazn['nazev'].'")';
+			mysql_query($dotaz);
 		}
 		else
 			echo "Nemáte dostatek surovin.";

@@ -89,6 +89,17 @@ else if (isset($_GET['cancel']))
 		
 		$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['cancel'];
 		mysql_query($dotaz);
+		
+		//názvy věcí pro log
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['chce'].' OR idveci='.$zaznam['nabizi'];
+		$vysl = mysql_query($dotaz) or die(mysql_error($db));
+		while ($zazn = mysql_fetch_array($vysl))
+		{
+			$veci[$zazn['idveci']] = $zazn['nazev'];
+		}
+		//log
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].')")';
+		mysql_query($dotaz);
 	}
 	else
 		echo "Zrušení se nepodařilo.";

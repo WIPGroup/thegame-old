@@ -13,6 +13,14 @@
 			//smazat výrobu
 			$dotaz = 'DELETE FROM vyroba WHERE idvyroby='.$zaznam['idvyroby'];
 			mysql_query($dotaz);
+			
+			//názvy věcí pro log
+			$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['vyrobek'];
+			$vysl = mysql_query($dotaz) or die(mysql_error($db));
+			$zazn = mysql_fetch_array($vysl);
+			//log
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Dokončena výroba '.$zazn['nazev'].'")';
+			mysql_query($dotaz);
 		}
 	}
 ?>
