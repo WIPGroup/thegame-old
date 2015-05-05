@@ -38,6 +38,17 @@ function reloadVyroba(){
 		}
 	});
 }
+function reloadTimer(){
+	var aktualniCas;
+	$('.casvyroby').each(function(){
+		aktualniCas = $(this).html();
+		if (aktualniCas > 0){
+			$(this).html(parseInt(aktualniCas)-1);
+		} else {
+			reloadVyroba();
+		}
+	});
+}
 function obchodovanie(idnab){
 	$.get( "trh.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
@@ -56,15 +67,15 @@ function reloadEverything(){
 function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log('ID tohoto trade je '+aktualniid);
+		var aktualniIF = $(this).data('idnab');
+		console.log('ID tohoto trade je '+aktualniID);
 		$('.potvrzenikoupeni').click(function(){
 			obchodovanie(aktualniid);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
-		var aktualniid = $(this).data('idnab');
-		console.log('ID tohoto trade je '+aktualniid);
+		var aktualniID = $(this).data('idnab');
+		console.log('ID tohoto trade je '+aktualniID);
 		$('.potvrzenizruseni').click(function(){
 			cancel(aktualniid);
 		});

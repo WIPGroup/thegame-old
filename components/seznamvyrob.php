@@ -14,6 +14,6 @@
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
-		echo $veci[$zaznam['vyrobek']].', hotovo za '.($zaznam['hotovo']-time()).' s ('.date('G:i:s j.n.Y', $zaznam['hotovo']).').<br>';
+		echo $veci[$zaznam['vyrobek']].', hotovo za <span class="casvyroby">'.($zaznam['hotovo']-time()).'</span> s ('.date('G:i:s j.n.Y', $zaznam['hotovo']).').<br>';
 	}
 ?>
