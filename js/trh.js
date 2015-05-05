@@ -6,10 +6,10 @@ $(function() { //odeslani formulare s nabidkou
 			type: "GET",
 			url: "trh.php",
 			success: function(data) {
-				reloadEverything(); //po odeslani se znovu nacte interface
+				reloadTrh(); //po odeslani se znovu nacte interface
 			}
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 });
-$(reloadEverything()); //po nacteni stranky se nacte interface, easy enough
+$(reloadTrh()); //po nacteni stranky se nacte interface, easy enough

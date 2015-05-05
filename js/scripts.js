@@ -50,19 +50,19 @@ function reloadTimer(){
 	});
 }
 function obchodovanie(idnab){
-	$.get( "trh.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+	$.get( "trh.php", { trade: idnab } ).done(reloadTrh());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
 function cancel(idnab){
-	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
+	$.get( "trh.php", { cancel: idnab } ).done(reloadTrh()); //to same jen cudlik Zrušiť
 }
 function craft(idreceptu){
 	$.get( "components/craft.php", { craft: idreceptu } ).done(reloadVyroba()); //TODO tlacitko by melo refreshovat i inventar na crafting.php
 }
-function reloadEverything(){ 
+function reloadTrh(){ 
 	reloadNabidky();
 	reloadInv();
 	$('.modal-backdrop.fade.in').hide();
-	console.log('reloadEverything');
+	console.log('reloadTrh');
 }
 function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
