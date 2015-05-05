@@ -44,7 +44,7 @@ function cancel(idnab){
 	$.get( "trh.php", { cancel: idnab } ).done(reloadEverything()); //to same jen cudlik Zrušiť
 }
 function craft(idreceptu){
-	$.get( "components/craft.php", { craft: idreceptu } ).done(reloadVyroba()); //to samé jen tlačítko vyrobit
+	$.get( "components/craft.php", { craft: idreceptu } ).done(reloadVyroba()); //TODO tlacitko by melo refreshovat i inventar na crafting.php
 }
 function reloadEverything(){ 
 	reloadNabidky();
