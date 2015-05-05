@@ -67,6 +67,7 @@ function reloadTrh(){
 function fixTrziste(){
     $('[data-toggle="tooltip"]').tooltip();
 	$('#main').DataTable(); //todo Preklad
+	$('#moje').DataTable();
 	$('.oteviranikoupeni').click(function(){
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
