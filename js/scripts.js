@@ -65,6 +65,7 @@ function reloadTrh(){
 	console.log('reloadTrh');
 }
 function fixTrziste(){
+    $('[data-toggle="tooltip"]').tooltip();
 	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
 		var aktualniID = $(this).data('idnab');
@@ -80,6 +81,5 @@ function fixTrziste(){
 			cancel(aktualniID);
 		});
 	});
-	$('[data-toggle="tooltip"]').tooltip();
 	console.log('fixTrziste');
 }
