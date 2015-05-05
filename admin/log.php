@@ -3,7 +3,7 @@
 		<div class="panel-heading">
 			<h1 class="panel-title">Log</h1>
 		</div>
-		<div class="panel-body" style="width: 100%; heigth: 100%">
+		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
 			<?php
 			$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 25';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
