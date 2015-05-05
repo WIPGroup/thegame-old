@@ -14,8 +14,7 @@
 	<script src="bower_components/offline/offline.min.js"></script>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-<!--	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> Smazano Vaskem protoze to kazi modaly a je to duplicitni, takze si to pak smaž Jožo až to budeš uklízet-->
+	<!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> bootstrap original theme-->
 	<!-- Bootstrap spacelab theme -->
 	<link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css">
 	<script src="bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
