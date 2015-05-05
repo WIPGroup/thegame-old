@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Pon 04. kvě 2015, 17:40
+-- Vytvořeno: Úte 05. kvě 2015, 19:15
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 `idhrace` int(11) NOT NULL,
   `jmeno` varchar(50) NOT NULL,
   `heslo` varchar(100) NOT NULL,
-  `vlastnictvi` varchar(100) NOT NULL
+  `vlastnictvi` varchar(500) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -38,9 +38,53 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '208;202;149;137;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1'),
+(1, 'root', 'root', '176;260;79;137;0;0;0;0;0;0;16;0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;5'),
 (2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0'),
-(3, 'test2', 'test2', '647;341;276;2;0;0;0;0;0;0;0;0');
+(3, 'test2', 'test2', '647;341;346;2;0;0;0;0;0;0;0;0');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `kupony`
+--
+
+CREATE TABLE IF NOT EXISTS `kupony` (
+`idkuponu` int(11) NOT NULL,
+  `kod` varchar(16) NOT NULL,
+  `obsah` varchar(500) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Vypisuji data pro tabulku `kupony`
+--
+
+INSERT INTO `kupony` (`idkuponu`, `kod`, `obsah`) VALUES
+(1, 'f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabulky `log`
+--
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `cas` int(11) NOT NULL,
+  `hrac` int(11) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Vypisuji data pro tabulku `log`
+--
+
+INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
+(1430843624, 1, 'Koupě 1(15) za 2(10) od 3'),
+(1430844340, 1, 'Koupě 1(15) za 2(10) od test2'),
+(1430844580, 1, 'Koupě (15) za (10) od test2'),
+(1430844681, 1, 'Koupě Gold(15) za Iron(10) od test2'),
+(1430844767, 1, 'Uskutečněn nákup Gold(15) za Iron(10) od test2'),
+(1430845185, 1, 'Vytvořena nabídka Iron(5) za Gold(5'),
+(1430845254, 1, 'Vytvořena nabídka Iron(5) za Gold(5)');
 
 -- --------------------------------------------------------
 
@@ -55,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
   `mnoznabizi` int(11) NOT NULL,
   `chce` int(11) NOT NULL,
   `mnozchce` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1072 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=439 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
@@ -66,13 +110,6 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (24, 3, 0, 23, 2, 500),
 (128, 1, 0, 250, 4, 1),
 (129, 1, 0, 13, 5, 1),
-(145, 3, 1, 15, 2, 10),
-(146, 3, 1, 15, 2, 10),
-(147, 3, 1, 15, 2, 10),
-(148, 3, 1, 15, 2, 10),
-(149, 3, 1, 15, 2, 10),
-(150, 3, 1, 15, 2, 10),
-(151, 3, 1, 15, 2, 10),
 (152, 3, 1, 15, 2, 10),
 (153, 3, 1, 15, 2, 10),
 (154, 3, 1, 15, 2, 10),
@@ -356,7 +393,10 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (432, 3, 1, 15, 2, 10),
 (433, 3, 1, 15, 2, 10),
 (434, 3, 1, 15, 2, 10),
-(435, 3, 1, 15, 2, 10);
+(435, 3, 1, 15, 2, 10),
+(436, 1, 1, 5, 2, 5),
+(437, 1, 1, 5, 2, 5),
+(438, 1, 1, 5, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -367,7 +407,7 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 CREATE TABLE IF NOT EXISTS `recepty` (
 `idreceptu` int(11) NOT NULL,
   `vyrobek` int(11) NOT NULL,
-  `suroviny` varchar(100) NOT NULL,
+  `suroviny` varchar(500) NOT NULL,
   `doba` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -386,26 +426,28 @@ INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`) VALUES
 
 CREATE TABLE IF NOT EXISTS `veci` (
 `idveci` int(11) NOT NULL,
-  `nazev` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
+  `nazev` varchar(50) NOT NULL,
+  `typ` varchar(16) NOT NULL,
+  `vykon` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Vypisuji data pro tabulku `veci`
 --
 
-INSERT INTO `veci` (`idveci`, `nazev`) VALUES
-(0, 'Money'),
-(1, 'Gold'),
-(2, 'Iron'),
-(3, 'Silicon'),
-(4, 'CPU-AMD'),
-(5, 'CPU-Intel'),
-(6, 'GPU'),
-(7, 'HDD'),
-(8, 'MemoryChip'),
-(9, 'PSU'),
-(10, 'RAM'),
-(11, 'SSD');
+INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`) VALUES
+(0, 'Money', '', 0),
+(1, 'Gold', '', 0),
+(2, 'Iron', '', 0),
+(3, 'Silicon', '', 0),
+(4, 'CPU-AMD', 'cpu', 2),
+(5, 'CPU-Intel', 'cpu', 3),
+(6, 'GPU', 'gpu', 5),
+(7, 'HDD', 'hdd', 1),
+(8, 'MemoryChip', '', 0),
+(9, 'PSU', 'psu', 10),
+(10, 'RAM', 'ram', 1),
+(11, 'SSD', 'hdd', 2);
 
 -- --------------------------------------------------------
 
@@ -418,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
   `hrac` int(11) NOT NULL,
   `recept` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Vypisuji data pro tabulku `vyroba`
@@ -436,6 +478,18 @@ INSERT INTO `vyroba` (`idvyroby`, `hrac`, `recept`, `hotovo`) VALUES
 --
 ALTER TABLE `hraci`
  ADD PRIMARY KEY (`idhrace`), ADD UNIQUE KEY `id` (`idhrace`), ADD KEY `id_2` (`idhrace`);
+
+--
+-- Klíče pro tabulku `kupony`
+--
+ALTER TABLE `kupony`
+ ADD PRIMARY KEY (`idkuponu`), ADD KEY `idkuponu` (`idkuponu`);
+
+--
+-- Klíče pro tabulku `log`
+--
+ALTER TABLE `log`
+ ADD KEY `cas` (`cas`);
 
 --
 -- Klíče pro tabulku `obchod`
@@ -459,7 +513,7 @@ ALTER TABLE `veci`
 -- Klíče pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
- ADD PRIMARY KEY (`idvyroby`), ADD KEY `id` (`idvyroby`);
+ ADD PRIMARY KEY (`idvyroby`), ADD UNIQUE KEY `idvyroby` (`idvyroby`), ADD KEY `id` (`idvyroby`), ADD KEY `idvyroby_2` (`idvyroby`);
 
 --
 -- AUTO_INCREMENT pro tabulky
@@ -471,10 +525,15 @@ ALTER TABLE `vyroba`
 ALTER TABLE `hraci`
 MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT pro tabulku `kupony`
+--
+ALTER TABLE `kupony`
+MODIFY `idkuponu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1072;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=439;
 --
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
@@ -484,12 +543,12 @@ MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT pro tabulku `veci`
 --
 ALTER TABLE `veci`
-MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
+MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
-MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
