@@ -5,7 +5,7 @@
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%">
 			<?php
-			$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 25';
+			$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 100';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{

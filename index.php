@@ -4,12 +4,14 @@ require "components/head.php";
 require "dblogin.php";
 require "login.php";
 include "components/navbar.php";
-if ($prihlasen){
+if ($prihlasen)
+{
 	echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
-	echo "<div id=\"inventar\"></div>";
+	echo '<div id="inventar"></div>';
 	include "components/redeem.php";
-	//include "trh.php";
-} else {
+}
+else
+{
 	include "components/form.php";
 }
 ?>
