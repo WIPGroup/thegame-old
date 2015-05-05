@@ -32,8 +32,8 @@ function reloadVyroba(){
 	$.ajax({
 		url : "components/seznamvyrob.php",
 		success : function (data) {
-			reloadInv();
 			$("#seznamvyrob").html(data);
+			reloadInv();
 			console.log('reloadVyroba');
 		}
 	});
