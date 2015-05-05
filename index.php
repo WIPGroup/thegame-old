@@ -6,7 +6,7 @@ require "login.php";
 include "components/navbar.php";
 if ($prihlasen)
 {
-	echo "Souhrn, vlastnictví, oznámení a jiné kraviny...";
+	include 'components/Index/jumbotron.php';
 	echo '<div id="inventar"></div>';
 	include "components/redeem.php";
 }
