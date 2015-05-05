@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="exampleInputAmount" placeholder="ABCDEFGH">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Uplatnit surovinný kupón</button>
+        <button type="submit" class="btn btn-primary">Uplatnit kupón</button>
       </form>
     </div>
   </div>
