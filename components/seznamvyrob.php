@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include '../vlastnictvi.php';
 	echo "<h3>Moje výroba:</h3>";
 	
 	$dotaz = 'SELECT * FROM veci';
