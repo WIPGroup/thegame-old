@@ -9,7 +9,7 @@ if ($prihlasen)
 {
 	include "components/inventar.php";	//TODO: lépe rozmístit na stránce
 	
-	include "components/seznamvyrob.php";	//TODO: refreshovat ajaxem
+	echo '<span id="seznamvyrob"></span>';
 	
 	echo "<h3>Recepty:</h3>";
 	echo '<table border="1">';
@@ -51,5 +51,6 @@ else
 	include "components/form.php";
 }
 ?>
+<script src="js/crafting.js"></script>
 </body>
 </html>

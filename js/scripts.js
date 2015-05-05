@@ -28,6 +28,15 @@ function reloadNabidky()
 		}
 	});
 }
+function reloadVyroba(){;
+	$.ajax({
+		url : "components/seznamvyrob.php",
+		success : function (data) {
+			$("#seznamvyrob").html(data);
+			console.log('reloadVyroba');
+		}
+	});
+}
 function obchodovanie(idnab){
 	$.get( "trh.php", { trade: idnab } ).done(reloadEverything());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
