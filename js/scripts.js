@@ -67,17 +67,17 @@ function reloadEverything(){
 function fixTrziste(){
 	$('#main').DataTable(); //todo Preklad
 	$('.oteviranikoupeni').click(function(){
-		var aktualniIF = $(this).data('idnab');
+		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
 		$('.potvrzenikoupeni').click(function(){
-			obchodovanie(aktualniid);
+			obchodovanie(aktualniID);
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
 		$('.potvrzenizruseni').click(function(){
-			cancel(aktualniid);
+			cancel(aktualniID);
 		});
 	});
 	$('[data-toggle="tooltip"]').tooltip();
