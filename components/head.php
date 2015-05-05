@@ -21,6 +21,9 @@
 	<!-- DataTables -->
 	<link rel="stylesheet" type="text/css" href="bower_components/datatables/media/css/jquery.dataTables.min.css">
 	<script type="text/javascript" charset="utf8" src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<!-- SweetAlert -->
+	<script src="bower_components/sweetalert/lib/sweet-alert.min.js"></script>
+	<link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css">
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="shortcut icon" href="favicon.ico">
