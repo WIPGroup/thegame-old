@@ -8,7 +8,7 @@
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon">Kód kupónu:</div>
-            <input type="text" class="form-control" id="exampleInputAmount" placeholder="ABCDEFGH">
+            <input type="text" class="form-control" id="exampleInputAmount" placeholder="XXXXXXXX">
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Uplatnit surovinný kupón</button>

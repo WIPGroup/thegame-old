@@ -15,6 +15,15 @@ if ($prihlasen)
 	echo '<table border="1">';
 	echo '<th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Vyrobit</th>';
 	
+	//názvy věcí	
+	$dotaz = 'SELECT * FROM veci';
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	while ($zaznam = mysql_fetch_array($vysledek))
+	{
+		$veci[$zaznam['idveci']] = $zaznam['nazev'];
+	}
+	
+	//seznam receptů
 	$dotaz = 'SELECT * FROM recepty';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))

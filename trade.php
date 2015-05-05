@@ -29,6 +29,17 @@ if (isset($_GET['trade']))
 			//odstranění nabídky
 			$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
 			mysql_query($dotaz);
+			
+			//názvy věcí pro log
+			$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['chce'].' OR idveci='.$zaznam['nabizi'];
+			$vysl = mysql_query($dotaz) or die(mysql_error($db));
+			while ($zazn = mysql_fetch_array($vysl))
+			{
+				$veci[$zazn['idveci']] = $zazn['nazev'];
+			}
+			//log
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutečněn nákup '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'")';
+			mysql_query($dotaz);
 		}
 		else
 			echo "Nemáš dostatečný majetek na uskutečnění obchodu.";
@@ -42,10 +53,23 @@ else if (isset($_GET['mnoznabizi']))
 	if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
 		$vlastnictvi[$_GET['nabizi']] -= $_GET['mnoznabizi'];
+
 		$dotaz = 'INSERT INTO obchod (hrac, nabizi, mnoznabizi, chce, mnozchce) VALUES ('.$_SESSION['hrac'].', '.$_GET['nabizi'].', '.$_GET['mnoznabizi'].', '.$_GET['chce'].', '.$_GET['mnozchce'].')';
-			mysql_query($dotaz);
-			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
-			mysql_query($dotaz);
+		mysql_query($dotaz);
+
+		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+		mysql_query($dotaz);
+		
+		//názvy věcí pro log
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['chce'].' OR idveci='.$_GET['nabizi'];
+		$vysl = mysql_query($dotaz) or die(mysql_error($db));
+		while ($zazn = mysql_fetch_array($vysl))
+		{
+			$veci[$zazn['idveci']] = $zazn['nazev'];
+		}
+		//log
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].')")';
+		mysql_query($dotaz);
 	}
 	else
 		echo "Nepodařilo se vytvořit nabídku.";
