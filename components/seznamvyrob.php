@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	echo "<h3>Moje výroba:</h3>";
 	
 	$dotaz = 'SELECT * FROM veci';

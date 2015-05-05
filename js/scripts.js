@@ -28,7 +28,7 @@ function reloadNabidky()
 		}
 	});
 }
-function reloadVyroba(){;
+function reloadVyroba(){
 	$.ajax({
 		url : "components/seznamvyrob.php",
 		success : function (data) {
