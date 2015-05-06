@@ -5,27 +5,27 @@
 			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
 			<ul class="dropdown-menu menu-refresh" id="refreshMenu">
 				<li class="dropdown-header">Automatic refresh</li>
-				<li data-interval="1">
+				<li data-interval="1000">
 					<a href="#">
 						1 Second
 					</a>
 				</li>
-				<li data-interval="5">
+				<li data-interval="5000">
 					<a href="#">
 						5 Seconds
 					</a>
 				</li>
-				<li data-interval="15">
+				<li data-interval="15000">
 					<a href="#">
 						15 Seconds
 					</a>
 				</li>
-				<li data-interval="30">
+				<li data-interval="30000">
 					<a href="#">
 						30 Seconds
 					</a>
 				</li>
-				<li data-interval="60">
+				<li data-interval="60000">
 					<a href="#">
 						1 Minute
 					</a>

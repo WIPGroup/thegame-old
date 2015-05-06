@@ -115,16 +115,18 @@ function enableRefresh(){
 		aktualniInterval=$(this).data('interval');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
 		console.log(aktualniInterval);
-		switch($(location).attr('pathname').split('/')[2]){
-			case 'index.php':
-				setInterval(reloadInv,aktualniInterval);
-				break;
-			case 'trh.php':
-				setInterval(reloadTrh,aktualniInterval);
-				break;
-			case 'crafting.php':
-				setInterval(reloadVyroba,aktualniInterval);
-				break;	
+		if (aktualniInterval!=0){
+			switch($(location).attr('pathname').split('/')[2]){
+				case 'index.php':
+					setInterval(reloadInv,aktualniInterval);
+					break;
+				case 'trh.php':
+					setInterval(reloadTrh,aktualniInterval);
+					break;
+				case 'crafting.php':
+					setInterval(reloadVyroba,aktualniInterval);
+					break;	
+			};
 		};
 		console.log($(location).attr('pathname').split('/')[2]);
 	});
