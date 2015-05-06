@@ -7,9 +7,13 @@ function toggleTable(n){
 	$("#"+aktualniTab+"tab").addClass('active');
 }
 function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length == 2) {
+		return parts.pop().split(";").shift();
+	} else {
+		return 0;
+	};
 }
 function reloadInv(){                //obnoveni tabulky vlastnictvi
 	$.ajax({
@@ -115,6 +119,9 @@ function getRefreshes(){
 		case 'index.php':
 			return reloadInv;
 			break;
+		case '':
+			return reloadInv;
+			break;
 		case 'trh.php':
 			return reloadTrh;
 			break;
@@ -137,7 +144,7 @@ function enableRefresh(){
 		$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold');
 		clearInterval(automaticRefresh);
 		console.log('Klik na vyber '+getCookie("aktualniInterval"));
-		if (getCookie("aktualniInterval")!=0){
+		if (getCookie("aktualniInterval")>0){
 			automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval"));
 		};
 	});
