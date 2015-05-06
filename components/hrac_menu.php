@@ -9,14 +9,14 @@
 	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
 	<li>
-		<p>
+		<a href="#">
 			<?php
 			$dotaz = 'SELECT jmeno FROM hraci WHERE idhrace='.$_SESSION['hrac'];
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			$zaznam = mysql_fetch_array($vysledek);
 			echo $zaznam['jmeno'];
 			?>
-		</p>
+		</a>
 	</li>
 </li>
 </ul>
