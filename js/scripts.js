@@ -21,7 +21,7 @@ function reloadNabidky(){
 		success : function (data) {
 			$("#nabidky").html(data);
 			toggleTable(aktualniTab);
-			fixTrziste();
+			trziste();
 			console.log('reloadNabidky');
 		}
 	});
@@ -63,7 +63,7 @@ function reloadTrh(){
 	$('.modal-backdrop.fade.in').hide();
 	console.log('reloadTrh');
 }
-function fixTrziste(){
+function trziste(){
     $('[data-toggle="tooltip"]').tooltip();
 	$('#main').DataTable(); //todo Preklad
 	$('#moje').DataTable();
@@ -103,5 +103,5 @@ function fixTrziste(){
 				cancel(aktualniID);
 			});
 	});
-	console.log('fixTrziste');
+	console.log('trziste');
 }
