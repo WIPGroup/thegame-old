@@ -70,16 +70,39 @@ function fixTrziste(){
 	$('.oteviranikoupeni').click(function(){
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
-		$('.potvrzenikoupeni').click(function(){
-			obchodovanie(aktualniID);
+		swal({   
+			title: "Jsi si jistý?",
+			text: "Pokračováním koupíš tuto nabídku!",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			cancelButtonText: "Ne, zavřít",
+			confirmButtonText: "Ano, chci koupit nabídku",
+			closeOnConfirm: false 
+			},
+			function(){
+				swal("Koupeno!", "Úspěšně jsi koupil něco.", "success"); 
+				obchodovanie(aktualniID);
+			});
 		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
-		$('.potvrzenizruseni').click(function(){
-			cancel(aktualniID);
+		swal({   
+			title: "Jsi si jistý?",
+			text: "Pokračováním bude tvoje nabídka zrušena!",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			cancelButtonText: "Ne, zavřít",
+			confirmButtonText: "Ano, chci zrušit nabídku",
+			closeOnConfirm: false 
+			},
+			function(){
+				swal("Smazáno!", "Vaše nabídka byla úspěšně zrušena.", "success"); 
+				cancel(aktualniID);
+			});
 		});
-	});
 	console.log('fixTrziste');
 }

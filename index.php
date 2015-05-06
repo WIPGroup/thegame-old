@@ -16,8 +16,5 @@ else
 }
 ?>
 <script src="js/index.js"></script>
-<script>
-swal("Výborně!", "Úspěšně jste otevřeli tuto stránku!", "success")
-</script>
 </body>
 </html>
