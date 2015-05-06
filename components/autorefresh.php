@@ -7,7 +7,7 @@
 				<li class="dropdown-header">Automatic refresh</li>
 				<li data-interval="1000">
 					<a href="#">
-						1 Second
+						1 Second (NEFUNGUJE)
 					</a>
 				</li>
 				<li data-interval="5000">
@@ -31,7 +31,7 @@
 					</a>
 				</li>
 				<li data-interval="0">
-					<a href="#"> 
+					<a href="#" style="font-weight:bold;"> 
 						Off
 					</a>
 				</li>
