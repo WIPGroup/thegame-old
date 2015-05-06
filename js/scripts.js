@@ -1,4 +1,3 @@
-var aktualniInterval=0;
 function toggleTable(n){
 	console.log('toggleTable na '+n);
 	$("#nabidky>div").hide();
@@ -122,6 +121,7 @@ function getRefreshes(){
 function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
+	var aktualniInterval=0;
 	var currentRefreshes=getRefreshes();
 	console.log('currentRefreshes'+currentRefreshes);
 	console.log('getRefreshes'+getRefreshes);
