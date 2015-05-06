@@ -137,6 +137,6 @@ function enableRefresh(){
 	});
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
-		currentRefreshes;
+		(currentRefreshes)();
 	});
 }
