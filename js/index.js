@@ -1,1 +1,2 @@
 $(reloadInv());
+$(enableRefresh());

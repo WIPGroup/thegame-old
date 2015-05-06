@@ -1,3 +1,5 @@
+var aktualniInterval=60;
+var refreshing;
 function toggleTable(n){
 	console.log('toggleTable na '+n);
 	$("#nabidky>div").hide();
@@ -104,4 +106,23 @@ function trziste(){
 			});
 	});
 	console.log('trziste');
+}
+function enableRefresh(){
+	$('#refreshMenu li').click(function(){
+		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','normal');
+		aktualniInterval=$(this).data('interval');
+		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
+		switch($(location).attr('pathname')){
+			case 'index.php':
+				setInterval(reloadInv,aktualniInterval);
+				break;
+			case 'trh.php':
+				setInterval(reloadTrh,aktualniInterval);
+				break;
+			case 'crafting.php':
+				setInterval(reloadVyroba,aktualniInterval);
+				break;
+				
+		}
+	});
 }
