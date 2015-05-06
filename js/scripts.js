@@ -108,10 +108,13 @@ function trziste(){
 	console.log('trziste');
 }
 function enableRefresh(){
+	console.log('enableRefresh');
 	$('#refreshMenu li').click(function(){
+		console.log('klik na vyber');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','normal');
 		aktualniInterval=$(this).data('interval');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
+		console.log(aktualniInterval);
 		switch($(location).attr('pathname')){
 			case 'index.php':
 				setInterval(reloadInv,aktualniInterval);
@@ -121,8 +124,8 @@ function enableRefresh(){
 				break;
 			case 'crafting.php':
 				setInterval(reloadVyroba,aktualniInterval);
-				break;
-				
-		}
+				break;	
+		};
+		console.log($(location).attr('pathname'));
 	});
 }
