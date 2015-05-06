@@ -6,6 +6,11 @@ function toggleTable(n){
 	$("#trzistetabs>li").removeClass('active');
 	$("#"+aktualniTab+"tab").addClass('active');
 }
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
 function reloadInv(){                //obnoveni tabulky vlastnictvi
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
@@ -121,18 +126,16 @@ function getRefreshes(){
 function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
-	var aktualniInterval=0;
+	document.cookie="aktualniInterval="+0;
 	var currentRefreshes=getRefreshes();
-	console.log('currentRefreshes'+currentRefreshes);
-	console.log('getRefreshes'+getRefreshes);
 	$('#refreshMenu li').click(function(){
-		$('li[data-interval="'+aktualniInterval+'"] a').css('font-weight','normal');
-		aktualniInterval=$(this).data('interval');
-		$('li[data-interval="'+aktualniInterval+'"] a').css('font-weight','bold');
+		$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','normal');
+		document.cookie="aktualniInterval="+$(this).data('interval');
+		$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold');
 		clearInterval(automaticRefresh);
-		console.log('Klik na vyber '+aktualniInterval);
-		if (aktualniInterval!=0){
-			automaticRefresh=setInterval(currentRefreshes,aktualniInterval);
+		console.log('Klik na vyber '+getCookie("aktualniInterval"));
+		if (getCookie("aktualniInterval")!=0){
+			automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval"));
 		};
 	});
 	$('#refreshButton').click(function(){
