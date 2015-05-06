@@ -106,9 +106,26 @@ function trziste(){
 	});
 	console.log('trziste');
 }
+function getRefreshes(){
+	console.log($(location).attr('pathname').split('/')[2]);
+	switch($(location).attr('pathname').split('/')[2]){
+		case 'index.php':
+			return reloadInv;
+			break;
+		case 'trh.php':
+			return reloadTrh;
+			break;
+		case 'crafting.php':
+			return reloadVyroba;
+			break;
+	};
+}
 function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
+	var currentRefreshes=getRefreshes();
+	console.log('currentRefreshes'+currentRefreshes);
+	console.log('getRefreshes'+getRefreshes);
 	$('#refreshMenu li').click(function(){
 		$('li[data-interval="'+aktualniInterval+'"] a').css('font-weight','normal');
 		aktualniInterval=$(this).data('interval');
@@ -116,32 +133,11 @@ function enableRefresh(){
 		clearInterval(automaticRefresh);
 		console.log('Klik na vyber '+aktualniInterval);
 		if (aktualniInterval!=0){
-			switch($(location).attr('pathname').split('/')[2]){
-				case 'index.php':
-					automaticRefresh=setInterval(reloadInv,aktualniInterval);
-					break;
-				case 'trh.php':
-					automaticRefresh=setInterval(reloadTrh,aktualniInterval);
-					break;
-				case 'crafting.php':
-					automaticRefresh=setInterval(reloadVyroba,aktualniInterval);
-					break;	
-			};
+			automaticRefresh=setInterval(currentRefreshes,aktualniInterval);
 		};
-		console.log($(location).attr('pathname').split('/')[2]);
 	});
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
-		switch($(location).attr('pathname').split('/')[2]){
-				case 'index.php':
-					reloadInv;
-					break;
-				case 'trh.php':
-					reloadTrh;
-					break;
-				case 'crafting.php':
-					reloadVyroba;
-					break;	
-		};
+		currentRefreshes;
 	});
 }
