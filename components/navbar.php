@@ -31,7 +31,7 @@
 				echo "</li>";
 			}
 			echo '<li>';
-			include 'components/autorefresh.php';
+			include 'components/autorefresh.php'; //TODO: jožo zarovnej to nějak lol
 			echo '</li>';
 			?>
 		</ul>

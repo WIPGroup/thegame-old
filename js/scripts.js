@@ -110,9 +110,9 @@ function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
 	$('#refreshMenu li').click(function(){
-		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','normal');
+		$('li[data-interval="'+aktualniInterval+'"] a').css('font-weight','normal');
 		aktualniInterval=$(this).data('interval');
-		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
+		$('li[data-interval="'+aktualniInterval+'"] a').css('font-weight','bold');
 		clearInterval(automaticRefresh);
 		console.log('Klik na vyber '+aktualniInterval);
 		if (aktualniInterval!=0){
