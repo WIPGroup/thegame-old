@@ -30,9 +30,6 @@
 				echo '<a href="admin.php">ADMIN</a>';
 				echo "</li>";
 			}
-			echo '<li>';
-			include 'components/autorefresh.php'; //TODO: jožo zarovnej to nějak lol
-			echo '</li>';
 			?>
 		</ul>
 		<?php
