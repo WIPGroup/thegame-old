@@ -27,7 +27,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 
 	echo '<td>';
 	if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
-		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-toggle="modal" data-target="#kup"  data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
+		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
 	}
 	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
 		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
@@ -50,7 +50,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
 
 	echo '<td>';
-	echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-toggle="modal" data-target="#zrus" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
+	echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
 	echo "</td></tr>";
 }
 echo '</tbody></table></div>';
