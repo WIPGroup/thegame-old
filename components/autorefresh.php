@@ -31,7 +31,7 @@
 					</a>
 				</li>
 				<li data-interval="0">
-					<a href="#" style="font-weight:bold;"> 
+					<a href="#"> 
 						Off
 					</a>
 				</li>

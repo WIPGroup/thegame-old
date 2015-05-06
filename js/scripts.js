@@ -126,8 +126,11 @@ function getRefreshes(){
 function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
-	document.cookie="aktualniInterval="+0;
+	$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold');
 	var currentRefreshes=getRefreshes();
+	if (getCookie("aktualniInterval")!=0){
+		automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval"));
+	};
 	$('#refreshMenu li').click(function(){
 		$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','normal');
 		document.cookie="aktualniInterval="+$(this).data('interval');
