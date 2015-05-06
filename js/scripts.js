@@ -115,6 +115,9 @@ function getRefreshes(){
 		case 'index.php':
 			return reloadInv;
 			break;
+		case '':
+			return reloadInv;
+			break;
 		case 'trh.php':
 			return reloadTrh;
 			break;
