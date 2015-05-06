@@ -1,5 +1,4 @@
 var aktualniInterval=0;
-var refreshing;
 function toggleTable(n){
 	console.log('toggleTable na '+n);
 	$("#nabidky>div").hide();
