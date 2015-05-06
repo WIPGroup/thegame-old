@@ -6,8 +6,7 @@ function toggleTable(n){
 	$("#trzistetabs>li").removeClass('active');
 	$("#"+aktualniTab+"tab").addClass('active');
 }
-function reloadInv()                //obnoveni tabulky vlastnictvi
-{
+function reloadInv(){                //obnoveni tabulky vlastnictvi
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
@@ -16,8 +15,7 @@ function reloadInv()                //obnoveni tabulky vlastnictvi
 		}
 	});
 }
-function reloadNabidky()
-{
+function reloadNabidky(){
 	$.ajax({
 		url : "components/nabidky.php",
 		success : function (data) {
