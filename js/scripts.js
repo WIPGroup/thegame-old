@@ -128,7 +128,7 @@ function enableRefresh(){
 	var automaticRefresh;
 	$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold');
 	var currentRefreshes=getRefreshes();
-	if (getCookie("aktualniInterval")!=0){
+	if (getCookie("aktualniInterval")>0){
 		automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval"));
 	};
 	$('#refreshMenu li').click(function(){
