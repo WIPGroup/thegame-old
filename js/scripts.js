@@ -111,11 +111,11 @@ function enableRefresh(){
 	console.log('enableRefresh');
 	var automaticRefresh;
 	$('#refreshMenu li').click(function(){
-		console.log('klik na vyber');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','normal');
 		aktualniInterval=$(this).data('interval');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
-		console.log(aktualniInterval);
+		clearInterval(automaticRefresh);
+		console.log('Klik na vyber '+aktualniInterval);
 		if (aktualniInterval!=0){
 			switch($(location).attr('pathname').split('/')[2]){
 				case 'index.php':
@@ -128,9 +128,7 @@ function enableRefresh(){
 					automaticRefresh=setInterval(reloadVyroba,aktualniInterval);
 					break;	
 			};
-		} else {
-			clearInterval(automaticRefresh);
-		}
+		};
 		console.log($(location).attr('pathname').split('/')[2]);
 	});
 }
