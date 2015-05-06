@@ -62,7 +62,6 @@ function craft(idreceptu){
 function reloadTrh(){ 
 	reloadNabidky();
 	reloadInv();
-	$('.modal-backdrop.fade.in').hide();
 	console.log('reloadTrh');
 }
 function trziste(){
@@ -74,7 +73,7 @@ function trziste(){
 		console.log('ID tohoto trade je '+aktualniID);
 		swal({   
 			title: "Jsi si jistý?",
-			text: "Pokračováním koupíš tuto nabídku!",
+			text: "Pokračováním koupíš tuto nabídku! ("+aktualniID+")",
 			type: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#DD6B55",
@@ -92,7 +91,7 @@ function trziste(){
 		console.log('ID tohoto trade je '+aktualniID);
 		swal({   
 			title: "Jsi si jistý?",
-			text: "Pokračováním bude tvoje nabídka zrušena!",
+			text: "Pokračováním bude tvoje nabídka zrušena! ("+aktualniID+")",
 			type: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#DD6B55",
@@ -130,5 +129,19 @@ function enableRefresh(){
 			};
 		};
 		console.log($(location).attr('pathname').split('/')[2]);
+	});
+	$('#refreshButton').click(function(){
+		console.log('klik na refreshButton');
+		switch($(location).attr('pathname').split('/')[2]){
+				case 'index.php':
+					reloadInv;
+					break;
+				case 'trh.php':
+					reloadTrh;
+					break;
+				case 'crafting.php':
+					reloadVyroba;
+					break;	
+		};
 	});
 }
