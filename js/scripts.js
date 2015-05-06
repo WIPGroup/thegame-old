@@ -115,7 +115,7 @@ function enableRefresh(){
 		aktualniInterval=$(this).data('interval');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','bold');
 		console.log(aktualniInterval);
-		switch($(location).attr('pathname')){
+		switch($(location).attr('pathname').split('/')[2]){
 			case 'index.php':
 				setInterval(reloadInv,aktualniInterval);
 				break;
@@ -126,6 +126,6 @@ function enableRefresh(){
 				setInterval(reloadVyroba,aktualniInterval);
 				break;	
 		};
-		console.log($(location).attr('pathname'));
+		console.log($(location).attr('pathname').split('/')[2]);
 	});
 }
