@@ -30,6 +30,9 @@
 				echo '<a href="admin.php">ADMIN</a>';
 				echo "</li>";
 			}
+			echo '<li>';
+			include 'components/autorefresh.php';
+			echo '</li>';
 			?>
 		</ul>
 		<?php
