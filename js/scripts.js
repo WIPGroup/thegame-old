@@ -84,7 +84,6 @@ function fixTrziste(){
 				swal("Koupeno!", "Úspěšně jsi koupil něco.", "success"); 
 				obchodovanie(aktualniID);
 			});
-		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniID = $(this).data('idnab');
@@ -103,6 +102,6 @@ function fixTrziste(){
 				swal("Smazáno!", "Vaše nabídka byla úspěšně zrušena.", "success"); 
 				cancel(aktualniID);
 			});
-		});
+	});
 	console.log('fixTrziste');
 }
