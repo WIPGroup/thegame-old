@@ -44,6 +44,7 @@ function reloadTimer(){
 			$(this).html(parseInt(aktualniCas)-1);
 		} else {
 			reloadVyroba();
+			return false;
 		}
 	});
 }
