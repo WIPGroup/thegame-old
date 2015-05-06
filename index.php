@@ -6,9 +6,9 @@ require "login.php";
 include "components/navbar.php";
 if ($prihlasen)
 {
-	include 'components/Index/jumbotron.php';
+	//include 'components/Index/jumbotron.php';
 	echo '<div id="inventar"></div>';
-	include "components/redeem.php";
+	include "components/kupony.php";
 }
 else
 {

@@ -1,18 +1,39 @@
-<div class="col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1 class="panel-title">Uplatnění surovinného kupónu</h1>
-    </div>
-    <div class="panel-body" style="width: 100%; heigth: 100%">
-      <form class="form-inline">
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-addon">Kód kupónu:</div>
-            <input type="text" class="form-control" id="exampleInputAmount" placeholder="XXXXXXXX">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Uplatnit kupón</button>
-      </form>
-    </div>
-  </div>
-</div>
+<?php
+require "vlastnictvi.php";
+if (isset($_GET['kupon']))
+{
+	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower($_GET['kupon']).'"';
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	$zaznam = mysql_fetch_array($vysledek);
+	if (count($zaznam) > 1)
+	{
+		$obsah = explode(';', $zaznam['obsah']);
+		$pocobsah = count($obsah);
+		
+		for ($i = 0; $i < $pocobsah; $i++)
+			$vlastnictvi[$i] += $obsah[$i];
+		
+		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+		mysql_query($dotaz);
+		
+		//smazat kupón
+		$dotaz = 'DELETE FROM kupony WHERE idkuponu='.$zaznam['idkuponu'];
+		mysql_query($dotaz);
+		
+		//log
+		$dotaz = 'SELECT * FROM veci';
+		$vysl = mysql_query($dotaz) or die(mysql_error($db));
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupón '.$zaznam['kod'].' (';
+		while ($zazn = mysql_fetch_array($vysl))
+		{
+			if ($obsah[$zazn['idveci']] > 0)
+				$dotaz .= $zazn['nazev']."(".$obsah[$zazn['idveci']].") ";
+		}
+		$dotaz .= ')")';
+		echo $dotaz;
+		mysql_query($dotaz);
+	}
+	else
+		echo "Tento kupón neexistuje.";
+}
+?>

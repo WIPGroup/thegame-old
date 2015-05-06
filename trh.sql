@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Úte 05. kvě 2015, 19:15
+-- Vytvořeno: Stř 06. kvě 2015, 21:40
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '176;260;79;137;0;0;0;0;0;0;16;0;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;5'),
+(1, 'root', 'root', '246;262;69;137;0;0;0;0;0;0;34;0'),
 (2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0'),
-(3, 'test2', 'test2', '647;341;346;2;0;0;0;0;0;0;0;0');
+(3, 'test2', 'test2', '647;341;356;2;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
 
@@ -52,14 +52,16 @@ CREATE TABLE IF NOT EXISTS `kupony` (
 `idkuponu` int(11) NOT NULL,
   `kod` varchar(16) NOT NULL,
   `obsah` varchar(500) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Vypisuji data pro tabulku `kupony`
 --
 
 INSERT INTO `kupony` (`idkuponu`, `kod`, `obsah`) VALUES
-(1, 'f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0');
+(1, 'f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0'),
+(9, 'f5g4df6a', '10;0;0;0;0;0;0;0;0;0;0;0'),
+(10, 'f5g4df6b', '10;0;0;0;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,48 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1430844681, 1, 'Koupě Gold(15) za Iron(10) od test2'),
 (1430844767, 1, 'Uskutečněn nákup Gold(15) za Iron(10) od test2'),
 (1430845185, 1, 'Vytvořena nabídka Iron(5) za Gold(5'),
-(1430845254, 1, 'Vytvořena nabídka Iron(5) za Gold(5)');
+(1430845254, 1, 'Vytvořena nabídka Iron(5) za Gold(5)'),
+(1430846450, 1, 'Zrušena nabídka Iron(5) za Gold(5)'),
+(1430846840, 1, 'Spuštěna výroba RAM'),
+(1430846891, 1, 'Spuštěna výroba RAM'),
+(1430846892, 1, 'Spuštěna výroba RAM'),
+(1430847096, 1, 'Spuštěna výroba RAM'),
+(1430847107, 1, 'Dokončena výroba RAM'),
+(1430847368, 1, 'Spuštěna výroba RAM'),
+(1430847369, 1, 'Spuštěna výroba RAM'),
+(1430847370, 1, 'Spuštěna výroba RAM'),
+(1430847370, 1, 'Spuštěna výroba RAM'),
+(1430847370, 1, 'Spuštěna výroba RAM'),
+(1430847371, 1, 'Spuštěna výroba RAM'),
+(1430847371, 1, 'Spuštěna výroba RAM'),
+(1430847372, 1, 'Spuštěna výroba RAM'),
+(1430847375, 1, 'Spuštěna výroba RAM'),
+(1430847378, 1, 'Spuštěna výroba RAM'),
+(1430847378, 1, 'Dokončena výroba RAM'),
+(1430847379, 1, 'Dokončena výroba RAM'),
+(1430847380, 1, 'Dokončena výroba RAM'),
+(1430847380, 1, 'Dokončena výroba RAM'),
+(1430847380, 1, 'Dokončena výroba RAM'),
+(1430847380, 1, 'Spuštěna výroba RAM'),
+(1430847381, 1, 'Dokončena výroba RAM'),
+(1430847381, 1, 'Dokončena výroba RAM'),
+(1430847381, 1, 'Spuštěna výroba RAM'),
+(1430847381, 1, 'Spuštěna výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430847397, 1, 'Dokončena výroba RAM'),
+(1430857764, 1, 'Spuštěna výroba RAM'),
+(1430857797, 1, 'Dokončena výroba RAM'),
+(1430935254, 1, 'Vytvořena nabídka Money(1) za Money(1)'),
+(1430935621, 1, 'Vytvořena nabídka Money(1) za Money(1)'),
+(1430935731, 1, 'Uskutečněn nákup Gold(15) za Iron(10) od test2'),
+(1430940404, 1, 'Použit kupón f5g8af6h (0(10) '),
+(1430941014, 1, 'Použit kupón f5g8df6h ('),
+(1430941092, 1, 'Použit kupón f5g4df6h (Money() )'),
+(1430941135, 1, 'Použit kupón f5g4df6c (Money(10) )');
 
 -- --------------------------------------------------------
 
@@ -99,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
   `mnoznabizi` int(11) NOT NULL,
   `chce` int(11) NOT NULL,
   `mnozchce` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=439 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=440 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
@@ -110,7 +153,6 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (24, 3, 0, 23, 2, 500),
 (128, 1, 0, 250, 4, 1),
 (129, 1, 0, 13, 5, 1),
-(152, 3, 1, 15, 2, 10),
 (153, 3, 1, 15, 2, 10),
 (154, 3, 1, 15, 2, 10),
 (155, 3, 1, 15, 2, 10),
@@ -396,7 +438,8 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (435, 3, 1, 15, 2, 10),
 (436, 1, 1, 5, 2, 5),
 (437, 1, 1, 5, 2, 5),
-(438, 1, 1, 5, 2, 5);
+(438, 1, 0, 1, 0, 1),
+(439, 1, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -460,7 +503,7 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
   `hrac` int(11) NOT NULL,
   `recept` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Vypisuji data pro tabulku `vyroba`
@@ -528,12 +571,12 @@ MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pro tabulku `kupony`
 --
 ALTER TABLE `kupony`
-MODIFY `idkuponu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `idkuponu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=439;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=440;
 --
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
@@ -548,7 +591,7 @@ MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 -- AUTO_INCREMENT pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
-MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
