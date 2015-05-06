@@ -109,6 +109,7 @@ function trziste(){
 }
 function enableRefresh(){
 	console.log('enableRefresh');
+	var automaticRefresh;
 	$('#refreshMenu li').click(function(){
 		console.log('klik na vyber');
 		$('li[data-interval="'+aktualniInterval+'"]').css('font-weight','normal');
@@ -118,16 +119,18 @@ function enableRefresh(){
 		if (aktualniInterval!=0){
 			switch($(location).attr('pathname').split('/')[2]){
 				case 'index.php':
-					setInterval(reloadInv,aktualniInterval);
+					automaticRefresh=setInterval(reloadInv,aktualniInterval);
 					break;
 				case 'trh.php':
-					setInterval(reloadTrh,aktualniInterval);
+					automaticRefresh=setInterval(reloadTrh,aktualniInterval);
 					break;
 				case 'crafting.php':
-					setInterval(reloadVyroba,aktualniInterval);
+					automaticRefresh=setInterval(reloadVyroba,aktualniInterval);
 					break;	
 			};
-		};
+		} else {
+			clearInterval(automaticRefresh);
+		}
 		console.log($(location).attr('pathname').split('/')[2]);
 	});
 }
