@@ -16,16 +16,14 @@
 			$zaznam = mysql_fetch_array($vysledek);
 			echo $zaznam['jmeno'];
 			?>
-			<span class="caret"></span>
 		</a>
-		<ul class="dropdown-menu" role="menu">
-			<li>
-				<form action="logout.php" class="navbar-form">
-					<div style="text-align: center">
-						<button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button>
-					</div>
-				</form>
-			</li>
-		</ul>
 	</li>
+	<li>
+		<form action="logout.php" class="navbar-form">
+			<div style="text-align: center">
+				<button type="submit" class="btn btn-danger">Odhlásiť</button>
+			</div>
+		</form>
+	</ul>
+</li>
 </ul>
