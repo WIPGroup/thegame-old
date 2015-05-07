@@ -3,11 +3,6 @@
 	"version": "1.0.0",
 	"description": "Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)\r # Branches\r * `master` obsahuje **nejnovejsi** verzi kodu\r * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo\r * `ex_(username)` personalni experimentalni branch",
 	"main": "index.php",
-	"scripts": {
-		"setup": "npm install -g grunt & npm install -g bower",
-		"install": "bower update",
-		"postinstall": "grunt"
-	},
 	"repository": {
 		"type": "git",
 		"url": "git@gitlab.com:AntreTeam/TheGame.git"
