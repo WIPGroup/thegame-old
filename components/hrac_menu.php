@@ -18,5 +18,18 @@
 			?>
 		</a>
 	</li>
+	<li>
+24	 
+-				<form action="logout.php" class="navbar-form">
+25	 
+-					<div style="text-align: center">
+26	 
+-						<button type="submit" class="btn btn-lg btn-danger btn-block">Odhlásiť</button>
+27	 
+-					</div>
+28	 
+-				</form>
+29	 
+-			</li>
 </li>
 </ul>
