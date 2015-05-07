@@ -15,11 +15,10 @@ include "admin/tvorbakuponu.php";
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
-					//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek)
-					echo '<div class="panel-heading">'.$zaznam['nazev'].':</div>';
-					echo '<div class="panel-body">';
+					//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek) | pokus 1 probehl
+					echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><div class="form-group"><label for="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</label>';
 					echo '<input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" value="0" class="form-control" placeholder="'.$zaznam['nazev'].'">';
-					echo '</div>';
+					echo '</div></div>';
 				}
 				?>
 				<button type="submit" class="btn btn-primary btn-block">Vytvořit</button>
@@ -41,6 +40,7 @@ include "admin/tvorbakuponu.php";
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
 				//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek)
+				//TODO: php: mozna by nebylo na skodu davat to do tabulky
 				echo $zaznam['kod'].': '.$zaznam['obsah'].'<br>';
 			}
 			?>
