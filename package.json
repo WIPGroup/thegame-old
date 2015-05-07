@@ -1,23 +1,22 @@
 {
-	"name": "TheGame",
-	"version": "1.0.0",
-	"description": "Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)\r # Branches\r * `master` obsahuje **nejnovejsi** verzi kodu\r * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo\r * `ex_(username)` personalni experimentalni branch",
-	"main": "index.php",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@gitlab.com:AntreTeam/TheGame.git"
-	},
-	"author": "",
-	"license": "none",
-	"dependencies": {
-		"bootstrap": "^3.3.4",
-		"bootswatch": "^3.3.4",
-		"datatables": "^1.10.7",
-		"offline-js": "^0.7.11",
-		"pace": "0.0.4",
-		"sweetalert": "^1.0.0-beta"
-	}
+  "name": "TheGame",
+  "version": "1.0.0",
+  "description": "Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)\r # Branches\r * `master` obsahuje **nejnovejsi** verzi kodu\r * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo\r * `ex_(username)` personalni experimentalni branch",
+  "main": "index.php",
+  "scripts": {
+    "test": "jshint scripts/*.js",
+    "prebower": "npm install bower -global",
+    "bower": "bower update",
+    "upload": "npm run bower && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:AntreTeam/TheGame.git"
+  },
+  "author": "",
+  "license": "none",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "jshint": "^2.7.0"
+  }
 }
