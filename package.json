@@ -7,7 +7,8 @@
     "test": "jshint scripts/*.js",
     "prebower": "npm install bower -global",
     "bower": "bower update",
-    "upload": "npm run bower && npm run test"
+    "upload": "npm run bower && npm run test",
+    "postupload": ""
   },
   "repository": {
     "type": "git",

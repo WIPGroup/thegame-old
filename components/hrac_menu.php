@@ -21,7 +21,7 @@
 	<li>
 		<form action="logout.php" class="navbar-form">
 			<div style="text-align: center">
-				<button type="submit" class="btn btn-danger">Odhlásiť</button>
+				<button type="submit" class="btn btn-warninig">Odhlásiť</button>
 			</div>
 		</form>
 	</ul>
