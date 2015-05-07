@@ -6,7 +6,7 @@ include "admin/tvorbakuponu.php";
 <div class="col-xs-12">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1 class="panel-title">Tvorba kuponů/poukázek</h1>
+			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
 			<form action="admin.php" method="GET">
