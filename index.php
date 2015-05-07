@@ -6,7 +6,7 @@ require "login.php";
 include "components/navbar.php";
 if ($prihlasen)
 {
-	//include 'components/Index/jumbotron.php';
+	//include 'components/index/jumbotron.php';
 	echo '<div id="inventar"></div>';
 	include "components/kupony.php";
 }
