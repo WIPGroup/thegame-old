@@ -7,11 +7,11 @@ include "components/navbar.php";
 include "vlastnictvi.php";
 if ($prihlasen)
 {
-	echo '<span id="inventar"></span>';	//TODO: lépe rozmístit na stránce
+	echo '<div class="col-md-6 col-xs-12"><span id="inventar"></span></div>';	//TODO: lépe rozmístit na stránce
 
-	echo '<span id="seznamvyrob"></span>';
+	echo '<div class="col-md-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
-	echo "<h3>Recepty:</h3>";
+	echo '<div class="col-xs-12"><div class="panel panel-default"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
 	echo '<table class="table table-striped table-hover">';
 	echo '<thead><tr><th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Vyrobit</th></tr></thead><tbody>';
 
@@ -53,7 +53,7 @@ if ($prihlasen)
 			echo '<td><button class="btn btn-default" disabled></button> </td>';
 		echo '</tr>';
 	}
-	echo '</tbody></table>';
+	echo '</tbody></table></div>';
 }
 else
 {
