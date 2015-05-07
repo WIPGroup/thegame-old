@@ -7,7 +7,7 @@ include "components/navbar.php";
 if ($prihlasen && $_SESSION['hrac'] == 1)
 {
 	include "admin/log.php";
-	include "admin/kupon.php";
+	include "admin/kupony.php";
 }
 else
 {
