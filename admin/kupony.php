@@ -16,7 +16,7 @@ include "admin/tvorbakuponu.php";
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
 					//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek) | pokus 1 probehl | zatim super (jirvoz)
-					echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><div class="form-group"><label for="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</label>';
+					echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><div class="form-group"><label for="'.$zaznam['idveci'].'"><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img> '.$zaznam['nazev'].'</label>';
 					echo '<input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" value="0" class="form-control" placeholder="'.$zaznam['nazev'].'">';
 					echo '</div></div>';
 				}
