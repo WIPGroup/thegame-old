@@ -1,6 +1,6 @@
 <?php
 //TODO: nacpat do ajaxu
-include "components/redeem.php";
+//include "components/redeem.php";
 ?>
 <div class="col-xs-12">
   <div class="panel panel-default">
