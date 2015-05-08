@@ -89,8 +89,6 @@ function reloadTrh(){
 }
 function trziste(){
     $('[data-toggle="tooltip"]').tooltip();
-	$('#main').DataTable(); //todo Preklad
-	$('#moje').DataTable();
 	$('.oteviranikoupeni').click(function(){ //sweetalerts
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
@@ -127,6 +125,8 @@ function trziste(){
 				cancel(aktualniID);
 			});
 	});
+	$('#main').DataTable(); //todo Preklad
+	$('#moje').DataTable();
 	console.log('trziste');
 }
 function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat, tj reload Vsechno
