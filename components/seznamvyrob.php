@@ -3,7 +3,6 @@
 		<div class="panel-heading">
 			<h1 class="panel-title">
 				<?php
-				session_start();
 				include '../vlastnictvi.php';
 				echo 'Moje výroba';
 				?>
