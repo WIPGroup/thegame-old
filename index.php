@@ -7,7 +7,7 @@ include "components/navbar.php";
 if ($prihlasen)
 {
 	//include 'components/index/jumbotron.php';
-	echo '<div id="inventar"></div>';
+	echo '<div id="inventar" class="col-xs-3"></div>';
 	include "components/kupony.php";
 }
 else
