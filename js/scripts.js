@@ -42,6 +42,8 @@ function reloadVyroba(){
 		success : function (data) {
 			$("#seznamvyrob").html(data);        //oda se to do seznamuvyrob
 			console.log('reloadVyroba');
+			clearInterval(seznamVyrobyRefresh); //zruseni predchoziho intervalu
+			console.log('clearIntervalureloadVyroba');
 			seznamVyrobyRefresh = setInterval(function(){reloadTimer()},1000);  //po nacteni se da timer
 		}
 	});
@@ -53,7 +55,8 @@ function reloadTimer(){
 		if (aktualniCas > 0){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
 		} else {
-			clearInterval(seznamVyrobyRefresh); //ukonceni intervalu
+			clearInterval(seznamVyrobyRefresh); 
+			console.log('clearIntervalureloadTimer');
 			reloadVyroba();
 			return false;
 		}
@@ -116,7 +119,6 @@ function trziste(){
 	console.log('trziste');
 }
 function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat, tj reload Vsechno
-	console.log($(location).attr('pathname').split('/')[2]);
 	switch($(location).attr('pathname').split('/')[2]){
 		case 'index.php':
 			return reloadInv;
