@@ -36,9 +36,7 @@ function reloadNabidky(){ //reload nabidek v trhu
 	});
 }
 function reloadVyroba(){
-	if (typeof seznamVyrobyRefresh !== 'undefined'){
-		clearInterval(seznamVyrobyRefresh);
-	};
+	console.log(seznamVyrobyRefresh);
 	reloadInv();
 	$.ajax({
 		url : "components/seznamvyrob.php",
