@@ -1,6 +1,6 @@
 <div class="col-xs-12">
 	<div class="panel panel-default">
-		<div class="panel-heading" data-toggle="collapse" href="#log">
+		<div class="panel-heading" data-toggle="collapse" href="#log" style="cursor: pointer">
 			<h1 class="panel-title">Log</h1>
 		</div>
 		<!--<div class="panel-body">
