@@ -36,7 +36,7 @@ function reloadNabidky(){ //reload nabidek v trhu
 	});
 }
 function reloadVyroba(){
-	if (typeof seznamVyrobyRefresh != 'undefined'){
+	if (timerRunning == true){
 		clearInterval(seznamVyrobyRefresh);
 	};
 	reloadInv();
@@ -52,6 +52,7 @@ function reloadVyroba(){
 				}
 			});
 			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
+			timerRunning = true;
 		}
 	});
 }

@@ -32,7 +32,7 @@
 		var branch = $(location).attr('pathname').split('/')[1];
 		$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
 		setInterval(function(){
-			$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"?timestamp="+new Date().getTime());
+			$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
 		},10000);
 	});
 </script>
