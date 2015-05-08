@@ -39,6 +39,8 @@ if (isset($_GET['craft']))
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$zazn['nazev'].'")';
 			mysql_query($dotaz);
+			
+			echo ', "Začals vyrábět '.$zazn['nazev'].'.';
 		}
 		else
 			echo "Nemáte dostatek surovin.";
