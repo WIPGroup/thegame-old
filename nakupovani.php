@@ -15,7 +15,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 <div class="col-lg-4 col-md-8 col-sm-7 col-xs-12">
 	<form id="nabidka">
 		<div class="form-group">
-			<div class="panel panel-default">
+			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h2 class="panel-title">Zadat objednávku:</h2>
 				</div>
@@ -49,7 +49,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	</form>
 </div>
 <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-	<div class="panel panel-default" id="trziste">
+	<div class="panel panel-primary" id="trziste">
 		<div class="panel-heading">
 			<h2 class="panel-title">Tržiště:</h2>
 		</div>

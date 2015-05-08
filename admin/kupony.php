@@ -4,7 +4,7 @@ include "admin/tvorbakuponu.php";
 ?>
 <!-- form na tvorbu kuponů -->
 <div class="col-xs-12">
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Tvorba kuponů/poukázek</h1>
 		</div>
@@ -26,7 +26,7 @@ include "admin/tvorbakuponu.php";
 </div>
 <!-- seznam kuponů -->
 <div class="col-xs-12">
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
