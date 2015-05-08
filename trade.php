@@ -40,6 +40,8 @@ if (isset($_GET['trade']))
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutečněn nákup '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'")';
 			mysql_query($dotaz);
+			
+			echo 'Koupils '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'.';
 		}
 		else
 			echo "Nemáš dostatečný majetek na uskutečnění obchodu.";
@@ -70,6 +72,8 @@ else if (isset($_GET['mnoznabizi']))
 		//log
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].')")';
 		mysql_query($dotaz);
+		
+		echo 'Vytvořils nabídku '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].').';
 	}
 	else
 		echo "Nepodařilo se vytvořit nabídku.";
@@ -100,6 +104,8 @@ else if (isset($_GET['cancel']))
 		//log
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].')")';
 		mysql_query($dotaz);
+		
+		echo ', "Zrušils svou nabídku '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].').';
 	}
 	else
 		echo "Zrušení se nepodařilo.";

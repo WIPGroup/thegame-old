@@ -35,6 +35,7 @@ include "admin/tvorbakuponu.php";
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
 			<?php
+			include "../vlastnictvi.php";
 			$dotaz = 'SELECT * FROM kupony';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek))
