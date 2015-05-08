@@ -42,8 +42,6 @@ function reloadVyroba(){
 		success : function (data) {
 			$("#seznamvyrob").html(data);        //oda se to do seznamuvyrob
 			console.log('reloadVyroba');
-			clearInterval(seznamVyrobyRefresh); //zruseni predchoziho intervalu
-			console.log('clearIntervalureloadVyroba');
 			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 		}
 	});
