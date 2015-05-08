@@ -22,6 +22,7 @@ if (isset($_GET['kupon']))
 		$dotaz = 'DELETE FROM kupony WHERE idkuponu='.$zaznam['idkuponu'];
 		mysql_query($dotaz);
 		
+		echo "Kupó přijat. Zíkals ";
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
@@ -29,10 +30,12 @@ if (isset($_GET['kupon']))
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
+			{
 				$dotaz .= $zazn['nazev']."(".$obsah[$zazn['idveci']].") ";
+				echo $zazn['nazev']."(".$obsah[$zazn['idveci']].") ";
+			}
 		}
 		$dotaz .= ')")';
-		echo $dotaz;
 		mysql_query($dotaz);
 	}
 	else
