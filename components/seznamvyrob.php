@@ -22,5 +22,12 @@ include '../vlastnictvi.php';
 			echo '<li class="list-group-item"><span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v <span class="casvyroby badge">'.($zaznam['hotovo']-time()).'</span>'.date('G:i:s j.n.Y', $zaznam['hotovo']);
 		}
 		?>
+		<li class="list-group-item" style="white-space: nowrap">
+			<span class="label label-default">RAM</span> hotovo v 4:31:12 16.5.2015
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 45%"></div>
+			</div>
+			<span class="casvyroby badge">632785</span>
+		</li>
 	</ul>
 </div>
