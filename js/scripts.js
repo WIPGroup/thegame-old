@@ -38,6 +38,7 @@ function reloadNabidky(){ //reload nabidek v trhu
 function reloadVyroba(){
 	if (timerRunning == true){
 		clearInterval(seznamVyrobyRefresh);
+		timerRunning = false;
 	};
 	reloadInv();
 	$.ajax({
