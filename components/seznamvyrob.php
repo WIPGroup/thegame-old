@@ -25,7 +25,7 @@ include '../vlastnictvi.php';
 		<li class="list-group-item">
 			<table style="width: 100%">
 				<tr>
-					<td>
+					<td style="width: 250px; text-align: left">
 						<span class="label label-default">RAM</span> hotovo v 4:31:12 16.5.2015
 					</td>
 					<td>
@@ -33,7 +33,7 @@ include '../vlastnictvi.php';
 							<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 45%"></div>
 						</div>
 					</td>
-					<td>
+					<td style="width: 75px; text-align: right">
 						<span class="casvyroby badge">632785</span>
 					</td>
 				</tr>
