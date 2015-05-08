@@ -4,7 +4,7 @@ $(function() { //odeslani formulare s nabidkou
 		$.ajax({
 			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
 			type: "GET",
-			url: "trh.php",
+			url: "trade.php",
 			success: function(data) {
 				reloadTrh(); //po odeslani se nacte interface
 			}
