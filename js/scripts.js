@@ -73,14 +73,38 @@ function snizeniTimeru(){
 		}
 	});
 }
-function obchodovanie(idnab){
-	$.get("trh.php",{trade:idnab}).done(reloadTrh());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+	$.ajax({
+		url : "trade.php",
+		type : "GET",
+		data : {trade:idnab},
+		success : function (data) {
+			reloadTrh();
+			swal(data);
+		}
+	});
 }
-function cancel(idnab){
-	$.get("trh.php",{cancel:idnab}).done(reloadTrh()); //to same jen cudlik Zrušiť
+function cancel(idnab){	 //to same jen cudlik Zrušiť
+	$.ajax({
+		url : "trade.php",
+		type : "GET",
+		data : {cancel:idnab},
+		success : function (data) {
+			reloadTrh();
+			swal(data);
+		}
+	});
 }
-function craft(idreceptu){
-	$.get("components/craft.php",{craft:idreceptu}).done(reloadVyroba()); //TODO tlacitko by melo refreshovat i inventar na crafting.php
+function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na crafting.php
+	$.ajax({
+		url : "craft.php",
+		type : "GET",
+		data : {craft:idreceptu},
+		success : function (data) {
+			reloadVyroba();
+			swal(data);
+		}
+	});
 }
 function reloadTrh(){ 
 	reloadNabidky();
@@ -103,7 +127,6 @@ function trziste(){
 			closeOnConfirm: false 
 			},
 			function(){
-				swal("Koupeno!", "Úspěšně jsi koupil něco.", "success"); 
 				obchodovanie(aktualniID);
 			});
 	});
@@ -121,7 +144,6 @@ function trziste(){
 			closeOnConfirm: false 
 			},
 			function(){
-				swal("Smazáno!", "Vaše nabídka byla úspěšně zrušena.", "success"); 
 				cancel(aktualniID);
 			});
 	});
