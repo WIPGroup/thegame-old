@@ -43,6 +43,12 @@ function reloadVyroba(){
 		success : function (data) {
 			$("#seznamvyrob").html(data);        //da se to do seznamuvyrob
 			console.log('reloadVyroba');
+			$('.casvyroby').each(function(){
+				if (parseInt($(this).html())<0){
+					$(this).html('0');
+					console.log('oprava ze zaporne hodnoty na 0');
+				}
+			});
 			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 		}
 	});
@@ -54,8 +60,6 @@ function snizeniTimeru(){
 		if (aktualniCas > 0){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
 		} else {
-			clearInterval(seznamVyrobyRefresh); 
-			console.log('clearIntervalusnizeniTimeru');
 			reloadVyroba();
 			return false;
 		}
