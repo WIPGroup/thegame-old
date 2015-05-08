@@ -44,7 +44,6 @@ include "admin/tvorbakuponu.php";
 				echo $zaznam['kod'].': '.$zaznam['obsah'].'<br>';
 			}
 			?>
-			<button type="submit" class="btn btn-primary btn-block">Vytvořit</button>
 		</div>
 	</div>
 </div>
