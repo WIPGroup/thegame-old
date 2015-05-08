@@ -1,3 +1,3 @@
-var timerRunning = false;
+var timerExists = false;
 $((getRefreshes())());
 $(enableRefresh());

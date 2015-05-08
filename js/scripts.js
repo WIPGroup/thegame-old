@@ -36,9 +36,8 @@ function reloadNabidky(){ //reload nabidek v trhu
 	});
 }
 function reloadVyroba(){
-	if (timerRunning == true){
+	if (timerExists == true){
 		clearInterval(seznamVyrobyRefresh);
-		timerRunning = false;
 	};
 	reloadInv();
 	$.ajax({
@@ -53,7 +52,7 @@ function reloadVyroba(){
 				}
 			});
 			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
-			timerRunning = true;
+			timerExists = true;
 		}
 	});
 }
@@ -64,6 +63,7 @@ function snizeniTimeru(){
 		if (aktualniCas > 0){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
 		} else {
+			clearInterval(seznamVyrobyRefresh);
 			reloadVyroba();
 			return false;
 		}
