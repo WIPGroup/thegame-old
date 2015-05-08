@@ -22,8 +22,8 @@ include '../vlastnictvi.php';
 			echo '<li class="list-group-item"><span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v <span class="casvyroby badge">'.($zaznam['hotovo']-time()).'</span>'.date('G:i:s j.n.Y', $zaznam['hotovo']);
 		} //Nasleduje priklad
 		?>
-		<li class="list-group-item" style="white-space: nowrap">
-			<table>
+		<li class="list-group-item">
+			<table style="width: 100%">
 				<tr>
 					<td>
 						<span class="label label-default">RAM</span> hotovo v 4:31:12 16.5.2015
