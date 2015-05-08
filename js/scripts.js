@@ -97,7 +97,7 @@ function cancel(idnab){	 //to same jen cudlik Zrušiť
 }
 function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na crafting.php
 	$.ajax({
-		url : "craft.php",
+		url : "components/craft.php",
 		type : "GET",
 		data : {craft:idreceptu},
 		success : function (data) {
