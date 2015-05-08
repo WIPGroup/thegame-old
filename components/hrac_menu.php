@@ -31,6 +31,8 @@
 	$(function(){
 		var branch = $(location).attr('pathname').split('/')[1];
 		$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
-		$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch);
+		setInterval(function(){
+			$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"?"+new Date().getTime());
+		},10000);
 	});
 </script>
