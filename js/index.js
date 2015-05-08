@@ -5,7 +5,7 @@ $(function() { //odeslani formulare s nabidkou
 			type: "GET",
 			url: "components/redeem.php",
 			success: function(data) {
-				reloadInv; //po odeslani se nacte interface
+				reloadInv(); //po odeslani se nacte interface
 				swal(data);
 			}
 		});
