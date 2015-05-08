@@ -44,11 +44,11 @@ function reloadVyroba(){
 			console.log('reloadVyroba');
 			clearInterval(seznamVyrobyRefresh); //zruseni predchoziho intervalu
 			console.log('clearIntervalureloadVyroba');
-			seznamVyrobyRefresh = setInterval(function(){reloadTimer()},1000);  //po nacteni se da timer
+			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 		}
 	});
 }
-function reloadTimer(){
+function snizeniTimeru(){
 	var aktualniCas; //deklarovani lokalni promenne aktualniCas, do ktere se uklada hodnota kazdeho timeru
 	$('.casvyroby').each(function(){
 		aktualniCas = $(this).html();
@@ -56,7 +56,7 @@ function reloadTimer(){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
 		} else {
 			clearInterval(seznamVyrobyRefresh); 
-			console.log('clearIntervalureloadTimer');
+			console.log('clearIntervalusnizeniTimeru');
 			reloadVyroba();
 			return false;
 		}

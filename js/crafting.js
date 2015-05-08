@@ -1,2 +1,3 @@
+var seznamVyrobyRefresh;
 $((getRefreshes())());
 $(enableRefresh());
