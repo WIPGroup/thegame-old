@@ -3,6 +3,9 @@
 		position: fixed
 	}
 }
+html {
+    overflow-y: scroll;
+}
 body {
 	background-color: #eee;
 	padding-top: 70px;
