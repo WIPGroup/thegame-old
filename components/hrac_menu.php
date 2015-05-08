@@ -3,8 +3,8 @@
 		<?php include 'components/autorefresh.php'; ?>
 	</li>
 	<li>
-		<a class="navbar-link" href='https://ci.gitlab.com/projects/2263?ref=master'>
-			<img src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
+		<a class="navbar-link" id="gitlaba" href='https://ci.gitlab.com/projects/2263?ref=master'>
+			<img id="gitlabimg" src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
 		</a>
 	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
@@ -27,3 +27,13 @@
 	</ul>
 </li>
 </ul>
+<script>
+	$(function(){
+		var branch = $(location).attr('pathname').split('/')[1];
+		$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
+		$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
+		setInterval(function(){
+			$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
+		},10000);
+	});
+</script>
