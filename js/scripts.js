@@ -37,7 +37,6 @@ function reloadNabidky(){ //reload nabidek v trhu
 }
 function reloadVyroba(){
 	reloadInv();
-	clearInterval(seznamVyrobyRefresh);
 	$.ajax({
 		url : "components/seznamvyrob.php",
 		success : function (data) {
