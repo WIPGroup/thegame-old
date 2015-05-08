@@ -9,7 +9,7 @@
 		</button>
 		<a class="navbar-brand" href="#"><img src="favicon.ico" style="display: inline" alt=""/>TheGame</a>
 	</div>
-	<div class="collapse navbar-collapse" id="main-nav">
+	<div class="collapse navbar-collapse" id="main-nav"><!--TODO: Dat classu active te zalozce, na ktere si, at uz pomoci php (asi slozite) nebo JS (asi jednodussi)-->
 		<ul class="nav navbar-nav">
 			<li>
 				<a href="index.php">Úvod</a>

@@ -40,7 +40,7 @@ include "admin/tvorbakuponu.php";
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
 				//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek)
-				//TODO: php: mozna by nebylo na skodu davat to do tabulky
+				//TODO: php: mozna by nebylo na skodu davat to do tabulky, dej sem while ktery to projde
 				echo $zaznam['kod'].': '.$zaznam['obsah'].'<br>';
 			}
 			?>

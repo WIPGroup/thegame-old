@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+<div class="col-xs-12"> //TODO: collapse
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h1 class="panel-title">Log</h1>
