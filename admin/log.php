@@ -3,7 +3,7 @@
 		<div class="panel-heading" data-toggle="collapse" href="#log">
 			<h1 class="panel-title">Log</h1>
 		</div>
-		<div class="panel-body">
+		<!--<div class="panel-body">
 			<p>
 				Měli bychom použít Labely:
 				<span class="label label-default">Default</span>
@@ -13,7 +13,7 @@
 				<span class="label label-warning">Warning</span>
 				<span class="label label-danger">Danger</span>
 			</p>
-		</div>
+		</div>-->
 		<div id="log" class="panel-collapse collapse" style="text-align: left">
 			<ul class="list-group">
 				<?php
