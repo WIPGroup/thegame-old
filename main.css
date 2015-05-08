@@ -4,12 +4,13 @@
 	}
 }
 body {
-	/*background-color: #eee;*/
+	background-color: #eee;
 	padding-top: 70px;
 	margin-left: auto;
-	margin-right: auto; /* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
-	max-width: 1200px;
+	margin-right: auto;
+	max-width: 1280px;/* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
 	text-align: center;
+	background-image: url("http://theawesomedaily.theawesomedaily.netdna-cdn.com/wp-content/uploads/2014/02/ZZyDYuc.jpg");
 }
 #item {
 	width: 52px;

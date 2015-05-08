@@ -11,7 +11,7 @@ if ($prihlasen)
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
-	echo '<div class="col-xs-12"><div class="panel panel-default"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
+	echo '<div class="col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
 	echo '<table class="table table-striped table-hover">';
 	echo '<thead><tr><th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Vyrobit</th></tr></thead><tbody>';
 

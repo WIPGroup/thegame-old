@@ -2,7 +2,7 @@
 if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissable col-lg-12"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Nesprávne meno alebo heslo!</div>';
 ?>
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-3">
-	<div class="login-panel panel panel-default">
+	<div class="login-panel panel panel-primary">
 		<div class="panel-heading">
 			<h2 class="panel-title">Prosím, prihlásťe sa</h2>
 		</div>
