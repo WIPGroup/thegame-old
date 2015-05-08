@@ -10,9 +10,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	$selectitems .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].'</option>'."\n";
 }
 ?>
-<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="inventar">
+<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12" id="inventar">
 </div>
-<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+<div class="col-lg-4 col-md-8 col-sm-7 col-xs-12">
 	<form id="nabidka">
 		<div class="form-group">
 			<div class="panel panel-default">
@@ -20,7 +20,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 					<h2 class="panel-title">Zadat objednávku:</h2>
 				</div>
 				<div class="panel-body">
-					<div class="input-group panel panel-primary col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: left">
+					<div class="input-group panel panel-primary col-xs-6" style="float: left">
 						<div class="panel-heading">Nabízím:</div>
 						<div class="panel-body">
 							<select name="nabizi" id="nabizi" class="form-control">
@@ -31,7 +31,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 							<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
 						</div>
 					</div>
-					<div class="input-group panel panel-primary col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="input-group panel panel-primary col-xs-6">
 						<div class="panel-heading">Hledám:</div>
 						<div class="panel-body">
 							<select name="chce" id="chce" class="form-control">
@@ -48,7 +48,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		</div>
 	</form>
 </div>
-<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 	<div class="panel panel-default" id="trziste">
 		<div class="panel-heading">
 			<h2 class="panel-title">Tržiště:</h2>
