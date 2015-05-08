@@ -1,12 +1,12 @@
+
+<?php
+session_start();
+include '../vlastnictvi.php';
+?>
 <div class="col-xs-9">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h1 class="panel-title">
-				<?php
-				include '../vlastnictvi.php';
-				echo 'Moje výroba';
-				?>
-			</h1>
+			<h1 class="panel-title">Moje výroba</h1>
 		</div>
 		<ul class="list-group" style="text-align: left">
 			<?php
