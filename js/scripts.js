@@ -130,7 +130,8 @@ function trziste(){
 	console.log('trziste');
 }
 function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat, tj reload Vsechno
-	switch($(location).attr('pathname').split('/')[2]){
+	var pathurl = $(location).attr('pathname').split('/');
+	switch(pathurl[pathurl.length-1]){
 		case '': //Fallthrough
 		case 'index.php':
 			return reloadInv;
