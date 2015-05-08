@@ -33,17 +33,28 @@ include "admin/tvorbakuponu.php";
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
+			<table>
+			<tr><th>Kód</th><th>Obsah</th></tr>
 			<?php
 			include "vlastnictvi.php";
+			//názvy věcí
+                        $dotaz = 'SELECT * FROM veci';
+                        $vysl = mysql_query($dotaz) or die(mysql_error($db));
+                        while ($zazn = mysql_fetch_array($vysl))
+                        {
+                                $veci[$zazn['idveci']] = $zazn['nazev'];
+                        }
 			$dotaz = 'SELECT * FROM kupony';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
 				//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek)
-				//TODO: php: mozna by nebylo na skodu davat to do tabulky
-				echo $zaznam['kod'].': '.$zaznam['obsah'].'<br>';
+				echo '<tr><td>'.$zaznam['kod'].'</td><td>';
+				//TODO: rozepsat jako názvy
+				echo $zaznam['obsah'].'</td></tr>';
 			}
 			?>
+			</table>
 		</div>
 	</div>
 </div>

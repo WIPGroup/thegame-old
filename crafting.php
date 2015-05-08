@@ -48,7 +48,7 @@ if ($prihlasen)
 				$splnuje = false;
 
 		if ($splnuje)
-			echo '<td><button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Tlačítko vyrobit</button></td>';
+			echo '<td><button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button></td>';
 		else
 			echo '<td><button class="btn btn-default" disabled></button> </td>';
 		echo '</tr>';
