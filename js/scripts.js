@@ -126,7 +126,7 @@ function trziste(){
 			});
 	});
 	$('#main').DataTable(); //todo Preklad
-	$('#moje').DataTable();
+	$('#moje').DataTable(); //todo pagination pri reloadu
 	console.log('trziste');
 }
 function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat, tj reload Vsechno
