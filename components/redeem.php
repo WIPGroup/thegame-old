@@ -1,5 +1,7 @@
 <?php
-require "vlastnictvi.php";
+session_start();
+require "../vlastnictvi.php";
+echo "hi";
 if (isset($_GET['kupon']))
 {
 	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower($_GET['kupon']).'"';
