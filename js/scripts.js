@@ -12,7 +12,7 @@ function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 	if (parts.length == 2) {
 		return parts.pop().split(";").shift();
 	} else {
-		return 0;
+		return 60000;
 	};
 }
 function reloadInv(){                //obnoveni inventare
@@ -177,7 +177,7 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 	var automaticRefresh;  //promenna k setInterval
 	$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold'); //prepnuti na spravny li od zacatku
 	var currentRefreshes=getRefreshes(); //ziskani funkce pro danou stranku
-	if (getCookie("aktualniInterval")>0){
+	if (getCookie("aktualniInterval")>=1000){
 		automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval")); //kdyz neni off, tak se nastavi interval
 	};
 	$('#refreshMenu li').click(function(){ //pri prepnuti intervalu
