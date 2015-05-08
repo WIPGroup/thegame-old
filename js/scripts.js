@@ -36,8 +36,8 @@ function reloadNabidky(){ //reload nabidek v trhu
 	});
 }
 function reloadVyroba(){
-	if (timerExists == true){
-		clearInterval(seznamVyrobyRefresh);
+	if (timerExists == true){ //ocharna pri prvnim loadnuti stranky
+		clearInterval(seznamVyrobyReload); //nejdriv se zrusi puvodni interval aby to nedelalo problemy
 		timerExists = false;
 	};
 	reloadInv();
@@ -52,11 +52,11 @@ function reloadVyroba(){
 					console.log('oprava ze zaporne hodnoty na 0');
 				}
 			});
-			if (timerExists == true){
-				clearInterval(seznamVyrobyRefresh);
+			if (timerExists == true){ //ochrana kdyz uzivatel moc rychle klika
+				clearInterval(seznamVyrobyReload);
 				timerExists = false;
 			};
-			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
+			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
 		}
 	});
@@ -74,13 +74,13 @@ function snizeniTimeru(){
 	});
 }
 function obchodovanie(idnab){
-	$.get( "trh.php", { trade: idnab } ).done(reloadTrh());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+	$.get("trh.php",{trade:idnab}).done(reloadTrh());  //pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 }
 function cancel(idnab){
-	$.get( "trh.php", { cancel: idnab } ).done(reloadTrh()); //to same jen cudlik Zrušiť
+	$.get("trh.php",{cancel:idnab}).done(reloadTrh()); //to same jen cudlik Zrušiť
 }
 function craft(idreceptu){
-	$.get( "components/craft.php", { craft: idreceptu } ).done(reloadVyroba()); //TODO tlacitko by melo refreshovat i inventar na crafting.php
+	$.get("components/craft.php",{craft:idreceptu}).done(reloadVyroba()); //TODO tlacitko by melo refreshovat i inventar na crafting.php
 }
 function reloadTrh(){ 
 	reloadNabidky();
