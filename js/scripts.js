@@ -37,10 +37,11 @@ function reloadNabidky(){ //reload nabidek v trhu
 }
 function reloadVyroba(){
 	reloadInv();
+	clearInterval(seznamVyrobyRefresh);
 	$.ajax({
 		url : "components/seznamvyrob.php",
 		success : function (data) {
-			$("#seznamvyrob").html(data);        //oda se to do seznamuvyrob
+			$("#seznamvyrob").html(data);        //da se to do seznamuvyrob
 			console.log('reloadVyroba');
 			seznamVyrobyRefresh = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 		}
