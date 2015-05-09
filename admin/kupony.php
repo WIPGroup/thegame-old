@@ -46,10 +46,12 @@ include "admin/tvorbakuponu.php";
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
-				//TODO: hrml/css guru: nějak hezky to pozarovnávat (víc na 1 řádek)
 				echo '<tr><td>'.$zaznam['kod'].'</td><td>';
-				//TODO: rozepsat jako názvy
-				echo $zaznam['obsah'].'</td></tr>';
+				$obsah = explode(';', $zaznam['obsah']);
+				$pocveci = count($obsah);
+				for ($i = 0; $i < $pocveci; $i++)
+					if ($obsah[$i] > 0)
+						echo $veci[$i].'('.$obsah[$i].') ';
 			}
 			?>
 			</table>

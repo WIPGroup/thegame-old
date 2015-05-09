@@ -19,25 +19,23 @@ include '../vlastnictvi.php';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zaznam = mysql_fetch_array($vysledek))
 		{
-			echo '<li class="list-group-item"><span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v <span class="casvyroby badge">'.($zaznam['hotovo']-time()).'</span>'.date('G:i:s j.n.Y', $zaznam['hotovo']);
-		} //Nasleduje priklad
+			echo '<li class="list-group-item">';
+			echo '	<table style="width: 100%">';
+			echo '		<tr>';
+			echo '			<td style="width: 250px; text-align: left">';
+			echo '				<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
+			echo '			</td>';
+			echo '			<td>';
+			echo '				<div class="progress">';
+			echo '					<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
+			echo '				</div>';
+			echo '			</td>';
+			echo '			<td style="width: 75px; text-align: right">';
+			echo '				<span class="casvyroby badge">zbývá '.($zaznam['hotovo'] - time ()).' sekund</span>';
+			echo '			</td>';
+			echo '		</tr>';
+			echo '	</table></li>';
+		}
 		?>
-		<li class="list-group-item">
-			<table style="width: 100%">
-				<tr>
-					<td style="width: 250px; text-align: left">
-						<span class="label label-default">RAM</span> hotovo v 4:31:12 16.5.2015
-					</td>
-					<td>
-						<div class="progress">
-							<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 45%"></div>
-						</div>
-					</td>
-					<td style="width: 75px; text-align: right">
-						<span class="casvyroby badge">632785</span>
-					</td>
-				</tr>
-			</table>
-		</li>
 	</ul>
 </div>
