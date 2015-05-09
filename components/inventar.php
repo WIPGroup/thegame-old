@@ -8,7 +8,7 @@ include "updatevyrob.php";
 		<h1 class="panel-title">Inventář</h1>
 	</div>
 	<div id="inv" class="panel-collapse collapse in" style="text-align: left">
-		<ul class="list-group" style="text-align: left">
+		<ul id="items" class="list-group" style="text-align: left">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -21,12 +21,10 @@ include "updatevyrob.php";
 </div>
 <script>
 $(function(){
-	$(".list-group-item").mouseenter(function(){
-		$(this).toggleClass("animate");
-		$(this).toggleClass("hinge");
+	$( "#items li" ).mouseenter(function(){
+		$(this).addClass("animate hinge");
 	}).mouseleave(function(){
-		$(this).toggleClass("animate");
-		$(this).toggleClass("hinge");
+		$(this).removeClass("animate hinge");
 	});
 });
 </script>
