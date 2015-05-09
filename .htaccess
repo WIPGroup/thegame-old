@@ -1,3 +1,7 @@
 <files *.*>
 SetOutputFilter DEFLATE
 </files>
+<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf|swf|mov|mp3|wmv|ppt)$">
+ExpiresDefault A3600
+Header append Cache-Control "public"
+</filesMatch>
