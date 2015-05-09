@@ -19,3 +19,14 @@ include "updatevyrob.php";
 		</ul>
 	</div>
 </div>
+<script>
+$(function(){
+	$(".list-group-item").mouseenter(function(){
+		$(this).toggleClass("animate");
+		$(this).toggleClass("hinge");
+	}).mouseleave(function(){
+		$(this).toggleClass("animate");
+		$(this).toggleClass("hinge");
+	});
+});
+</script>
