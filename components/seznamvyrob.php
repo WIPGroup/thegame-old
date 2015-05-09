@@ -31,7 +31,7 @@ include '../vlastnictvi.php';
 			echo '				</div>';
 			echo '			</td>';
 			echo '			<td style="width: 75px; text-align: right">';
-			echo '				<span class="casvyroby badge">zbývá '.($zaznam['hotovo'] - time ()).' sekund</span>';
+			echo '				<span class="badge">zbývá <span class="casvyroby">'.($zaznam['hotovo'] - time ()).'</span> sekund</span>';
 			echo '			</td>';
 			echo '		</tr>';
 			echo '	</table></li>';
