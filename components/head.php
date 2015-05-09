@@ -34,7 +34,7 @@
 <body>
 <script>
 $(function(){
-	$( "*" ).mouseenter(function(){
+	$( "li, td, button" ).mouseenter(function(){
 		$(this).addClass("animated hinge");
 	}).mouseleave(function(){});
 });
