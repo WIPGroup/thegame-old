@@ -5,9 +5,6 @@
 	<title>TheGame</title>
 	<!-- jQuery -->
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- jQuery UI -->
-	<link rel="stylesheet" href="bower_components/jquery-ui/themes/start/jquery-ui.min.css">
-	<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 	<!-- Pace -->
 	<link href="bower_components/pace/themes/black/pace-theme-minimal.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.js"></script>
@@ -34,6 +31,12 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="js/scripts.js"></script>
 </head>
-<body>
-	<!-- 	Kdyby nahodou :D
-	<script>	$(function(){	$( "li, td, button, input, select" ).mouseenter(function(){	$(this).addClass("animated hinge");}).mouseleave(function(){});});</script>-->
+<body><!-- Kdyby nahodou
+<script>
+$(function(){
+	$( "li, td, button, input, select" ).mouseenter(function(){
+		$(this).addClass("animated hinge");
+	}).mouseleave(function(){});
+});
+</script>
+-->
