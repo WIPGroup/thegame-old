@@ -24,6 +24,8 @@
 	<!-- SweetAlert -->
 	<script src="bower_components/sweetalert/lib/sweet-alert.min.js"></script>
 	<link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="bower_components\animate.css\animate.min.css">
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="shortcut icon" href="favicon.ico">

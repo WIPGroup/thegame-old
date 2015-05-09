@@ -1,4 +1,4 @@
-<div class="panel panel-warning">
+<div class="panel panel-warning animated infinite pulse">
 	<div class="panel-heading">
 		<h1 class="panel-title">Oznameni</h1>
 	</div>
