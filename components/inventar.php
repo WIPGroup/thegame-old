@@ -22,9 +22,9 @@ include "updatevyrob.php";
 <script>
 $(function(){
 	$( "#items li" ).mouseenter(function(){
-		$(this).addClass("animate hinge");
+		$(this).addClass("animated hinge");
 	}).mouseleave(function(){
-		$(this).removeClass("animate hinge");
+		$(this).removeClass("animated hinge");
 	});
 });
 </script>
