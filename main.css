@@ -13,7 +13,7 @@ body {
 	margin-right: auto;
 	max-width: 1280px;/* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
 	text-align: center;
-	/*background-image: url("http://cdn.superbwallpapers.com/wallpapers/meme/doge-27300-1920x1200.jpg"); POKUD CHCETE POZADI, TAK ZAJISTETE CACHOVANI*/
+	background-image: url("favicon.ico"); /* pozadi se nacita dlouho, proto ho v devu vynechame */
 }
 #item {
 	width: 52px;
