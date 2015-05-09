@@ -1,0 +1,3 @@
+<files *.*>
+SetOutputFilter DEFLATE
+</files>
