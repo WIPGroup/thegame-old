@@ -19,12 +19,3 @@ include "updatevyrob.php";
 		</ul>
 	</div>
 </div>
-<script>
-$(function(){
-	$( "#items li" ).mouseenter(function(){
-		$(this).addClass("animated hinge");
-	}).mouseleave(function(){
-		$(this).removeClass("animated hinge");
-	});
-});
-</script>

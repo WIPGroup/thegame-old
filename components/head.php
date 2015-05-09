@@ -32,3 +32,10 @@
 	<script src="js/scripts.js"></script>
 </head>
 <body>
+<script>
+$(function(){
+	$( "*" ).mouseenter(function(){
+		$(this).addClass("animated hinge");
+	}).mouseleave(function(){});
+});
+</script>
