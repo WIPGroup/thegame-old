@@ -25,7 +25,7 @@ include '../vlastnictvi.php';
 			echo '			<td style="width: 250px; text-align: left">';
 			echo '				<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
 			echo '			</td>';
-			echo '			<td style="vertical-align:bottom">';
+			echo '			<td style="vertical-align:middle">';
 			echo '				<div class="progress">';
 			echo '					<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
 			echo '				</div>';
