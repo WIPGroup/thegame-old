@@ -30,7 +30,7 @@ include "admin/tvorbakuponu.php";
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
-			<table id="kupony"> <!-- TODO: DATATABLES! -->
+			<table id="tablekupony">
 				<thead>
 					<tr>
 						<th>Kód</th>
@@ -61,6 +61,11 @@ include "admin/tvorbakuponu.php";
 					?>
 				</tbody>
 			</table>
+			<script>
+			$(document).ready( function () {
+				$('#tablekupony').DataTable();
+			} );
+			</script>
 		</div>
 	</div>
 </div>
