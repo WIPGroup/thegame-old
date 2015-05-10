@@ -58,6 +58,11 @@ function reloadVyroba(){
 			};
 			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
+			$("div[role='progressbar']").each(function(){
+				$(this).animate({
+					width:"100%"	
+				},$(this).data('zbyva'));
+			});
 		}
 	});
 }
