@@ -47,3 +47,7 @@ th {
 #nabidky input{
 	width:75px;
 }
+#seznamvyrob .progress-bar{
+	-webkit-transition:none !important;
+	transition:none !important;
+}
