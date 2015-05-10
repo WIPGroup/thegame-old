@@ -6,7 +6,7 @@
 	<!-- jQuery -->
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- Pace -->
-	<link href="bower_components/pace/themes/black/pace-theme-minimal.css" rel="stylesheet" />
+	<link href="bower_components/pace/themes/green/pace-theme-minimal.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.js"></script>
 	<!-- Offline -->
 	<link href="bower_components/offline/themes/offline-theme-slide.css" rel="stylesheet" />
