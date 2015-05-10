@@ -59,17 +59,9 @@ function reloadVyroba(){
 			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
 			$("div[role='progressbar']").each(function(){
-		//		$(this).animate({
-		//			width:"100%"	
-		//		},($(this).data('zbyva')*1000));
-				$(this).css({
-					WebkitTransition : 'width '+$(this).data('zbyva')+'s linear',
-					MozTransition    : 'width '+$(this).data('zbyva')+'s linear',
-					MsTransition     : 'width '+$(this).data('zbyva')+'s linear',
-					OTransition      : 'width '+$(this).data('zbyva')+'s linear',
-					transition       : 'width '+$(this).data('zbyva')+'s linear',
-					width			 : '100%'
-				});
+				$(this).animate({
+					width:"100%"	
+				},($(this).data('zbyva')*1000));
 				console.log($(this).data('zbyva')*1000);
 			});
 		}
