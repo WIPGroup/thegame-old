@@ -85,9 +85,9 @@ function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se po
 		data : {trade:idnab},
 		success : function (data) {
 			reloadTrh();
-		//	if (data!=''){
+			if (data!=''){
 				swal(data);
-		//	};
+			};
 		}
 	});
 }
@@ -98,9 +98,9 @@ function cancel(idnab){	 //to same jen cudlik Zrušiť
 		data : {cancel:idnab},
 		success : function (data) {
 			reloadTrh();
-	//		if (data!=''){
+			if (data!=''){
 				swal(data);
-	//		};
+			};
 		}
 	});
 }
@@ -111,9 +111,9 @@ function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na cr
 		data : {craft:idreceptu},
 		success : function (data) {
 			reloadVyroba();
-	//		if (data!=''){
+			if (data!=''){
 				swal(data);
-	//		};
+			};
 		}
 	});
 }
