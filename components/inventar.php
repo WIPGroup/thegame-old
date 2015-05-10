@@ -11,7 +11,7 @@ include "updatevyrob.php";
 		<ul id="items" class="list-group" style="text-align: left">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
-			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+			$vysledek = mysql_query($dotaz) or die(mysql_error($db)); //TODO schovat ty, kterych mame 0
 			while ($zaznam = mysql_fetch_array($vysledek)) {
 				echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> '.$zaznam['nazev'].'</li>';
 			}
