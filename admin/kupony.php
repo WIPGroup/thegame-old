@@ -30,29 +30,36 @@ include "admin/tvorbakuponu.php";
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
-			<table> <!-- TODO: DATATABLES! -->
-				<tr><th>Kód</th><th>Obsah</th></tr>
-				<?php
-				include "vlastnictvi.php";
-				//názvy věcí
-				$dotaz = 'SELECT * FROM veci';
-				$vysl = mysql_query($dotaz) or die(mysql_error($db));
-				while ($zazn = mysql_fetch_array($vysl))
-				{
-					$veci[$zazn['idveci']] = $zazn['nazev'];
-				}
-				$dotaz = 'SELECT * FROM kupony';
-				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-				while ($zaznam = mysql_fetch_array($vysledek))
-				{
-					echo '<tr><td>'.$zaznam['kod'].'</td><td>';
-					$obsah = explode(';', $zaznam['obsah']);
-					$pocveci = count($obsah);
-					for ($i = 0; $i < $pocveci; $i++)
-					if ($obsah[$i] > 0)
-					echo $veci[$i].'('.$obsah[$i].') ';
-				}
-				?>
+			<table id="kupony"> <!-- TODO: DATATABLES! -->
+				<thead>
+					<tr>
+						<th>Kód</th>
+						<th>Obsah</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					include "vlastnictvi.php";
+					//názvy věcí
+					$dotaz = 'SELECT * FROM veci';
+					$vysl = mysql_query($dotaz) or die(mysql_error($db));
+					while ($zazn = mysql_fetch_array($vysl))
+					{
+						$veci[$zazn['idveci']] = $zazn['nazev'];
+					}
+					$dotaz = 'SELECT * FROM kupony';
+					$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+					while ($zaznam = mysql_fetch_array($vysledek))
+					{
+						echo '<tr><td>'.$zaznam['kod'].'</td><td>';
+						$obsah = explode(';', $zaznam['obsah']);
+						$pocveci = count($obsah);
+						for ($i = 0; $i < $pocveci; $i++)
+						if ($obsah[$i] > 0)
+						echo $veci[$i].'('.$obsah[$i].')</td></tr>';
+					}
+					?>
+				</tbody>
 			</table>
 		</div>
 	</div>
