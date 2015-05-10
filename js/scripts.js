@@ -61,8 +61,9 @@ function reloadVyroba(){
 			$("div[role='progressbar']").each(function(){
 				$(this).animate({
 					width:"100%"	
-				},$(this).data('zbyva')*1000);
+				},($(this).data('zbyva')*1000));
 			});
+			console.log($(this).data('zbyva')*1000);
 		}
 	});
 }
