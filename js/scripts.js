@@ -67,8 +67,12 @@ function reloadVyroba(){
 					WebkitTransition : 'width '+$(this).data('zbyva')+'s linear',
 					transition		 : 'width '+$(this).data('zbyva')+'s linear'
 				});
-				$(this).css("width":$(this).data('defaultwidth'));
-				$(this).css("width":"100%");
+				$(this).css({
+					"width":$(this).data('defaultwidth')
+				});
+				$(this).css({
+					"width":"100%"
+				});
 			});
 		}
 	});
