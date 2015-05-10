@@ -62,8 +62,8 @@ function reloadVyroba(){
 				$(this).animate({
 					width:"100%"	
 				},($(this).data('zbyva')*1000));
+				console.log($(this).data('zbyva')*1000);
 			});
-			console.log($(this).data('zbyva')*1000);
 		}
 	});
 }
