@@ -1,3 +1,3 @@
 var timerExists = false;
-$((getRefreshes())());
+$(reloadVyroba());
 $(enableRefresh());

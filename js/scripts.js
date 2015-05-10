@@ -173,13 +173,13 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 			return reloadTrh;
 			break;
 		case 'crafting.php':
-			return reloadVyroba;
+			return reloadInv;
 			break;
 	};
 }
 function enableRefresh(){ //k funkcnosti autorefreshe
 	console.log('enableRefresh');
-/*	var automaticRefresh;  //promenna k setInterval
+	var automaticRefresh;  //promenna k setInterval
 	$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','bold'); //prepnuti na spravny li od zacatku
 	var currentRefreshes=getRefreshes(); //ziskani funkce pro danou stranku
 	if (getCookie("aktualniInterval")>=1000){
@@ -194,9 +194,9 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 		if (getCookie("aktualniInterval")>0){
 			automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval")); //pokud neni off, nastavi se interval
 		};
-	}); */
+	}); 
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
-		(getRefreshes())(); //refresh tlacitko
+		(currentRefreshes)(); //refresh tlacitko
 	}); 
 }

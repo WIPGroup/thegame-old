@@ -12,5 +12,5 @@ $(function() { //odeslani formulare s nabidkou
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 });
-$((getRefreshes())());
+$(reloadInv());
 $(enableRefresh());

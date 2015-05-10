@@ -12,5 +12,5 @@ $(function() { //odeslani formulare s nabidkou
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 });
-$((getRefreshes())()); //po nacteni stranky se nacte interface, easy 
+$(reloadTrh()); //po nacteni stranky se nacte interface, easy 
 $(enableRefresh());
