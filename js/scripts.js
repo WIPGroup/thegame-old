@@ -197,6 +197,6 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 	}); */
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
-		(currentRefreshes)(); //refresh tlacitko
+		(getRefreshes())(); //refresh tlacitko
 	}); 
 }
