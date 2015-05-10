@@ -68,7 +68,7 @@ function reloadVyroba(){
 					transition		 : 'width '+$(this).data('zbyva')+'s linear'
 				});
 				$(this).css({
-					"width":$(this).data('defaultwidth')
+					"width"
 				});
 				$(this).css({
 					"width":"100%"

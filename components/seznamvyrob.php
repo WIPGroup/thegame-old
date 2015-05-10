@@ -27,7 +27,7 @@ include '../vlastnictvi.php';
 			echo '			</td>';
 			echo '			<td style="vertical-align:middle">'; //TODO zarovnat na střed
 			echo '				<div class="progress">';
-			echo '					<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" role="progressbar" data-defaultwidth="'.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
+			echo '					<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
 			echo '				</div>';
 			echo '			</td>';
 			echo '			<td style="width: 100px; text-align: right">';
