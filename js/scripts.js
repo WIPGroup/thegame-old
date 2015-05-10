@@ -59,20 +59,10 @@ function reloadVyroba(){
 			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
 			$("div[role='progressbar']").each(function(){
-	//			$(this).animate({
-		//			width:"100%"	
-		//		},($(this).data('zbyva')*1000),"linear");
-		//		console.log($(this).data('zbyva')*1000);
-				$(this).css({
-					WebkitTransition : 'width '+$(this).data('zbyva')+'s linear',
-					transition		 : 'width '+$(this).data('zbyva')+'s linear'
-				});
-				$(this).css({
-					"width":"0%"
-				});
-				$(this).css({
-					"width":"100%"
-				});
+				$(this).animate({
+					width:"100%"	
+				},($(this).data('zbyva')*1000),"linear");
+				console.log($(this).data('zbyva')*1000);
 			});
 		}
 	});
