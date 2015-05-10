@@ -15,7 +15,6 @@ include "admin/tvorbakuponu.php";
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
-					//TODO: html/css guru: mozna by to chtelo inline
 					echo '<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><div class="form-group"><label><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img> '.$zaznam['nazev'].'<input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" value="0" class="form-control" placeholder="'.$zaznam['nazev'].'"></label></div></div>';
 				}
 				?>
@@ -31,29 +30,29 @@ include "admin/tvorbakuponu.php";
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
-			<table>
-			<tr><th>Kód</th><th>Obsah</th></tr>
-			<?php
-			include "vlastnictvi.php";
-			//názvy věcí
-                        $dotaz = 'SELECT * FROM veci';
-                        $vysl = mysql_query($dotaz) or die(mysql_error($db));
-                        while ($zazn = mysql_fetch_array($vysl))
-                        {
-                                $veci[$zazn['idveci']] = $zazn['nazev'];
-                        }
-			$dotaz = 'SELECT * FROM kupony';
-			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-			while ($zaznam = mysql_fetch_array($vysledek))
-			{
-				echo '<tr><td>'.$zaznam['kod'].'</td><td>';
-				$obsah = explode(';', $zaznam['obsah']);
-				$pocveci = count($obsah);
-				for ($i = 0; $i < $pocveci; $i++)
+			<table> <!-- TODO: DATATABLES! -->
+				<tr><th>Kód</th><th>Obsah</th></tr>
+				<?php
+				include "vlastnictvi.php";
+				//názvy věcí
+				$dotaz = 'SELECT * FROM veci';
+				$vysl = mysql_query($dotaz) or die(mysql_error($db));
+				while ($zazn = mysql_fetch_array($vysl))
+				{
+					$veci[$zazn['idveci']] = $zazn['nazev'];
+				}
+				$dotaz = 'SELECT * FROM kupony';
+				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+				while ($zaznam = mysql_fetch_array($vysledek))
+				{
+					echo '<tr><td>'.$zaznam['kod'].'</td><td>';
+					$obsah = explode(';', $zaznam['obsah']);
+					$pocveci = count($obsah);
+					for ($i = 0; $i < $pocveci; $i++)
 					if ($obsah[$i] > 0)
-						echo $veci[$i].'('.$obsah[$i].') ';
-			}
-			?>
+					echo $veci[$i].'('.$obsah[$i].') ';
+				}
+				?>
 			</table>
 		</div>
 	</div>
