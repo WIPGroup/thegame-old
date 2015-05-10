@@ -4,9 +4,9 @@ require "components/head.php";
 require "dblogin.php";
 require "login.php";
 include "components/navbar.php";
-include "vlastnictvi.php";
 if ($prihlasen)
 {
+	include "vlastnictvi.php";
 	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';	//TODO: lépe rozmístit na stránce
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';

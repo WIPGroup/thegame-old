@@ -51,7 +51,7 @@ if (isset($_GET['trade']))
 	echo "Nabídka už neexistuje.";
 }
 //vytvořit nabídku
-else if (isset($_GET['mnoznabizi'])) //TODO: #42 vytvoreni nabidek stejne za stejne
+else if (isset($_GET['mnoznabizi']))
 {
 	if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
@@ -77,7 +77,7 @@ else if (isset($_GET['mnoznabizi'])) //TODO: #42 vytvoreni nabidek stejne za ste
 		echo 'Vytvořils nabídku '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].').';
 	}
 	else
-	echo "Nepodařilo se vytvořit nabídku.";
+		echo "Nemáš dost surovin na vytvoření nabídky.";
 }
 //zrušit nabídku
 else if (isset($_GET['cancel']))
@@ -106,7 +106,7 @@ else if (isset($_GET['cancel']))
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].')")';
 		mysql_query($dotaz);
 
-		echo ', "Zrušils svou nabídku '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].').';
+		echo 'Zrušils svou nabídku '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].').';
 	}
 	else
 	echo "Zrušení se nepodařilo.";

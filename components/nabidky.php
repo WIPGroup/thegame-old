@@ -2,7 +2,7 @@
 session_start();
 
 include "../vlastnictvi.php";
-include "../trade.php";
+//include "../trade.php";
 
 $dotaz = 'SELECT * FROM veci';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));

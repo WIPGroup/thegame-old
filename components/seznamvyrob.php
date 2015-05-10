@@ -19,22 +19,15 @@ include '../vlastnictvi.php';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zaznam = mysql_fetch_array($vysledek))
 		{
-			echo '<li class="list-group-item">';
-			echo '	<table style="width: 100%">';
-			echo '		<tr>';
-			echo '			<td style="width: 250px; text-align: left">';
-			echo '				<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
-			echo '			</td>';
-			echo '			<td style="vertical-align:middle">'; //TODO zarovnat na střed
-			echo '				<div class="progress">';
-			echo '					<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
-			echo '				</div>';
-			echo '			</td>';
-			echo '			<td style="width: 100px; text-align: right">';
-			echo '				<span class="badge">zbývá <span class="casvyroby">'.($zaznam['hotovo'] - time ()).'</span> sekund</span>';
-			echo '			</td>';
-			echo '		</tr>';
-			echo '	</table></li>';
+			echo '<li class="list-group-item"><table style="width: 100%"><tr>';
+			echo '<td style="width: 250px; text-align: left">';
+			echo '<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
+			echo '</td><td style="vertical-align:middle">'; //TODO zarovnat na střed
+			echo '<div class="progress">';
+			echo '<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
+			echo '</div></td><td style="width: 150px; text-align: right">';
+			echo '<span class="badge">zbývá <span class="casvyroby">'.($zaznam['hotovo'] - time ()).'</span> sekund</span>';
+			echo '</td></tr></table></li>';
 		}
 		?>
 	</ul>
