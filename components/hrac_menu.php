@@ -9,7 +9,7 @@
 	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
 	<li class="dropdown">
-		<a href="profile/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<a href="profile/" >
 			<?php
 			$dotaz = 'SELECT jmeno FROM hraci WHERE idhrace='.$_SESSION['hrac'];
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -28,12 +28,12 @@
 </li>
 </ul>
 <script>
-	$(function(){
-		var branch = $(location).attr('pathname').split('/')[1];
-		$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
+$(function(){
+	var branch = $(location).attr('pathname').split('/')[1];
+	$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
+	$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
+	setInterval(function(){
 		$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
-		setInterval(function(){
-			$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
-		},10000);
-	});
+	},10000);
+});
 </script>
