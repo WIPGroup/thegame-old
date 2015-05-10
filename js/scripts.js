@@ -135,7 +135,7 @@ function trziste(){
 			confirmButtonColor: "#DD6B55",
 			cancelButtonText: "Ne, zavřít",
 			confirmButtonText: "Ano, chci koupit nabídku",
-			closeOnConfirm: false 
+			closeOnConfirm: true 
 			},
 			function(){
 				obchodovanie(aktualniID);
@@ -152,7 +152,7 @@ function trziste(){
 			confirmButtonColor: "#DD6B55",
 			cancelButtonText: "Ne, zavřít",
 			confirmButtonText: "Ano, chci zrušit nabídku",
-			closeOnConfirm: false 
+			closeOnConfirm: true 
 			},
 			function(){
 				cancel(aktualniID);
