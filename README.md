@@ -1,4 +1,4 @@
-Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)
+Master: [![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master) [![Dependency Status](https://gemnasium.com/eeb803c626900dda77f0bf52e69e5e91.svg)](https://gemnasium.com/2267d5b2ddc964c4f42201b4c9265eb6)
 # Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
