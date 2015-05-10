@@ -53,7 +53,9 @@ if (isset($_GET['trade']))
 //vytvořit nabídku
 else if (isset($_GET['mnoznabizi']))
 {
-	if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
+	if ($_GET['nabizi'] == $_GET['chce'])
+		echo "Nepřijde ti to jako blbost, nabízet stejnou věc za stejnou? (pokud ne, kontaktuj admina)";
+	else if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
 		$vlastnictvi[$_GET['nabizi']] -= $_GET['mnoznabizi'];
 
