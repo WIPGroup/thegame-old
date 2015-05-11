@@ -42,7 +42,7 @@ if ($prihlasen)
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
 		
-		echo '<td><input type="number" name="pocet" id="pocet" value="1" min="1" max="10000">';
+		echo '<td><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000">';
 		
 		$splnuje = true;
 		for ($i = 0; $i < $pocsurovin; $i++)
