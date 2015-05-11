@@ -1,9 +1,9 @@
 box: wercker/php
 build:
-	steps:
-		- script:
-				name: Update packages
-				code: |
-					npm install
-					npm install bower -g
-					bower update -V -p --config.interactive=false
+  steps:
+    - script:
+        name: Update packages
+        code: |-
+          npm install
+          npm install bower -g
+          bower update -V -p --config.interactive=false
