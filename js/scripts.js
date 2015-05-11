@@ -106,6 +106,7 @@ function cancel(idnab){	 //to same jen cudlik Zrušiť
 }
 function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na crafting.php
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
+	console.log(kolikrat);
 	$.ajax({
 		url : "components/craft.php",
 		type : "GET",
