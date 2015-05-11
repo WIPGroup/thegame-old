@@ -24,7 +24,7 @@ include '../vlastnictvi.php';
 			echo '<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
 			echo '</td><td>';
 			echo '<div class="progress" style="margin-top:auto; margin-bottom:auto">';
-			echo '<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
+			echo '<div class="progress-bar progress-bar-striped active" data-zbyva="'.($zaznam['hotovo'] - time ()).'" data-celkem="'.$zaznam['doba'].'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
 			echo '</div></td><td style="width: 150px; text-align: right">';
 			echo '<span class="badge">zbývá <span class="casvyroby">'.($zaznam['hotovo'] - time ()).'</span> sekund</span>';
 			echo '</td></tr></table></li>';

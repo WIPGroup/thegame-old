@@ -73,12 +73,8 @@ function snizeniTimeru(){
 		}
 	});
 	$("div[role='progressbar']").each(function(){
-		var zbyvajici = $(this).data("zbyva");
-		var sirka = $(this).width();
-		var sirkaOtce = $(this).offsetParent().width();
-		var percent = ((sirka/sirkaOtce)+(1/zbyvajici))*100;
-		console.log(percent);
-		$(this).css("width",percent+"%");
+		var sirka = (1-($(this).data('zbyva')/$(this).data('celkem')))*100;
+		$(this).css("width",sirka+"%");
 	});
 }
 function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
