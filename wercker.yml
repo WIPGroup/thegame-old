@@ -1,16 +1,15 @@
 box: wercker/php
-# Build definition
 build:
-	# The steps that will be executed on build
 	steps:
-		# A custom script step, name value is used in the UI
-		# and the code value contains the command that get executed
 		- script:
-				name: echo php information
-				code: |
-					echo "php version $(php --version) running"
-					echo "from location $(which php)"
-		# Add more steps here:
-		#- script:
-		#    name: run unit tests
-		#    code: phpunit
+				name: Install npm
+				code: |-
+					npm install
+		- script:
+				name: Install bower
+				code: |-
+					npm install bower -g
+		- script:
+				name: install dependencies
+				code: |-
+						bower update -V -p --config.interactive=false
