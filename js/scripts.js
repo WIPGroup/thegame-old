@@ -77,6 +77,13 @@ function snizeniTimeru(){
 			return false;
 		}
 	});
+	$("div[role='progressbar']").each(function(){
+		var sirkacss = $(this).css("width");
+		var sirkawidth = $(this).width();
+		console.log("css"+sirkacss);
+		console.log("width"+sirkawidth);
+		//$(this).css("width",sirka);
+	});
 }
 function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 	$.ajax({
