@@ -67,7 +67,7 @@ function snizeniTimeru(){
 		aktualniCas = $(this).html();
 		if (aktualniCas > 0){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
-			$(this).data('zbyva',(parseInt($(this).data('zbyva'))-1));
+			$(this).data().zbyva -= 1;
 		} else {
 			reloadVyroba();
 			return false;
