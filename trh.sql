@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Stř 06. kvě 2015, 21:40
+-- Vytvořeno: Pon 11. kvě 2015, 15:28
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '246;262;69;137;0;0;0;0;0;0;34;0'),
+(1, 'root', 'root', '1234;1179;3;965;0;0;0;0;0;8;47;0'),
 (2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0'),
-(3, 'test2', 'test2', '647;341;356;2;0;0;0;0;0;0;0;0');
+(3, 'test2', 'test2', '647;341;376;2;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
 
@@ -49,19 +49,20 @@ INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `kupony` (
-`idkuponu` int(11) NOT NULL,
   `kod` varchar(16) NOT NULL,
   `obsah` varchar(500) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Vypisuji data pro tabulku `kupony`
 --
 
-INSERT INTO `kupony` (`idkuponu`, `kod`, `obsah`) VALUES
-(1, 'f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0'),
-(9, 'f5g4df6a', '10;0;0;0;0;0;0;0;0;0;0;0'),
-(10, 'f5g4df6b', '10;0;0;0;0;0;0;0;0;0;0;0');
+INSERT INTO `kupony` (`kod`, `obsah`) VALUES
+('dnsmbfg1', '40;0;0;0;0;0;0;0;0;0;0;0'),
+('f5g4df6a', '10;0;0;0;0;0;0;0;0;0;0;0'),
+('f5g4df6b', '10;0;0;0;0;0;0;0;0;0;0;0'),
+('f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0'),
+('v40ol2yt', '40;0;0;0;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,60 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1430940404, 1, 'Použit kupón f5g8af6h (0(10) '),
 (1430941014, 1, 'Použit kupón f5g8df6h ('),
 (1430941092, 1, 'Použit kupón f5g4df6h (Money() )'),
-(1430941135, 1, 'Použit kupón f5g4df6c (Money(10) )');
+(1430941135, 1, 'Použit kupón f5g4df6c (Money(10) )'),
+(1431003646, 1, 'Uskutečněn nákup Gold(15) za Iron(10) od test2'),
+(1431003685, 1, 'Použit kupón 6oomv3ty (Iron(100) )'),
+(1431107324, 1, 'Uskutečněn nákup Gold(15) za Iron(10) od test2'),
+(1431202222, 1, 'Spuštěna výroba RAM'),
+(1431202232, 1, 'Dokončena výroba RAM'),
+(1431202242, 1, 'Spuštěna výroba RAM'),
+(1431202252, 1, 'Dokončena výroba RAM'),
+(1431202313, 1, 'Spuštěna výroba RAM'),
+(1431202323, 1, 'Dokončena výroba RAM'),
+(1431202423, 1, 'Spuštěna výroba RAM'),
+(1431202433, 1, 'Dokončena výroba RAM'),
+(1431202500, 1, 'Spuštěna výroba PSU'),
+(1431202599, 1, 'Dokončena výroba PSU'),
+(1431202777, 1, 'Spuštěna výroba PSU'),
+(1431202881, 1, 'Dokončena výroba PSU'),
+(1431204503, 1, 'Spuštěna výroba PSU'),
+(1431204607, 1, 'Dokončena výroba PSU'),
+(1431245356, 1, 'Spuštěna výroba PSU'),
+(1431245419, 1, 'Spuštěna výroba RAM'),
+(1431245430, 1, 'Dokončena výroba RAM'),
+(1431245438, 1, 'Spuštěna výroba PSU'),
+(1431245460, 1, 'Dokončena výroba PSU'),
+(1431245542, 1, 'Dokončena výroba PSU'),
+(1431245596, 1, 'Spuštěna výroba RAM'),
+(1431245607, 1, 'Dokončena výroba RAM'),
+(1431248734, 1, 'Spuštěna výroba PSU'),
+(1431248838, 1, 'Dokončena výroba PSU'),
+(1431277620, 1, 'Spuštěna výroba PSU'),
+(1431277725, 1, 'Dokončena výroba PSU'),
+(1431277894, 1, 'Spuštěna výroba SSD'),
+(1431280449, 1, 'Vytvořena nabídka Money(1) za Money(1)'),
+(1431280465, 1, 'Vytvořena nabídka Money(1) za Gold(1)'),
+(1431280467, 1, 'Vytvořena nabídka Money(1) za Gold(1)'),
+(1431280682, 1, 'Zrušena nabídka Money(1) za Money(1)'),
+(1431280727, 1, 'Zrušena nabídka Money(1) za Gold(1)'),
+(1431280744, 1, 'Zrušena nabídka Money(1) za Money(1)'),
+(1431280752, 1, 'Zrušena nabídka Money(1) za Gold(1)'),
+(1431282484, 1, 'Spuštěna výroba RAM'),
+(1431282484, 1, 'Spuštěna výroba RAM'),
+(1431282484, 1, 'Spuštěna výroba RAM'),
+(1431282485, 1, 'Spuštěna výroba RAM'),
+(1431282487, 1, 'Spuštěna výroba RAM'),
+(1431282494, 1, 'Dokončena výroba RAM'),
+(1431282494, 1, 'Dokončena výroba RAM'),
+(1431282494, 1, 'Dokončena výroba RAM'),
+(1431282495, 1, 'Dokončena výroba RAM'),
+(1431282497, 1, 'Dokončena výroba RAM'),
+(1431282544, 1, 'Spuštěna výroba RAM'),
+(1431282554, 1, 'Dokončena výroba RAM'),
+(1431282559, 1, 'Spuštěna výroba PSU'),
+(1431282663, 1, 'Dokončena výroba PSU'),
+(1431282757, 1, 'Spuštěna výroba RAM'),
+(1431282768, 1, 'Dokončena výroba RAM');
 
 -- --------------------------------------------------------
 
@@ -142,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
   `mnoznabizi` int(11) NOT NULL,
   `chce` int(11) NOT NULL,
   `mnozchce` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=440 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=301 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
@@ -153,8 +207,6 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (24, 3, 0, 23, 2, 500),
 (128, 1, 0, 250, 4, 1),
 (129, 1, 0, 13, 5, 1),
-(153, 3, 1, 15, 2, 10),
-(154, 3, 1, 15, 2, 10),
 (155, 3, 1, 15, 2, 10),
 (156, 3, 1, 15, 2, 10),
 (157, 3, 1, 15, 2, 10),
@@ -300,146 +352,7 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (297, 3, 1, 15, 2, 10),
 (298, 3, 1, 15, 2, 10),
 (299, 3, 1, 15, 2, 10),
-(300, 3, 1, 15, 2, 10),
-(301, 3, 1, 15, 2, 10),
-(302, 3, 1, 15, 2, 10),
-(303, 3, 1, 15, 2, 10),
-(304, 3, 1, 15, 2, 10),
-(305, 3, 1, 15, 2, 10),
-(306, 3, 1, 15, 2, 10),
-(307, 3, 1, 15, 2, 10),
-(308, 3, 1, 15, 2, 10),
-(309, 3, 1, 15, 2, 10),
-(310, 3, 1, 15, 2, 10),
-(311, 3, 1, 15, 2, 10),
-(312, 3, 1, 15, 2, 10),
-(313, 3, 1, 15, 2, 10),
-(314, 3, 1, 15, 2, 10),
-(315, 3, 1, 15, 2, 10),
-(316, 3, 1, 15, 2, 10),
-(317, 3, 1, 15, 2, 10),
-(318, 3, 1, 15, 2, 10),
-(319, 3, 1, 15, 2, 10),
-(320, 3, 1, 15, 2, 10),
-(321, 3, 1, 15, 2, 10),
-(322, 3, 1, 15, 2, 10),
-(323, 3, 1, 15, 2, 10),
-(324, 3, 1, 15, 2, 10),
-(325, 3, 1, 15, 2, 10),
-(326, 3, 1, 15, 2, 10),
-(327, 3, 1, 15, 2, 10),
-(328, 3, 1, 15, 2, 10),
-(329, 3, 1, 15, 2, 10),
-(330, 3, 1, 15, 2, 10),
-(331, 3, 1, 15, 2, 10),
-(332, 3, 1, 15, 2, 10),
-(333, 3, 1, 15, 2, 10),
-(334, 3, 1, 15, 2, 10),
-(335, 3, 1, 15, 2, 10),
-(336, 3, 1, 15, 2, 10),
-(337, 3, 1, 15, 2, 10),
-(338, 3, 1, 15, 2, 10),
-(339, 3, 1, 15, 2, 10),
-(340, 3, 1, 15, 2, 10),
-(341, 3, 1, 15, 2, 10),
-(342, 3, 1, 15, 2, 10),
-(343, 3, 1, 15, 2, 10),
-(344, 3, 1, 15, 2, 10),
-(345, 3, 1, 15, 2, 10),
-(346, 3, 1, 15, 2, 10),
-(347, 3, 1, 15, 2, 10),
-(348, 3, 1, 15, 2, 10),
-(349, 3, 1, 15, 2, 10),
-(350, 3, 1, 15, 2, 10),
-(351, 3, 1, 15, 2, 10),
-(352, 3, 1, 15, 2, 10),
-(353, 3, 1, 15, 2, 10),
-(354, 3, 1, 15, 2, 10),
-(355, 3, 1, 15, 2, 10),
-(356, 3, 1, 15, 2, 10),
-(357, 3, 1, 15, 2, 10),
-(358, 3, 1, 15, 2, 10),
-(359, 3, 1, 15, 2, 10),
-(360, 3, 1, 15, 2, 10),
-(361, 3, 1, 15, 2, 10),
-(362, 3, 1, 15, 2, 10),
-(363, 3, 1, 15, 2, 10),
-(364, 3, 1, 15, 2, 10),
-(365, 3, 1, 15, 2, 10),
-(366, 3, 1, 15, 2, 10),
-(367, 3, 1, 15, 2, 10),
-(368, 3, 1, 15, 2, 10),
-(369, 3, 1, 15, 2, 10),
-(370, 3, 1, 15, 2, 10),
-(371, 3, 1, 15, 2, 10),
-(372, 3, 1, 15, 2, 10),
-(373, 3, 1, 15, 2, 10),
-(374, 3, 1, 15, 2, 10),
-(375, 3, 1, 15, 2, 10),
-(376, 3, 1, 15, 2, 10),
-(377, 3, 1, 15, 2, 10),
-(378, 3, 1, 15, 2, 10),
-(379, 3, 1, 15, 2, 10),
-(380, 3, 1, 15, 2, 10),
-(381, 3, 1, 15, 2, 10),
-(382, 3, 1, 15, 2, 10),
-(383, 3, 1, 15, 2, 10),
-(384, 3, 1, 15, 2, 10),
-(385, 3, 1, 15, 2, 10),
-(386, 3, 1, 15, 2, 10),
-(387, 3, 1, 15, 2, 10),
-(388, 3, 1, 15, 2, 10),
-(389, 3, 1, 15, 2, 10),
-(390, 3, 1, 15, 2, 10),
-(391, 3, 1, 15, 2, 10),
-(392, 3, 1, 15, 2, 10),
-(393, 3, 1, 15, 2, 10),
-(394, 3, 1, 15, 2, 10),
-(395, 3, 1, 15, 2, 10),
-(396, 3, 1, 15, 2, 10),
-(397, 3, 1, 15, 2, 10),
-(398, 3, 1, 15, 2, 10),
-(399, 3, 1, 15, 2, 10),
-(400, 3, 1, 15, 2, 10),
-(401, 3, 1, 15, 2, 10),
-(402, 3, 1, 15, 2, 10),
-(403, 3, 1, 15, 2, 10),
-(404, 3, 1, 15, 2, 10),
-(405, 3, 1, 15, 2, 10),
-(406, 3, 1, 15, 2, 10),
-(407, 3, 1, 15, 2, 10),
-(408, 3, 1, 15, 2, 10),
-(409, 3, 1, 15, 2, 10),
-(410, 3, 1, 15, 2, 10),
-(411, 3, 1, 15, 2, 10),
-(412, 3, 1, 15, 2, 10),
-(413, 3, 1, 15, 2, 10),
-(414, 3, 1, 15, 2, 10),
-(415, 3, 1, 15, 2, 10),
-(416, 3, 1, 15, 2, 10),
-(417, 3, 1, 15, 2, 10),
-(418, 3, 1, 15, 2, 10),
-(419, 3, 1, 15, 2, 10),
-(420, 3, 1, 15, 2, 10),
-(421, 3, 1, 15, 2, 10),
-(422, 3, 1, 15, 2, 10),
-(423, 3, 1, 15, 2, 10),
-(424, 3, 1, 15, 2, 10),
-(425, 3, 1, 15, 2, 10),
-(426, 3, 1, 15, 2, 10),
-(427, 3, 1, 15, 2, 10),
-(428, 3, 1, 15, 2, 10),
-(429, 3, 1, 15, 2, 10),
-(430, 3, 1, 15, 2, 10),
-(431, 3, 1, 15, 2, 10),
-(432, 3, 1, 15, 2, 10),
-(433, 3, 1, 15, 2, 10),
-(434, 3, 1, 15, 2, 10),
-(435, 3, 1, 15, 2, 10),
-(436, 1, 1, 5, 2, 5),
-(437, 1, 1, 5, 2, 5),
-(438, 1, 0, 1, 0, 1),
-(439, 1, 0, 1, 0, 1);
+(300, 3, 1, 15, 2, 10);
 
 -- --------------------------------------------------------
 
@@ -452,14 +365,16 @@ CREATE TABLE IF NOT EXISTS `recepty` (
   `vyrobek` int(11) NOT NULL,
   `suroviny` varchar(500) NOT NULL,
   `doba` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Vypisuji data pro tabulku `recepty`
 --
 
 INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`) VALUES
-(1, 10, '1;1;0;0;0;0;0;0;0;0;0;0', 10);
+(1, 10, '1;1;0;0;0;0;0;0;0;0;0;0', 10),
+(2, 9, '0;10;20;5;0;0;0;0;0;0;0;0', 103),
+(3, 11, '0;20;10;50;0;0;0;0;0;0;0;0', 86400);
 
 -- --------------------------------------------------------
 
@@ -502,15 +417,17 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
 `idvyroby` int(11) NOT NULL,
   `hrac` int(11) NOT NULL,
   `recept` int(11) NOT NULL,
+  `pocet` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Vypisuji data pro tabulku `vyroba`
 --
 
-INSERT INTO `vyroba` (`idvyroby`, `hrac`, `recept`, `hotovo`) VALUES
-(2, 1, 1, 1431750672);
+INSERT INTO `vyroba` (`idvyroby`, `hrac`, `recept`, `pocet`, `hotovo`) VALUES
+(2, 1, 1, 1, 1431750672),
+(9, 1, 3, 1, 1431364294);
 
 --
 -- Klíče pro exportované tabulky
@@ -526,7 +443,7 @@ ALTER TABLE `hraci`
 -- Klíče pro tabulku `kupony`
 --
 ALTER TABLE `kupony`
- ADD PRIMARY KEY (`idkuponu`), ADD KEY `idkuponu` (`idkuponu`);
+ ADD PRIMARY KEY (`kod`), ADD UNIQUE KEY `kod` (`kod`), ADD KEY `kod_2` (`kod`), ADD KEY `kod_3` (`kod`);
 
 --
 -- Klíče pro tabulku `log`
@@ -568,20 +485,15 @@ ALTER TABLE `vyroba`
 ALTER TABLE `hraci`
 MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pro tabulku `kupony`
---
-ALTER TABLE `kupony`
-MODIFY `idkuponu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=440;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=301;
 --
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
 ALTER TABLE `recepty`
-MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pro tabulku `veci`
 --
@@ -591,7 +503,7 @@ MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 -- AUTO_INCREMENT pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
-MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

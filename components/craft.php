@@ -15,7 +15,7 @@ if (isset($_GET['craft']))
 		$pocsurovin = count($suroviny);
 		$splnuje = true;
 		for ($i = 0; $i < $pocsurovin; $i++)
-			if ($vlastnictvi[$i] < $suroviny[$i])
+			if ($vlastnictvi[$i] < $suroviny[$i] * $_GET['pocet'])
 				$splnuje = false;
 		
 		if ($splnuje)
@@ -27,7 +27,7 @@ if (isset($_GET['craft']))
 			//odečtení surovin
 			for ($i = 0; $i < $pocsurovin; $i++)
 			{
-				$vlastnictvi[$i] -= $suroviny[$i];
+				$vlastnictvi[$i] -= $suroviny[$i] * $_GET['pocet'];
 			}
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
@@ -37,10 +37,8 @@ if (isset($_GET['craft']))
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
 			$zazn = mysql_fetch_array($vysl);
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$zazn['nazev'].'")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$_GET['pocet'].'x '.$zazn['nazev'].'")';
 			mysql_query($dotaz);
-			
-			//echo 'Začals vyrábět '.$zazn['nazev'].'.';
 		}
 		else
 			echo "Nemáte dostatek surovin.";
