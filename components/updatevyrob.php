@@ -7,9 +7,10 @@
 		if ($zaznam['hotovo'] <= time())
 		{
 			//přičíst suroviny
-			$vlastnictvi[$zaznam['vyrobek']]++;
+			$vlastnictvi[$zaznam['vyrobek']] += $zaznam['pocet'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
+		 	
 			//smazat výrobu
 			$dotaz = 'DELETE FROM vyroba WHERE idvyroby='.$zaznam['idvyroby'];
 			mysql_query($dotaz);
@@ -19,7 +20,7 @@
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
 			$zazn = mysql_fetch_array($vysl);
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Dokončena výroba '.$zazn['nazev'].'")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Dokončena výroba '.$zaznam['pocet'].'x '.$zazn['nazev'].'")';
 			mysql_query($dotaz);
 		}
 	}

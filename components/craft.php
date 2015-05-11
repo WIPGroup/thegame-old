@@ -21,7 +21,7 @@ if (isset($_GET['craft']))
 		if ($splnuje)
 		{
 			//spuštění výroby
-			$dotaz = 'INSERT INTO vyroba (hrac, recept, hotovo) VALUES ('.$_SESSION['hrac'].', '.$_GET['craft'].', '.(time() + $zaznam['doba']).')';
+			$dotaz = 'INSERT INTO vyroba (hrac, recept, pocet, hotovo) VALUES ('.$_SESSION['hrac'].', '.$_GET['craft'].', '.$_GET['pocet'].', '.(time() + $zaznam['doba']).')';
 			mysql_query($dotaz);
 			
 			//odečtení surovin
@@ -40,7 +40,7 @@ if (isset($_GET['craft']))
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$zazn['nazev'].'")';
 			mysql_query($dotaz);
 			
-	//		echo 'Začals vyrábět '.$zazn['nazev'].'.';
+			//echo 'Začals vyrábět '.$zazn['nazev'].'.';
 		}
 		else
 			echo "Nemáte dostatek surovin.";

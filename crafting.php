@@ -7,7 +7,7 @@ include "components/navbar.php";
 if ($prihlasen)
 {
 	include "vlastnictvi.php";
-	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';	//TODO: lépe rozmístit na stránce
+	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
@@ -41,17 +41,19 @@ if ($prihlasen)
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
-
+		
+		echo '<td><input type="number" name="pocet" id="pocet" value="1" min="1" max="10000">';
+		
 		$splnuje = true;
 		for ($i = 0; $i < $pocsurovin; $i++)
-		if ($vlastnictvi[$i] < $suroviny[$i])
-		$splnuje = false;
+			if ($vlastnictvi[$i] < $suroviny[$i])
+				$splnuje = false;
 
 		if ($splnuje)
-		echo '<td><button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button></td>';
+			echo '<button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		else
-		echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
-		echo '</tr>';
+			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
+		echo '</td></tr>';
 	}
 	echo '</tbody></table></div>';
 }
