@@ -5,4 +5,4 @@ build:
         name: Update packages
         code: |-
           npm install
-          node_modules\bower\bin\bower update -V -p --config.interactive=false
+          node_modules/bower/bin/bower update -V -p --config.interactive=false
