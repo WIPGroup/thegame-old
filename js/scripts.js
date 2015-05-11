@@ -73,8 +73,7 @@ function snizeniTimeru(){
 		}
 	});
 	$("div[role='progressbar']").each(function(){
-		var zbyvajici = $(this).parents("tr").find("td:last").find(".casvyroby").html();
-		console.log(zbyvajici);
+		var zbyvajici = $(this).parents("tr").find(".casvyroby").html();
 		var celkove = $(this).data('celkem');
 		var sirka = (1-(zbyvajici/celkove))*100;
 		$(this).css("width",sirka+"%");
