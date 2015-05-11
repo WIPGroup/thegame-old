@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//TODO: vypsat vse co se da pridat v klientovi aby se to nemuselo posilat
 include "../vlastnictvi.php";
 //include "../trade.php";
 
@@ -21,9 +21,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
 	//TODO: tyhle 2 radky sou skoro stejne (24 a 26) neslo by to tak ze se to vypise jednou, zmeni se hodnota promenne a vypise podruhe? bylo by to kratsi, prehlednejsi a html zmeny by se delali na 1 misto 2 mistech
-	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['nabizi']] . '"><span class="badge">' . $zaznam['mnoznabizi'] . '</span><span class="sr-only">' . $veci[$zaznam['nabizi']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['nabizi']] . '"><span class="badge">' . $zaznam['mnoznabizi'] . '</span><span class="sr-only">' . $veci[$zaznam['nabizi']] . '</span></td>';
 
-	echo '<td id="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
 
 	echo '<td>';
 	if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {

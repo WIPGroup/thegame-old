@@ -30,7 +30,7 @@ td {
 th {
 	text-align: center;
 }
-#tableimage {
+.tableimage {
 	width: 52px;
 	height: 52px;
 	background-repeat:no-repeat;
