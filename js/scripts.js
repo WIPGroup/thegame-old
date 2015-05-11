@@ -60,7 +60,7 @@ function reloadVyroba(){
 			timerExists = true;
 			$("div[role='progressbar']").each(function(){
 				$(this).animate({
-					width:"100%"	
+					width:"100%"
 				},(($(this).data('zbyva')+1)*1000),"linear");
 			});
 		}
@@ -117,17 +117,17 @@ function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na cr
 		}
 	});
 }
-function reloadTrh(){ 
-	reloadNabidky();
+function reloadTrh(){
 	reloadInv();
+	reloadNabidky();
 	console.log('reloadTrh');
 }
 function trziste(){
-    $('[data-toggle="tooltip"]').tooltip();
+	$('[data-toggle="tooltip"]').tooltip();
 	$('.oteviranikoupeni').click(function(){ //sweetalerts
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
-		swal({   
+		swal({
 			title: "Jsi si jistý?",
 			text: "Pokračováním koupíš tuto nabídku! ("+aktualniID+")",
 			type: "warning",
@@ -135,16 +135,16 @@ function trziste(){
 			confirmButtonColor: "#DD6B55",
 			cancelButtonText: "Ne, zavřít",
 			confirmButtonText: "Ano, chci koupit nabídku",
-			closeOnConfirm: true 
-			},
-			function(){
-				obchodovanie(aktualniID);
-			});
+			closeOnConfirm: true
+		},
+		function(){
+			obchodovanie(aktualniID);
+		});
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniID = $(this).data('idnab');
 		console.log('ID tohoto trade je '+aktualniID);
-		swal({   
+		swal({
 			title: "Jsi si jistý?",
 			text: "Pokračováním bude tvoje nabídka zrušena! ("+aktualniID+")",
 			type: "warning",
@@ -152,11 +152,11 @@ function trziste(){
 			confirmButtonColor: "#DD6B55",
 			cancelButtonText: "Ne, zavřít",
 			confirmButtonText: "Ano, chci zrušit nabídku",
-			closeOnConfirm: true 
-			},
-			function(){
-				cancel(aktualniID);
-			});
+			closeOnConfirm: true
+		},
+		function(){
+			cancel(aktualniID);
+		});
 	});
 	$('#main').DataTable(); //todo Preklad
 	$('#moje').DataTable(); //todo pagination pri reloadu
@@ -167,14 +167,14 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 	switch(pathurl[pathurl.length-1]){
 		case '': //Fallthrough
 		case 'index.php':
-			return reloadInv;
-			break;
+		return reloadInv;
+		break;
 		case 'trh.php':
-			return reloadTrh;
-			break;
+		return reloadTrh;
+		break;
 		case 'crafting.php':
-			return reloadInv;
-			break;
+		return reloadInv;
+		break;
 	};
 }
 function enableRefresh(){ //k funkcnosti autorefreshe
@@ -194,9 +194,9 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 		if (getCookie("aktualniInterval")>0){
 			automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval")); //pokud neni off, nastavi se interval
 		};
-	}); 
+	});
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
 		(currentRefreshes)(); //refresh tlacitko
-	}); 
+	});
 }
