@@ -67,14 +67,16 @@ function snizeniTimeru(){
 		aktualniCas = $(this).html();
 		if (aktualniCas > 0){
 			$(this).html(parseInt(aktualniCas)-1); //snizeni hodnoty o 1
-			$(this).data().zbyva -= 1;
 		} else {
 			reloadVyroba();
 			return false;
 		}
 	});
 	$("div[role='progressbar']").each(function(){
-		var sirka = (1-($(this).data('zbyva')/$(this).data('celkem')))*100;
+		var zbyvajici = $(this).parents("tr").find("td:last").find(".casvyroby").html();
+		console.log(zbyvajici);
+		var celkove = $(this).data('celkem');
+		var sirka = (1-(zbyvajici/celkove))*100;
 		$(this).css("width",sirka+"%");
 	});
 }
