@@ -47,7 +47,3 @@ th {
 #nabidky input{
 	width:75px;
 }
-.progress-bar,.active,.progress {
-    -webkit-transition:none;
-    transition:none;
-}
