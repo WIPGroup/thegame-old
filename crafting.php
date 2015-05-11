@@ -37,20 +37,20 @@ if ($prihlasen)
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-				echo $veci[$i].'('.$suroviny[$i].') ';
+			echo $veci[$i].'('.$suroviny[$i].') ';
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
 
 		$splnuje = true;
 		for ($i = 0; $i < $pocsurovin; $i++)
-			if ($vlastnictvi[$i] < $suroviny[$i])
-				$splnuje = false;
+		if ($vlastnictvi[$i] < $suroviny[$i])
+		$splnuje = false;
 
 		if ($splnuje)
-			echo '<td><button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button></td>';
+		echo '<td><button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button></td>';
 		else
-			echo '<td><button class="btn btn-default" disabled></button> </td>';
+		echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
 		echo '</tr>';
 	}
 	echo '</tbody></table></div>';
