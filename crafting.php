@@ -13,7 +13,7 @@ if ($prihlasen)
 
 	echo '<div class="col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
 	echo '<table class="table table-striped table-hover">';
-	echo '<thead><tr><th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Vyrobit</th></tr></thead><tbody>';
+	echo '<thead><tr><th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Množství</th><th>Vyrobit</th></tr></thead><tbody>';
 
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
@@ -41,8 +41,8 @@ if ($prihlasen)
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
-		
-		echo '<td><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000">';
+
+		echo '<td><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000"></td><td>';
 		
 		$splnuje = true;
 		for ($i = 0; $i < $pocsurovin; $i++)
