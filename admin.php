@@ -10,9 +10,7 @@ if ($prihlasen && $_SESSION['hrac'] == 1)
 	include "admin/log.php";
 }
 else
-{
-	echo "Tady nemáš co dělat.";
-}
+	include "components/form.php";
 ?>
 </body>
 </html>
