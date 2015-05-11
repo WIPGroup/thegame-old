@@ -58,11 +58,6 @@ function reloadVyroba(){
 			};
 			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
-			$("div[role='progressbar']").each(function(){
-				$(this).animate({
-					width:"100%"
-				},(($(this).data('zbyva')+1)*1000),"linear");
-			});
 		}
 	});
 }
@@ -78,11 +73,12 @@ function snizeniTimeru(){
 		}
 	});
 	$("div[role='progressbar']").each(function(){
-		var sirkacss = $(this).css("width");
-		var sirkawidth = $(this).width();
-		console.log("css"+sirkacss);
-		console.log("width"+sirkawidth);
-		//$(this).css("width",sirka);
+		var zbyvajici = $(this).data("zbyva");
+		var sirka = $(this).width();
+		var sirkaOtce = $(this).offsetParent().width();
+		var percent = ((sirka/sirkaOtce)+(1/zbyvajici))*100;
+		console.log(percent);
+		$(this).css("width",percent+"%");
 	});
 }
 function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
