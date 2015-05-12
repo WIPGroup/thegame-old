@@ -11,8 +11,8 @@
 [![ŠMAK Badge](https://img.shields.io/badge/%C5%A0MAK-100%25-brightgreen.svg)](http://antre.417rct.org/master/)
 # Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
-* `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
 * `ex_(username)` personalni experimentalni branch
+* Vyznamne verze kodu oznacujte tagem
 
 Prístupy:
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
