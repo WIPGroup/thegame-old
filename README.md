@@ -8,6 +8,7 @@
 [![Build Status](https://scrutinizer-ci.com/gp/TheGame/badges/build.png?b=master&s=f272cda99ea9b068fdac05abc349ebe55bc471f8)](https://scrutinizer-ci.com/gp/TheGame/build-status/master)
 [![Dependency Status](https://gemnasium.com/eeb803c626900dda77f0bf52e69e5e91.svg)](https://gemnasium.com/2267d5b2ddc964c4f42201b4c9265eb6)
 [![Codacy Badge](https://www.codacy.com/project/badge/294482e322c24c259253412339847922)](https://www.codacy.com)
+[![ŠMAK Badge](https://img.shields.io/badge/%C5%A0MAK-100%25-brightgreen.svg)](http://antre.417rct.org/master/)
 # Branches
 * `master` obsahuje **nejnovejsi** verzi kodu
 * `latestWorking` obsahuje posledni **poradne proverenou** verzi, u ktere vse fungovalo
