@@ -9,7 +9,7 @@
 
 ##Prístupy:
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
-```
+```php
 http://417rct.org/phpMyAdmin/
 $user='rctorg_antre';
 $passwd='F}6Z?6tX-H&E';
@@ -17,8 +17,3 @@ $databaze='rctorg_antre';
 ```
 
 ## [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home)
-
-Pokud budete chtit pouzit ikony zvazte vybrat neco z:
-- http://getbootstrap.com/components/#glyphicons
-- http://google.github.io/material-design-icons/ (pridam na pozadani)
-- http://fontawesome.io/cheatsheet/ (pridam na pozadani)
