@@ -7,7 +7,7 @@
 * `ex_(username)` personalni experimentalni branch
 * Vyznamne verze kodu oznacujte tagem
 
-Prístupy:
+##Prístupy:
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
 ```
 http://417rct.org/phpMyAdmin/
@@ -16,7 +16,7 @@ $passwd='F}6Z?6tX-H&E';
 $databaze='rctorg_antre';
 ```
 
-# [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home)
+## [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home)
 
 Pokud budete chtit pouzit ikony zvazte vybrat neco z:
 - http://getbootstrap.com/components/#glyphicons
