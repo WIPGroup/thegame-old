@@ -21,6 +21,9 @@
 				<a href="crafting.php">Výroba</a>
 			</li>
 			<li>
+				<a href="build.php">Stavba PC</a>
+			</li>
+			<li>
 				<a href="research.php">Výzkum</a>
 			</li>
 			<?php
