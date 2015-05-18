@@ -34,7 +34,18 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="js/scripts.js"></script>
 </head>
-<body><!-- Kdyby nahodou
+<body>
+	<?php //Crash monitoring
+	require_once 'rollbar.php';
+	$config = array(
+	    'access_token' => '41a7de13241f499ab0849238a8b7b00e',
+	    'environment' => 'production',
+	    'root' => '/'
+	);
+	Rollbar::init($config);
+	?>
+
+	<!-- Kdyby nahodou
 	<script>
 	$(function(){
 	$( "li, td, button, input, select" ).mouseenter(function(){
