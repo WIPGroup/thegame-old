@@ -16,4 +16,4 @@ $passwd='F}6Z?6tX-H&E';
 $databaze='rctorg_antre';
 ```
 
-## [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home)
+# [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home) obsahuje důležité informace
