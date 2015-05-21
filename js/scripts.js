@@ -205,7 +205,7 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 }
 function navbarActive(){
 	var pathurl = $(location).attr('pathname').split('/');
-	$('#main-nav li a[href="'+pathurl[pathurl.length-1]+'"]').closest().addClass("active");
+	$('#main-nav li a[href="'+pathurl[pathurl.length-1]+'"]').closest("li").addClass("active");
 }
 //funkce ktere se maji spustit na kazde strance
 $(function(){
