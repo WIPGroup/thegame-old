@@ -13,4 +13,3 @@ $(function() { //odeslani formulare s nabidkou
 	});
 });
 $(reloadInv());
-$(enableRefresh());

@@ -13,4 +13,3 @@ $(function() { //odeslani formulare s nabidkou
 	});
 });
 $(reloadTrh()); //po nacteni stranky se nacte interface, easy 
-$(enableRefresh());
