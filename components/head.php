@@ -3,10 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>TheGame</title>
-	<!-- Rollbar JS -->
-	<script src="js/rollbar.js"></script>
 	<!-- jQuery -->
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- Rollbar JS -->
+	<script src="js/rollbar.js"></script>
 	<!-- Pace -->
 	<link href="bower_components/pace/themes/green/pace-theme-minimal.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.js"></script>
