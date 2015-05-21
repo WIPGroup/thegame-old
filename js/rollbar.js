@@ -1,4 +1,5 @@
 var branch = $(location).attr('pathname').split('/')[1];
+console.log(branch);
 var _rollbarConfig = {
     accessToken: "ebf11dfe7ce14a08967bc29d421f00a4",
     captureUncaught: true,
