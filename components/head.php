@@ -44,6 +44,7 @@
 	    'environment' => 'production',
 	    'root' => '/'
 	);
+	$config[environment] = getcwd();
 	Rollbar::init($config);
 	?>
 
