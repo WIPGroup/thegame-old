@@ -1,9 +1,9 @@
 <?php
 include "components/sestavit.php";
-
+//TODO Napsat @j2ghz az to bude pripravene na graficke vylepseni
 echo "<h1>stavba počítačů</h1>";
 
-echo '<form action="build.php" method="GET">';  
+echo '<form action="build.php" method="GET">';
 
 $dotaz = 'SELECT * FROM veci WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));

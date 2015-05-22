@@ -25,7 +25,7 @@
 					<th>Motherboard</th>
 				</tr>
 			</thead>
-			<?php //PHP magic nejake vybirani a tak ?>
+			<?php // TODO: PHP magic nejake vybirani a tak ?>
 			<tbody>
 				<tr>
 					<td><button class="btn">CPU</button></td>
