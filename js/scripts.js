@@ -170,15 +170,12 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 	switch(pathurl[pathurl.length-1]){
 		case '': //Fallthrough
 		case 'index.php':
-		return reloadInv;
-		break;
+			return reloadInv;
 		case 'trh.php':
-		return reloadTrh;
-		break;
+			return reloadTrh;
 		case 'crafting.php':
-		return reloadInv;
-		break;
-	};
+			return reloadInv;
+	}
 }
 function enableRefresh(){ //k funkcnosti autorefreshe
 	console.log('enableRefresh');
