@@ -5,11 +5,11 @@ $(function() { //odeslani formulare s nabidkou
 			type: "GET",
 			url: "components/redeem.php",
 			success: function(data) {
-				reloadInv(); //po odeslani se nacte interface
+				reloadFullInv(); //po odeslani se nacte interface
 				swal(data);
 			}
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 });
-$(reloadInv());
+$(reloadFullInv());
