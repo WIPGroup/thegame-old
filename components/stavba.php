@@ -11,7 +11,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($zaznam['typ'] == "mb")
-			$mbs .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].')</option>'."\n";
+			$mbs .= '<option value="'.$zaznam['idveci'].'" data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "cpu")
 			$cpus .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].')</option>'."\n";
 		if ($zaznam['typ'] == "gpu")
