@@ -1,5 +1,5 @@
 <?php
 $I = new AcceptanceTester($scenario);
-$I->wantTo('tabule oznameni je na hlavni strance');
+$I->wantTo('Na Hlavni strance je TheGame');
 $I->amOnPage('/');
-$I->see('Oznámení');
+$I->see('TheGame');
