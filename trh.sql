@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Pon 11. kvě 2015, 15:28
+-- Vytvořeno: Pon 25. kvě 2015, 10:31
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '1234;1179;3;965;0;0;0;0;0;8;47;0'),
-(2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0'),
-(3, 'test2', 'test2', '647;341;376;2;0;0;0;0;0;0;0;0');
+(1, 'root', 'root', '1228;1123;230;900;1;1;1;1;1;11;54;2;1'),
+(2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0;0'),
+(3, 'test2', 'test2', '647;341;376;2;0;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
 
@@ -58,10 +58,12 @@ CREATE TABLE IF NOT EXISTS `kupony` (
 --
 
 INSERT INTO `kupony` (`kod`, `obsah`) VALUES
+('7lo1tyvs', '0;10;10;10;0;0;0;0;0;0;0;0'),
 ('dnsmbfg1', '40;0;0;0;0;0;0;0;0;0;0;0'),
 ('f5g4df6a', '10;0;0;0;0;0;0;0;0;0;0;0'),
 ('f5g4df6b', '10;0;0;0;0;0;0;0;0;0;0;0'),
 ('f5g4df6g', '10;0;0;0;0;0;0;0;0;0;0;0'),
+('tcahxvws', '0;10;10;10;0;0;0;0;0;0;0;0'),
 ('v40ol2yt', '40;0;0;0;0;0;0;0;0;0;0;0');
 
 -- --------------------------------------------------------
@@ -181,7 +183,26 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1431282559, 1, 'Spuštěna výroba PSU'),
 (1431282663, 1, 'Dokončena výroba PSU'),
 (1431282757, 1, 'Spuštěna výroba RAM'),
-(1431282768, 1, 'Dokončena výroba RAM');
+(1431282768, 1, 'Dokončena výroba RAM'),
+(1431352305, 1, 'Spuštěna výroba x RAM'),
+(1431352348, 1, 'Spuštěna výroba 3x RAM'),
+(1431352359, 1, 'Dokončena výroba 3x RAM'),
+(1431370427, 1, 'Dokončena výroba 1x SSD'),
+(1431370437, 1, 'Spuštěna výroba 1x SSD'),
+(1431370447, 1, 'Spuštěna výroba 1x PSU'),
+(1431370691, 1, 'Dokončena výroba 1x PSU'),
+(1431370697, 1, 'Spuštěna výroba 2x RAM'),
+(1431370708, 1, 'Dokončena výroba 2x RAM'),
+(1431370712, 1, 'Spuštěna výroba 1x PSU'),
+(1431370817, 1, 'Dokončena výroba 1x PSU'),
+(1431370841, 1, 'Spuštěna výroba 1x RAM'),
+(1431370852, 1, 'Dokončena výroba 1x RAM'),
+(1431370854, 1, 'Spuštěna výroba 1x PSU'),
+(1431370959, 1, 'Dokončena výroba 1x PSU'),
+(1431882687, 1, 'Dokončena výroba 1x RAM'),
+(1431882687, 1, 'Dokončena výroba 1x SSD'),
+(1432491336, 1, 'Vytvořena nabídka Money(1) za GPU(1)'),
+(1432491365, 1, 'Zrušena nabídka Money(1) za GPU(1)');
 
 -- --------------------------------------------------------
 
@@ -196,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
   `mnoznabizi` int(11) NOT NULL,
   `chce` int(11) NOT NULL,
   `mnozchce` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=301 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=302 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
@@ -379,6 +400,27 @@ INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabulky `sestavy`
+--
+
+CREATE TABLE IF NOT EXISTS `sestavy` (
+`idsestavy` int(11) NOT NULL,
+  `hrac` int(11) NOT NULL,
+  `vykon` int(11) NOT NULL,
+  `obsah` varchar(500) NOT NULL,
+  `update` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Vypisuji data pro tabulku `sestavy`
+--
+
+INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `obsah`, `update`) VALUES
+(1, 1, 1000, '0;0;0;0;0;1;1;1;0;1;2;0;1', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabulky `veci`
 --
 
@@ -386,26 +428,29 @@ CREATE TABLE IF NOT EXISTS `veci` (
 `idveci` int(11) NOT NULL,
   `nazev` varchar(50) NOT NULL,
   `typ` varchar(16) NOT NULL,
-  `vykon` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `vykon` int(11) NOT NULL,
+  `socket` int(11) NOT NULL,
+  `sloty` varchar(50) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Vypisuji data pro tabulku `veci`
 --
 
-INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`) VALUES
-(0, 'Money', '', 0),
-(1, 'Gold', '', 0),
-(2, 'Iron', '', 0),
-(3, 'Silicon', '', 0),
-(4, 'CPU-AMD', 'cpu', 2),
-(5, 'CPU-Intel', 'cpu', 3),
-(6, 'GPU', 'gpu', 5),
-(7, 'HDD', 'hdd', 1),
-(8, 'MemoryChip', '', 0),
-(9, 'PSU', 'psu', 10),
-(10, 'RAM', 'ram', 1),
-(11, 'SSD', 'hdd', 2);
+INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`, `socket`, `sloty`) VALUES
+(0, 'Money', '', 0, 0, ''),
+(1, 'Gold', '', 0, 0, ''),
+(2, 'Iron', '', 0, 0, ''),
+(3, 'Silicon', '', 0, 0, ''),
+(4, 'CPU-AMD', 'cpu', 2, 1, ''),
+(5, 'CPU-Intel', 'cpu', 3, 2, ''),
+(6, 'GPU', 'gpu', 5, 0, ''),
+(7, 'HDD', 'hdd', 1, 0, ''),
+(8, 'MemoryChip', '', 0, 0, ''),
+(9, 'PSU', 'psu', 10, 0, ''),
+(10, 'RAM', 'ram', 1, 0, ''),
+(11, 'SSD', 'hdd', 2, 0, ''),
+(12, 'MotherBoard', 'mb', 1, 2, '2;1');
 
 -- --------------------------------------------------------
 
@@ -419,15 +464,7 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
   `recept` int(11) NOT NULL,
   `pocet` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
-
---
--- Vypisuji data pro tabulku `vyroba`
---
-
-INSERT INTO `vyroba` (`idvyroby`, `hrac`, `recept`, `pocet`, `hotovo`) VALUES
-(2, 1, 1, 1, 1431750672),
-(9, 1, 3, 1, 1431364294);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Klíče pro exportované tabulky
@@ -464,6 +501,12 @@ ALTER TABLE `recepty`
  ADD PRIMARY KEY (`idreceptu`), ADD KEY `id` (`idreceptu`);
 
 --
+-- Klíče pro tabulku `sestavy`
+--
+ALTER TABLE `sestavy`
+ ADD PRIMARY KEY (`idsestavy`), ADD KEY `idsestavy` (`idsestavy`);
+
+--
 -- Klíče pro tabulku `veci`
 --
 ALTER TABLE `veci`
@@ -488,22 +531,27 @@ MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=301;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=302;
 --
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
 ALTER TABLE `recepty`
 MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT pro tabulku `sestavy`
+--
+ALTER TABLE `sestavy`
+MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT pro tabulku `veci`
 --
 ALTER TABLE `veci`
-MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
-MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

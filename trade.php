@@ -72,10 +72,10 @@ else if (isset($_GET['mnoznabizi']))
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].')")';
 		mysql_query($dotaz);
 
-		echo 'Vytvořils nabídku '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].') za '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].').';
+		echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
 	}
 	else
 		echo "Nemáš dost surovin na vytvoření nabídky.";
@@ -104,10 +104,10 @@ else if (isset($_GET['cancel']))
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].')")';
 		mysql_query($dotaz);
 
-		echo 'Zrušils svou nabídku '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') za '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].').';
+		echo 'Zrušils svou nabídku '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].').';
 	}
 	else
 	echo "Zrušení se nepodařilo.";
