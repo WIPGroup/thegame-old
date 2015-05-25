@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "vlastnictvi.php";
 if (isset($_GET['trade']))
 {
