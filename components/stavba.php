@@ -3,6 +3,7 @@ include "components/sestavit.php";
 echo "<h1>stavba počítačů</h1>";
 echo '<form class="form-inline" action="build.php" method="GET">';
 
+$mbs = ""; $cpus = ""; $gpus = ""; $rams = ""; $psus = ""; $hdds = ""; 
 $veci = null;
 $dotaz = 'SELECT * FROM veci';// WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
