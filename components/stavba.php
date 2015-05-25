@@ -9,6 +9,8 @@ $dotaz = 'SELECT * FROM veci';// WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
+	$veci[$zaznam['idveci']] = $zaznam['nazev'];
+	
 	if ($vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($zaznam['typ'] == "mb")
@@ -23,8 +25,6 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			$psus .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "hdd")
 			$hdds .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
-		
-		$veci[$zaznam['idveci']] = $zaznam['nazev'];
 	}
 }
 echo '<select class="form-control" name="mb" id="mb">'.$mbs.'</select>';
