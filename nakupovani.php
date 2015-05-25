@@ -1,7 +1,6 @@
 <?php
 //engine nakupování
 include "vlastnictvi.php";
-include "trade.php";
 $selectitems = '';
 $dotaz = 'SELECT * FROM veci';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
