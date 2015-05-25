@@ -7,6 +7,9 @@ $(function() { //odeslani formulare s nabidkou
 			url: "trade.php",
 			success: function(data) {
 				reloadTrh(); //po odeslani se nacte interface
+				if (data!=''){
+					swal(data);
+				}
 			}
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh

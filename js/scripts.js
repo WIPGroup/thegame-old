@@ -13,7 +13,7 @@ function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 		return parts.pop().split(";").shift();
 	} else {
 		return 60000;
-	};
+	}
 }
 function reloadInv(){                //obnoveni inventare
 	$.ajax({
@@ -39,7 +39,7 @@ function reloadVyroba(){
 	if (timerExists == true){ //ocharna pri prvnim loadnuti stranky
 		clearInterval(seznamVyrobyReload); //nejdriv se zrusi puvodni interval aby to nedelalo problemy
 		timerExists = false;
-	};
+	}
 	reloadInv();
 	$.ajax({
 		url : "components/seznamvyrob.php",
@@ -55,9 +55,18 @@ function reloadVyroba(){
 			if (timerExists == true){ //ochrana kdyz uzivatel moc rychle klika
 				clearInterval(seznamVyrobyReload);
 				timerExists = false;
-			};
+			}
 			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
 			timerExists = true;
+		}
+	});
+}
+function reloadFullInv(){
+	$.ajax({
+		url : "components/full_inv.php", //vykona se to co je v url
+		success : function (data) {  //prijdou zpatky nejake data
+			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
+			console.log('reloadFullInv');
 		}
 	});
 }
@@ -88,7 +97,7 @@ function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se po
 			reloadTrh();
 			if (data!=''){
 				swal(data);
-			};
+			}
 		}
 	});
 }
@@ -101,7 +110,7 @@ function cancel(idnab){	 //to same jen cudlik Zrušiť
 			reloadTrh();
 			if (data!=''){
 				swal(data);
-			};
+			}
 		}
 	});
 }
@@ -116,7 +125,7 @@ function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na cr
 			reloadVyroba();
 			if (data!=''){
 				swal(data);
-			};
+			}
 		}
 	});
 }
@@ -170,7 +179,7 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 	switch(pathurl[pathurl.length-1]){
 		case '': //Fallthrough
 		case 'index.php':
-			return reloadInv;
+			return reloadFullInv;
 		case 'trh.php':
 			return reloadTrh;
 		case 'crafting.php':
@@ -184,7 +193,7 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 	var currentRefreshes=getRefreshes(); //ziskani funkce pro danou stranku
 	if (getCookie("aktualniInterval")>=1000){
 		automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval")); //kdyz neni off, tak se nastavi interval
-	};
+	}
 	$('#refreshMenu li').click(function(){ //pri prepnuti intervalu
 		$('li[data-interval="'+getCookie("aktualniInterval")+'"] a').css('font-weight','normal');
 		document.cookie="aktualniInterval="+$(this).data('interval'); //nova susenka s intervalem
@@ -193,7 +202,7 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 		console.log('Klik na vyber '+getCookie("aktualniInterval"));
 		if (getCookie("aktualniInterval")>0){
 			automaticRefresh=setInterval(currentRefreshes,getCookie("aktualniInterval")); //pokud neni off, nastavi se interval
-		};
+		}
 	});
 	$('#refreshButton').click(function(){
 		console.log('klik na refreshButton');
@@ -204,7 +213,7 @@ function navbarActive(){
 	var pathurl = $(location).attr('pathname').split('/');
 	if (pathurl[pathurl.length-1] === ''){
 		pathurl[pathurl.length-1] = 'index.php';
-	};
+	}
 	$('#main-nav li a[href="'+pathurl[pathurl.length-1]+'"]').closest("li").addClass("active");
 }
 //funkce ktere se maji spustit na kazde strance
