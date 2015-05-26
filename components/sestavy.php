@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	include "../vlastnictvi.php";
+?>
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<h1 class="panel-title">Sestava X</h1>

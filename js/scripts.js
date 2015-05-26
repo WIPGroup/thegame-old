@@ -174,7 +174,7 @@ function trziste(){
 	$('#moje').DataTable(); //todo pagination pri reloadu
 	console.log('trziste');
 }
-function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat, tj reload Vsechno
+function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat AUTOREFRESH, tj reload Vsechno
 	var pathurl = $(location).attr('pathname').split('/');
 	switch(pathurl[pathurl.length-1]){
 		case '': //Fallthrough
@@ -184,6 +184,8 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 			return reloadTrh;
 		case 'crafting.php':
 			return reloadInv;
+		case 'build.php';
+			return reloadSestavy;
 	}
 }
 function enableRefresh(){ //k funkcnosti autorefreshe
@@ -215,6 +217,15 @@ function navbarActive(){
 		pathurl[pathurl.length-1] = 'index.php';
 	}
 	$('#main-nav li a[href="'+pathurl[pathurl.length-1]+'"]').closest("li").addClass("active");
+}
+function reloadSestavy(){
+	$.ajax({
+		url : "components/sestavy.php", //vykona se to co je v url
+		success : function (data) {  //prijdou zpatky nejake data
+			$("#sestavy").html(data);  //data se hodi do neceho s id inventar, easy
+			console.log('reloadSestavy');
+		}
+	});
 }
 function disableRam(){
 	var pocetram = $("#build #mb option:selected").data('ram');

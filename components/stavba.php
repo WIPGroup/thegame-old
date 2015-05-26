@@ -40,5 +40,5 @@ echo '<button class="btn btn-primary" type="submit">Sestavit</button>';
 echo '</form>';
 
 echo '<h2>Moje sestavy</h2>';
-include "components/sestavy.php"; //TODO: václave, máš to zde
+echo '<div id="sestavy"></div>';
 ?>
