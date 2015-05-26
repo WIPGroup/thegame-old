@@ -25,8 +25,8 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/datatables/media/css/jquery.dataTables.min.css">
 	<script type="text/javascript" charset="utf8" src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
 	<!-- SweetAlert -->
-	<script src="bower_components/sweetalert/dist/sweet-alert.min.js"></script>
-	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweet-alert.css">
+	<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="bower_components\animate.css\animate.min.css">
 	<!-- The noUiSlider script and stylesheet -->
