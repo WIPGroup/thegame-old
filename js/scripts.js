@@ -184,7 +184,7 @@ function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pr
 			return reloadTrh;
 		case 'crafting.php':
 			return reloadInv;
-		case 'build.php';
+		case 'build.php':
 			return reloadSestavy;
 	}
 }
