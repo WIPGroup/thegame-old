@@ -1,3 +1,4 @@
+<!--
 <div id="RefreshBlockDesktop" class="pull-right phone-hide">
 	<div class="btn-toolbar" id="RefreshBlock">
 		<div class="btn-group">
@@ -39,3 +40,4 @@
 		</div>
 	</div>
 </div>
+-->

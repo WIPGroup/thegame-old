@@ -5,7 +5,7 @@ function toggleTable(n){ //prepinani mezi Vse a Moje nabidky
 	$("#nabidky #"+aktualniTab+"container").show(); //ukaze se ten, ktery ma v nazvu parametr
 	$("#trzistetabs>li").removeClass('active'); //spravny aktivni tab v navbaru
 	$("#"+aktualniTab+"tab").addClass('active');
-}
+}/*
 function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 	var value = "; " + document.cookie;
 	var parts = value.split("; " + name + "=");
@@ -14,7 +14,7 @@ function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 	} else {
 		return 60000;
 	}
-}
+}*/
 function reloadInv(){                //obnoveni inventare
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
@@ -173,7 +173,7 @@ function trziste(){
 	$('#main').DataTable(); //todo Preklad
 	$('#moje').DataTable(); //todo pagination pri reloadu
 	console.log('trziste');
-}
+}/*
 function getRefreshes(){ //tato funkce na zaklade URL ziska funkci, kterou ma pro danou stranku vykonat AUTOREFRESH, tj reload Vsechno
 	var pathurl = $(location).attr('pathname').split('/');
 	switch(pathurl[pathurl.length-1]){
@@ -210,7 +210,7 @@ function enableRefresh(){ //k funkcnosti autorefreshe
 		console.log('klik na refreshButton');
 		(currentRefreshes)(); //refresh tlacitko
 	});
-}
+} */
 function navbarActive(){
 	var pathurl = $(location).attr('pathname').split('/');
 	if (pathurl[pathurl.length-1] === ''){
@@ -240,5 +240,5 @@ function disableRam(){
 //funkce ktere se maji spustit na kazde strance
 $(function(){
 	navbarActive();
-	enableRefresh();
+//	enableRefresh();
 });
