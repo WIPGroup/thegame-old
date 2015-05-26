@@ -39,7 +39,7 @@ echo '<select class="form-control" name="hdd" id="hdd">'.$hdds.'</select>';
 echo '<button class="btn btn-primary" type="submit">Sestavit</button>';
 echo '</form>';
 
-echo '<h2>Moje sestavy</h2>';
+echo '<h2>Moje sestavy</h2>'; //TODO: juro opět potřebuju aby byly sestavy ve zvláštním souboru který funguje sám o sobě (tj když dojdu na components/seznamsestav.php tak se mi ukážou ty sestavy) pro AJAX
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
