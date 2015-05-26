@@ -36,7 +36,7 @@ function reloadNabidky(){ //reload nabidek v trhu
 	});
 }
 function reloadVyroba(){
-	if (timerExists == true){ //ocharna pri prvnim loadnuti stranky
+	if (timerExists === true){ //ocharna pri prvnim loadnuti stranky
 		clearInterval(seznamVyrobyReload); //nejdriv se zrusi puvodni interval aby to nedelalo problemy
 		timerExists = false;
 	}
@@ -52,11 +52,11 @@ function reloadVyroba(){
 					console.log('oprava ze zaporne hodnoty na 0');
 				}
 			});
-			if (timerExists == true){ //ochrana kdyz uzivatel moc rychle klika
+			if (timerExists === true){ //ochrana kdyz uzivatel moc rychle klika
 				clearInterval(seznamVyrobyReload);
 				timerExists = false;
 			}
-			seznamVyrobyReload = setInterval(function(){snizeniTimeru()},1000);  //po nacteni se da timer
+			seznamVyrobyReload = setInterval(function(){snizeniTimeru();},1000);  //po nacteni se da timer
 			timerExists = true;
 		}
 	});
@@ -88,33 +88,33 @@ function snizeniTimeru(){
 		$(this).css("width",sirka+"%");
 	});
 }
-function obchodovanie(idnab){ 	//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
+function obchodovanie(idnab){//pri kliknuti na cudlik koupit nebo prodat se posle get request na index.php s parametry trade=idnab, potom se reloadne interface
 	$.ajax({
 		url : "trade.php",
 		type : "GET",
 		data : {trade:idnab},
 		success : function (data) {
 			reloadTrh();
-			if (data!=''){
+			if (data!==''){
 				swal(data);
 			}
 		}
 	});
 }
-function cancel(idnab){	 //to same jen cudlik Zrušiť
+function cancel(idnab){//to same jen cudlik Zrušiť
 	$.ajax({
 		url : "trade.php",
 		type : "GET",
 		data : {cancel:idnab},
 		success : function (data) {
 			reloadTrh();
-			if (data!=''){
+			if (data!==''){
 				swal(data);
 			}
 		}
 	});
 }
-function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na crafting.php
+function craft(idreceptu){//TODO tlacitko by melo refreshovat i inventar na crafting.php
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
 	console.log(kolikrat);
 	$.ajax({
@@ -123,7 +123,7 @@ function craft(idreceptu){	 //TODO tlacitko by melo refreshovat i inventar na cr
 		data : {craft:idreceptu,pocet:kolikrat},
 		success : function (data) {
 			reloadVyroba();
-			if (data!=''){
+			if (data!==''){
 				swal(data);
 			}
 		}
