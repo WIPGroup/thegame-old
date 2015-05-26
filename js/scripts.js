@@ -216,6 +216,15 @@ function navbarActive(){
 	}
 	$('#main-nav li a[href="'+pathurl[pathurl.length-1]+'"]').closest("li").addClass("active");
 }
+function disableRam(){
+	var pocetram = $("#build #mb option:selected").data('ram');
+	$("select[id*=ram]").each(function(){
+		$(this).prop("disabled",true);
+	});
+	for(i=1;i<=pocetram;i++){
+		$("#ram"+i).prop("disabled",false);
+	}
+}
 //funkce ktere se maji spustit na kazde strance
 $(function(){
 	navbarActive();

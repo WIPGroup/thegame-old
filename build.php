@@ -12,5 +12,6 @@ if ($prihlasen)
 else
 	include "components/form.php";
 ?>
+<script src="js/build.js"></script>
 </body>
 </html>
