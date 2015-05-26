@@ -17,7 +17,14 @@ else
 	include "components/form.php";
 }
 ?>
-<iframe src="http://antre.417rct.org/master/report.html"></iframe>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h1 class="panel-title">Test results</h1>
+	</div>
+	<div class="panel-body">
+		<iframe src="http://antre.417rct.org/master/report.html"></iframe>
+	</div>
+</div>
 <script src="js/index.js"></script>
 </body>
 </html>
