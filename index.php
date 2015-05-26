@@ -17,6 +17,7 @@ else
 	include "components/form.php";
 }
 ?>
+<iframe src="http://antre.417rct.org/master/report.html"></iframe>
 <script src="js/index.js"></script>
 </body>
 </html>
