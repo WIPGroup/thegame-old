@@ -14,9 +14,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($zaznam['typ'] == "mb")
-			$mbs .= '<option value="'.$zaznam['idveci'].'" data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
+			$mbs .= '<option value="'.$zaznam['idveci'].'" data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-socket="'.$zaznam['socket'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "cpu")
-			$cpus .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
+			$cpus .= '<option value="'.$zaznam['idveci'].'" data-socket="'.$zaznam['socket'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "gpu")
 			$gpus .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "ram")
@@ -39,21 +39,6 @@ echo '<select class="form-control" name="hdd" id="hdd">'.$hdds.'</select>';
 echo '<button class="btn btn-primary" type="submit">Sestavit</button>';
 echo '</form>';
 
-echo '<h2>Moje sestavy</h2>'; //TODO: juro opět potřebuju aby byly sestavy ve zvláštním souboru který funguje sám o sobě (tj když dojdu na components/seznamsestav.php tak se mi ukážou ty sestavy) pro AJAX
-$pocveci = count($veci);
-$dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
-$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-while ($zaznam = mysql_fetch_array($vysledek))
-{
-	$obsah = explode(';', $zaznam['obsah']);
-	for ($i = 0; $i < $pocveci; $i++)
-		if ($obsah[$i] > 0)
-		{
-			echo $veci[$i];
-			if ($obsah[$i] > 1)
-				echo ' ('.$obsah[$i].')';
-			echo ', ';
-		}
-	echo 'Výkon: '.$zaznam['vykon'].'<br>';
-}
+echo '<h2>Moje sestavy</h2>';
+include "components/sestavy.php"; //TODO: václave, máš to zde
 ?>
