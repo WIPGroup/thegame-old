@@ -218,6 +218,7 @@ function navbarActive(){
 }
 function disableRam(){
 	var pocetram = $("#build #mb option:selected").data('ram');
+	console.log(pocetram);
 	$("select[id*=ram]").each(function(){
 		$(this).prop("disabled",true);
 	});
