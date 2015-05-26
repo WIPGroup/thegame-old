@@ -20,7 +20,7 @@ else
 <div class="col-xs-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h1 class="panel-title">Test results</h1>
+			<h1 class="panel-title">Test results for master</h1>
 		</div>
 		<div class="panel-body">
 			<iframe style="width: 100%; height: 1000px" src="http://antre.417rct.org/master/report.html"></iframe>
