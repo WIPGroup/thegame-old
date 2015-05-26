@@ -17,13 +17,13 @@ else
 	include "components/form.php";
 }
 ?>
-<div class="col-md-9 col-xs-3">
+<div class="col-xs-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Test results</h1>
 		</div>
 		<div class="panel-body">
-			<iframe src="http://antre.417rct.org/master/report.html"></iframe>
+			<iframe style="width: 100%; height: 1000px" src="http://antre.417rct.org/master/report.html"></iframe>
 		</div>
 	</div>
 </div>
