@@ -28,7 +28,7 @@
 	<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="bower_components\animate.css\animate.min.css">
+	<link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 	<!-- The noUiSlider script and stylesheet -->
 	<link href="bower_components/nouislider/distribute/jquery.nouislider.min.css" rel="stylesheet">
 	<script src="bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
