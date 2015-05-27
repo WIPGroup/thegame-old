@@ -54,8 +54,8 @@ echo '</form>';
 		<div class="panel-heading">
 			<h1 class="panel-title">Moje sestavy</h1>
 		</div>
-	</div>
-	<div class="panel-body">
-		<div id="sestavy"></div>
+		<div class="panel-body">
+			<div id="sestavy"></div>
+		</div>
 	</div>
 </div>
