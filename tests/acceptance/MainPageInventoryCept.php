@@ -5,6 +5,8 @@ $I->amOnPage('/');
 $I->fillField('hrac','root');
 $I->fillField('heslo','root');
 $I->click('Prihlásiť');
+$I->dontSee('Prosím, prihlásťe sa');
+$I->click('Úvod');
 $I->see('Money');
 $I->see('Gold');
 $I->see('Iron');
