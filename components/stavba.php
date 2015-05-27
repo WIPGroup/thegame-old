@@ -38,7 +38,7 @@ echo "Základní deska:";
 echo '<select class="form-control" name="mb" id="mb">'.$mbs.'</select>';
 echo "<br>Procesor:";
 echo '<select class="form-control" name="cpu" id="cpu">'.$cpus.'</select>';
-echo "<br>Ramky:";
+echo "<br>Ramky:"; //TODO: nesmi jit vybrat jedna vec dvakrat, nevim jak to takhle chces resit, bylo by mozne dat do optionu disable, ale bootstrap to nijak nezvyrazni, pak to vypada divne
 echo '<select class="form-control" name="ram1" id="ram1">'.$rams.'</select>';
 echo '<select class="form-control" name="ram2" id="ram2">'.$rams.'</select>';
 echo '<select class="form-control" name="ram3" id="ram3">'.$rams.'</select>';
