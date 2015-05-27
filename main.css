@@ -9,7 +9,8 @@ body {
 	max-width: 1280px;/* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
 	text-align: center;
 	background-image: url("background.jpg"); /* pozadi se nacita dlouho, proto ho v devu vynechame */
-  background-attachment: fixed;
+    background-attachment: fixed;
+    background-size:cover;
 }
 #item {
 	width: 52px;
