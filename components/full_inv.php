@@ -9,11 +9,11 @@ include "updatevyrob.php";
 	</div>
 	<div id="inv" class="panel-collapse collapse in" style="text-align: left">
 		<div class="btn-group button-group filter-button-group">
-			<button class="btn" data-filter="*">Show all</button>
-			<button class="btn" data-filter=".money">Money</button>
-			<button class="btn" data-filter=".gold, .iron, .silicon">Gold, Iron & Silicon</button>
-			<button class="btn" data-filter=":not(.money)">No Money</button>
-			<button class="btn" data-filter=".metal:not(.transition)">metal but not transition</button>
+			<button class="btn btn-info" data-filter="*">Show all</button>
+			<button class="btn btn-info" data-filter=".Money">Money</button>
+			<button class="btn btn-info" data-filter=".Gold, .Iron, .Silicon">Gold, Iron & Silicon</button>
+			<button class="btn btn-info" data-filter=":not(.Money)">No Money</button>
+			<button class="btn btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 		</div>
 		<div class="grid">
 			<?php
@@ -25,7 +25,7 @@ include "updatevyrob.php";
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
 				echo '</div>';
-				//TODO do classy pridat ruzne veci podle kterych se to da tridit a filtrovat
+				//TODO do classy pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
 			}
 		?>
 		</div>
