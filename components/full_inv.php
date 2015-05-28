@@ -15,7 +15,7 @@ include "updatevyrob.php";
 			<button class="btn btn-info" data-filter=":not(.Money)">No Money</button>
 			<button class="btn btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 		</div>
-		<div class="button-group sort-by-button-group">
+		<div class="btn-group button-group sort-by-button-group">
   		<button class="btn btn-info" data-sort-by="original-order">Původní (ID)</button>
   		<button class="btn btn-info" data-sort-by="name">Jméno</button>
   		<button class="btn btn-info" data-sort-by="count">Počet</button>
@@ -24,7 +24,7 @@ include "updatevyrob.php";
 		<p>
   		<input type="text" class="quicksearch form-control" placeholder="Search" />
 		</p>
-		<div class="grid">
+		<div class="grid center">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
