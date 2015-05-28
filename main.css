@@ -3,12 +3,14 @@ html {
 }
 body {
 	background-color: #eee;
-	padding-top: 70px;
+	/*padding-top: 70px; Navbar uz neni nahore fixed, neni potreba */
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1280px;/* Stránka je optimalizovaná na 1280*1024, protože takové sú kompy na antre */
 	text-align: center;
 	background-image: url("background.jpg"); /* pozadi se nacita dlouho, proto ho v devu vynechame */
+    background-attachment: fixed;
+    background-size:cover;
 }
 #item {
 	width: 52px;

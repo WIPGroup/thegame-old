@@ -1,5 +1,5 @@
 <?php include_once("components/analyticstracking.php") ?>
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-default navbar-inverse">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
 			<span class="sr-only">Toggle navigation</span>

@@ -625,7 +625,7 @@ class RollbarNotifier {
                 'filename' => isset($frame['file']) ? $frame['file'] : '<internal>',
                 'lineno' =>  isset($frame['line']) ? $frame['line'] : 0,
                 'method' => $frame['function']
-                // TODO include args? need to sanitize first.
+                // TO DO include args? need to sanitize first.
             );
         }
 

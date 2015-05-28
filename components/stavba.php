@@ -1,16 +1,23 @@
 <?php
 include "components/sestavit.php";
 echo "<h1>stavba počítačů</h1>";
-echo '<form class="form-inline" action="build.php" method="GET" id="build">';
-
-$mbs = ""; $cpus = ""; $gpus = ""; $rams = ""; $psus = ""; $hdds = ""; 
+?>
+<div class="col-md-6 col-xs-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">Sestavit</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-inline" action="build.php" method="GET" id="build">
+<?php
+$mbs = ""; $cpus = ""; $gpus = ""; $rams = ""; $psus = ""; $hdds = "";
 $veci = null;
-$dotaz = 'SELECT * FROM veci';// WHERE typ<>""';
+$dotaz = 'SELECT * FROM veci WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
-	
+
 	if ($vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($zaznam['typ'] == "mb")
@@ -27,18 +34,41 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			$hdds .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 	}
 }
-echo '<select class="form-control" name="mb" id="mb">'.$mbs.'</select>';
-echo '<select class="form-control" name="cpu" id="cpu">'.$cpus.'</select>';
-echo '<select class="form-control" name="gpu" id="gpu">'.$gpus.'</select>';
-echo '<select class="form-control" name="ram1" id="ram1">'.$rams.'</select>';
-echo '<select class="form-control" name="ram2" id="ram2">'.$rams.'</select>';
-echo '<select class="form-control" name="ram3" id="ram3">'.$rams.'</select>';
-echo '<select class="form-control" name="ram4" id="ram4">'.$rams.'</select>';
-echo '<select class="form-control" name="psu" id="psu">'.$psus.'</select>';
-echo '<select class="form-control" name="hdd" id="hdd">'.$hdds.'</select>';
-echo '<button class="btn btn-primary" type="submit">Sestavit</button>';
+echo "Základní deska:";
+echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</select>';
+echo "<br>Procesor:";
+echo '<select class="form-control selectpicker" name="cpu" id="cpu">'.$cpus.'</select>';
+echo "<br>Ramky:"; //TODO: http://silviomoreto.github.io/bootstrap-select/
+echo '<select class="form-control selectpicker" name="ram1" id="ram1">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram2" id="ram2">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram3" id="ram3">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram4" id="ram4">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram5" id="ram5">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram6" id="ram6">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram7" id="ram7">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram8" id="ram8">'.$rams.'</select>';
+echo "<br>Grafárny:";
+echo '<select class="form-control selectpicker" name="gpu1" id="gpu1">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu2" id="gpu2">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu3" id="gpu3">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu4" id="gpu4">'.$gpus.'</select>';
+echo "<br>Harddisk:";
+echo '<select class="form-control selectpicker" name="hdd" id="hdd">'.$hdds.'</select>';
+echo "<br>Zdroj:";
+echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
+echo '<br><button class="btn btn-primary" type="submit">Sestavit</button>';
 echo '</form>';
-
-echo '<h2>Moje sestavy</h2>';
-echo '<div id="sestavy"></div>';
 ?>
+		</div>
+	</div>
+</div>
+<div class="col-md-6 col-xs-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">Moje sestavy</h1>
+		</div>
+		<div class="panel-body">
+			<div id="sestavy"></div>
+		</div>
+	</div>
+</div>

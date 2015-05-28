@@ -12,9 +12,11 @@ Nepodarilo se najit code checker zdarma pro uzavrene projekty :(
 phpMyAdmin (pri každom update trh.sql manuálne importujte [autor commitu])
 ```php
 http://417rct.org/phpMyAdmin/
+<?php
 $user='rctorg_antre';
 $passwd='F}6Z?6tX-H&E';
 $databaze='rctorg_antre';
+?>
 ```
 
 ## [WIKI](https://gitlab.com/AntreTeam/TheGame/wikis/home) obsahuje důležité informace
