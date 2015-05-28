@@ -15,6 +15,7 @@
     "animate.css": "~3.3.0",
     "nouislider": "~7.0.10",
     "bootstrap-select": "~1.7.2",
-    "isotope": "~2.2.0"
+    "isotope": "~2.2.0",
+    "isotope-packery": "~1.1.3"
   }
 }
