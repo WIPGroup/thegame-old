@@ -15,16 +15,17 @@ include "updatevyrob.php";
 			<button class="btn" data-filter=":not(.money)">No Money</button>
 			<button class="btn" data-filter=".metal:not(.transition)">metal but not transition</button>
 		</div>
-		<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".item", "layoutMode": "packery" }'>
+		<div class="grid">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) {
 				//if ($vlastnictvi[$zaznam['idveci']] > 0)
 				echo '<div class="grid-item '.$zaznam['nazev'].'">';
-				echo '<img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img>';
-				echo '<span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> ';
-				echo $zaznam['nazev'].'</div>';
+				echo '<img src="icons/'.$zaznam['nazev'].'.png"></img>';
+				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
+				echo '<p class="name">'.$zaznam['nazev'].'</p>';
+				echo '</div>';
 				//TODO do classy pridat ruzne veci podle kterych se to da tridit a filtrovat
 			}
 		?>
@@ -32,6 +33,11 @@ include "updatevyrob.php";
 	</div>
 </div>
 <script>
+$('.grid').isotope({
+  // options
+  itemSelector: '.grid-item',
+  layoutMode: 'packery'
+});
 $('.filter-button-group').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $container.isotope({ filter: filterValue });

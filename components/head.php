@@ -37,8 +37,10 @@
 	<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<!-- Isotope -->
 	<script src="bower_components\isotope\dist\isotope.pkgd.js"></script>
+	<script src="bower_components\isotope-packery\packery-mode.pkgd.min.js"></script>
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="inventory.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script src="js/scripts.js"></script>
 </head>
