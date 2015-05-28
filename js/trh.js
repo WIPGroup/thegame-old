@@ -7,7 +7,7 @@ $(function() { //odeslani formulare s nabidkou
 			url: "trade.php",
 			success: function(data) {
 				reloadTrh(); //po odeslani se nacte interface
-				if (data!=''){
+				if (data!==''){
 					swal(data);
 				}
 			}
@@ -15,4 +15,4 @@ $(function() { //odeslani formulare s nabidkou
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 });
-$(reloadTrh()); //po nacteni stranky se nacte interface, easy 
+$(reloadTrh()); //po nacteni stranky se nacte interface, easy
