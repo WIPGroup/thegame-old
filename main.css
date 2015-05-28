@@ -14,8 +14,8 @@ body {
 }
 .grid-item {
   float: left;
-  width: 150px;
-  height: 20px;
+  width: 100px;
+  height: 100px;
 }
 #item {
 	width: 52px;
