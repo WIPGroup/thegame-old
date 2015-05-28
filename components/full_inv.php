@@ -23,7 +23,7 @@ include "updatevyrob.php";
 				//if ($vlastnictvi[$zaznam['idveci']] > 0)
 				echo '<div class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
-				echo '<span class="label label-default name" style="text-align: right; margin-top: 90px">'.$zaznam['nazev'].'</span>';
+				echo '<span class="label label-default name" style="float:right; margin-top: 90px">'.$zaznam['nazev'].'</span>';
 				echo '</div>';
 				//TODO do classy pridat ruzne veci podle kterych se to da tridit a filtrovat
 			}
