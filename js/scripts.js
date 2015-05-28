@@ -15,6 +15,54 @@ function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 		return 60000;
 	}
 }*/
+function initIsotope(){
+	// init Isotope
+	var $grid = $('.grid').isotope({
+		itemSelector: '.grid-item',
+	  layoutMode: 'packery',
+		filter: function() {
+			return qsRegex ? $(this).text().match( qsRegex ) : true;
+		},
+		getSortData: {
+			name: '.name',
+	    count: '.count parseInt',
+    	tier: '[data-tier]',
+  	},
+		packery: {
+  		gutter: 10
+		}
+	});
+	// filter items on button click TODO vymazat vyhledavaci policko
+	$('.filter-button-group').on( 'click', 'button', function() {
+	  var filterValue = $(this).attr('data-filter');
+	  $grid.isotope({ filter: filterValue });
+	});
+	$('.sort-by-button-group').on( 'click', 'button', function() {
+  	var sortByValue = $(this).attr('data-sort-by');
+  	$grid.isotope({ sortBy: sortByValue });
+	});
+	var qsRegex;
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+	qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+	$grid.isotope({filter: function() {return qsRegex ? $(this).text().match( qsRegex ) : true;},});}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+var timeout;
+return function debounced() {
+	if ( timeout ) {
+		clearTimeout( timeout );
+	}
+	function delayed() {
+		fn();
+		timeout = null;
+	}
+	timeout = setTimeout( delayed, threshold || 100 );
+};
+}
+	console.log('initIsotope');
+}
 function reloadInv(){                //obnoveni inventare
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
@@ -66,6 +114,7 @@ function reloadFullInv(){
 		url : "components/full_inv.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
+			initIsotope();
 			console.log('reloadFullInv');
 		}
 	});

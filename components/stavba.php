@@ -56,7 +56,7 @@ echo "<br>Harddisk:";
 echo '<select class="form-control selectpicker" name="hdd" id="hdd">'.$hdds.'</select>';
 echo "<br>Zdroj:";
 echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
-echo '<br><button class="btn btn-primary" type="submit">Sestavit</button>';
+echo '<br><button class="btn btn-primary btn-block" type="submit">Sestavit</button>';
 echo '</form>';
 ?>
 		</div>
