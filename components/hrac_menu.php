@@ -29,7 +29,8 @@
 </ul>
 <script>
 $(function(){
-	var branch = $(location).attr('pathname').split('/')[2];
+	var pathurl = $(location).attr('pathname').split('/');
+	var branch = pathurl[pathurl.length-2];
 	$('#gitlaba').attr("href","https://ci.gitlab.com/projects/2263?ref="+branch);
 	$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
 	setInterval(function(){
