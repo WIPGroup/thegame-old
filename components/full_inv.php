@@ -31,15 +31,3 @@ include "updatevyrob.php";
 		</div>
 	</div>
 </div>
-<script>
-// init Isotope
-var $grid = $('.grid').isotope({
-	itemSelector: '.grid-item',
-  layoutMode: 'packery'
-});
-// filter items on button click
-$('.filter-button-group').on( 'click', 'button', function() {
-  var filterValue = $(this).attr('data-filter');
-  $container.isotope({ filter: filterValue });
-});
-</script>

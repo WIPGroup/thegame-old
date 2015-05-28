@@ -15,6 +15,19 @@ function getCookie(name){ //funkce pro ziskavani cookies podle nazvu
 		return 60000;
 	}
 }*/
+function initIsotope(){
+	// init Isotope
+	var $grid = $('.grid').isotope({
+		itemSelector: '.grid-item',
+	  layoutMode: 'packery'
+	});
+	// filter items on button click
+	$('.filter-button-group').on( 'click', 'button', function() {
+	  var filterValue = $(this).attr('data-filter');
+	  $container.isotope({ filter: filterValue });
+	});
+	console.log('initIsotope');
+}
 function reloadInv(){                //obnoveni inventare
 	$.ajax({
 		url : "components/inventar.php", //vykona se to co je v url
@@ -66,6 +79,7 @@ function reloadFullInv(){
 		url : "components/full_inv.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
+			initIsotope();
 			console.log('reloadFullInv');
 		}
 	});
