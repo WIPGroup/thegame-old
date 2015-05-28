@@ -15,13 +15,19 @@ include "updatevyrob.php";
 			<button class="btn btn-info" data-filter=":not(.Money)">No Money</button>
 			<button class="btn btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 		</div>
+		<div class="button-group sort-by-button-group">
+  		<button class="btn btn-info" data-sort-by="original-order">Původní (ID)</button>
+  		<button class="btn btn-info" data-sort-by="name">Jméno</button>
+  		<button class="btn btn-info" data-sort-by="count">Počet</button>
+  		<button class="btn btn-info" data-sort-by="tier">Tier</button>
+		</div>
 		<div class="grid">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) {
 				//if ($vlastnictvi[$zaznam['idveci']] > 0)
-				echo '<div class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
+				echo '<div data-tier="T0" class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">'; // data-tier="T0" nahradit phpmagic
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
 				echo '</div>';

@@ -19,12 +19,21 @@ function initIsotope(){
 	// init Isotope
 	var $grid = $('.grid').isotope({
 		itemSelector: '.grid-item',
-	  layoutMode: 'packery'
+	  layoutMode: 'packery',
+		getSortData: {
+			name: '.name',
+	    count: '.count parseInt',
+    	tier: '[data-tier]',
+  	}
 	});
 	// filter items on button click
 	$('.filter-button-group').on( 'click', 'button', function() {
 	  var filterValue = $(this).attr('data-filter');
 	  $grid.isotope({ filter: filterValue });
+	});
+	$('.sort-by-button-group').on( 'click', 'button', function() {
+  	var sortByValue = $(this).attr('data-sort-by');
+  	$grid.isotope({ sortBy: sortByValue });
 	});
 	console.log('initIsotope');
 }
