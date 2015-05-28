@@ -24,7 +24,7 @@ include "updatevyrob.php";
 		<p>
   		<input type="text" class="quicksearch form-control" placeholder="Search" />
 		</p>
-		<div class="grid center">
+		<div class="grid okraj">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
