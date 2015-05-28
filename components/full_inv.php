@@ -21,6 +21,9 @@ include "updatevyrob.php";
   		<button class="btn btn-info" data-sort-by="count">Počet</button>
   		<button class="btn btn-info" data-sort-by="tier">Tier</button>
 		</div>
+		<p>
+  		<input type="text" class="quicksearch form-control" placeholder="Search" />
+		</p>
 		<div class="grid">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
