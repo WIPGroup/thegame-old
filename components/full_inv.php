@@ -21,7 +21,7 @@ include "updatevyrob.php";
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) {
 				//if ($vlastnictvi[$zaznam['idveci']] > 0)
-				echo '<div class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\');">';
+				echo '<div class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<p class="name">'.$zaznam['nazev'].'</p>';
 				echo '</div>';
