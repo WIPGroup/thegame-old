@@ -8,7 +8,7 @@ include "updatevyrob.php";
 		<h1 class="panel-title">Inventář</h1>
 	</div>
 	<div id="inv" class="panel-collapse collapse in" style="text-align: left">
-		<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".item", "layoutMode": "fitRows" }'>
+		<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".item", "layoutMode": "packery" }'>
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
