@@ -2,3 +2,7 @@
   width: 128px;
   height: 128px;
 }
+.name {
+  float:right;
+  margin-top: 90px;
+}
