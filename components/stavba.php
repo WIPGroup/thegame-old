@@ -35,27 +35,27 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	}
 }
 echo "Základní deska:";
-echo '<select class="form-control" name="mb" id="mb">'.$mbs.'</select>';
+echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</select>';
 echo "<br>Procesor:";
-echo '<select class="form-control" name="cpu" id="cpu">'.$cpus.'</select>';
-echo "<br>Ramky:"; //TODO: nesmi jit vybrat jedna vec dvakrat, nevim jak to takhle chces resit, bylo by mozne dat do optionu disable, ale bootstrap to nijak nezvyrazni, pak to vypada divne
-echo '<select class="form-control" name="ram1" id="ram1">'.$rams.'</select>';
-echo '<select class="form-control" name="ram2" id="ram2">'.$rams.'</select>';
-echo '<select class="form-control" name="ram3" id="ram3">'.$rams.'</select>';
-echo '<select class="form-control" name="ram4" id="ram4">'.$rams.'</select>';
-echo '<select class="form-control" name="ram5" id="ram5">'.$rams.'</select>';
-echo '<select class="form-control" name="ram6" id="ram6">'.$rams.'</select>';
-echo '<select class="form-control" name="ram7" id="ram7">'.$rams.'</select>';
-echo '<select class="form-control" name="ram8" id="ram8">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="cpu" id="cpu">'.$cpus.'</select>';
+echo "<br>Ramky:"; //TODO: http://silviomoreto.github.io/bootstrap-select/
+echo '<select class="form-control selectpicker" name="ram1" id="ram1">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram2" id="ram2">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram3" id="ram3">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram4" id="ram4">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram5" id="ram5">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram6" id="ram6">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram7" id="ram7">'.$rams.'</select>';
+echo '<select class="form-control selectpicker" name="ram8" id="ram8">'.$rams.'</select>';
 echo "<br>Grafárny:";
-echo '<select class="form-control" name="gpu1" id="gpu1">'.$gpus.'</select>';
-echo '<select class="form-control" name="gpu2" id="gpu2">'.$gpus.'</select>';
-echo '<select class="form-control" name="gpu3" id="gpu3">'.$gpus.'</select>';
-echo '<select class="form-control" name="gpu4" id="gpu4">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu1" id="gpu1">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu2" id="gpu2">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu3" id="gpu3">'.$gpus.'</select>';
+echo '<select class="form-control selectpicker" name="gpu4" id="gpu4">'.$gpus.'</select>';
 echo "<br>Harddisk:";
-echo '<select class="form-control" name="hdd" id="hdd">'.$hdds.'</select>';
+echo '<select class="form-control selectpicker" name="hdd" id="hdd">'.$hdds.'</select>';
 echo "<br>Zdroj:";
-echo '<select class="form-control" name="psu" id="psu">'.$psus.'</select>';
+echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
 echo '<br><button class="btn btn-primary" type="submit">Sestavit</button>';
 echo '</form>';
 ?>

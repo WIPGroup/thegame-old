@@ -32,6 +32,9 @@
 	<!-- The noUiSlider script and stylesheet -->
 	<link href="bower_components/nouislider/distribute/jquery.nouislider.min.css" rel="stylesheet">
 	<script src="bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+	<!-- bootstrap-select -->
+	<link href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="shortcut icon" href="favicon.ico">
