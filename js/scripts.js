@@ -27,7 +27,10 @@ function initIsotope(){
 			name: '.name',
 	    count: '.count parseInt',
     	tier: '[data-tier]',
-  	}
+  	},
+		packery: {
+  		gutter: 5
+		}
 	});
 	// filter items on button click TODO vymazat vyhledavaci policko
 	$('.filter-button-group').on( 'click', 'button', function() {
