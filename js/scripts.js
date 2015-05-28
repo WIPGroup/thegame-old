@@ -24,7 +24,7 @@ function initIsotope(){
 	// filter items on button click
 	$('.filter-button-group').on( 'click', 'button', function() {
 	  var filterValue = $(this).attr('data-filter');
-	  $container.isotope({ filter: filterValue });
+	  $grid.isotope({ filter: filterValue });
 	});
 	console.log('initIsotope');
 }
