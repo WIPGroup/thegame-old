@@ -29,7 +29,7 @@ function initIsotope(){
     	tier: '[data-tier]',
   	},
 		packery: {
-  		gutter: 5
+  		gutter: 10
 		}
 	});
 	// filter items on button click TODO vymazat vyhledavaci policko
