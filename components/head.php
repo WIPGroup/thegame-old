@@ -35,6 +35,8 @@
 	<!-- bootstrap-select -->
 	<link href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<!-- Isotope -->
+	<script src="bower_components\isotope\dist\isotope.pkgd.js"></script>
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="shortcut icon" href="favicon.ico">
