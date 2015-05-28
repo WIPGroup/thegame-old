@@ -6,4 +6,8 @@
 .name {
   float:right;
   margin-top: 90px;
+  font-size: 110%;
+}
+.count {
+  font-size: 90%;
 }

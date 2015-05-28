@@ -29,7 +29,7 @@ function initIsotope(){
     	tier: '[data-tier]',
   	}
 	});
-	// filter items on button click
+	// filter items on button click TODO vymazat vyhledavaci policko
 	$('.filter-button-group').on( 'click', 'button', function() {
 	  var filterValue = $(this).attr('data-filter');
 	  $grid.isotope({ filter: filterValue });
