@@ -12,6 +12,11 @@ body {
     background-attachment: fixed;
     background-size:cover;
 }
+.grid-item {
+  float: left;
+  width: 150px;
+  height: 20px;
+}
 #item {
 	width: 52px;
 	height: 52px;
