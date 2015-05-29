@@ -25,9 +25,18 @@ function initIsotope(){
 		},
 		getSortData: {
 			name: '.name',
+			power: '.power parseInt',
 	    count: '.count parseInt',
     	tier: '[data-tier]',
+			type: '[data-type]',
   	},
+		sortAscending: {
+    	name: true,
+			power: false,
+			count: false,
+			tier: true,
+			type: true
+		},
 		packery: {
   		gutter: 10
 		}

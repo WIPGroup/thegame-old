@@ -33,7 +33,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		if ($zaznam['typ'] == "hdd")
 			$hdds .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 	}
-}
+} //https://select2.github.io/examples.html mozna
 echo "Základní deska:";
 echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</select>';
 echo "<br>Procesor:";

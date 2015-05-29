@@ -28,13 +28,14 @@ include "updatevyrob.php";
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-			while ($zaznam = mysql_fetch_array($vysledek)) {
-				//if ($vlastnictvi[$zaznam['idveci']] > 0)
-				echo '<div data-tier="T0" class="grid-item '.$zaznam['nazev'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">'; // data-tier="T0" nahradit phpmagic
+			while ($zaznam = mysql_fetch_array($vysledek)) { //vymyslet http://isotope.metafizzy.co/filtering.html
+				echo '<div data-tier="T0" data-type="'.$zaznam['typ'].'" class="grid-item" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
+				echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
 				echo '</div>';
-				//TODO do classy pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
+				//TODO do data-neco dat informace ktere neni potreba zobrazovat, do spanu s classou neco dat veci k zobrazeni
+				//TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
 			}
 		?>
 		</div>
