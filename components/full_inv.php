@@ -10,9 +10,14 @@ include "updatevyrob.php";
 	<div id="inv" class="panel-collapse collapse in" style="text-align: left">
 		<div class="btn-group button-group filter-button-group">
 			<button class="btn btn-info" data-filter="*">Show all</button>
-			<button class="btn btn-info" data-filter=".Money">Money</button>
-			<button class="btn btn-info" data-filter=".Gold, .Iron, .Silicon">Gold, Iron & Silicon</button>
-			<button class="btn btn-info" data-filter=":not(.Money)">No Money</button>
+			<button class="btn btn-info" data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</button>
+			<button class="btn btn-info" data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</button>
+			<button class="btn btn-info" data-filter=".cpu">CPUs</button>
+			<button class="btn btn-info" data-filter=".psu">PSUs</button>
+			<button class="btn btn-info" data-filter=".hdd">HDDs</button>
+			<button class="btn btn-info" data-filter=".gpu">GPUs</button>
+			<button class="btn btn-info" data-filter=".ram">RAMs</button>
+			<button class="btn btn-info" data-filter=".mb">Motherboards</button>
 			<button class="btn btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 		</div>
 		<div class="btn-group button-group sort-by-button-group">
