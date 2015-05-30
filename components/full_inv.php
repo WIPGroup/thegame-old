@@ -37,8 +37,8 @@ include "updatevyrob.php";
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) { //vymyslet http://isotope.metafizzy.co/filtering.html
 				echo '<div data-tier="T0" data-type="'.$zaznam['typ'].'" class="grid-item '.$zaznam['typ'].'" style="background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">'; //TODO pokud hrac item nema, pridat do style "opacity: 0.4;"
+				echo '<span class="badge power center">'.$zaznam['vykon'].'</span>';
 				echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
-				echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
 				echo '</div>';
 				//TODO php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco

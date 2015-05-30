@@ -10,7 +10,12 @@
 }
 .count {
   font-size: 110%;
+  float:left;
+  margin-top: 108px;
 }
 .okraj {
   margin: 5px 5px 5px 5px;
+}
+.power {
+  background-color: #f55;
 }
