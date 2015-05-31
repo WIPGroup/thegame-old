@@ -7,6 +7,6 @@ $I->fillField('heslo','root');
 $I->click('Prihlásiť');
 $I->wantTo('Check inventory for money, iron and gold');
 $I->click('Trh');
-//$I->see('Money'); TODO ajax
-//$I->see('Gold');
-//$I->see('Iron');
+$I->see('Money');
+$I->see('Gold');
+$I->see('Iron');
