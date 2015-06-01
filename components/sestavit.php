@@ -2,6 +2,27 @@
 if (isset($_GET['mb']))
 {
 	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
+	
+	$rampwr = 0;
+	$gpupwr = 0;
+	$hddpwr = 0;
+	
+	//názvy věcí
+	$dotaz = 'SELECT * FROM veci';
+	$vysl = mysql_query($dotaz) or die(mysql_error($db));
+	
+	while ($zazn = mysql_fetch_array($vysl))
+	{
+		$veci[$zazn['idveci']] = $zazn['nazev'];
+	}
+	
+	$pocveci = count($vlastnictvi);
+	$sestava = null;
+	for ($i = 0; $i < $pocveci; $i++)
+	{
+		$sestava[$i] = 0;
+	}
+	
 	//získat údaje o desce
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['mb'].' AND typ="mb"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -11,6 +32,7 @@ if (isset($_GET['mb']))
 		$sloty = explode(';', $zaznam['sloty']);
 		$socket = $zaznam['socket'];
 		$vlastnictvi[$zaznam['idveci']]--;
+		$sestava[$zaznam['idveci']]++;
 	}
 	else
 		die('Takovou základní desku nevlastníš.');
@@ -25,6 +47,8 @@ if (isset($_GET['mb']))
 			die('Nekompatibilní základní deska a procesor.');
 
 		$vlastnictvi[$zaznam['idveci']]--;
+		$sestava[$zaznam['idveci']]++;
+		$cpupwr = $zaznam['vykon'];
 	}
 	else
 		die('Takový procesor nevlastníš.');
@@ -38,6 +62,8 @@ if (isset($_GET['mb']))
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 		{
 			$vlastnictvi[$zaznam['idveci']]--;
+			$sestava[$zaznam['idveci']]++;
+			$rampwr += $zaznam['vykon'];
 		}
 		else
 			die('Takovou ramku nevlastníš.');
@@ -52,6 +78,8 @@ if (isset($_GET['mb']))
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 		{
 			$vlastnictvi[$zaznam['idveci']]--;
+			$sestava[$zaznam['idveci']]++;
+			$gpupwr = $zaznam['vykon'];
 		}
 		else
 			die('Takovou grafárnu nevlastníš.');
@@ -64,6 +92,8 @@ if (isset($_GET['mb']))
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		$vlastnictvi[$zaznam['idveci']]--;
+		$sestava[$zaznam['idveci']]++;
+		$hddpwr += $zaznam['vykon'];
 	}
 	else
 		die('Takový harddisk nevlastníš.');
@@ -75,12 +105,28 @@ if (isset($_GET['mb']))
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		$vlastnictvi[$zaznam['idveci']]--;
+		$sestava[$zaznam['idveci']]++;
+		$psupwr = $zaznam['vykon'];
 	}
 	else
 		die('Takový zdroj nevlastníš.');
+	
+	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
+	if ($psupwr < $vykon)
+		$vykon = 0;
 		
 	//TODO: poskládat hráči sestavu
+	$dotaz = 'INSERT INTO sestavy (hrac, vykon, obsah, update) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
+	mysql_query($dotaz);
 	
-	//TODO: odebrat hráči majetek
+	//odebrat hráči majetek
+	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+	mysql_query($dotaz);
+
+	//log
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.'")';
+	mysql_query($dotaz);
+
+	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.';
 }
 ?>
