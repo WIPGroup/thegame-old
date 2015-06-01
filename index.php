@@ -23,7 +23,7 @@ else
 			<h1 class="panel-title">Test results for master</h1>
 		</div>
 		<div class="panel-body">
-			<iframe style="width: 100%; height: 1000px" src="http://antre.417rct.org/master/report.html"></iframe>
+			<iframe style="width: 100%; height: 1000px" src="http://94.125.220.136:8111/viewLog.html?buildTypeId=TheGame_Build&buildId=lastFinished"></iframe>
 		</div>
 	</div>
 </div>
