@@ -39,21 +39,14 @@ echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</sele
 echo "<br>Procesor:";
 echo '<select class="form-control selectpicker" name="cpu" id="cpu">'.$cpus.'</select>';
 echo "<br>Ramky:"; //TODO: http://silviomoreto.github.io/bootstrap-select/
-echo '<select class="form-control selectpicker" name="ram1" id="ram1">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram2" id="ram2">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram3" id="ram3">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram4" id="ram4">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram5" id="ram5">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram6" id="ram6">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram7" id="ram7">'.$rams.'</select>';
-echo '<select class="form-control selectpicker" name="ram8" id="ram8">'.$rams.'</select>';
+for ($i = 1; $i <= 8; $i++)
+	echo '<select class="form-control selectpicker" name="ram'.$i.'" id="ram'.$i.'">'.$rams.'</select>';
 echo "<br>Grafárny:";
-echo '<select class="form-control selectpicker" name="gpu1" id="gpu1">'.$gpus.'</select>';
-echo '<select class="form-control selectpicker" name="gpu2" id="gpu2">'.$gpus.'</select>';
-echo '<select class="form-control selectpicker" name="gpu3" id="gpu3">'.$gpus.'</select>';
-echo '<select class="form-control selectpicker" name="gpu4" id="gpu4">'.$gpus.'</select>';
+for ($i = 1; $i <= 4; $i++)
+	echo '<select class="form-control selectpicker" name="gpu'.$i.'" id="gpu'.$i.'">'.$gpus.'</select>';
 echo "<br>Harddisk:";
-echo '<select class="form-control selectpicker" name="hdd" id="hdd">'.$hdds.'</select>';
+for ($i = 1; $i <= 4; $i++)
+	echo '<select class="form-control selectpicker" name="hdd'.$i.'" id="hdd'.$i.'">'.$hdds.'</select>';
 echo "<br>Zdroj:";
 echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
 echo '<br><button class="btn btn-primary btn-block" type="submit">Sestavit</button>';

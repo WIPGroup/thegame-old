@@ -86,18 +86,21 @@ if (isset($_GET['mb']))
 	}
 	
 	//hdd
-	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'].' AND typ="hdd"';
-	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-	$zaznam = mysql_fetch_array($vysledek);
-	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
+	for ($i = 1; $i <= $sloty[2]; $i++)
 	{
-		$vlastnictvi[$zaznam['idveci']]--;
-		$sestava[$zaznam['idveci']]++;
-		$hddpwr += $zaznam['vykon'];
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'.$i].' AND typ="hdd"';
+		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+		$zaznam = mysql_fetch_array($vysledek);
+		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
+		{
+			$vlastnictvi[$zaznam['idveci']]--;
+			$sestava[$zaznam['idveci']]++;
+			$hddpwr = max($zaznam['vykon'], $hddpwr);
+		}
+		else
+			die('Takový harddisk nevlastníš.');
 	}
-	else
-		die('Takový harddisk nevlastníš.');
-	
+
 	//psu
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['psu'].' AND typ="psu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
