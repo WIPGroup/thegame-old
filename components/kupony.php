@@ -1,4 +1,4 @@
-<div class="col-xs-9">
+<div class="col-xs-12">
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h1 class="panel-title">Uplatnění surovinného kupónu</h1>
