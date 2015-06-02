@@ -7,7 +7,7 @@ include "updatevyrob.php";
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
 		<h1 class="panel-title">Inventář</h1>
 	</div>
-	<div id="inv" class="panel-collapse collapse in">
+	<div id="inv" class="panel-body panel-collapse collapse in">
 		<div class="col-xs-12 col-md-2">
 			<p>
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
