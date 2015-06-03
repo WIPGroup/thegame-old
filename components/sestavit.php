@@ -2,27 +2,27 @@
 if (isset($_GET['mb']))
 {
 	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
-	
+
 	$rampwr = 0;
 	$gpupwr = 0;
 	$hddpwr = 0;
-	
+
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysl = mysql_query($dotaz) or die(mysql_error($db));
-	
+
 	while ($zazn = mysql_fetch_array($vysl))
 	{
 		$veci[$zazn['idveci']] = $zazn['nazev'];
 	}
-	
+
 	$pocveci = count($vlastnictvi);
 	$sestava = null;
 	for ($i = 0; $i < $pocveci; $i++)
 	{
 		$sestava[$i] = 0;
 	}
-	
+
 	//získat údaje o desce
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['mb'].' AND typ="mb"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -52,7 +52,7 @@ if (isset($_GET['mb']))
 	}
 	else
 		die('Takový procesor nevlastníš.');
-	
+
 	//ram sloty
 	for ($i = 1; $i <= $sloty[0]; $i++)
 	{
@@ -68,7 +68,7 @@ if (isset($_GET['mb']))
 		else
 			die('Takovou ramku nevlastníš.');
 	}
-	
+
 	//gpu karty
 	for ($i = 1; $i <= $sloty[1]; $i++)
 	{
@@ -84,7 +84,7 @@ if (isset($_GET['mb']))
 		else
 			die('Takovou grafárnu nevlastníš.');
 	}
-	
+
 	//hdd
 	for ($i = 1; $i <= $sloty[2]; $i++)
 	{
@@ -113,15 +113,15 @@ if (isset($_GET['mb']))
 	}
 	else
 		die('Takový zdroj nevlastníš.');
-	
+
 	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
 	if ($psupwr < $vykon)
 		$vykon = 0;
-		
+
 	//TODO: poskládat hráči sestavu
 	$dotaz = 'INSERT INTO sestavy (hrac, vykon, obsah, update) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
 	mysql_query($dotaz);
-	
+
 	//odebrat hráči majetek
 	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 	mysql_query($dotaz);
@@ -130,6 +130,6 @@ if (isset($_GET['mb']))
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.'")';
 	mysql_query($dotaz);
 
-	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.';
+	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
 }
 ?>

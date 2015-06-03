@@ -3,9 +3,9 @@
 		<?php include 'components/autorefresh.php'; ?>
 	</li>
 	<li>
-		<a class="navbar-link" id="gitlaba" href='https://ci.gitlab.com/projects/2263?ref=master'>
+<!--		<a class="navbar-link" id="gitlaba" href='https://ci.gitlab.com/projects/2263?ref=master'>
 			<img id="gitlabimg" src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
-		</a>
+		</a> -->
 	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
 	<li class="dropdown">
@@ -27,7 +27,7 @@
 	</ul>
 </li>
 </ul>
-<script>
+<script>/*
 $(function(){
 	var pathurl = $(location).attr('pathname').split('/');
 	var branch = pathurl[pathurl.length-2];
@@ -36,5 +36,5 @@ $(function(){
 	setInterval(function(){
 		$('#gitlabimg').attr("src","https://ci.gitlab.com/projects/2263/status.png?ref="+branch+"&timestamp="+new Date().getTime());
 	},10000);
-});
+});*/
 </script>
