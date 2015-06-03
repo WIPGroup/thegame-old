@@ -64,14 +64,14 @@ include "updatevyrob.php";
 			?>
 		</div>
 		<div class="grid col-xs-12 col-md-2">
-			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a>
-			Core (Threads):	8(16)
-			L3 Cache:	20
-			Graphics:	0
-			Controller:	2
-			Brand:	Core i7-E
-			MicroArchitecture Code-name:	Haswell-E
-			Vykon:	23 711 280 000 000
+			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
+			Core (Threads):	8(16)<br/>
+			L3 Cache:	20<br/>
+			Graphics:	0<br/>
+			Controller:	2<br/>
+			Brand:	Core i7-E<br/>
+			MicroArchitecture Code-name:	Haswell-E<br/>
+			Vykon:	23 711 280 000 000<br/>
 		</div>
 	</div>
 </div>
