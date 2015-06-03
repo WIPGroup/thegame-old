@@ -8,7 +8,7 @@ include "updatevyrob.php";
 		<h1 class="panel-title">Inventář</h1>
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
-		<div class="col-xs-12 col-md-2">
+		<div class="col-xs-12 col-md-2"> <!-- TODO do dropdownu http://getbootstrap.com/components/#btn-dropdowns -->
 			<p>
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
 			</p>
@@ -35,7 +35,7 @@ include "updatevyrob.php";
 				<button class="btn btn-block btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 			</div>
 		</div>
-		<div class="grid col-xs-12 col-md-10">
+		<div class="grid col-xs-12 col-md-8">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -62,6 +62,17 @@ include "updatevyrob.php";
 				//TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
 				}
 			?>
+		</div>
+		<div class="grid col-xs-12 col-md-2">
+			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
+			Core (Threads):	8(16)<br/>
+			L3 Cache:	20<br/>
+			Graphics:	0<br/>
+			Controller:	2<br/>
+			Brand:	Core i7-E<br/>
+			MicroArchitecture Code-name:	Haswell-E<br/>
+			Vykon:	23 711 280 000 000<br/>
+			<button class="btn btn-primary btn-block">More...</button> <!-- TODO swal info text z wiki -->
 		</div>
 	</div>
 </div>
