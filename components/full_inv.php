@@ -8,7 +8,7 @@ include "updatevyrob.php";
 		<h1 class="panel-title">Inventář</h1>
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
-		<div class="col-xs-12 col-md-2">
+		<div class="col-xs-12 col-md-2"> <!-- TODO do dropdownu http://getbootstrap.com/components/#btn-dropdowns -->
 			<p>
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
 			</p>
@@ -72,6 +72,7 @@ include "updatevyrob.php";
 			Brand:	Core i7-E<br/>
 			MicroArchitecture Code-name:	Haswell-E<br/>
 			Vykon:	23 711 280 000 000<br/>
+			<button class="btn btn-primary btn-block">More...</button> <!-- TODO swal info text z wiki -->
 		</div>
 	</div>
 </div>
