@@ -64,8 +64,14 @@ include "updatevyrob.php";
 			?>
 		</div>
 		<div class="grid col-xs-12 col-md-2">
-			tady bude info o itemu
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec orci metus. Fusce tincidunt lorem elit, quis efficitur lectus vehicula ut. Maecenas a justo purus. Nullam euismod odio felis, ac hendrerit risus suscipit placerat. Ut sit amet lacus volutpat, viverra elit blandit, gravida erat. Nulla facilisi. Aenean ex diam, fermentum at nunc quis, pulvinar dapibus eros. Morbi sit amet aliquam dolor. Proin gravida erat eget nibh ullamcorper, a sollicitudin sem vulputate. Morbi blandit libero vel ipsum porttitor rutrum. Donec varius nisl nibh, non congue purus suscipit et. Mauris at nulla condimentum, maximus nibh quis, consequat lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean in orci fermentum dui lacinia posuere eu a erat. Donec ac lobortis ipsum.
+			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a>
+			Core (Threads):	8(16)
+			L3 Cache:	20
+			Graphics:	0
+			Controller:	2
+			Brand:	Core i7-E
+			MicroArchitecture Code-name:	Haswell-E
+			Vykon:	23 711 280 000 000
 		</div>
 	</div>
 </div>
