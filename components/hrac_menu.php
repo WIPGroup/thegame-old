@@ -6,6 +6,9 @@
 <!--		<a class="navbar-link" id="gitlaba" href='https://ci.gitlab.com/projects/2263?ref=master'>
 			<img id="gitlabimg" src='https://ci.gitlab.com/projects/2263/status.png?ref=master'/>
 		</a> -->
+		<a href="http://94.125.220.136:8111/viewType.html?buildTypeId=TheGame_Build&guest=1">
+			<img src="http://94.125.220.136:8111/app/rest/builds/buildType:(id:TheGame_Build)/statusIcon"/>
+		</a>
 	</li>
 	<li><a href="https://gitlab.com/AntreTeam/TheGame">GitLab</a></li>
 	<li class="dropdown">
