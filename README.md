@@ -1,4 +1,4 @@
-[![build status](https://ci.gitlab.com/projects/2263/status.png?ref=master)](https://ci.gitlab.com/projects/2263?ref=master)
+[![build status](http://94.125.220.136:8111/app/rest/builds/buildType:(id:TheGame_Build)/statusIcon)](http://94.125.220.136:8111/viewType.html?buildTypeId=TheGame_Build&guest=1)
 [![Dependency Status](https://gemnasium.com/eeb803c626900dda77f0bf52e69e5e91.svg)](https://gemnasium.com/2267d5b2ddc964c4f42201b4c9265eb6)
 [![ŠMAK Badge](https://img.shields.io/badge/%C5%A0MAK-100%25-brightgreen.svg)](http://antre.417rct.org/master/)
 Nepodarilo se najit code checker zdarma pro uzavrene projekty :(
