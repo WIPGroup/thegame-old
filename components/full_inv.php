@@ -35,7 +35,7 @@ include "updatevyrob.php";
 				<button class="btn btn-block btn-info" data-filter=".metal:not(.transition)">metal but not transition</button>
 			</div>
 		</div>
-		<div class="grid col-xs-12 col-md-10">
+		<div class="grid col-xs-12 col-md-8">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -62,6 +62,10 @@ include "updatevyrob.php";
 				//TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
 				}
 			?>
+		</div>
+		<div class="grid col-xs-12 col-md-2">
+			tady bude info o itemu
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec orci metus. Fusce tincidunt lorem elit, quis efficitur lectus vehicula ut. Maecenas a justo purus. Nullam euismod odio felis, ac hendrerit risus suscipit placerat. Ut sit amet lacus volutpat, viverra elit blandit, gravida erat. Nulla facilisi. Aenean ex diam, fermentum at nunc quis, pulvinar dapibus eros. Morbi sit amet aliquam dolor. Proin gravida erat eget nibh ullamcorper, a sollicitudin sem vulputate. Morbi blandit libero vel ipsum porttitor rutrum. Donec varius nisl nibh, non congue purus suscipit et. Mauris at nulla condimentum, maximus nibh quis, consequat lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean in orci fermentum dui lacinia posuere eu a erat. Donec ac lobortis ipsum.
 		</div>
 	</div>
 </div>
