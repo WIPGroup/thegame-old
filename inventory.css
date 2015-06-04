@@ -4,7 +4,7 @@
   height: 128px;
 }
 .name {
-  float:right;
+  text-align: right;
   position: absolute;
   top: 108px;
   left: 40%;
@@ -12,12 +12,9 @@
 }
 .count {
   font-size: 110%;
-  float:left;
   position: absolute;
   top: 108px;
-}
-.okraj {
-  margin: 5px 5px 5px 5px;
+  left: 0px;
 }
 .power {
   background-color: #f55;

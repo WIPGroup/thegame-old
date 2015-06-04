@@ -11,5 +11,17 @@ $(function() { //odeslani formulare s nabidkou
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
+	$(".grid-item").click(function(){
+	    var idveci = $(this).attr("data-idveci");
+	    console.log('Id veci je '+idveci);
+	    $.ajax({
+			data: {item:idveci},
+			type: "GET",
+			url: "components/iteminfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
 });
 $(reloadFullInv());
