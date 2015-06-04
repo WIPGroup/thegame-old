@@ -14,14 +14,14 @@ function reloadSkladaniSestav(){
 			$("#build").html(data);  //data se hodi do neceho s id inventar, easy
 			disableUnavailable();
 			console.log('reloadSkladaniSestav');
-			$("select#mb").change(function(){ //TODO vašek to někdy opraví
+			$("select#mb").change(function(){
 		        console.log('selectchange');
 	    	    disableUnavailable();
 	        });
 		}
 	});
 }
-function disableRam(){
+function disableRAM(){
 	var pocetram = $("#build #mb option:selected").data('ram');
 	console.log('RAM k dispozici '+pocetram);
 	$("select[id*=ram]").each(function(){
@@ -52,7 +52,7 @@ function disablePCI(){
 	}
 }
 function disableUnavailable(){
-	disableRam();
+	disableRAM();
 	disableHDD();
 	disablePCI();
 	$("#build select").selectpicker('refresh');
