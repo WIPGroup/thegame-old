@@ -1,6 +1,5 @@
 <?php
 include "components/sestavit.php";
-echo "<h1>stavba počítačů</h1>";
 ?>
 <div class="col-md-6 col-xs-12">
 	<div class="panel panel-primary">
@@ -10,7 +9,7 @@ echo "<h1>stavba počítačů</h1>";
 		<div class="panel-body">
 			<form class="form-inline" action="build.php" method="GET" id="build">
 <?php
-$mbs = null; $cpus = null; $gpus = null; $rams = null; $hdds = null; $psus = null; 
+$mbs = null; $cpus = null; $gpus = null; $rams = null; $hdds = null; $psus = null;
 $veci = null;
 $dotaz = 'SELECT * FROM veci WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -63,7 +62,7 @@ echo '</form>';
 <div class="col-md-6 col-xs-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h1 class="panel-title">Moje sestavy</h1>
+			<h1 class="panel-title">Moje sestavy</h1> <!-- předělat misto druheho divu na list -->
 		</div>
 		<div class="panel-body">
 			<div id="sestavy"></div>
