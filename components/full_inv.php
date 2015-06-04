@@ -9,10 +9,10 @@ include "updatevyrob.php";
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
 		<div class="col-xs-12">
-			<div class="col-md-2 col-xs-12">
+			<div class="col-md-3 col-xs-12">
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
 			</div>
-			<div class="col-md-2 col-xs-12 col-md-offset-4 btn-group button-group sort-by-button-group">
+			<div class="col-md-3 col-xs-12 col-md-offset-1 btn-group button-group sort-by-button-group">
 				<button type="button" class="btn btn-info" data-sort-by="original-order">Default sort (ID)</button>
 			  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 			    <span class="caret"></span>
@@ -25,7 +25,7 @@ include "updatevyrob.php";
 					<li><button class="btn btn-block btn-info" data-sort-by="type">Typ</button></li>
 			  </ul>
 			</div>
-			<div class="col-md-2 col-xs-12 col-md-offset-8 btn-group button-group filter-button-group">
+			<div class="col-md-3 col-xs-12 col-md-offset-1 btn-group button-group filter-button-group">
 				<button type="button" class="btn btn-info" data-filter="*">Show all</button>
 				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					<span class="caret"></span>
