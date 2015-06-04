@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Pon 25. kvě 2015, 10:31
+-- Vytvořeno: Čtv 04. čen 2015, 08:44
 -- Verze serveru: 5.5.43-0ubuntu0.14.10.1
 -- Verze PHP: 5.5.12-2ubuntu4.4
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`) VALUES
-(1, 'root', 'root', '1228;1123;230;900;1;1;1;1;1;11;54;2;1'),
+(1, 'root', 'root', '1228;1123;230;900;10;15;5;0;10;6;44;2;5'),
 (2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0;0'),
 (3, 'test2', 'test2', '647;341;376;2;0;0;0;0;0;0;0;0;0');
 
@@ -202,7 +202,19 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1431882687, 1, 'Dokončena výroba 1x RAM'),
 (1431882687, 1, 'Dokončena výroba 1x SSD'),
 (1432491336, 1, 'Vytvořena nabídka Money(1) za GPU(1)'),
-(1432491365, 1, 'Zrušena nabídka Money(1) za GPU(1)');
+(1432491365, 1, 'Zrušena nabídka Money(1) za GPU(1)'),
+(1432578094, 1, 'Vytvořena nabídka GPU(1) za Money(1)'),
+(1432578157, 1, 'Zrušena nabídka GPU(1) za Money(1)'),
+(1432579924, 1, 'Vytvořena nabídka CPU-Intel(1) za Money(1)'),
+(1433149045, 1, 'Vytvořena nabídka GPU(1) za Money(1)'),
+(1433149076, 1, 'Zrušena nabídka GPU(1) za Money(1)'),
+(1433149107, 1, 'Vytvořena nabídka Gold(1) za Money(1)'),
+(1433149112, 1, 'Zrušena nabídka Gold(1) za Money(1)'),
+(1433149222, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
+(1433149376, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
+(1433149859, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
+(1433150333, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
+(1433150399, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6');
 
 -- --------------------------------------------------------
 
@@ -217,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
   `mnoznabizi` int(11) NOT NULL,
   `chce` int(11) NOT NULL,
   `mnozchce` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=302 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=304 ;
 
 --
 -- Vypisuji data pro tabulku `obchod`
@@ -373,7 +385,8 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 (297, 3, 1, 15, 2, 10),
 (298, 3, 1, 15, 2, 10),
 (299, 3, 1, 15, 2, 10),
-(300, 3, 1, 15, 2, 10);
+(300, 3, 1, 15, 2, 10),
+(303, 1, 5, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -408,15 +421,18 @@ CREATE TABLE IF NOT EXISTS `sestavy` (
   `hrac` int(11) NOT NULL,
   `vykon` int(11) NOT NULL,
   `obsah` varchar(500) NOT NULL,
-  `update` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `sbercas` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Vypisuji data pro tabulku `sestavy`
 --
 
-INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `obsah`, `update`) VALUES
-(1, 1, 1000, '0;0;0;0;0;1;1;1;0;1;2;0;1', 0);
+INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `obsah`, `sbercas`) VALUES
+(1, 1, 1000, '0;0;0;0;0;1;1;1;0;1;2;0;1', 0),
+(2, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1433149859),
+(3, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1433150333),
+(4, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1433150399);
 
 -- --------------------------------------------------------
 
@@ -430,27 +446,28 @@ CREATE TABLE IF NOT EXISTS `veci` (
   `typ` varchar(16) NOT NULL,
   `vykon` int(11) NOT NULL,
   `socket` int(11) NOT NULL,
-  `sloty` varchar(50) NOT NULL
+  `sloty` varchar(50) NOT NULL,
+  `popis` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Vypisuji data pro tabulku `veci`
 --
 
-INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`, `socket`, `sloty`) VALUES
-(0, 'Money', '', 0, 0, ''),
-(1, 'Gold', '', 0, 0, ''),
-(2, 'Iron', '', 0, 0, ''),
-(3, 'Silicon', '', 0, 0, ''),
-(4, 'CPU-AMD', 'cpu', 2, 1, ''),
-(5, 'CPU-Intel', 'cpu', 3, 2, ''),
-(6, 'GPU', 'gpu', 5, 0, ''),
-(7, 'HDD', 'hdd', 1, 0, ''),
-(8, 'MemoryChip', '', 0, 0, ''),
-(9, 'PSU', 'psu', 10, 0, ''),
-(10, 'RAM', 'ram', 1, 0, ''),
-(11, 'SSD', 'hdd', 2, 0, ''),
-(12, 'MotherBoard', 'mb', 1, 2, '2;1');
+INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`, `socket`, `sloty`, `popis`) VALUES
+(0, 'Money', '', 0, 0, '', ''),
+(1, 'Gold', '', 0, 0, '', ''),
+(2, 'Iron', '', 0, 0, '', ''),
+(3, 'Silicon', '', 0, 0, '', ''),
+(4, 'CPU-AMD', 'cpu', 2, 1, '', 'ne tak dobrý popis cpu od amd'),
+(5, 'CPU-Intel', 'cpu', 3, 2, '', 'überepic popis cpu od intelu'),
+(6, 'GPU', 'gpu', 5, 0, '', 'popis gpu'),
+(7, 'HDD', 'hdd', 1, 0, '', 'popis hdd'),
+(8, 'MemoryChip', '', 0, 0, '', ''),
+(9, 'PSU', 'psu', 10, 0, '', 'popis psu'),
+(10, 'RAM', 'ram', 1, 0, '', 'popis ram'),
+(11, 'SSD', 'hdd', 2, 0, '', 'popis ssd'),
+(12, 'MotherBoard', 'mb', 1, 2, '2;1;2', 'popis mb');
 
 -- --------------------------------------------------------
 
@@ -531,7 +548,7 @@ MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pro tabulku `obchod`
 --
 ALTER TABLE `obchod`
-MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=302;
+MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=304;
 --
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
@@ -541,7 +558,7 @@ MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pro tabulku `sestavy`
 --
 ALTER TABLE `sestavy`
-MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pro tabulku `veci`
 --

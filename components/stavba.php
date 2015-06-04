@@ -10,6 +10,7 @@ echo "<h1>stavba počítačů</h1>";
 		<div class="panel-body">
 			<form class="form-inline" action="build.php" method="GET" id="build">
 <?php
+$mbs = null; $cpus = null; $gpus = null; $rams = null; $hdds = null; $psus = null; 
 $veci = null;
 $dotaz = 'SELECT * FROM veci WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
