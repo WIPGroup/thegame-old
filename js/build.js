@@ -7,6 +7,16 @@ function reloadSestavy(){
 		}
 	});
 }
+function reloadSkladaniSestav(){
+	$.ajax({
+		url : "components/sestavyformular.php", //vykona se to co je v url
+		success : function (data) {  //prijdou zpatky nejake data
+			$("#build").html(data);  //data se hodi do neceho s id inventar, easy
+			console.log('reloadSkladaniSestav');
+			disableRam();
+		}
+	});
+}
 function disableRam(){
 	var pocetram = $("#build #mb option:selected").data('ram');
 	console.log(pocetram);
@@ -19,7 +29,7 @@ function disableRam(){
 }
 $(function(){
 	reloadSestavy();
-	disableRam();
+	reloadSkladaniSestav();
 	$("select").change(function(){
 		console.log('selectchange');
 		disableRam();
@@ -33,7 +43,9 @@ $(function(){
 				if (data!==''){
 					swal(data);
 				} else {
-					location.reload();
+				//	location.reload();
+					reloadSestavy();
+					reloadSkladaniSestav();
 				}
 			}
 		});
