@@ -3,9 +3,9 @@ function itemInfo(){
 	    var idveci = $(this).attr("data-idveci");
 	    console.log('Id veci je '+idveci);
 	    $.ajax({
-			data: {item:idveci},
+			data: {id:idveci},
 			type: "GET",
-			url: "components/iteminfo.php",
+			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
 			}
