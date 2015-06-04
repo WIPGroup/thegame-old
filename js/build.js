@@ -13,7 +13,6 @@ function reloadSkladaniSestav(){
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#build").html(data);  //data se hodi do neceho s id inventar, easy
 			disableUnavailable();
-			$("#build select").selectpicker('refresh');
 			console.log('reloadSkladaniSestav');
 			$("select#mb").change(function(){ //TODO vašek to někdy opraví
 		        console.log('selectchange');
@@ -56,6 +55,7 @@ function disableUnavailable(){
 	disableRam();
 	disableHDD();
 	disablePCI();
+	$("#build select").selectpicker('refresh');
 }
 $(function(){
 	reloadSestavy();
