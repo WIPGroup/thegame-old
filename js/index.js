@@ -1,3 +1,17 @@
+function itemInfo(){
+	$(".grid-item").click(function(){ //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
+	    var idveci = $(this).attr("data-idveci");
+	    console.log('Id veci je '+idveci);
+	    $.ajax({
+			data: {item:idveci},
+			type: "GET",
+			url: "components/iteminfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
+}
 function initIsotope(){
 	// init Isotope
 	var $grid = $('.grid').isotope({
@@ -53,6 +67,7 @@ function initIsotope(){
 		timeout = setTimeout( delayed, threshold || 100 );
 	};
 	}
+	itemInfo();
 		console.log('initIsotope');
 }
 function reloadFullInv(){
@@ -77,18 +92,6 @@ $(function() { //odeslani formulare s nabidkou
 			}
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
-	});
-	$(".grid-item").click(function(){ //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
-	    var idveci = $(this).attr("data-idveci");
-	    console.log('Id veci je '+idveci);
-	    $.ajax({
-			data: {item:idveci},
-			type: "GET",
-			url: "components/iteminfo.php",
-			success: function(data) {
-				$("#infoitemu").html(data);
-			}
-		});
 	});
 });
 $(reloadFullInv());
