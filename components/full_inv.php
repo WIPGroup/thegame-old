@@ -8,38 +8,38 @@ include "updatevyrob.php";
 		<h1 class="panel-title">Inventář</h1>
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
-		<div class="col-xs-12"> <!-- TODO do dropdownu http://getbootstrap.com/components/#btn-dropdowns -->
-			<p>
+		<div class="col-xs-12">
+			<div class="col-md-2 col-xs-12">
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
-			</p>
-			<div class="btn-group button-group sort-by-button-group">
+			</div>
+			<div class="col-md-2 col-xs-12 col-md-offset-4 btn-group button-group sort-by-button-group">
 				<button type="button" class="btn btn-info" data-sort-by="original-order">Default sort (ID)</button>
 			  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 			    <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
-					<li><button class="btn btn-info" data-sort-by="name">Jméno</button></li>
-					<li><button class="btn btn-info" data-sort-by="power">Výkon</button></li>
-					<li><button class="btn btn-info" data-sort-by="count">Počet</button></li>
-					<li><button class="btn btn-info" data-sort-by="tier">Tier</button></li>
-					<li><button class="btn btn-info" data-sort-by="type">Typ</button></li>
+					<li><button class="btn btn-block btn-info" data-sort-by="name">Jméno</button></li>
+					<li><button class="btn btn-block btn-info" data-sort-by="power">Výkon</button></li>
+					<li><button class="btn btn-block btn-info" data-sort-by="count">Počet</button></li>
+					<li><button class="btn btn-block btn-info" data-sort-by="tier">Tier</button></li>
+					<li><button class="btn btn-block btn-info" data-sort-by="type">Typ</button></li>
 			  </ul>
 			</div>
-			<div class="btn-group button-group filter-button-group">
+			<div class="col-md-2 col-xs-12 col-md-offset-8 btn-group button-group filter-button-group">
 				<button type="button" class="btn btn-info" data-filter="*">Show all</button>
 				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu">
-					<li><button class="btn btn-info" data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</button></li>
-					<li><button class="btn btn-info" data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</button></li>
-					<li><button class="btn btn-info" data-filter=".cpu">CPUs</button></li>
-					<li><button class="btn btn-info" data-filter=".psu">PSUs</button></li>
-					<li><button class="btn btn-info" data-filter=".hdd">HDDs</button></li>
-					<li><button class="btn btn-info" data-filter=".gpu">GPUs</button></li>
-					<li><button class="btn btn-info" data-filter=".ram">RAMs</button></li>
-					<li><button class="btn btn-info" data-filter=".mb">Motherboards</button></li>
-					<li><button class="btn btn-info" data-filter=".metal:not(.transition)">metal but not transition</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".cpu">CPUs</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".psu">PSUs</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".hdd">HDDs</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".gpu">GPUs</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".ram">RAMs</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".mb">Motherboards</button></li>
+					<li><button class="btn btn-block btn-info" data-filter=".metal:not(.transition)">metal but not transition</button></li>
 				</ul>
 			</div>
 		</div>
