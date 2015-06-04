@@ -56,7 +56,7 @@ function disableUnavailable(){
 $(function(){
 	reloadSestavy();
 	reloadSkladaniSestav();
-	$("select#mb").change(function(){
+	$("select#mb").change(function(){ //TODO vašek to někdy opraví
 		console.log('selectchange');
 		disableUnavailable();
 	});
