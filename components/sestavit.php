@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['mb']))
 {
-	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
+	require "../vlastnictvi.php"; 
 
 	$rampwr = 0;
 	$gpupwr = 0;
@@ -131,7 +131,7 @@ if (isset($_GET['mb']))
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.'")';
 	mysql_query($dotaz);
 
-	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
+//	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
 }
 if (isset($_GET['switch']))
 {

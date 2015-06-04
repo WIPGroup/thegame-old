@@ -1,5 +1,5 @@
 <?php
-include "components/sestavit.php";
+require "vlastnictvi.php";
 ?>
 <div class="col-md-6 col-xs-12">
 	<div class="panel panel-primary">
