@@ -11,5 +11,16 @@ $(function() { //odeslani formulare s nabidkou
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
+	$("#inv div[data-idveci]").click(function(){
+	    var idveci = $(this).data("idveci")
+	    $.ajax({
+			data: {item:idveci},
+			type: "GET",
+			url: "components/iteminfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
 });
 $(reloadFullInv());
