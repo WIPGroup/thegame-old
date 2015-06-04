@@ -12,15 +12,15 @@ function reloadSkladaniSestav(){
 		url : "components/sestavyformular.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#build").html(data);  //data se hodi do neceho s id inventar, easy
+			disableUnavailable();
 			$("#build select").selectpicker('refresh');
 			console.log('reloadSkladaniSestav');
-			disableRam();
 		}
 	});
 }
 function disableRam(){
 	var pocetram = $("#build #mb option:selected").data('ram');
-	console.log(pocetram);
+	console.log('RAM k dispozici '+pocetram);
 	$("select[id*=ram]").each(function(){
 		$(this).prop("disabled",true);
 	});
@@ -28,12 +28,37 @@ function disableRam(){
 		$("#ram"+i).prop("disabled",false);
 	}
 }
+function disableHDD(){
+	var pocethdd = $("#build #mb option:selected").data('hdd');
+	console.log('HDD k dispozici '+pocethdd);
+	$("select[id*=hdd]").each(function(){
+		$(this).prop("disabled",true);
+	});
+	for(i=1;i<=pocethdd;i++){
+		$("#hdd"+i).prop("disabled",false);
+	}
+}
+function disablePCI(){
+	var pocetpci = $("#build #mb option:selected").data('pci');
+	console.log('PCI k dispozici '+pocetpci);
+	$("select[id*=gpu]").each(function(){
+		$(this).prop("disabled",true);
+	});
+	for(i=1;i<=pocetpci;i++){
+		$("#gpu"+i).prop("disabled",false);
+	}
+}
+function disableUnavailable(){
+	disableRam();
+	disableHDD();
+	disablePCI();
+}
 $(function(){
 	reloadSestavy();
 	reloadSkladaniSestav();
-	$("select").change(function(){
+	$("select#mb").change(function(){
 		console.log('selectchange');
-		disableRam();
+		disableUnavailable();
 	});
 	$('#build').submit(function() {
 		$.ajax({
