@@ -133,4 +133,13 @@ if (isset($_GET['mb']))
 
 	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
 }
+if (isset($_GET['switch']))
+{
+	//TODO: přepnout na body/výzkum
+}
+
+if (isset($_GET['disass']))
+{
+	//TODO: rozložit na součástky
+}
 ?>

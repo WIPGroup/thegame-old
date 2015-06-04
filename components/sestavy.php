@@ -23,5 +23,6 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		echo ', ';
 	}
 	echo 'Výkon: '.$zaznam['vykon'].'<br>';
+	echo 'přepnutí body/výzkum; tlačítko rozebrat<br>';
 }
 ?>
