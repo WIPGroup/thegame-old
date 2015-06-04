@@ -15,6 +15,10 @@ function reloadSkladaniSestav(){
 			disableUnavailable();
 			$("#build select").selectpicker('refresh');
 			console.log('reloadSkladaniSestav');
+			$("select#mb").change(function(){ //TODO vašek to někdy opraví
+		        console.log('selectchange');
+	    	    disableUnavailable();
+	        });
 		}
 	});
 }
@@ -56,10 +60,6 @@ function disableUnavailable(){
 $(function(){
 	reloadSestavy();
 	reloadSkladaniSestav();
-	$("select#mb").change(function(){ //TODO vašek to někdy opraví
-		console.log('selectchange');
-		disableUnavailable();
-	});
 	$('#build').submit(function() {
 		$.ajax({
 			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
