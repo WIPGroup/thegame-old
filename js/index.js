@@ -11,8 +11,9 @@ $(function() { //odeslani formulare s nabidkou
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
-	$("#inv div[data-idveci]").click(function(){
+	$("#inv .grid-item").click(function(){
 	    var idveci = $(this).data("idveci")
+	    console.log('Id veci je '+idveci);
 	    $.ajax({
 			data: {item:idveci},
 			type: "GET",
