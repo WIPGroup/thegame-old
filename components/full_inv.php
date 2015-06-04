@@ -71,7 +71,7 @@ include "updatevyrob.php";
 				}
 			?>
 		</div>
-		<div class="grid col-xs-12 col-md-2" id="infoitemu">
+		<div class="col-xs-12 col-md-2" id="infoitemu">
 			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
 			Core (Threads):	8(16)<br/>
 			L3 Cache:	20<br/>
