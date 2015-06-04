@@ -11,7 +11,7 @@ function reloadSkladaniSestav(){
 	$.ajax({
 		url : "components/sestavyformular.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
-			$("#build").html(data);  //data se hodi do neceho s id inventar, easy
+			$("#build").html(data).selectpicker('refresh');  //data se hodi do neceho s id inventar, easy
 			console.log('reloadSkladaniSestav');
 			disableRam();
 		}
