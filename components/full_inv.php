@@ -40,7 +40,7 @@ include "updatevyrob.php";
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) { //vymyslet http://isotope.metafizzy.co/filtering.html
-				echo '<div data-tier="T0" data-type="'.$zaznam['typ'].'" class="grid-item '.$zaznam['typ'].'" style="';
+				echo '<div data-tier="T0" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="';
 				if ($vlastnictvi[$zaznam['idveci']] < 1)
 					echo 'opacity: 0.4; ';
 				echo 'background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
