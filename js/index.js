@@ -11,7 +11,7 @@ $(function() { //odeslani formulare s nabidkou
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
-	$(".grid-item").click(function(){
+	$(".grid-item").click(function(){ //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
 	    var idveci = $(this).attr("data-idveci");
 	    console.log('Id veci je '+idveci);
 	    $.ajax({
