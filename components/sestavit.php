@@ -115,11 +115,13 @@ if (isset($_GET['mb']))
 		die('Takový zdroj nevlastníš.');
 	
 	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
+
 	if ($psupwr < $vykon)
 		$vykon = 0;
 		
-	//TODO: poskládat hráči sestavu
-	$dotaz = 'INSERT INTO sestavy (hrac, vykon, obsah, update) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
+	//poskládat hráči sestavu
+	$dotaz = 'INSERT INTO sestavy (hrac, vykon, obsah, sbercas) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
+	echo 'INSERT INTO sestavy (hrac, vykon, obsah, update) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
 	mysql_query($dotaz);
 	
 	//odebrat hráči majetek
@@ -130,6 +132,6 @@ if (isset($_GET['mb']))
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.'")';
 	mysql_query($dotaz);
 
-	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.';
+	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
 }
 ?>

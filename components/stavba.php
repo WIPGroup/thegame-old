@@ -10,7 +10,6 @@ echo "<h1>stavba počítačů</h1>";
 		<div class="panel-body">
 			<form class="form-inline" action="build.php" method="GET" id="build">
 <?php
-$mbs = ""; $cpus = ""; $gpus = ""; $rams = ""; $psus = ""; $hdds = "";
 $veci = null;
 $dotaz = 'SELECT * FROM veci WHERE typ<>""';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -21,7 +20,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	if ($vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($zaznam['typ'] == "mb")
-			$mbs .= '<option value="'.$zaznam['idveci'].'" data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-socket="'.$zaznam['socket'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
+			$mbs .= '<option value="'.$zaznam['idveci'].'" data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-hdd="'.explode(';', $zaznam['sloty'])[2].'" data-socket="'.$zaznam['socket'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "cpu")
 			$cpus .= '<option value="'.$zaznam['idveci'].'" data-socket="'.$zaznam['socket'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 		if ($zaznam['typ'] == "gpu")
@@ -34,6 +33,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			$hdds .= '<option value="'.$zaznam['idveci'].'">'.$zaznam['nazev'].' ('.$vlastnictvi[$zaznam['idveci']].'x)</option>'."\n";
 	}
 } //https://select2.github.io/examples.html mozna
+
+$rams .= '<option value="-1">Nic</option>'."\n";
+$gpus .= '<option value="-1">Nic</option>'."\n";
+$hdds .= '<option value="-1">Nic</option>'."\n";
+
 echo "Základní deska:";
 echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</select>';
 echo "<br>Procesor:";

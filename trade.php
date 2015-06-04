@@ -76,7 +76,7 @@ else if (isset($_GET['mnoznabizi']))
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].')")';
 		mysql_query($dotaz);
 
-	//	echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
+		echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
 	}
 	else
 		echo "Nemáš dost surovin na vytvoření nabídky.";
