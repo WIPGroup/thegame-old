@@ -20,6 +20,11 @@
 			else
 				echo 'Do prvního výzkumu ti zbývá '.(50 - $vyzkum).' bodů.';
 		?>
+		<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <?php echo $vyzkum/10; ?>%;">
+		<?php echo $vyzkum .' z 1000'; ?>
+  </div>
+</div>
 		</div>
 	</div>
 </div>
