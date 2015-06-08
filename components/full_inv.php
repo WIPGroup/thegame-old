@@ -80,7 +80,7 @@ include "updatevyrob.php";
 			Brand:	Core i7-E<br/>
 			MicroArchitecture Code-name:	Haswell-E<br/>
 			Vykon:	23 711 280 000 000<br/>
-			<button class="btn btn-primary btn-block">More...</button> <!-- TODO swal info text z wiki -->
+			<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z wiki -->
 		</div>
 	</div>
 </div>

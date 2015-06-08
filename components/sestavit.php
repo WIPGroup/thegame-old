@@ -1,8 +1,9 @@
 <?php
 //poskládání sestavy
+session_start();
 if (isset($_GET['mb']))
 {
-	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
+	require "../vlastnictvi.php"; 
 
 	$rampwr = 0;
 	$gpupwr = 0;
