@@ -155,11 +155,15 @@ if (isset($_GET['switch']))
 			die("Tuto sestavu nevlastníš.");
 		
 		if ($zaznam['vyzkum'] == 1)	//přepnout na body
+		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
+		}
 		else	//přepnout na výzkum
+		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
+		}
 	}
 	else
 		echo "Tato sestava neexistuje.";
