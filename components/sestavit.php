@@ -1,4 +1,5 @@
 <?php
+//poskládání sestavy
 if (isset($_GET['mb']))
 {
 	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
@@ -56,6 +57,8 @@ if (isset($_GET['mb']))
 	//ram sloty
 	for ($i = 1; $i <= $sloty[0]; $i++)
 	{
+		if ($_GET['ram'.$i] < 0)
+			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['ram'.$i].' AND typ="ram"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -72,6 +75,8 @@ if (isset($_GET['mb']))
 	//gpu karty
 	for ($i = 1; $i <= $sloty[1]; $i++)
 	{
+		if ($_GET['gpu'.$i] < 0)
+			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['gpu'.$i].' AND typ="gpu"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -88,6 +93,8 @@ if (isset($_GET['mb']))
 	//hdd
 	for ($i = 1; $i <= $sloty[2]; $i++)
 	{
+		if ($_GET['hdd'.$i] < 0)
+			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'.$i].' AND typ="hdd"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -133,13 +140,56 @@ if (isset($_GET['mb']))
 
 	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
 }
+
+//přepínání body/výzkum
 if (isset($_GET['switch']))
 {
-	//TODO: přepnout na body/výzkum
+	//přepnout na body/výzkum
+	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['switch'];
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	$zaznam = mysql_fetch_array($vysledek);
+	if (count($zaznam) > 1)
+	{
+		if ($zaznam['hrac'] != $_SESSION['hrac'])
+			die("Tuto sestavu nevlastníš.");
+		
+		if ($zaznam['vyzkum'] == 1)	//přepnout na body
+			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
+			mysql_query($dotaz);
+		else	//přepnout na výzkum
+			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
+			mysql_query($dotaz);
+	}
+	else
+		echo "Tato sestava neexistuje.";
 }
 
+//rozebrání sestavy
 if (isset($_GET['disass']))
 {
-	//TODO: rozložit na součástky
+	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
+	
+	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['disass'];
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	$zaznam = mysql_fetch_array($vysledek);
+	if (count($zaznam) <= 1)
+		die("Tato sestava neexistuje.");
+
+	if ($zaznam['hrac'] != $_SESSION['hrac'])
+		die("Tuto sestavu nevlastníš.");
+
+	$sestava = explode(';', $zaznam['obsah']);
+
+	$pocveci = count($vlasnictvi);
+	for ($i = 0; $i < $pocveci; $i++)
+	{
+		$vlastnictvi[$i] += $sestava[$i];
+	}
+
+	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+	mysql_query($dotaz);
+
+	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
+	mysql_query($dotaz);
 }
 ?>

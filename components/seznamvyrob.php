@@ -31,4 +31,5 @@ include '../vlastnictvi.php';
 		}
 		?>
 	</ul>
+	<br>
 </div>
