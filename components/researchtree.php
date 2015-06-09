@@ -27,6 +27,8 @@
 	</div>
 	Rozdeleni vykonu:</br>
 	<script>
+	$(function(){
+
 $('#slider-range').noUiSlider({
 	start: [ 50 ],
 	range: {
@@ -34,6 +36,8 @@ $('#slider-range').noUiSlider({
 		'max': [ 100 ]
 	}
 });
+});
+
 </script>
 		</div>
 	</div>
