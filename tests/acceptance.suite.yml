@@ -11,4 +11,4 @@ modules:
         - AcceptanceHelper
     config:
         PhpBrowser:
-            url: 'http://antre.417rct.org/master/'
+            url: 'http://127.0.0.1/'
