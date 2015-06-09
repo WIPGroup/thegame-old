@@ -24,6 +24,7 @@
   <div class="progress-bar" role="progressbar" style="width: <?php echo $vyzkum/10; ?>%;">
 		<?php echo $vyzkum .' z 1000'; ?>
   </div>
+	</div>
 	Rozdeleni vykonu:</br>
 	<script>
 $('#slider-range').noUiSlider({
@@ -34,7 +35,6 @@ $('#slider-range').noUiSlider({
 	}
 });
 </script>
-</div>
 		</div>
 	</div>
 </div>
