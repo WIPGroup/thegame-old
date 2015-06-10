@@ -27,7 +27,7 @@ function reloadSkladaniSestav(){
 	});
 }
 function disass(idsestavy){
-	console.log('ID sestavy, ktera se bude rusit, je'+idsestavy);
+	console.log('ID sestavy, ktera se bude rusit, je '+idsestavy); //TODO potvrzovaci tlacitko
 	$.ajax({
 		url : "components/sestavit.php",
 		type : "GET",
@@ -86,7 +86,8 @@ $(function(){
 			type: "GET",
 			url: "components/sestavit.php",
 			success: function(data) {
-				if (data.indexOf('Složena sestava')!=-1){
+				var contains = data.indexOf('Složena sestava');
+				if (contains==-1){
 					swal(data);
 				} else {
 				//	location.reload();

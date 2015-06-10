@@ -170,7 +170,7 @@ if (isset($_GET['switch']))
 }
 
 //rozebrání sestavy
-if (isset($_GET['disass']))
+if (isset($_GET['disass'])) //TODO juro nevraci to nejak suroviny zpatky, vasek
 {
 	require "../vlastnictvi.php";
 	
