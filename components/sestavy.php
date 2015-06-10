@@ -19,10 +19,10 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	for ($i = 0; $i < $pocveci; $i++)
 		if ($obsah[$i] > 0)
 		{
-			echo '<li>';
+			echo '<li><a>';
 			if ($obsah[$i] > 1)
 				echo '<span class="badge">'.$obsah[$i].'</span>';
-			echo $veci[$i].'</li>';
+			echo $veci[$i].'</a></li>';
 		}
 	echo '<li>Výkon: '.$zaznam['vykon'].'</li>';
 	echo '<li>přepnutí body/výzkum; tlačítko rozebrat</li></ul>';
