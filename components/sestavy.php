@@ -25,7 +25,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			echo $veci[$i].'</a></li>';
 		}
 	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
-	echo '<li><a>přepnutí body/výzkum; tlačítko rozebrat</a></li></ul>';
+	echo '<li><a href="#rozebrat">Rozobrať</a></li></ul>'; //TODO zfunkcnit
 }
 echo '</nav>';
 ?>
