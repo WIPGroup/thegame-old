@@ -24,8 +24,8 @@ while ($zaznam = mysql_fetch_array($vysledek))
 				echo '<span class="badge">'.$obsah[$i].'</span>';
 			echo $veci[$i].'</a></li>';
 		}
-	echo '<li>Výkon: '.$zaznam['vykon'].'</li>';
-	echo '<li>přepnutí body/výzkum; tlačítko rozebrat</li></ul>';
+	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
+	echo '<li><a>přepnutí body/výzkum; tlačítko rozebrat</a></li></ul>';
 }
 echo '</nav>';
 ?>
