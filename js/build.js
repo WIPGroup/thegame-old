@@ -93,6 +93,7 @@ $(function(){
 				//	location.reload();
 					reloadSestavy();
 					reloadSkladaniSestav();
+					//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
 				}
 			}
 		});
