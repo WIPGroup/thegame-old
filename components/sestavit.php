@@ -172,7 +172,7 @@ if (isset($_GET['switch']))
 //rozebrání sestavy
 if (isset($_GET['disass']))
 {
-	require "vlastnictvi.php"; //TODO: v samostatném ajaxu upravit na ../vlastnictvi.php
+	require "../vlastnictvi.php";
 	
 	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['disass'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));

@@ -1,5 +1,5 @@
 var timerExists = false;
-function craft(idreceptu){//TODO tlacitko by melo refreshovat i inventar na crafting.php
+function craft(idreceptu){
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
 	console.log(kolikrat);
 	$.ajax({

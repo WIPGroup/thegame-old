@@ -25,7 +25,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			echo $veci[$i].'</a></li>';
 		}
 	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
-	echo '<li><a href="#rozebrat">Rozobrať</a></li></ul>'; //TODO zfunkcnit
+	echo '<li><a href="#rozebrat" class="disass" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</a></li></ul>'; //TODO zfunkcnit
 }
 echo '</nav>';
 ?>
