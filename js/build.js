@@ -9,6 +9,11 @@ function reloadSestavy(){
 				disass(idsestavy);
 				return false; 
 			});
+			$('.switch').click(function(){ 
+				var idsestavy = $(this).data('idsestavy');
+				zmenit(idsestavy);
+				return false; 
+			});
 		}
 	});
 }
@@ -35,6 +40,19 @@ function disass(idsestavy){
 		success : function (data) {
 			reloadSestavy();
 			reloadSkladaniSestav();
+			if (data!==''){
+				swal(data);
+			}
+		}
+	});
+}
+function zmenit(idsestavy){
+	$.ajax({
+		url : "components/sestavit.php",
+		type : "GET",
+		data : {switch:idsestavy},
+		success : function (data) {
+			reloadSestavy();
 			if (data!==''){
 				swal(data);
 			}
