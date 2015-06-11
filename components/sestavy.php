@@ -25,6 +25,13 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			echo $veci[$i].'</a></li>';
 		}
 	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
+	
+	if ($zaznam['vyzkum'] == 1)
+		$prepnout = "skóre";
+	else
+		$prepnout = "výzkum";
+
+	echo '<li><a href="#prepnout" class="switch" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</a></li>'; //TODO zfunkcnit
 	echo '<li><a href="#rozebrat" class="disass" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</a></li></ul>'; //TODO zfunkcnit
 }
 echo '</nav>';
