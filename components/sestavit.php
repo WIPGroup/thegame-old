@@ -191,7 +191,8 @@ if (isset($_GET['disass']))
 		$vlastnictvi[$i] += $sestava[$i];
 	}
 
-	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+	echo 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace='.$_SESSION['hrac'];
 	mysql_query($dotaz);
 
 	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
