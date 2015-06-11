@@ -31,8 +31,8 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	else
 		$prepnout = "výzkum";
 
-	echo '<li><a href="#prepnout" class="switch" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</a></li>'; //TODO zfunkcnit
-	echo '<li><a href="#rozebrat" class="disass" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</a></li></ul>'; //TODO zfunkcnit
+	echo '<li><a href="#prepnout" class="switch" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</a></li>'; 
+	echo '<li><a href="#rozebrat" class="disass" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</a></li></ul>'; 
 }
 echo '</nav>';
 ?>
