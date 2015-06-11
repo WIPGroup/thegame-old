@@ -4,6 +4,11 @@ function reloadSestavy(){
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#sestavy").html(data);  //data se hodi do neceho s id inventar, easy
 			console.log('reloadSestavy');
+			$('.disass').click(function(){ 
+				var idsestavy = $(this).data('idsestavy');
+				disass(idsestavy);
+				return false; 
+			});
 		}
 	});
 }
@@ -18,6 +23,21 @@ function reloadSkladaniSestav(){
 		        console.log('selectchange');
 	    	    disableUnavailable();
 	        });
+		}
+	});
+}
+function disass(idsestavy){
+	console.log('ID sestavy, ktera se bude rusit, je '+idsestavy); //TODO potvrzovaci tlacitko
+	$.ajax({
+		url : "components/sestavit.php",
+		type : "GET",
+		data : {disass:idsestavy},
+		success : function (data) {
+			reloadSestavy();
+			reloadSkladaniSestav();
+			if (data!==''){
+				swal(data);
+			}
 		}
 	});
 }
@@ -66,12 +86,14 @@ $(function(){
 			type: "GET",
 			url: "components/sestavit.php",
 			success: function(data) {
-				if (data!==''){
+				var contains = data.indexOf('Složena sestava');
+				if (contains==-1){
 					swal(data);
 				} else {
 				//	location.reload();
 					reloadSestavy();
 					reloadSkladaniSestav();
+					//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
 				}
 			}
 		});
