@@ -170,7 +170,7 @@ if (isset($_GET['switch']))
 }
 
 //rozebrání sestavy
-if (isset($_GET['disass'])) //TODO juro nevraci to nejak suroviny zpatky, vasek
+if (isset($_GET['disass']))
 {
 	require "../vlastnictvi.php";
 	
@@ -185,13 +185,12 @@ if (isset($_GET['disass'])) //TODO juro nevraci to nejak suroviny zpatky, vasek
 
 	$sestava = explode(';', $zaznam['obsah']);
 
-	$pocveci = count($vlasnictvi);
+	$pocveci = count($vlastnictvi);
 	for ($i = 0; $i < $pocveci; $i++)
 	{
 		$vlastnictvi[$i] += $sestava[$i];
 	}
 
-	echo 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace='.$_SESSION['hrac'];
 	mysql_query($dotaz);
 
