@@ -21,7 +21,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		{
 			echo '<li><a>';
 			if ($obsah[$i] > 1)
-				echo '<span class="badge">'.$obsah[$i].'</span>';
+				echo $obsah[$i].'x ';
 			echo $veci[$i].'</a></li>';
 		}
 	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
