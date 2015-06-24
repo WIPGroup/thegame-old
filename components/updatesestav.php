@@ -1,19 +1,25 @@
 <?php
-require "../dblogin.php";
-
-if (is_numeric($_GET['hrac']))
+if (is_numeric($_SESSION['hrac']))
 {
-	$body = 0;
-	$dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_GET['hrac'];
+	$vyzkum = 0; $body = 0;
+	$dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
-		$body += $zaznam['vykon'] * ((time() - $zaznam['sbercas']) / 60);
+		if ($zaznam['vyzkum'] == 1)
+			$vyzkum += $zaznam['vykon'] * (time() - $zaznam['sbercas']);
+		else
+			$body += $zaznam['vykon'] * (time() - $zaznam['sbercas']);
 
-		$dotaz = 'UPDATE sestavy SET sbercas='.time(); //TODO $zaznam['sbercas'];
+		$dotaz = 'UPDATE sestavy SET sbercas='.time().' WHERE idsestavy='.$zaznam['idsestavy'];
 		mysql_query($dotaz);
 	}
+	
+	//updatovat hráče
+	$hrac['vyzkum'] += $vyzkum;
+	$hrac['body'] += $body;
 
-	//TODO: updatovat hráče
+	$dotaz = 'UPDATE hraci SET vyzkum='.$hrac['vyzkum'].', body='.$hrac['body'].' WHERE idhrace='.$_SESSION['hrac'];
+	mysql_query($dotaz);
 }
 ?>
