@@ -145,8 +145,8 @@ if (isset($_GET['mb']))
 //přepínání body/výzkum
 if (isset($_GET['switch']))
 {
-	require "dblogin.php";
-	require "login.php";
+	require "../dblogin.php";
+	require "../login.php";
 	//přepnout na body/výzkum
 	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['switch'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
