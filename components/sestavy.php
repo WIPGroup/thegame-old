@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../vlastnictvi.php";
+include "updatesestav.php";
 $veci = null;
 $dotaz = 'SELECT * FROM veci';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));

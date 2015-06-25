@@ -2,6 +2,7 @@
 session_start();
 include "../vlastnictvi.php";
 include "updatevyrob.php";
+include "updatesestav.php";
 ?>
 <!--body/výzkum-->
 <div class="panel panel-primary">
