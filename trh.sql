@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Čtv 25. čen 2015, 10:58
+-- Vytvořeno: Čtv 25. čen 2015, 13:02
 -- Verze serveru: 5.6.24-0ubuntu2
 -- Verze PHP: 5.6.4-4ubuntu6
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`, `body`, `vyzkum`) VALUES
-(1, 'root', 'root', '1228;1113;210;895;10;15;5;10;10;7;44;2;5', 2950, 2940),
+(1, 'root', 'root', '1227;1112;210;895;10;15;5;10;10;7;45;2;5', 45550, 45540),
 (2, 'test1', 'test1', '343;402;371;11;0;0;0;0;0;0;0;0;0', 0, 0),
 (3, 'test2', 'test2', '647;341;376;2;0;0;0;0;0;0;0;0;0', 0, 0);
 
@@ -221,7 +221,9 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1433752121, 1, 'Dokončena výroba 1x PSU'),
 (1433752422, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
 (1433788567, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
-(1433788583, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6');
+(1433788583, 1, 'Složena sestava 0;0;0;0;0;1;1;2;0;1;2;0;1 o výkonu 6'),
+(1435229747, 1, 'Spuštěna výroba 1x RAM'),
+(1435229758, 1, 'Dokončena výroba 1x RAM');
 
 -- --------------------------------------------------------
 
@@ -405,17 +407,19 @@ CREATE TABLE IF NOT EXISTS `recepty` (
 `idreceptu` int(11) NOT NULL,
   `vyrobek` int(11) NOT NULL,
   `suroviny` varchar(500) NOT NULL,
-  `doba` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `doba` int(11) NOT NULL,
+  `vyzkum` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Vypisuji data pro tabulku `recepty`
 --
 
-INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`) VALUES
-(1, 10, '1;1;0;0;0;0;0;0;0;0;0;0', 10),
-(2, 9, '0;10;20;5;0;0;0;0;0;0;0;0', 103),
-(3, 11, '0;20;10;50;0;0;0;0;0;0;0;0', 86400);
+INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`, `vyzkum`) VALUES
+(1, 10, '1;1;0;0;0;0;0;0;0;0;0;0', 10, 0),
+(2, 9, '0;10;20;5;0;0;0;0;0;0;0;0', 103, 0),
+(3, 11, '0;20;10;50;0;0;0;0;0;0;0;0', 86400, 0),
+(4, 5, '0;10;10;10;0;0;0;0;0;0;0;0', 1000, 3);
 
 -- --------------------------------------------------------
 
@@ -437,8 +441,8 @@ CREATE TABLE IF NOT EXISTS `sestavy` (
 --
 
 INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `obsah`, `sbercas`, `vyzkum`) VALUES
-(7, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1435222659, 1),
-(8, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1435222659, 0);
+(7, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1435229759, 1),
+(8, 1, 6, '0;0;0;0;0;1;1;2;0;1;2;0;1', 1435229759, 0);
 
 -- --------------------------------------------------------
 
@@ -487,7 +491,7 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
   `recept` int(11) NOT NULL,
   `pocet` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -500,16 +504,18 @@ CREATE TABLE IF NOT EXISTS `vyzkumy` (
   `nazev` varchar(200) NOT NULL,
   `body` bigint(11) NOT NULL,
   `popis` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Vypisuji data pro tabulku `vyzkumy`
 --
 
 INSERT INTO `vyzkumy` (`idvyzkumu`, `nazev`, `body`, `popis`) VALUES
+(0, 'Základ', 0, 'Nějak se začínat musí.'),
 (1, 'Pentium', 1000, 'Začínáme pentiem.'),
 (2, 'Core', 10000, 'Vylepšujeme na core.'),
-(3, 'Nehalem', 100000, 'Další vylepšení.');
+(3, 'Nehalem', 100000, 'Další vylepšení.'),
+(4, 'Sandy Bridge', 1000000, 'Čím dál tím lepší.');
 
 --
 -- Klíče pro exportované tabulky
@@ -587,7 +593,7 @@ MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=304;
 -- AUTO_INCREMENT pro tabulku `recepty`
 --
 ALTER TABLE `recepty`
-MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pro tabulku `sestavy`
 --
@@ -602,12 +608,12 @@ MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT pro tabulku `vyroba`
 --
 ALTER TABLE `vyroba`
-MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pro tabulku `vyzkumy`
 --
 ALTER TABLE `vyzkumy`
-MODIFY `idvyzkumu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `idvyzkumu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
