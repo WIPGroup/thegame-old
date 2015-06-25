@@ -7,7 +7,7 @@ include "components/navbar.php";
 if ($prihlasen)
 {
 	include "vlastnictvi.php";
-	include "updatesestav.php";
+	include "components/updatesestav.php";
 	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
