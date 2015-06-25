@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../vlastnictvi.php';
+include "../vlastnictvi.php";
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading">

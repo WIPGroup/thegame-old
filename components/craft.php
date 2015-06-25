@@ -5,12 +5,14 @@ include "../vlastnictvi.php";
 if (isset($_GET['craft']))
 {
 	//započat výrobu
-	$dotaz = 'SELECT * FROM recepty WHERE idreceptu='.$_GET['craft'];
+	$dotaz = 'SELECT * FROM recepty, vyzkumy WHERE idreceptu='.$_GET['craft'].' AND vyzkum=idvyzkumu';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
 	{
 		//kontrola
+		if ($hrac['vyzkum'] < $zaznam['body'])
+			die("Neostatečná úroveň výzkumu.");
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		$splnuje = true;
