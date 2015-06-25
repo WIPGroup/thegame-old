@@ -15,7 +15,7 @@
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
-				echo "<h5>".$zaznam['nazev']." (".$zaznam['body']." research bodů)</h5>";
+				echo "<h5>".$zaznam['nazev']." (".$zaznam['body']." research bodů)</h5>".$zaznam['popis']."<br>";
 				
 				if ($vyzkum > $zaznam['body'])
 					echo "Výzkum hotový.";
