@@ -5,6 +5,7 @@
 }
 .grid-item2 {
   float: left;
+  border: 1px solid blue;
 }
 .name {
   text-align: right;
