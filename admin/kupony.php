@@ -73,7 +73,9 @@ include 'admin/tvorbakuponu.php';
 					itemSelector: '.grid-item2',
 					layoutMode: 'packery',
 					packery: {
-						gutter: 5
+						gutter: 10
+						isHorizontal: true
+						columnWidth: 128
 					},
 					itemSelector: '.grid-item',
 				});
