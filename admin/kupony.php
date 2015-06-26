@@ -30,7 +30,7 @@ include 'admin/tvorbakuponu.php';
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body">-->
-			<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>
+			<div class="col-xs-12 grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>
 				<?php //TODO podle http://isotope.metafizzy.co/filtering.html Combination Filters pridat tlacitka na filtrovani itemu
 				include 'vlastnictvi.php';
 
