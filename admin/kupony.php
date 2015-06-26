@@ -56,29 +56,27 @@ include 'admin/tvorbakuponu.php';
 					if ($obsah[$i] > 0)
 					echo ' '.$veci[$i];
 					echo '">'; // style="float: left; width: 64px; heigth '.(13+24*$pocveci).'px">';
-
-					echo '<h6>'.$zaznam['kod'].'</h6>';
-
+					echo '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'.$zaznam['kod'].'</h3></div><div class="panel-body"><p>Vytvořeno kdy a kým</p>			</div><ul class="list-group">';
 					for ($i = 0; $i < $pocveci; $i++)
 					if ($obsah[$i] > 0)
-					echo '<p><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</p>';
+					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';
 
-					echo '</div>';
+					echo '</ul></div></div>';
 				}
 				?>
 			</div>
 			<!--<script>
 			$(document).ready( function () {
-				$('.grid').isotope({
-					itemSelector: '.grid-item2',
-					layoutMode: 'packery',
-					packery: {
-						gutter: 10
-					},
-					itemSelector: '.grid-item',
-				});
-			} );
-		</script>-->
-		</div>
-	</div>
+			$('.grid').isotope({
+			itemSelector: '.grid-item2',
+			layoutMode: 'packery',
+			packery: {
+			gutter: 10
+		},
+		itemSelector: '.grid-item',
+	});
+} );
+</script>-->
+</div>
+</div>
 </div>
