@@ -55,7 +55,7 @@ include 'admin/tvorbakuponu.php';
 					for ($i = 0; $i < $pocveci; $i++)
 					if ($obsah[$i] > 0)
 					echo ' '.$veci[$i];
-					echo '" style="float: left;">'; // width: 64px; heigth '.(13+24*$pocveci).'px">';
+					echo '>'; // style="float: left; width: 64px; heigth '.(13+24*$pocveci).'px">';
 
 					echo '<h6>'.$zaznam['kod'].'</h6>';
 
@@ -73,7 +73,7 @@ include 'admin/tvorbakuponu.php';
 					itemSelector: '.grid-item2',
 					layoutMode: 'packery',
 					packery: {
-						gutter: '5'
+						gutter: 5
 					},
 					itemSelector: '.grid-item',
 				});

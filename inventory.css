@@ -3,6 +3,9 @@
   width: 128px;
   height: 128px;
 }
+.grid-item2 {
+  float: left;
+}
 .name {
   text-align: right;
   position: absolute;
