@@ -30,7 +30,7 @@ include 'admin/tvorbakuponu.php';
 			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body">
-			<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 5}'>
+			<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 5}}'>
 				<?php
 				include 'vlastnictvi.php';
 
