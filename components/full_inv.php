@@ -1,8 +1,8 @@
 <?php
 session_start();
-include "../vlastnictvi.php";
-include "updatevyrob.php";
-include "updatesestav.php";
+include '../vlastnictvi.php';
+include 'updatevyrob.php';
+include 'updatesestav.php';
 ?>
 <!--body/výzkum TODO FIX presunout na zvlast stranku-->
 <div class="panel panel-primary">
@@ -11,7 +11,7 @@ include "updatesestav.php";
   </div>
   <div class="panel-body" style="width: 100%; heigth: 100%">
   	<?php
-		echo "Výzkumové body: ".$hrac['vyzkum']."<br>Výherní body: ".$hrac['body'];
+		echo 'Výzkumové body: '.$hrac['vyzkum'].'<br>Výherní body: '.$hrac['body'];
 	?>
   </div>
 </div>
@@ -67,15 +67,15 @@ include "updatesestav.php";
 				echo 'background-image: url(\'icons/'.$zaznam['nazev'].'.png\'); background-size: 128px 128px;">';
 
 				if ($zaznam['vykon'] <= 0)
-					$skryt = " sr-only";
+					$skryt = ' sr-only';
 				else
-					$skryt = "";
+					$skryt = '';
 				echo '<span class="badge power'.$skryt.'">'.$zaznam['vykon'].'</span>';
 
 				if ($vlastnictvi[$zaznam['idveci']] <= 0)
-					$skryt = " sr-only";
+					$skryt = ' sr-only';
 				else
-					$skryt = "";
+					$skryt = '';
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
 				echo '</div>';

@@ -1,6 +1,7 @@
 <?php
+
 session_start();
-require "../vlastnictvi.php";
+require '../vlastnictvi.php';
 if (isset($_GET['kupon']))
 {
 	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower($_GET['kupon']).'"';
@@ -10,18 +11,18 @@ if (isset($_GET['kupon']))
 	{
 		$obsah = explode(';', $zaznam['obsah']);
 		$pocobsah = count($obsah);
-		
+
 		for ($i = 0; $i < $pocobsah; $i++)
 			$vlastnictvi[$i] += $obsah[$i];
-		
+
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
-		
+
 		//smazat kupón
 		$dotaz = 'DELETE FROM kupony WHERE idkuponu='.$zaznam['idkuponu'];
 		mysql_query($dotaz);
-		
-		echo "Kupó přijat. Zíkals ";
+
+		echo 'Kupó přijat. Zíkals ';
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
@@ -30,14 +31,13 @@ if (isset($_GET['kupon']))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
 			{
-				$dotaz .= $zazn['nazev']."(".$obsah[$zazn['idveci']].") ";
-				echo $zazn['nazev']."(".$obsah[$zazn['idveci']].") ";
+				$dotaz .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].') ';
+				echo $zazn['nazev'].'('.$obsah[$zazn['idveci']].') ';
 			}
 		}
 		$dotaz .= ')")';
 		mysql_query($dotaz);
 	}
 	else
-		echo "Tento kupón neexistuje.";
+		echo 'Tento kupón neexistuje.';
 }
-?>

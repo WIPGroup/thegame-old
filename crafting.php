@@ -1,13 +1,13 @@
 <?php
 session_start();
-require "components/head.php";
-require "dblogin.php";
-require "login.php";
-include "components/navbar.php";
+require 'components/head.php';
+require 'dblogin.php';
+require 'login.php';
+include 'components/navbar.php';
 if ($prihlasen)
 {
-	include "vlastnictvi.php";
-	include "components/updatesestav.php";
+	include 'vlastnictvi.php';
+	include 'components/updatesestav.php';
 	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
@@ -45,16 +45,16 @@ if ($prihlasen)
 		echo '</td><td>'.$zaznam['nazev'].'</td>';
 
 		echo '<td><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000"></td><td>';
-		
+
 		$splnuje = true;
-		
+
 		for ($i = 0; $i < $pocsurovin; $i++)
 			if ($vlastnictvi[$i] < $suroviny[$i])
 				$splnuje = false;
 
 		if (!$splnuje)
 			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
-		else if ($hrac['vyzkum'] < $zaznam['body'])
+		elseif ($hrac['vyzkum'] < $zaznam['body'])
 			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else
 			echo '<button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
@@ -64,7 +64,7 @@ if ($prihlasen)
 }
 else
 {
-	include "components/form.php";
+	include 'components/form.php';
 }
 ?>
 <script src="js/crafting.js"></script>

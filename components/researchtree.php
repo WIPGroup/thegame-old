@@ -10,8 +10,8 @@
 			bla
 			co je vyzkum a tak mozna?
 			<?php
-				include "vlastnictvi.php";
-				include "updatesestav.php";
+				include 'vlastnictvi.php';
+				include 'updatesestav.php';
 				$vyzkum = $hrac['vyzkum'];
 				echo 'Máš '.$vyzkum.' research bodů.';
 				?>
@@ -27,7 +27,7 @@
 				echo '<div class="col-xs-3"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">'.$zaznam['nazev'].' ('.$zaznam['body'].' research bodů)		</div><div class="panel-body">'.$zaznam['popis'].'<br>';
 
 				if ($vyzkum > $zaznam['body'])
-					echo "Výzkum hotový.";
+					echo 'Výzkum hotový.';
 				if ($vyzkum < $zaznam['body'])
 					if ($zkoumany)
 					{
@@ -35,8 +35,8 @@
 						$zkoumany = false;
 					}
 					else
-						echo "Čeká se na předchozí výzkum."; //"Do vyzkoumání zbývá ".($zaznam['body'] - $vyzkum)." research bodů.";
+						echo 'Čeká se na předchozí výzkum.'; //"Do vyzkoumání zbývá ".($zaznam['body'] - $vyzkum)." research bodů.";
 
-				echo "</div></div></div>";
+				echo '</div></div></div>';
 			}
 		?>

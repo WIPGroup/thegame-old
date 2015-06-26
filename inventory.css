@@ -3,6 +3,9 @@
   width: 128px;
   height: 128px;
 }
+.grid-item2 {
+  float: left;
+}
 .name {
   text-align: right;
   position: absolute;
@@ -18,7 +21,7 @@
 }
 .power {
   background-color: #f55;
-  text-align:center;
+  text-align: center;
   position: absolute;
   top: 0px;
 }

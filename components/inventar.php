@@ -1,8 +1,8 @@
 <?php
 session_start();
-require "../vlastnictvi.php";
-include "updatevyrob.php";
-include "updatesestav.php";
+require '../vlastnictvi.php';
+include 'updatevyrob.php';
+include 'updatesestav.php';
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">

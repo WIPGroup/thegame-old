@@ -1,6 +1,7 @@
 <?php
+
 session_start();
-require "vlastnictvi.php";
+require 'vlastnictvi.php';
 if (isset($_GET['trade']))
 {
 	//uskutečnit obchod
@@ -18,7 +19,7 @@ if (isset($_GET['trade']))
 			mysql_query($dotaz);
 
 			//přidělení surovin prodávajícímu (autoru nabídky)
-			$dotaz = 'SELECT * FROM hraci WHERE idhrace=' . $zaznam['hrac'];
+			$dotaz = 'SELECT * FROM hraci WHERE idhrace='.$zaznam['hrac'];
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			$autor = mysql_fetch_array($vysledek);
 			$vlastautor = explode(';', $autor['vlastnictvi']);
@@ -45,17 +46,17 @@ if (isset($_GET['trade']))
 			echo 'Koupils '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'.';
 		}
 		else
-		echo "Nemáš dostatečný majetek na uskutečnění obchodu.";
+		echo 'Nemáš dostatečný majetek na uskutečnění obchodu.';
 	}
 	else
-	echo "Nabídka už neexistuje.";
+	echo 'Nabídka už neexistuje.';
 }
 //vytvořit nabídku
-else if (isset($_GET['mnoznabizi']))
+elseif (isset($_GET['mnoznabizi']))
 {
 	if ($_GET['nabizi'] == $_GET['chce'])
-		echo "Nepřijde ti to jako blbost, nabízet stejnou věc za stejnou? (pokud ne, kontaktuj admina)";
-	else if ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
+		echo 'Nepřijde ti to jako blbost, nabízet stejnou věc za stejnou? (pokud ne, kontaktuj admina)';
+	elseif ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
 		$vlastnictvi[$_GET['nabizi']] -= $_GET['mnoznabizi'];
 
@@ -79,10 +80,10 @@ else if (isset($_GET['mnoznabizi']))
 		echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
 	}
 	else
-		echo "Nemáš dost surovin na vytvoření nabídky.";
+		echo 'Nemáš dost surovin na vytvoření nabídky.';
 }
 //zrušit nabídku
-else if (isset($_GET['cancel']))
+elseif (isset($_GET['cancel']))
 {
 	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['cancel'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -111,6 +112,5 @@ else if (isset($_GET['cancel']))
 		echo 'Zrušils svou nabídku '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].').';
 	}
 	else
-	echo "Zrušení se nepodařilo.";
+	echo 'Zrušení se nepodařilo.';
 }
-?>

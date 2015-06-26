@@ -1,9 +1,10 @@
 <?php
+
 //TODO: jakmile se tento skript nebude includovat, ale volat samostatně, odkomentovat tyto 2 řádky
 //require "../dblogin.php";
 //require "../login.php";
 if ($_SESSION['hrac'] != 1)
-	die("Nejsi admin.");
+	die('Nejsi admin.'); //TODO: pokud zbyde cas tak vic adminu
 
 if (isset($_GET['0']))
 {
@@ -34,4 +35,3 @@ while (isset($_GET[$i]))
 $dotaz = 'INSERT INTO kupony (kod, obsah) VALUES ("'.$kod.'", "'.join(';', $obsah).'")';
 mysql_query($dotaz);
 }
-?>

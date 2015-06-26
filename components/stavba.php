@@ -1,5 +1,5 @@
 <?php
-require "vlastnictvi.php";
+require 'vlastnictvi.php';
 ?>
 <div class="col-md-3 col-xs-12">
 	<div class="panel panel-primary">

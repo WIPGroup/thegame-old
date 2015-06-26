@@ -51,7 +51,7 @@
 	$config = array(
 	    'access_token' => '41a7de13241f499ab0849238a8b7b00e',
 	    'environment' => 'production',
-	    'root' => '/'
+	    'root' => '/',
 	);
 	$config['environment'] = getcwd();
 	Rollbar::init($config);
