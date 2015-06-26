@@ -51,11 +51,11 @@ include 'admin/tvorbakuponu.php';
 					$obsah = explode(';', $zaznam['obsah']);
 					$pocveci = count($obsah);
 
-					echo '<div class="grid-item';
+					echo '<div class="grid-item2';
 					for ($i = 0; $i < $pocveci; $i++)
 					if ($obsah[$i] > 0)
 					echo ' '.$veci[$i];
-					echo '">';
+					echo '" style="float: left; width: 64px; height '.(13+24*$pocveci).'px">';
 
 					echo '<h6>'.$zaznam['kod'].'</h6>';
 
@@ -70,7 +70,7 @@ include 'admin/tvorbakuponu.php';
 			<script>
 			$(document).ready( function () {
 				$('.grid').isotope({
-					itemSelector: '.grid-item',
+					itemSelector: '.grid-item2',
 					layoutMode: 'packery',
 					packery: {
 						gutter: '5'
