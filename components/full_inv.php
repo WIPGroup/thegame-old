@@ -4,7 +4,7 @@ include "../vlastnictvi.php";
 include "updatevyrob.php";
 include "updatesestav.php";
 ?>
-<!--body/výzkum-->
+<!--body/výzkum TODO FIX presunout na zvlast stranku-->
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h1 class="panel-title">Body</h1>
