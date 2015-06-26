@@ -4,15 +4,21 @@
 			<h1 class="panel-title">Strom výzkumu</h1>
 		</div>
 		<div class="panel-body">
+			Nejake kecy
+			bla
+			bla
+			bla
+			co je vyzkum a tak mozna?
+			<?php
+				include "vlastnictvi.php";
+				include "updatesestav.php";
+				$vyzkum = $hrac['vyzkum'];
+				echo 'Máš '.$vyzkum.' research bodů.';
+				?>
 		</div>
 	</div>
 </div>
-		<?php
-			include "vlastnictvi.php";
-			include "updatesestav.php";
-			$vyzkum = $hrac['vyzkum'];
-			echo 'Máš '.$vyzkum.' research bodů.<hr>';
-
+<?php
 			$zkoumany = true;
 			$dotaz = 'SELECT * FROM vyzkumy ORDER BY body';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
