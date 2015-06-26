@@ -1,5 +1,6 @@
 <?php
-require "../dblogin.php";
+
+require '../dblogin.php';
 
 if (isset($_GET['id']))
 {
@@ -11,6 +12,8 @@ if (isset($_GET['id']))
 		echo '<div id="nazev">'.$zaznam['nazev'].'</div><div id="popis">'.$zaznam['popis'].'</div>';
 	}
 	else
-		echo 'Nepodařilo se získat info o tomto předmětu.';
+		echo 'Nepodařilo se získat info o tomto předmětu: '.$_GET['id'];
 }
-?>
+else {
+	echo 'Chybí id itemu.';
+}

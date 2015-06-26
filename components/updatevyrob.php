@@ -10,11 +10,11 @@
 			$vlastnictvi[$zaznam['vyrobek']] += $zaznam['pocet'];
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 			mysql_query($dotaz);
-		 	
+
 			//smazat výrobu
 			$dotaz = 'DELETE FROM vyroba WHERE idvyroby='.$zaznam['idvyroby'];
 			mysql_query($dotaz);
-			
+
 			//názvy věcí pro log
 			$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['vyrobek'];
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
@@ -24,4 +24,3 @@
 			mysql_query($dotaz);
 		}
 	}
-?>

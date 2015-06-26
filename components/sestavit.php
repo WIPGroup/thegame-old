@@ -1,9 +1,10 @@
 <?php
+
 //poskládání sestavy
 session_start();
 if (isset($_GET['mb']))
 {
-	require "../vlastnictvi.php"; 
+	require '../vlastnictvi.php';
 
 	$rampwr = 0;
 	$gpupwr = 0;
@@ -126,7 +127,7 @@ if (isset($_GET['mb']))
 
 	if ($psupwr < $vykon)
 		$vykon = 0;
-	
+
 	//poskládat hráči sestavu
 	$dotaz = 'INSERT INTO sestavy (hrac, vykon, obsah, sbercas) VALUES ('.$_SESSION['hrac'].', '.$vykon.', "'.join(';', $sestava).'", '.time().')';
 	mysql_query($dotaz);
@@ -145,8 +146,8 @@ if (isset($_GET['mb']))
 //přepínání body/výzkum
 if (isset($_GET['switch']))
 {
-	require "../dblogin.php";
-	require "../login.php";
+	require '../dblogin.php';
+	require '../login.php';
 	//přepnout na body/výzkum
 	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['switch'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -154,8 +155,8 @@ if (isset($_GET['switch']))
 	if (count($zaznam) > 1)
 	{
 		if ($zaznam['hrac'] != $_SESSION['hrac'])
-			die("Tuto sestavu nevlastníš.");
-		
+			die('Tuto sestavu nevlastníš.');
+
 		if ($zaznam['vyzkum'] == 1)	//přepnout na body
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
@@ -168,22 +169,22 @@ if (isset($_GET['switch']))
 		}
 	}
 	else
-		echo "Tato sestava neexistuje.";
+		echo 'Tato sestava neexistuje.';
 }
 
 //rozebrání sestavy
 if (isset($_GET['disass']))
 {
-	require "../vlastnictvi.php";
-	
+	require '../vlastnictvi.php';
+
 	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['disass'];
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) <= 1)
-		die("Tato sestava neexistuje.");
+		die('Tato sestava neexistuje.');
 
 	if ($zaznam['hrac'] != $_SESSION['hrac'])
-		die("Tuto sestavu nevlastníš.");
+		die('Tuto sestavu nevlastníš.');
 
 	$sestava = explode(';', $zaznam['obsah']);
 
@@ -199,4 +200,3 @@ if (isset($_GET['disass']))
 	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
 	mysql_query($dotaz);
 }
-?>

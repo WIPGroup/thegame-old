@@ -1,4 +1,4 @@
 <?php
-die("Fuck off!");
+
+die('Fuck off!');
 phpinfo();
-?>

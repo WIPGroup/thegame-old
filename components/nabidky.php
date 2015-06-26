@@ -1,7 +1,8 @@
 <?php
+
 session_start();
 //TODO: vypsat vse co se da pridat v klientovi aby se to nemuselo posilat
-include "../vlastnictvi.php";
+include '../vlastnictvi.php';
 //include "../trade.php";
 
 $dotaz = 'SELECT * FROM veci';
@@ -19,20 +20,20 @@ $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace AND hrac<>'.$_SESSION['
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<tr><td>' . $zaznam['jmeno'] . '</td>';
+	echo '<tr><td>'.$zaznam['jmeno'].'</td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['nabizi']] . '"><span class="badge">' . $zaznam['mnoznabizi'] . '</span><span class="sr-only">' . $veci[$zaznam['nabizi']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['nabizi']].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['chce']].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
 
 	echo '<td>';
 	if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
 		echo '<button type="button" class="btn btn-success btn-block oteviranikoupeni" data-idnab="'.$zaznam['idnab'].'">Kúpiť</button>';
 	}
-	else if ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
+	elseif ($zaznam['idhrace'] != $_SESSION['hrac'] && $zaznam['mnozchce'] > $vlastnictvi[$zaznam['chce']]) {
 		echo '<button type="button" class="btn btn-success btn-block" disabled>Kúpiť</button>';
 	}
-	echo "</td></tr>";
+	echo '</td></tr>';
 }
 echo '</tbody></table></div>';
 
@@ -45,13 +46,12 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['nabizi']] . '.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="' . $veci[$zaznam['nabizi']] . '"><span class="badge">' . $zaznam['mnoznabizi'] . '</span><span class="sr-only">' . $veci[$zaznam['nabizi']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['nabizi']].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/' . $veci[$zaznam['chce']] . '.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="' . $veci[$zaznam['chce']] . '"><span class="badge">' . $zaznam['mnozchce'] . '</span><span class="sr-only">' . $veci[$zaznam['chce']] . '</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['chce']].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
 
 	echo '<td>';
 	echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';
-	echo "</td></tr>";
+	echo '</td></tr>';
 }
 echo '</tbody></table></div>';
-?>

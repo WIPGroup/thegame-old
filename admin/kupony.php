@@ -1,6 +1,6 @@
 <?php
 //TODO: předělat na ajax
-include "admin/tvorbakuponu.php";
+include 'admin/tvorbakuponu.php';
 ?>
 <!-- form na tvorbu kuponů -->
 <div class="col-xs-12">
@@ -39,30 +39,30 @@ include "admin/tvorbakuponu.php";
 				</thead>
 				<tbody>
 					<?php
-					include "vlastnictvi.php";
-					
+					include 'vlastnictvi.php';
+
 					//názvy věcí
 					$dotaz = 'SELECT * FROM veci';
 					$vysl = mysql_query($dotaz) or die(mysql_error($db));
-					
+
 					while ($zazn = mysql_fetch_array($vysl))
 					{
 						$veci[$zazn['idveci']] = $zazn['nazev'];
 					}
-					
+
 					$dotaz = 'SELECT * FROM kupony';
 					$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-					
+
 					while ($zaznam = mysql_fetch_array($vysledek))
 					{
 						echo '<tr><td>'.$zaznam['kod'].'</td><td>';
 						$obsah = explode(';', $zaznam['obsah']);
 						$pocveci = count($obsah);
-						
+
 						for ($i = 0; $i < $pocveci; $i++)
 							if ($obsah[$i] > 0)
 								echo $veci[$i].'('.$obsah[$i].') ';
-						
+
 						echo '</td></tr>';
 					}
 					?>

@@ -1,4 +1,5 @@
 <?php
+
 if (is_numeric($_SESSION['hrac']))
 {
 	$vyzkum = 0; $body = 0;
@@ -14,7 +15,7 @@ if (is_numeric($_SESSION['hrac']))
 		$dotaz = 'UPDATE sestavy SET sbercas='.time().' WHERE idsestavy='.$zaznam['idsestavy'];
 		mysql_query($dotaz);
 	}
-	
+
 	//updatovat hráče
 	$hrac['vyzkum'] += $vyzkum;
 	$hrac['body'] += $body;
@@ -22,4 +23,3 @@ if (is_numeric($_SESSION['hrac']))
 	$dotaz = 'UPDATE hraci SET vyzkum='.$hrac['vyzkum'].', body='.$hrac['body'].' WHERE idhrace='.$_SESSION['hrac'];
 	mysql_query($dotaz);
 }
-?>
