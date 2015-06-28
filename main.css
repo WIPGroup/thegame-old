@@ -46,3 +46,7 @@ th {
 #main-nav .active {
   font-weight: bold;
 }
+col-xs-12, col-sm-12, col-md-12, col-lg-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
