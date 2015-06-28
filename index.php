@@ -4,7 +4,6 @@ require 'components/head.php';
 require 'dblogin.php';
 require 'login.php';
 include 'components/navbar.php';
-echo '<div class="container-fluid">';
 if ($prihlasen)
 {
 	include 'components/index/jumbotron.php';
@@ -28,7 +27,6 @@ else
 			</div>
 		</div>
 	</div>
-</div>
 <script src="js/index.js"></script>
 </body>
 </html>
