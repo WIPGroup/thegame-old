@@ -78,6 +78,7 @@ include 'updatesestav.php';
 					$skryt = '';
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
+        echo '<span class="label label-default category">'.'Surovina'.'</span>'; // TODO pridat surovina, soucastka, kompoennta
 				echo '</div>';
 				//TODO php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
 				//TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html

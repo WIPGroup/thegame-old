@@ -3,9 +3,10 @@
     width: 128px;
     height: 128px;
     cursor: pointer;
+    border: 1px solid #ddd;
   }
   .grid-item:hover {
-    background-color: #bbb
+    background-color: #ddd;
   }
   .grid-item2 {
     float: left;
@@ -13,22 +14,28 @@
   .name {
     text-align: right;
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 5px;
+    right: 5px;
     font-size: 90%;
   }
   .count {
     font-size: 110%;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 5px;
+    left: 5px;
   }
   .power {
     background-color: #f55;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 5px;
+    right: 5px;
   }
   .category {
     font-size: 90%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .grid {
+    padding: 15px;
   }
