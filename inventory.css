@@ -1,9 +1,11 @@
   .grid-item {
     float: left;
-    width: 128px;
-    height: 128px;
+    width: 160px;
+    height: 160px;
     cursor: pointer;
     border: 1px solid #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .grid-item:hover {
     background-color: #ddd;
@@ -37,5 +39,7 @@
     left: 5px;
   }
   .grid {
-    padding: 15px;
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+    border: 1px solid #eee;
   }
