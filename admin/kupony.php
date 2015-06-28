@@ -23,60 +23,40 @@ include 'admin/tvorbakuponu.php';
 		</div>
 	</div>
 </div>
-<!-- seznam kuponů
 <div class="col-xs-12">
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h1 class="panel-title">Seznam kuponů/poukázek</h1>
-		</div>
-		<div class="panel-body">-->
-			<div class="col-xs-12 grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>
-				<?php //TODO podle http://isotope.metafizzy.co/filtering.html Combination Filters pridat tlacitka na filtrovani itemu
-				include 'vlastnictvi.php';
+	<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>
+		<?php //TODO podle http://isotope.metafizzy.co/filtering.html Combination Filters pridat tlacitka na filtrovani itemu
+		include 'vlastnictvi.php';
 
-				//názvy věcí
-				$dotaz = 'SELECT * FROM veci';
-				$vysl = mysql_query($dotaz) or die(mysql_error($db));
+		//názvy věcí
+		$dotaz = 'SELECT * FROM veci';
+		$vysl = mysql_query($dotaz) or die(mysql_error($db));
 
-				while ($zazn = mysql_fetch_array($vysl))
-				{
-					$veci[$zazn['idveci']] = $zazn['nazev'];
-				}
+		while ($zazn = mysql_fetch_array($vysl))
+		{
+			$veci[$zazn['idveci']] = $zazn['nazev'];
+		}
 
-				$dotaz = 'SELECT * FROM kupony';
-				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+		$dotaz = 'SELECT * FROM kupony';
+		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 
-				while ($zaznam = mysql_fetch_array($vysledek))
-				{
-					$obsah = explode(';', $zaznam['obsah']);
-					$pocveci = count($obsah);
+		while ($zaznam = mysql_fetch_array($vysledek))
+		{
+			$obsah = explode(';', $zaznam['obsah']);
+			$pocveci = count($obsah);
 
-					echo '<div class="grid-item2';
-					for ($i = 0; $i < $pocveci; $i++)
-					if ($obsah[$i] > 0)
-					echo ' '.$veci[$i];
-					echo '">'; // style="float: left; width: 64px; heigth '.(13+24*$pocveci).'px">';
-					echo '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">'.$zaznam['kod'].'</h3></div><div class="panel-body"><p>Vytvořeno kdy a kým</p>			</div><ul class="list-group">';
-					for ($i = 0; $i < $pocveci; $i++)
-					if ($obsah[$i] > 0)
-					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';
+			echo '<div class="grid-item2';
+			for ($i = 0; $i < $pocveci; $i++)
+			if ($obsah[$i] > 0)
+			echo ' '.$veci[$i];
+			echo '">'; // style="float: left; width: 64px; heigth '.(13+24*$pocveci).'px">';
+			echo '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">'.$zaznam['kod'].'</h3></div><div class="panel-body"><p>Vytvořeno kdy a kým</p>			</div><ul class="list-group">';
+			for ($i = 0; $i < $pocveci; $i++)
+			if ($obsah[$i] > 0)
+			echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';
 
-					echo '</ul></div></div>'; //TODO zrušeni kuponu
-				}
-				?>
-			</div>
-			<!--<script>
-			$(document).ready( function () {
-			$('.grid').isotope({
-			itemSelector: '.grid-item2',
-			layoutMode: 'packery',
-			packery: {
-			gutter: 10
-		},
-		itemSelector: '.grid-item',
-	});
-} );
-</script>
+			echo '</ul></div></div>'; //TODO zrušeni kuponu
+		}
+		?>
+	</div>
 </div>
-</div>
-</div>-->

@@ -30,6 +30,7 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: přidat obrázky předmětů
+		//TODO: mobile  friendly
 		echo '<tr>';
 		echo '<td>'.$veci[$zaznam['vyrobek']].'</td><td>';
 
