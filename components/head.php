@@ -69,7 +69,7 @@
 -->
 <style>
 body > div {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 </style>
