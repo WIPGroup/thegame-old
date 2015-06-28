@@ -22,10 +22,10 @@ include 'updatesestav.php';
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
 		<div class="col-xs-12">
-			<div class="col-md-3 col-xs-12">
+			<div>
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
 			</div>
-			<div class="col-md-3 col-xs-12 col-md-offset-1 btn-group button-group sort-by-button-group">
+			<div class="btn-group button-group sort-by-button-group">
 				<button type="button" class="btn btn-info" data-sort-by="original-order">Default sort (ID)</button>
 			  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 			    <span class="caret"></span>
@@ -38,12 +38,12 @@ include 'updatesestav.php';
 					<li><button class="btn btn-block btn-info" data-sort-by="type">Typ</button></li>
 			  </ul>
 			</div>
-			<div class="col-md-3 col-xs-12 col-md-offset-1 btn-group button-group filter-button-group">
+			<div class="btn-group button-group filter-button-group">
 				<button type="button" class="btn btn-info" data-filter="*">Show all</button>
 				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					<span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu" role="menu">
+				<ul class="dropdown-menu" role="menu"> <!-- TODO predelat na a misto button, je potreba upravit JS podle toho -->
 					<li><button class="btn btn-block btn-info" data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</button></li>
 					<li><button class="btn btn-block btn-info" data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</button></li>
 					<li><button class="btn btn-block btn-info" data-filter=".cpu">CPUs</button></li>
@@ -78,6 +78,7 @@ include 'updatesestav.php';
 					$skryt = '';
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
+        echo '<span class="label label-default category">'.'Surovina'.'</span>'; // TODO pridat surovina, soucastka, kompoennta
 				echo '</div>';
 				//TODO php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
 				//TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html

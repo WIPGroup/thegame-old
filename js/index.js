@@ -33,9 +33,6 @@ function initIsotope(){
 			count: false,
 			tier: true,
 			type: true
-		},
-		packery: {
-  		gutter: 10
 		}
 	});
 	// filter items on button click TODO vymazat vyhledavaci policko

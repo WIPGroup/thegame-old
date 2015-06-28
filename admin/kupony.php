@@ -61,7 +61,7 @@ include 'admin/tvorbakuponu.php';
 					if ($obsah[$i] > 0)
 					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';
 
-					echo '</ul></div></div>';
+					echo '</ul></div></div>'; //TODO zrušeni kuponu
 				}
 				?>
 			</div>
