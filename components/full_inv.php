@@ -77,7 +77,7 @@ include 'updatesestav.php';
 				else
 					$skryt = '';
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
-				echo '<span class="label label-default name">'.$zaznam['nazev'].'</span>';
+				echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
         echo '<span class="label label-default category">'.'Surovina'.'</span>'; // TODO pridat surovina, soucastka, kompoennta
 				echo '</div>';
 				//TODO php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
