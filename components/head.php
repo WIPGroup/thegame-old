@@ -11,7 +11,7 @@
 	<script async src="js/rollbar.js"></script>
 	<!-- Pace -->
 	<link href="bower_components/pace/themes/green/pace-theme-minimal.css" rel="stylesheet" />
-	<script src="bower_components/pace/pace.js"></script>
+	<script src="bower_components/pace/pace.min.js"></script>
 	<!-- Offline -->
 	<link href="bower_components/offline/themes/offline-theme-slide.css" rel="stylesheet" />
 	<link href="bower_components/offline/themes/offline-language-english.css" rel="stylesheet" />
@@ -37,7 +37,7 @@
 	<link href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<script async src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<!-- Isotope -->
-	<script async src="bower_components\isotope\dist\isotope.pkgd.js"></script>
+	<script async src="bower_components\isotope\dist\isotope.pkgd.min.js"></script>
 	<script async src="bower_components\isotope-packery\packery-mode.pkgd.min.js"></script>
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
