@@ -10,7 +10,7 @@
 	<!-- Rollbar JS -->
 	<script async src="js/rollbar.js"></script>
 	<!-- Pace -->
-	<link href="bower_components/pace/themes/green/pace-theme-flash.css" rel="stylesheet" />
+	<link href="bower_components/pace/themes/green/pace-theme-loading-bar.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.min.js"></script>
 	<!-- Offline -->
 	<link href="bower_components/offline/themes/offline-theme-slide.css" rel="stylesheet" />
