@@ -43,7 +43,7 @@ include 'updatesestav.php';
 				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					<span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu" role="menu">
+				<ul class="dropdown-menu" role="menu"> <!-- TODO predelat na a misto button, je potreba upravit JS podle toho -->
 					<li><button class="btn btn-block btn-info" data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</button></li>
 					<li><button class="btn btn-block btn-info" data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</button></li>
 					<li><button class="btn btn-block btn-info" data-filter=".cpu">CPUs</button></li>
