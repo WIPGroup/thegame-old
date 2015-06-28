@@ -17,6 +17,7 @@ else
 	include 'components/form.php';
 }
 ?>
+<!--
 <div class="col-xs-12">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
@@ -30,3 +31,4 @@ else
 <script src="js/index.js"></script>
 </body>
 </html>
+-->
