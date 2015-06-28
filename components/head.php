@@ -67,3 +67,9 @@
 });
 </script>
 -->
+<style>
+body > div {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+</style>
