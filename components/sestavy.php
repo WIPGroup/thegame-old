@@ -13,27 +13,29 @@ while ($zaznam = mysql_fetch_array($vysledek))
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
-echo '<nav>';
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<ul class="pagination">';
-	$obsah = explode(';', $zaznam['obsah']);
-	for ($i = 0; $i < $pocveci; $i++)
-		if ($obsah[$i] > 0)
-		{
-			echo '<li><a>';
-			if ($obsah[$i] > 1)
-				echo $obsah[$i].'x ';
-			echo $veci[$i].'</a></li>';
-		}
-	echo '<li><a>Výkon: '.$zaznam['vykon'].'</a></li>';
+	echo '<div class="col-md-5 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
+	echo 'Výkon: '.$zaznam['vykon'];
+	echo '</h1></div><div class="panel-body">';
 
 	if ($zaznam['vyzkum'] == 1)
 		$prepnout = 'skóre';
 	else
 		$prepnout = 'výzkum';
 
-	echo '<li><a href="#prepnout" class="switch" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</a></li>';
-	echo '<li><a href="#rozebrat" class="disass" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</a></li></ul>';
+	echo '<button href="#prepnout" class="switch btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</button>';
+	echo '<button href="#rozebrat" class="disass btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</button>';
+
+	echo '</div><ul class="list-group">';
+	$obsah = explode(';', $zaznam['obsah']);
+	for ($i = 0; $i < $pocveci; $i++)
+		if ($obsah[$i] > 0)
+		{
+			echo '<li class="list-group-item">';
+			if ($obsah[$i] > 1)
+				echo $obsah[$i].'x ';
+			echo $veci[$i].'</li>';
+		}
+	echo '</ul></div></div>';
 }
-echo '</nav>';
