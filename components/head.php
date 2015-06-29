@@ -50,9 +50,9 @@
 	error_reporting(E_ALL);
 	require_once 'rollbar.php';
 	$config = array(
-	    'access_token' => '41a7de13241f499ab0849238a8b7b00e',
-	    'environment' => 'production',
-	    'root' => '/',
+		'access_token' => '41a7de13241f499ab0849238a8b7b00e',
+		'environment' => 'production',
+		'root' => '/',
 	);
 	$config['environment'] = getcwd();
 	Rollbar::init($config);

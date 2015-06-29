@@ -15,7 +15,7 @@ include 'admin/tvorbakuponu.php';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
-					echo '<div class="col-xs-12 col-sm-2"><div class="form-group"><label><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img> '.$zaznam['nazev'].'<input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" value="0" class="form-control" placeholder="'.$zaznam['nazev'].'"></label></div></div>';
+					echo '<label><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img> '.$zaznam['nazev'].'<input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" value="0" class="form-control" placeholder="'.$zaznam['nazev'].'"></label>';
 				} //TODO FIX situaci, kdyz je pred cislem par nul
 				?>
 				<button type="submit" class="btn btn-primary btn-block">Vytvořit</button>

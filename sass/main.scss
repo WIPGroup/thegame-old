@@ -1,27 +1,32 @@
 /* WARNING: ZMENY V CSS BUDOU PREPSANY */
 body {
   background-attachment: fixed;
-  background-image: url("background.jpg");
+  background-image: url('background.jpg');
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
-  text-align: center; }
+  text-align: center;
+}
 
 #item {
   height: 52px;
-  width: 52px; }
+  width: 52px;
+}
 
 #item-sm {
   height: 24px;
-  width: 24px; }
+  width: 24px;
+}
 
 td {
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 th {
-  text-align: center; }
+  text-align: center;
+}
 
 .tableimage {
   background-position: center center;
@@ -31,66 +36,92 @@ th {
   padding: 5px;
   text-align: right;
   vertical-align: bottom;
-  width: 52px; }
+  width: 52px;
+}
 
 .center {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
-.nav .active {
+.nav {
+ .active {
   background-image: linear-gradient(#6284AB, #385A80 50%, #2A4563);
-  font-weight: bold; }
+  font-weight: bold;
+}
+}
 
+// TODO @ aby to platilo jen kdyz je urcita sirka
 .col-xs-12,
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
   padding-left: 0 !important;
-  padding-right: 0 !important; }
+  padding-right: 0 !important;
+}
+
+$inventory: #ddd;
 
 .grid-item {
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid #ddd;
+  border: 1px solid $inventory;
   cursor: pointer;
   float: left;
   height: 160px;
-  width: 160px; }
+  width: 160px;
+}
 
 .grid-item:hover {
-  background-color: #ddd; }
+  background-color: $inventory;
+}
 
 .grid-item2 {
-  float: left; }
+  float: left;
+}
 
-.inv-parts, .name, .count, .power, .category {
+$power-color: #f55;
+
+.inv-parts {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
+
+$odsazeni: 5px;
 
 .name {
-  bottom: 5px;
+  @extend .inv-parts;
+  bottom: $odsazeni;
   font-size: 90%;
-  right: 5px;
-  text-align: right; }
+  right: $odsazeni;
+  text-align: right;
+}
 
 .count {
-  bottom: 5px;
+  @extend .inv-parts;
+  bottom: $odsazeni;
   font-size: 110%;
-  left: 5px; }
+  left: $odsazeni;
+}
 
 .power {
-  background-color: #f55;
-  right: 5px;
-  top: 5px; }
+  @extend .inv-parts;
+  background-color: $power-color;
+  right: $odsazeni;
+  top: $odsazeni;
+}
 
 .category {
+  @extend .inv-parts;
   font-size: 90%;
-  left: 5px;
-  top: 5px; }
+  left: $odsazeni;
+  top: $odsazeni;
+}
 
 .grid {
   margin: 15px 0 0;
-  padding: 0; }
+  padding: 0;
+}
