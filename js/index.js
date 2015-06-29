@@ -36,11 +36,11 @@ function initIsotope(){
 		}
 	});
 	// filter items on button click TODO vymazat vyhledavaci policko
-	$('.filter-button-group').on( 'click', 'button', function() {
+	$('.filter-button-group').on( 'click', 'a', function() {
 	  var filterValue = $(this).attr('data-filter');
 	  $grid.isotope({ filter: filterValue });
 	});
-	$('.sort-by-button-group').on( 'click', 'button', function() {
+	$('.sort-by-button-group').on( 'click', 'a', function() {
   	var sortByValue = $(this).attr('data-sort-by');
   	$grid.isotope({ sortBy: sortByValue });
 	});
