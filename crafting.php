@@ -39,7 +39,7 @@ if ($prihlasen)
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo '<img id="item-sm" src="icons/'.$veci[$i].'.png"></img> <span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span>';
+			echo '<img id="item-sm" src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span> ';
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
