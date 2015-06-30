@@ -9,7 +9,7 @@ if (isset($_GET['id']))
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
 	{
-		echo '<div id="nazev">'.$zaznam['nazev'].'</div><div id="popis">'.$zaznam['popis'].'</div>';
+		echo '<div id="nazev">Název: '.$zaznam['nazev'].'</div><div id="typ">Typ: '.$zaznam['typ'].'</div><div id="vykon">Výkon: '.$zaznam['vykon'].'</div><div id="popis">'.$zaznam['popis'].'</div>';
 	}
 	else
 		echo 'Nepodařilo se získat info o tomto předmětu: '.$_GET['id'];
