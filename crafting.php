@@ -32,14 +32,14 @@ if ($prihlasen)
 		//TODO: přidat obrázky předmětů
 		//TODO: mobile  friendly
 		echo '<tr>';
-		echo '<td>'.$veci[$zaznam['vyrobek']].'</td><td>';
+		echo '<td><img id="item-sm" src="icons/'.$veci[$zaznam['vyrobek']].'.png"></img>'.$veci[$zaznam['vyrobek']].'</td><td>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo $veci[$i].'('.$suroviny[$i].') ';
+			echo '<img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].'<span class="badge">'.$suroviny[$i].'</span>';
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
