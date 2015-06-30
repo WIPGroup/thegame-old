@@ -1,33 +1,28 @@
 /* WARNING: ZMENY V CSS BUDOU PREPSANY */
 body {
   background-attachment: fixed;
-  background-image: url('background.jpg');
+  background-image: url("background.jpg");
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
   text-align: center;
 }
-
 #item {
   height: 52px;
   width: 52px;
 }
-
 #item-sm {
   height: 24px;
   width: 24px;
 }
-
 td {
   text-align: center;
   vertical-align: middle;
 }
-
 th {
   text-align: center;
 }
-
 .tableimage {
   background-position: center center;
   background-repeat: no-repeat;
@@ -38,30 +33,50 @@ th {
   vertical-align: bottom;
   width: 52px;
 }
-
 .center {
   margin-left: auto;
   margin-right: auto;
 }
-
+$active: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
 .nav {
- .active {
-  background-image: linear-gradient(#6284AB, #385A80 50%, #2A4563);
-  font-weight: bold;
-}
+  .active {
+    background-image: $active;
+    font-weight: bold;
+  }
+  li:hover {
+    background-image: $active;
+  }
 }
 
 // TODO @ aby to platilo jen kdyz je urcita sirka
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
+$screen-xs-max: 768px;
+$screen-sm-max: 992px;
+$screen-md-max: 1200px;
+@mixin pad {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-
+@media (max-width: $screen-xs-max) {
+  .col-xs-12 {
+    @include pad;
+  }
+}
+@media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+  .col-sm-12 {
+    @include pad;
+  }
+}
+@media (min-width: $screen-sm-max) and (max-width: $screen-md-max) {
+  .col-md-12 {
+    @include pad;
+  }
+}
+@media (min-width: $screen-md-max) {
+  .col-lg-12 {
+    @include pad;
+  }
+}
 $inventory: #ddd;
-
 .grid-item {
   background-position: center;
   background-repeat: no-repeat;
@@ -71,17 +86,13 @@ $inventory: #ddd;
   height: 160px;
   width: 160px;
 }
-
 .grid-item:hover {
   background-color: $inventory;
 }
-
 .grid-item2 {
   float: left;
 }
-
 $power-color: #f55;
-
 .inv-parts {
   max-width: 50%;
   overflow: hidden;
@@ -89,9 +100,7 @@ $power-color: #f55;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 $odsazeni: 5px;
-
 .name {
   @extend .inv-parts;
   bottom: $odsazeni;
@@ -99,28 +108,24 @@ $odsazeni: 5px;
   right: $odsazeni;
   text-align: right;
 }
-
 .count {
   @extend .inv-parts;
   bottom: $odsazeni;
   font-size: 110%;
   left: $odsazeni;
 }
-
 .power {
   @extend .inv-parts;
   background-color: $power-color;
   right: $odsazeni;
   top: $odsazeni;
 }
-
 .category {
   @extend .inv-parts;
   font-size: 90%;
   left: $odsazeni;
   top: $odsazeni;
 }
-
 .grid {
   margin: 15px 0 0;
   padding: 0;

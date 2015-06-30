@@ -38,15 +38,31 @@ th {
   margin-right: auto; }
 
 .nav .active {
-  background-image: linear-gradient(#6284AB, #385A80 50%, #2A4563);
+  background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
   font-weight: bold; }
 
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
-  padding-left: 0 !important;
-  padding-right: 0 !important; }
+.nav li:hover {
+  background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563); }
+
+@media (max-width: 768px) {
+  .col-xs-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .col-sm-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .col-md-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
+
+@media (min-width: 1200px) {
+  .col-lg-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
 
 .grid-item {
   background-position: center;
