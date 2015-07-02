@@ -1,5 +1,4 @@
 <?php
-//TODO: předělat na ajax
 include 'admin/tvorbakuponu.php';
 ?>
 <!-- form na tvorbu kuponů -->
@@ -38,7 +37,7 @@ include 'admin/tvorbakuponu.php';
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 
-		$dotaz = 'SELECT * FROM kupony';
+		$dotaz = 'SELECT * FROM kupony ORDER BY cas';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 
 		while ($zaznam = mysql_fetch_array($vysledek))

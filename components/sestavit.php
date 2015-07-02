@@ -1,5 +1,6 @@
 <?php
 
+//TODO http://puu.sh/iL7Vs/0775c5b398.jpg FIX
 //poskládání sestavy
 session_start();
 if (isset($_GET['mb']))
