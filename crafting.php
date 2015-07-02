@@ -14,7 +14,7 @@ if ($prihlasen)
 
 	echo '<div class="col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
 	echo '<table class="table table-striped table-hover">';
-	echo '<thead><tr><th>Výrobek</th><th>Suroviny</th><th>Čas na výrobu</th><th>Potřebný výzkum</th><th>Množství</th><th>Vyrobit</th></tr></thead><tbody>';
+	echo '<thead><tr><th>Výrobok</th><th>Suroviny</th><th>Čas na výrobu</th><th>Potrebný výzkum</th><th>Množstvo</th><th>Vyrobiť</th></tr></thead><tbody>';
 
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
