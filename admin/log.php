@@ -19,7 +19,7 @@
 				<?php
 				$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 100';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-				while ($zaznam = mysql_fetch_array($vysledek))  //TODO: Log by mozna taky stalo za to dat do tabulky |cas|jmeno|text|
+				while ($zaznam = mysql_fetch_array($vysledek))
 				{
 					echo '<li class="list-group-item"><span class="label label-default">'.date('Y.m.d H:i:s', $zaznam['cas']).'</span><span class="label label-info">'.$zaznam['jmeno'].'</span> '.$zaznam['text'];
 					echo '</li>';

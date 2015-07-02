@@ -80,8 +80,8 @@ include 'updatesestav.php';
         echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
         echo '<span class="label label-default category">'.'Surovina'.'</span>'; // TODO pridat surovina, soucastka, kompoennta
         echo '</div>';
-        //TODO php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
-        //TODO do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
+        //IDEA php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
+        //IDEA do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
       }
       ?>
     </div>
@@ -94,7 +94,7 @@ include 'updatesestav.php';
       Brand:	Core i7-E<br/>
       MicroArchitecture Code-name:	Haswell-E<br/>
       Vykon:	23 711 280 000 000<br/>
-      <button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z wiki -->
+      <button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
     </div>
   </div>
 </div>

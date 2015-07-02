@@ -35,7 +35,7 @@ function initIsotope(){
 			type: true
 		}
 	});
-	// filter items on button click TODO vymazat vyhledavaci policko
+	// filter items on button click
 	$('.filter-button-group').on( 'click', 'a', function() {
 	  var filterValue = $(this).attr('data-filter');
 	  $grid.isotope({ filter: filterValue });

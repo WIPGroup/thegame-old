@@ -29,7 +29,6 @@ if ($prihlasen)
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
-		//TODO: přidat obrázky předmětů
 		//TODO: mobile  friendly
 		echo '<tr>';
 		echo '<td><img id="item-sm" src="icons/'.$veci[$zaznam['vyrobek']].'.png"></img> <span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span></td><td>';

@@ -25,7 +25,7 @@ include 'admin/tvorbakuponu.php';
 <!--zobrazení kuponů-->
 <div class="col-xs-12">
 	<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>
-		<?php //TODO podle http://isotope.metafizzy.co/filtering.html Combination Filters pridat tlacitka na filtrovani itemu
+		<?php //IDEA podle http://isotope.metafizzy.co/filtering.html Combination Filters pridat tlacitka na filtrovani itemu
 		include 'vlastnictvi.php';
 
 		//názvy věcí
@@ -55,7 +55,7 @@ include 'admin/tvorbakuponu.php';
 				if ($obsah[$i] > 0)
 					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$veci[$i].'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';
 
-			echo '</ul></div></div>'; //TODO zrušeni kuponu
+			echo '</ul></div></div>';
 		}
 		?>
 	</div>
