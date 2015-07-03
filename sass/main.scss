@@ -100,6 +100,7 @@ $odsazeni: 5px;
 }
 .grid-craft-item {
   @extend .grid-item;
+  background-color: #ffffff;
   a {
     float: left;
     img {

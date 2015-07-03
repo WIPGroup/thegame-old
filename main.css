@@ -79,11 +79,12 @@ th {
 .grid-item2 {
   float: left; }
 
-.grid-craft-item a {
-  float: left; }
-
-.grid-craft-item .craft-vyzkum {
-  top: 30px; }
+.grid-craft-item {
+  background-color: #ffffff; }
+  .grid-craft-item a {
+    float: left; }
+  .grid-craft-item .craft-vyzkum {
+    top: 30px; }
 
 .inv-parts, .name, .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .category {
   max-width: 50%;
