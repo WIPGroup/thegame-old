@@ -93,6 +93,9 @@ $inventory: #ddd;
 .grid-item2 {
   float: left;
 }
+.grid-craft-item{
+  @extend .grid-item;
+}
 $power-color: #f55;
 .inv-parts {
   max-width: 50%;
@@ -108,6 +111,9 @@ $odsazeni: 5px;
   font-size: 90%;
   right: $odsazeni;
   text-align: right;
+}
+.craft-name {
+  @extend .name;
 }
 .count {
   @extend .inv-parts;

@@ -28,15 +28,15 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: mobile  friendly
-		echo '<div class="grid-craft-item">';
-		echo '<img id="item-sm" src="icons/'.$veci[$zaznam['vyrobek']].'.png"></img> <span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span>';
+		echo '<div class="grid-craft-item" style="background-image: url(icons/'.$veci[$zaznam['vyrobek']].'.png)">';
+		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo '<img id="item-sm" src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span> ';
+			echo '<p><img id="item-sm" src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span></p>';
 		}
 
 		echo $zaznam['doba'].' s';
@@ -51,11 +51,11 @@ if ($prihlasen)
 				$splnuje = false;
 
 		if (!$splnuje)
-			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
+			echo '<button class="btn btn-primary btn-xs" disabled="">Nedostatek surovin</button>';
 		elseif ($hrac['vyzkum'] < $zaznam['body'])
-			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Neuskutečněný výzkum</button>';
+			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else
-			echo '<button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
+			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		echo '</div>';
 	}
 	echo '</div>';

@@ -64,7 +64,7 @@ th {
     padding-left: 0 !important;
     padding-right: 0 !important; } }
 
-.grid-item {
+.grid-item, .grid-craft-item {
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid #ddd;
@@ -73,20 +73,20 @@ th {
   height: 160px;
   width: 160px; }
 
-.grid-item:hover {
+.grid-item:hover, .grid-craft-item:hover {
   background-color: #ddd; }
 
 .grid-item2 {
   float: left; }
 
-.inv-parts, .name, .count, .power, .category {
+.inv-parts, .name, .craft-name, .count, .power, .category {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.name {
+.name, .craft-name {
   bottom: 5px;
   font-size: 90%;
   right: 5px;
