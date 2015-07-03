@@ -36,7 +36,7 @@ if ($prihlasen)
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0) //TODO html kdyz bude cas tak do tablu
-			echo '<div class="craft-suroviny"><span class="badge">'.$i.'</span><img src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span></div>';
+			echo '<div class="craft-suroviny"><span class="badge">'.$suroviny[$i].'</span><img src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span></div>';
 		}
 		echo '<div class="craft-suroviny"><span class="badge">'.$zaznam['doba'].'</span><span class="glyphicon glyphicon-time"></span><span class="label label-default">Sekundy</span></div>';
 		echo '<div class="craft-vyzkum label label-warning">'.$zaznam['nazev'].'</div>';
