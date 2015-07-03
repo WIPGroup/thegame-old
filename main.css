@@ -71,8 +71,8 @@ th {
   border: 1px solid #ddd;
   cursor: pointer;
   float: left;
-  height: 160px;
-  width: 320px; }
+  min-height: 160px;
+  min-width: 320px; }
 
 .grid-item:hover, .grid-craft-item:hover {
   background-color: #ddd; }
