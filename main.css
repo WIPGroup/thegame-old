@@ -82,7 +82,7 @@ th {
 .grid-craft-item a {
   float: left; }
 
-.inv-parts, .name, .craft-name, .count, .grid-craft-item .craft-vyzkum, .power, .grid-craft-item .craft-time, .category {
+.inv-parts, .name, .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .grid-craft-item .craft-time, .category {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
@@ -95,7 +95,7 @@ th {
   right: 5px;
   text-align: right; }
 
-.count, .grid-craft-item .craft-vyzkum {
+.count, .grid-craft-item .craft-vyrob {
   bottom: 5px;
   font-size: 110%;
   left: 5px; }

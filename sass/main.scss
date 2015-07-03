@@ -109,6 +109,10 @@ $inventory: #ddd;
     @extend .power;
   }
   .craft-vyzkum {
+    @extend .power;
+    top: 25 + $odsazeni;
+  }
+  .craft-vyrob {
     @extend .count;
   }
 }

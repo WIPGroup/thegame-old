@@ -42,7 +42,7 @@ if ($prihlasen)
 		echo '<div class="craft-time">'.$zaznam['doba'].' s</div>';
 		echo '<div class="craft-vyzkum">'.$zaznam['nazev'].'</div>';
 
-		echo '<input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000">';
+		echo '<div class="craft-vyzkum"><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000">';
 
 		$splnuje = true;
 
@@ -56,7 +56,7 @@ if ($prihlasen)
 			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else
 			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
-		echo '</div>';
+		echo '</div></div>';
 	}
 	echo '</div>';
 }
