@@ -123,6 +123,7 @@ $odsazeni: 5px;
     @extend .inv-parts;
     bottom: 20 + $odsazeni;
     right: $odsazeni;
+    max-width: 100% !important;
   }
 }
 $power-color: #f55;

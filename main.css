@@ -91,7 +91,8 @@ th {
     right: 5px; }
   .grid-craft-item .craft-vyrob {
     bottom: 25px;
-    right: 5px; }
+    right: 5px;
+    max-width: 100% !important; }
 
 .inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .grid-craft-item .craft-vyrob, .name, .grid-craft-item .craft-name, .count, .power, .category {
   max-width: 50%;
