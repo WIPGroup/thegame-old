@@ -103,7 +103,6 @@ $odsazeni: 5px;
   background-color: #fff;
   text-align: left;
   .craft-suroviny {
-    ;
     img {
       @extend #item-sm;
     }
@@ -113,13 +112,15 @@ $odsazeni: 5px;
     max-width: 100% !important;
   }
   .craft-time {
-    @extend .power;
+    @extend .inv-parts;
   }
   .craft-vyzkum {
-    @extend .power;
-    top: 25 + $odsazeni;
+    @extend .inv-parts;
+    top: $odsazeni;
+    right: $odsazeni;
   }
   .craft-vyrob {
+    @extend .inv-parts;
     bottom: 20 + $odsazeni;
     right: $odsazeni;
   }
