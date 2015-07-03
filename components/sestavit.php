@@ -1,6 +1,5 @@
 <?php
 
-//TODO http://puu.sh/iL7Vs/0775c5b398.jpg FIX
 //poskládání sestavy
 session_start();
 if (isset($_GET['mb']))
@@ -42,6 +41,8 @@ if (isset($_GET['mb']))
 		die('Takovou základní desku nevlastníš.');
 
 	//info a kompatibilita procesoru
+	if (!isset($_GET['cpu']))
+		die("Nemáš vybraný procesor.");
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['cpu'].' AND typ="cpu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
@@ -60,7 +61,7 @@ if (isset($_GET['mb']))
 	//ram sloty
 	for ($i = 1; $i <= $sloty[0]; $i++)
 	{
-		if ($_GET['ram'.$i] < 0)
+		if (!isset($_GET['ram'.$i]) || $_GET['ram'.$i] < 0)
 			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['ram'.$i].' AND typ="ram"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -78,7 +79,7 @@ if (isset($_GET['mb']))
 	//gpu karty
 	for ($i = 1; $i <= $sloty[1]; $i++)
 	{
-		if ($_GET['gpu'.$i] < 0)
+		if (!isset($_GET['gpu'.$i]) || $_GET['gpu'.$i] < 0)
 			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['gpu'.$i].' AND typ="gpu"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -96,7 +97,7 @@ if (isset($_GET['mb']))
 	//hdd
 	for ($i = 1; $i <= $sloty[2]; $i++)
 	{
-		if ($_GET['hdd'.$i] < 0)
+		if (!isset($_GET['hdd'.$i]) || $_GET['hdd'.$i] < 0)
 			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'.$i].' AND typ="hdd"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -112,6 +113,8 @@ if (isset($_GET['mb']))
 	}
 
 	//psu
+	if (!isset($_GET['psu']))
+		die("Nemáš vybraný zdroj.");
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['psu'].' AND typ="psu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);

@@ -28,7 +28,7 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: mobile  friendly
-		echo '<div class="grid-craft-item" style="background-image: url(icons/'.$veci[$zaznam['vyrobek']].'.png)">';
+		echo '<div class="grid-craft-item" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)">';
 		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
@@ -36,7 +36,7 @@ if ($prihlasen)
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo '<a><span class="badge">'.$suroviny[$i].'</span><img src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span></a><br>';
+			echo '<a><span class="badge">'.$i.'</span><img src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span></a><br>';
 		}
 
 		echo '<div class="craft-time">'.$zaznam['doba'].' s</div>';

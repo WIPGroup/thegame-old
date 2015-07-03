@@ -22,9 +22,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr><td>'.$zaznam['jmeno'].'</td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['nabizi']].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$zaznam['nabizi'].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['chce']].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$zaznam['chce'].'.png)" data-toggle="tooltip" data-placement="left" data-container="body" title data-original-title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
 
 	echo '<td>';
 	if ($zaznam['mnozchce'] <= $vlastnictvi[$zaznam['chce']]) {
@@ -46,9 +46,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<tr>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['nabizi']].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$zaznam['nabizi'].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['nabizi']].'"><span class="badge">'.$zaznam['mnoznabizi'].'</span><span class="sr-only">'.$veci[$zaznam['nabizi']].'</span></td>';
 
-	echo '<td class="tableimage" style="background-image:url(icons/'.$veci[$zaznam['chce']].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
+	echo '<td class="tableimage" style="background-image:url(icons/'.$zaznam['chce'].'.png)" data-toggle="tooltip" data-placement="top" data-container="body" title="'.$veci[$zaznam['chce']].'"><span class="badge">'.$zaznam['mnozchce'].'</span><span class="sr-only">'.$veci[$zaznam['chce']].'</span></td>';
 
 	echo '<td>';
 	echo '<button type="button" class="btn btn-warning btn-block oteviranizruseni" data-idnab="'.$zaznam['idnab'].'">Zrušiť</button>';

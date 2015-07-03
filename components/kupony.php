@@ -11,7 +11,7 @@
             <input type="text" name="kupon" id="kupon" class="form-control" id="exampleInputAmount" placeholder="XXXXXXXX" maxlength="8">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Uplatnit kupón</button> <!-- TODO FIX jde to pouzivat do nekonecna -->
+        <button type="submit" class="btn btn-primary">Uplatnit kupón</button>
       </form>
     </div>
   </div>

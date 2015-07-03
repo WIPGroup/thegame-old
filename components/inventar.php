@@ -16,7 +16,7 @@ include 'updatesestav.php';
 			while ($zaznam = mysql_fetch_array($vysledek))
 			{
 				if ($vlastnictvi[$zaznam['idveci']] > 0)
-					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$zaznam['nazev'].'.png"></img><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> '.$zaznam['nazev'].'</li>';
+					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$zaznam['idveci'].'.png"></img><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span> '.$zaznam['nazev'].'</li>';
 			}
 			?>
 		</ul>
