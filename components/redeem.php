@@ -19,7 +19,7 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 
 		//smazat kupón
-		$dotaz = 'DELETE FROM kupony WHERE idkuponu='.$zaznam['idkuponu'];
+		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
 		mysql_query($dotaz);
 
 		echo 'Kupó přijat. Zíkals ';
