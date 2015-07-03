@@ -11,7 +11,7 @@ if (isset($_GET['id']))
 	{
 		echo '<div id="nazev">Název: '.$zaznam['nazev'].'</div>';
 		if ($zaznam['typ'] == "")
-			echo '<div id="typ">Typ: Surovina</div>';
+			echo '<div id="typ">Typ: Surovina</div>'; //TODO Rozdeleni surovina soucastka
 		else
 			echo '<div id="typ">Typ: '.strtoupper($zaznam['typ']).'</div>';
 		if ($zaznam['socket'] != "")

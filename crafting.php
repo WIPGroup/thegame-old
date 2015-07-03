@@ -12,10 +12,8 @@ if ($prihlasen)
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
-	echo '<div class="col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h2 class="panel-title">Recepty</h2></div>';
-	echo '<table class="table table-striped table-hover">';
-	echo '<thead><tr><th>Výrobok</th><th>Suroviny</th><th>Čas na výrobu</th><th>Potrebný výzkum</th><th>Množstvo</th><th>Vyrobiť</th></tr></thead><tbody>';
-
+	echo '<div class="col-xs-12">';
+	echo '<div class="grid js-isotope" data-isotope-options=\'{ "itemSelector": ".grid-craft-item", "layoutMode": "packery" , "packery": {"gutter": 10}}\'>';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -30,21 +28,20 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: mobile  friendly
-		echo '<tr>';
-		echo '<td><img id="item-sm" src="icons/'.$zaznam['vyrobek'].'.png"></img> <span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span></td><td>';
+		echo '<div class="grid-craft-item" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)">';
+		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
-			if ($suroviny[$i] > 0)
-			echo '<img id="item-sm" src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span> ';
+			if ($suroviny[$i] > 0) //TODO html kdyz bude cas tak do tablu
+			echo '<div class="craft-suroviny"><span class="badge">'.$i.'</span><img src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span></div>';
 		}
+		echo '<div class="craft-suroviny"><span class="badge">'.$zaznam['doba'].'</span><span class="glyphicon glyphicon-time"></span><span class="label label-default">Sekundy</span></div>';
+		echo '<div class="craft-vyzkum label label-warning">'.$zaznam['nazev'].'</div>';
 
-		echo '</td><td>'.$zaznam['doba'].' s</td>';
-		echo '</td><td>'.$zaznam['nazev'].'</td>';
-
-		echo '<td><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="10000"></td><td>';
+		echo '<div class="craft-vyrob"><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="1000">';
 
 		$splnuje = true;
 
@@ -53,14 +50,14 @@ if ($prihlasen)
 				$splnuje = false;
 
 		if (!$splnuje)
-			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Nedostatek surovin</button>';
+			echo '<button class="btn btn-primary btn-xs" disabled="">Nedostatek surovin</button>';
 		elseif ($hrac['vyzkum'] < $zaznam['body'])
-			echo '<button class="btn btn-primary btn-block btn-xs" disabled="">Neuskutečněný výzkum</button>';
+			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else
-			echo '<button class="btn btn-xs btn-block btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
-		echo '</td></tr>';
+			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
+		echo '</div></div>';
 	}
-	echo '</tbody></table></div>';
+	echo '</div>';
 }
 else
 {
