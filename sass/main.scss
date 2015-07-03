@@ -1,4 +1,7 @@
-/* WARNING: ZMENY V CSS BUDOU PREPSANY */
+/* WARNING: ZMENY V CSS BUDOU PREPSANY, navod v .scss */
+// NAVOD: npm install node-sass
+// zapnout sasswatch.bat
+// po kazde zmene v sass/main.scss se zmeny ulozi do main.css
 body {
   background-attachment: fixed;
   background-image: url("background.jpg");
@@ -8,6 +11,7 @@ body {
   max-width: 1280px;
   text-align: center;
 }
+
 // @ TODO #000 pozadi na mobilu
 #item {
   height: 52px;
@@ -93,8 +97,20 @@ $inventory: #ddd;
 .grid-item2 {
   float: left;
 }
-.grid-craft-item{
+.grid-craft-item {
   @extend .grid-item;
+  a {
+    float: left;
+    img {
+      @extend #item-sm;
+    }
+  }
+  .craft-time {
+    @extend .power;
+  }
+  .craft-vyzkum {
+    @extend .count;
+  }
 }
 $power-color: #f55;
 .inv-parts {

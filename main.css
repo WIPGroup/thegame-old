@@ -1,4 +1,4 @@
-/* WARNING: ZMENY V CSS BUDOU PREPSANY */
+/* WARNING: ZMENY V CSS BUDOU PREPSANY, navod v .scss */
 body {
   background-attachment: fixed;
   background-image: url("background.jpg");
@@ -12,7 +12,7 @@ body {
   height: 52px;
   width: 52px; }
 
-#item-sm {
+#item-sm, .grid-craft-item a img {
   height: 24px;
   width: 24px; }
 
@@ -79,7 +79,10 @@ th {
 .grid-item2 {
   float: left; }
 
-.inv-parts, .name, .craft-name, .count, .power, .category {
+.grid-craft-item a {
+  float: left; }
+
+.inv-parts, .name, .craft-name, .count, .grid-craft-item .craft-vyzkum, .power, .grid-craft-item .craft-time, .category {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
@@ -92,12 +95,12 @@ th {
   right: 5px;
   text-align: right; }
 
-.count {
+.count, .grid-craft-item .craft-vyzkum {
   bottom: 5px;
   font-size: 110%;
   left: 5px; }
 
-.power {
+.power, .grid-craft-item .craft-time {
   background-color: #f55;
   right: 5px;
   top: 5px; }
