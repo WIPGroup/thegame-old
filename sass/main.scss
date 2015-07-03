@@ -89,7 +89,7 @@ $odsazeni: 5px;
   cursor: pointer;
   float: left;
   min-height: 160px;
-  min-width: 320px; //TODO rozdelit pro ruzne gridy
+  min-width: 160px; //TODO rozdelit pro ruzne gridy
 }
 .grid-item:hover {
   background-color: $inventory;
@@ -99,6 +99,8 @@ $odsazeni: 5px;
 }
 .grid-craft-item {
   @extend .grid-item;
+  min-height: 160px;
+  min-width: 320px;
   cursor: default;
   background-color: #fff;
   text-align: left;
