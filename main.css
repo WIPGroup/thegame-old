@@ -12,7 +12,7 @@ body {
   height: 52px;
   width: 52px; }
 
-#item-sm, .grid-craft-item a img {
+#item-sm, .grid-craft-item .craft-suroviny img {
   height: 24px;
   width: 24px; }
 
@@ -67,6 +67,7 @@ th {
 .grid-item, .grid-craft-item {
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 128px 128px;
   border: 1px solid #ddd;
   cursor: pointer;
   float: left;
@@ -80,20 +81,22 @@ th {
   float: left; }
 
 .grid-craft-item {
-  background-color: #ffffff; }
-  .grid-craft-item a {
-    float: left; }
+  cursor: default;
+  background-color: #fff;
+  text-align: left; }
+  .grid-craft-item .craft-name {
+    max-width: 100%; }
   .grid-craft-item .craft-vyzkum {
     top: 30px; }
 
-.inv-parts, .name, .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .category {
+.inv-parts, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .category {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.name, .craft-name {
+.name, .grid-craft-item .craft-name {
   bottom: 5px;
   font-size: 90%;
   right: 5px;

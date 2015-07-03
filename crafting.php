@@ -36,7 +36,7 @@ if ($prihlasen)
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo '<a><span class="badge">'.$i.'</span><img src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span></a><br>';
+			echo '<div class="craft-suroviny"><span class="badge">'.$i.'</span><img src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span></div><br>';
 		}
 
 		echo '<div class="craft-time">'.$zaznam['doba'].' s</div>';

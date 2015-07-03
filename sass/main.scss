@@ -52,8 +52,6 @@ $active: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
     background-image: $active;
   }
 }
-
-// TODO @ aby to platilo jen kdyz je urcita sirka
 $screen-xs-max: 768px;
 $screen-sm-max: 992px;
 $screen-md-max: 1200px;
@@ -86,6 +84,7 @@ $odsazeni: 5px;
 .grid-item {
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 128px 128px;
   border: 1px solid $inventory;
   cursor: pointer;
   float: left;
@@ -100,12 +99,18 @@ $odsazeni: 5px;
 }
 .grid-craft-item {
   @extend .grid-item;
-  background-color: #ffffff;
-  a {
-    float: left;
+  cursor: default;
+  background-color: #fff;
+  text-align: left;
+  .craft-suroviny {
+    ;
     img {
       @extend #item-sm;
     }
+  }
+  .craft-name {
+    @extend .name;
+    max-width: 100%;
   }
   .craft-time {
     @extend .power;
@@ -132,9 +137,6 @@ $power-color: #f55;
   font-size: 90%;
   right: $odsazeni;
   text-align: right;
-}
-.craft-name {
-  @extend .name;
 }
 .count {
   @extend .inv-parts;
