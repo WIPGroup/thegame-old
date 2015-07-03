@@ -88,8 +88,8 @@ $odsazeni: 5px;
   border: 1px solid $inventory;
   cursor: pointer;
   float: left;
-  height: 160px;
-  width: 320px;
+  min-height: 160px;
+  min-width: 320px;
 }
 .grid-item:hover {
   background-color: $inventory;
