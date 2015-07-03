@@ -82,6 +82,7 @@ $screen-md-max: 1200px;
   }
 }
 $inventory: #ddd;
+$odsazeni: 5px;
 .grid-item {
   background-position: center;
   background-repeat: no-repeat;
@@ -124,7 +125,6 @@ $power-color: #f55;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-$odsazeni: 5px;
 .name {
   @extend .inv-parts;
   bottom: $odsazeni;
