@@ -49,10 +49,10 @@ if ($prihlasen)
 			if ($vlastnictvi[$i] < $suroviny[$i])
 				$splnuje = false;
 
-		if (!$splnuje)
-			echo '<button class="btn btn-primary btn-xs" disabled="">Nedostatek surovin</button>';
-		elseif ($hrac['vyzkum'] < $zaznam['body'])
+		if ($hrac['vyzkum'] < $zaznam['body'])
 			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
+		else if (!$splnuje)
+			echo '<button class="btn btn-primary btn-xs" disabled="">Nedostatek surovin</button>';
 		else
 			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		echo '</div></div>';
