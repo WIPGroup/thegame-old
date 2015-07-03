@@ -31,14 +31,14 @@ if ($prihlasen)
 	{
 		//TODO: mobile  friendly
 		echo '<tr>';
-		echo '<td><img id="item-sm" src="icons/'.$veci[$zaznam['vyrobek']].'.png"></img> <span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span></td><td>';
+		echo '<td><img id="item-sm" src="icons/'.$zaznam['vyrobek'].'.png"></img> <span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span></td><td>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0)
-			echo '<img id="item-sm" src="icons/'.$veci[$i].'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span> ';
+			echo '<img id="item-sm" src="icons/'.$i.'.png"></img><span class="label label-default">'.$veci[$i].'</span><span class="badge">'.$suroviny[$i].'</span> ';
 		}
 
 		echo '</td><td>'.$zaznam['doba'].' s</td>';
