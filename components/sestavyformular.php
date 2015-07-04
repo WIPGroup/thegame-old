@@ -47,4 +47,3 @@ for ($i = 1; $i <= 4; $i++)
 echo '<br>Zdroj:';
 echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
 echo '<br><button class="btn btn-primary btn-block" type="submit">Sestavit</button>';
-?>

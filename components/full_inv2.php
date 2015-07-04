@@ -47,11 +47,17 @@ include 'updatesestav.php';
 	{ //vymyslet http://isotope.metafizzy.co/filtering.html
 		if (($vlastnictvi[$zaznam['idveci']] > 0) && ($zaznam['vykon'] > 0) && ($zaznam['typ'] != ''))
 		{
-			echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="background-image: url(\'icons/'.$zaznam['idveci'].'.png\');">';
+			echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="background-image: url(\'icons/'.$zaznam['idveci'].'.png\');" ';
+
+			if ($zaznam['typ'] == 'mb')
+				$mbs .= 'data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-hdd="'.explode(';', $zaznam['sloty'])[2].'" data-socket="'.$zaznam['socket'].'"';
+			if ($zaznam['typ'] == 'cpu')
+				$cpus .= 'data-socket="'.$zaznam['socket'].'"';
+			echo '>';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 
-			echo '<span class="badge count"><input type="checkbox"><input type="number" min="1" max="'.$vlastnictvi[$zaznam['idveci']].'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
+			echo '<span class="badge count"><input type="checkbox"><input type="number" min="1" max="'.$vlastnictvi[$zaznam['idveci']].'"> z '.$vlastnictvi[$zaznam['idveci']].'</span>';
 
 			echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 
