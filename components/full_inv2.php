@@ -62,7 +62,7 @@ include 'updatesestav.php';
 				else
 				$skryt = '';
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
-				echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
+				echo '<span class="label label-default name"><input type="checkbox"></input><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 				if ($zaznam['typ'] == '')
 				echo '<span class="label label-default category">Surovina</span>';
 				else
