@@ -3,165 +3,164 @@
 // zapnout sasswatch.bat
 // po kazde zmene v sass/main.scss se zmeny ulozi do main.css
 body {
-  background-attachment: fixed;
-  background-image: url("background.jpg");
-  background-size: cover;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1280px;
-  text-align: center;
+	background-attachment: fixed;
+	background-image: url("background.jpg");
+	background-size: cover;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1280px;
+	text-align: center;
 }
 
 // @ TODO #000 pozadi na mobilu
 #item {
-  height: 52px;
-  width: 52px;
+	height: 52px;
+	width: 52px;
 }
 #item-sm {
-  height: 24px;
-  width: 24px;
+	height: 24px;
+	width: 24px;
 }
 td {
-  text-align: center;
-  vertical-align: middle;
+	text-align: center;
+	vertical-align: middle;
 }
 th {
-  text-align: center;
+	text-align: center;
 }
 .tableimage {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 52px 52px;
-  height: 52px;
-  padding: 5px;
-  text-align: right;
-  vertical-align: bottom;
-  width: 52px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 52px 52px;
+	height: 52px;
+	padding: 5px;
+	text-align: right;
+	vertical-align: bottom;
+	width: 52px;
 }
 .center {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 $active: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
 .nav {
-  .active {
-    background-image: $active;
-    font-weight: bold;
-  }
-  li:hover {
-    background-image: $active;
-  }
+	.active {
+		background-image: $active;
+		font-weight: bold;
+	}
+	li:hover {
+		background-image: $active;
+	}
 }
 $screen-xs-max: 768px;
 $screen-sm-max: 992px;
 $screen-md-max: 1200px;
 @mixin pad {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 @media (max-width: $screen-xs-max) {
-  .col-xs-12 {
-    @include pad;
-  }
+	.col-xs-12 {
+		@include pad;
+	}
 }
 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
-  .col-sm-12 {
-    @include pad;
-  }
+	.col-sm-12 {
+		@include pad;
+	}
 }
 @media (min-width: $screen-sm-max) and (max-width: $screen-md-max) {
-  .col-md-12 {
-    @include pad;
-  }
+	.col-md-12 {
+		@include pad;
+	}
 }
 @media (min-width: $screen-md-max) {
-  .col-lg-12 {
-    @include pad;
-  }
+	.col-lg-12 {
+		@include pad;
+	}
 }
 $inventory: #ddd;
 $odsazeni: 5px;
 .grid-item {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 128px 128px;
-  border: 1px solid $inventory;
-  cursor: pointer;
-  float: left;
-  min-height: 160px;
-  min-width: 160px; //TODO rozdelit pro ruzne gridy
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 128px 128px;
+	border: 1px solid $inventory;
+	cursor: pointer;
+	float: left;
+	min-height: 160px;
+	min-width: 160px; //TODO rozdelit pro ruzne gridy
 }
 .grid-item:hover {
-  background-color: $inventory;
+	background-color: $inventory;
 }
 .grid-item2 {
-  float: left;
+	float: left;
 }
 .grid-craft-item {
-  @extend .grid-item;
-  min-height: 160px;
-  min-width: 320px;
-  cursor: default;
-  background-color: #fff;
-  text-align: left;
-  .craft-suroviny {
-    img {
-      @extend #item-sm;
-    }
-  }
-  .craft-name {
-    @extend .name;
-    max-width: 100% !important;
-  }
-  .craft-time {
-    @extend .inv-parts;
-  }
-  .craft-vyzkum {
-    @extend .inv-parts;
-    top: $odsazeni;
-    right: $odsazeni;
-  }
-  .craft-vyrob {
-    @extend .inv-parts;
-    bottom: 20 + $odsazeni;
-    right: $odsazeni;
-    max-width: 100% !important;
-  }
+	@extend .grid-item;
+	min-height: 160px;
+	min-width: 320px;
+	cursor: default;
+	background-color: #fff;
+	text-align: left;
+	.craft-suroviny {
+		img {
+			@extend #item-sm;
+		}
+	}
+	.craft-name {
+		@extend .name;
+		max-width: 100% !important;
+	}
+	.craft-time {
+		@extend .inv-parts;
+	}
+	.craft-vyzkum {
+		@extend .inv-parts;
+		top: $odsazeni;
+		right: $odsazeni;
+	}
+	.craft-vyrob {
+		@extend .inv-parts;
+		bottom: 20 + $odsazeni;
+		right: $odsazeni;
+		max-width: 100% !important;
+	}
 }
 $power-color: #f55;
 .inv-parts {
-  max-width: 50%;
-  overflow: hidden;
-  position: absolute;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	max-width: 50%;
+	overflow: hidden;
+	position: absolute;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .name {
-  @extend .inv-parts;
-  bottom: $odsazeni;
-  font-size: 90%;
-  right: $odsazeni;
-  text-align: right;
+	@extend .inv-parts;
+	bottom: $odsazeni;
+	font-size: 90%;
+	max-width: 100% !important;
+	right: $odsazeni;
+	text-align: right;
 }
 .count {
-  @extend .inv-parts;
-  bottom: $odsazeni;
-  font-size: 110%;
-  left: $odsazeni;
+	@extend .craft-vyrob;
+	font-size: 110%;
 }
 .power {
-  @extend .inv-parts;
-  background-color: $power-color;
-  right: $odsazeni;
-  top: $odsazeni;
+	@extend .inv-parts;
+	background-color: $power-color;
+	right: $odsazeni;
+	top: $odsazeni;
 }
 .category {
-  @extend .inv-parts;
-  font-size: 90%;
-  left: $odsazeni;
-  top: $odsazeni;
+	@extend .inv-parts;
+	font-size: 90%;
+	left: $odsazeni;
+	top: $odsazeni;
 }
 .grid {
-  margin: 15px 0 0;
-  padding: 0;
+	margin: 15px 0 0;
+	padding: 0;
 }
