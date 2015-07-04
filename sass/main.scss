@@ -122,10 +122,7 @@ $odsazeni: 5px;
 		right: $odsazeni;
 	}
 	.craft-vyrob {
-		@extend .inv-parts;
-		bottom: 20 + $odsazeni;
-		right: $odsazeni;
-		max-width: 100% !important;
+		@extend .count;
 	}
 }
 $power-color: #f55;
@@ -145,8 +142,11 @@ $power-color: #f55;
 	text-align: right;
 }
 .count {
-	@extend .craft-vyrob;
+	@extend .inv-parts;
 	font-size: 110%;
+	bottom: 20 + $odsazeni;
+	right: $odsazeni;
+	max-width: 100% !important;
 }
 .power {
 	@extend .inv-parts;
