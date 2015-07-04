@@ -29,7 +29,6 @@ include 'updatesestav.php';
 		<ul class="dropdown-menu" role="menu">
 			<li><a data-filter="*">Zobrazit vše</a></li>
 			<li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</a></li>
-			<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">No Components</a></li>
 			<li><a data-filter=".cpu">CPUs</a></li>
 			<li><a data-filter=".psu">PSUs</a></li>
 			<li><a data-filter=".hdd">HDDs</a></li>
@@ -54,7 +53,7 @@ include 'updatesestav.php';
 
 			echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 
-			echo '<span class="label label-default name"><input type="checkbox"></input><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
+			echo '<span class="name"><input type="checkbox"><span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 
 			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
 

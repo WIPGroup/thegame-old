@@ -73,8 +73,9 @@ th {
 	float: left;
 	min-height: 160px;
 	min-width: 160px; }
-	.grid-item :hover, .grid-craft-item :hover {
-		background-color: #ddd; }
+
+.grid-item:hover, .grid-craft-item:hover {
+	background-color: #ddd; }
 
 .grid-item2 {
 	float: left; }

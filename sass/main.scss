@@ -90,10 +90,10 @@ $odsazeni: 5px;
 	float: left;
 	min-height: 160px;
 	min-width: 160px;
-	:hover {
+}
+.grid-item:hover {
 		background-color: $inventory;
 	}
-}
 .grid-item2 {
 	float: left;
 }
