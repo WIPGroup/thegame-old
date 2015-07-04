@@ -4,17 +4,6 @@ include '../vlastnictvi.php';
 include 'updatevyrob.php';
 include 'updatesestav.php';
 ?>
-<!--body/výzkum TODO FIX presunout na zvlast stranku-->
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h1 class="panel-title">Body</h1>
-  </div>
-  <div class="panel-body" style="width: 100%; heigth: 100%">
-    <?php
-    echo 'Výzkumové body: '.$hrac['vyzkum'].'<br>Výherní body: '.$hrac['body'];
-    ?>
-  </div>
-</div>
 <!--inventář-->
 <div class="panel panel-primary">
   <div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
