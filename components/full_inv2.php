@@ -51,9 +51,9 @@ include 'updatesestav.php';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 
-			echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
+			echo '<span class="badge count"><input type="checkbox"><input type="number" min="1" max="'.$vlastnictvi[$zaznam['idveci']].'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 
-			echo '<span class="name"><input type="checkbox"><span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
+			echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 
 			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
 
