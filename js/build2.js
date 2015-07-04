@@ -108,6 +108,7 @@ function reloadSkladaniSestav() {
       $("#build").html(data); //data se hodi do neceho s id inventar, easy
       //	disableUnavailable();
       console.log('reloadSkladaniSestav');
+			initIsotope();
       /*	$("select#mb").change(function(){
 		        console.log('selectchange');
 	    	    disableUnavailable();
@@ -192,7 +193,6 @@ function disableUnavailable() {
 $(function() {
   reloadSestavy();
   reloadSkladaniSestav();
-  initIsotope();
   /*	$('#build').submit(function() {
   		$.ajax({
   			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
