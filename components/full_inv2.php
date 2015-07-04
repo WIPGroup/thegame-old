@@ -50,9 +50,9 @@ include 'updatesestav.php';
 			echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="background-image: url(\'icons/'.$zaznam['idveci'].'.png\');" ';
 
 			if ($zaznam['typ'] == 'mb')
-				$mbs .= 'data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-hdd="'.explode(';', $zaznam['sloty'])[2].'" data-socket="'.$zaznam['socket'].'"';
+				echo 'data-ram="'.explode(';', $zaznam['sloty'])[0].'" data-pci="'.explode(';', $zaznam['sloty'])[1].'" data-hdd="'.explode(';', $zaznam['sloty'])[2].'" data-socket="'.$zaznam['socket'].'"';
 			if ($zaznam['typ'] == 'cpu')
-				$cpus .= 'data-socket="'.$zaznam['socket'].'"';
+				echo 'data-socket="'.$zaznam['socket'].'"';
 			echo '>';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
