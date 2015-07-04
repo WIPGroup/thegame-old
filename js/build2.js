@@ -64,6 +64,23 @@ function initIsotope() {
   console.log('initIsotope');
 }
 
+function itemInfo() {
+  $(".grid-item").click(function() { //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
+    var idveci = $(this).attr("data-idveci");
+    console.log('Id veci je ' + idveci);
+    $.ajax({
+      data: {
+        id: idveci
+      },
+      type: "GET",
+      url: "components/getinfo.php",
+      success: function(data) {
+        $("#infoitemu").html(data);
+      }
+    });
+  });
+}
+
 function reloadSestavy() {
   $.ajax({
     url: "components/sestavy.php", //vykona se to co je v url
@@ -175,7 +192,7 @@ function disableUnavailable() {
 $(function() {
   reloadSestavy();
   reloadSkladaniSestav();
-	initIsotope();
+  initIsotope();
   /*	$('#build').submit(function() {
   		$.ajax({
   			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
