@@ -5,11 +5,6 @@ include 'updatevyrob.php';
 include 'updatesestav.php';
 ?>
 <!--inventář-->
-<div class="panel panel-primary">
-  <div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
-    <h1 class="panel-title">Inventář</h1>
-  </div>
-  <div id="inv" class="panel-body panel-collapse collapse in">
     <div class="col-xs-12">
       <div class="col-xs-12 col-sm-4 col-md-6">
         <input type="text" class="quicksearch form-control" placeholder="Search" />
@@ -68,7 +63,7 @@ include 'updatesestav.php';
         	$skryt = '';
         echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
         echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
-        if ($zaznam['typ'] == "")
+        if ($zaznam['typ'] == '')
 			echo '<span class="label label-default category">Surovina</span>';
 		else
 			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
@@ -89,5 +84,3 @@ include 'updatesestav.php';
       Vykon:	23 711 280 000 000<br/>
       <button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
     </div>
-  </div>
-</div>
