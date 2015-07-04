@@ -41,7 +41,6 @@
 	<script  src="bower_components\isotope-packery\packery-mode.pkgd.min.js"></script>
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="inventory.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script  src="js/scripts.js"></script>
 </head>
