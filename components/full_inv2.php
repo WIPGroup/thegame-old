@@ -42,36 +42,28 @@ include 'updatesestav.php';
 </div>
 <div class="grid col-xs-12 col-md-10">
 	<?php
-		$dotaz = 'SELECT * FROM veci';
-		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-		while ($zaznam = mysql_fetch_array($vysledek))
-		{ //vymyslet http://isotope.metafizzy.co/filtering.html
-				echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="';
-				if ($vlastnictvi[$zaznam['idveci']] < 1)
-				echo 'opacity: 0.4; ';
-				echo 'background-image: url(\'icons/'.$zaznam['idveci'].'.png\'); background-size: 128px 128px;">';
+	$dotaz = 'SELECT * FROM veci';
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	while ($zaznam = mysql_fetch_array($vysledek))
+	{ //vymyslet http://isotope.metafizzy.co/filtering.html
+		if (($vlastnictvi[$zaznam['idveci']] > 0) && ($zaznam['vykon'] > 0) && ($zaznam['typ'] != ''))
+		{
+			echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="background-image: url(\'icons/'.$zaznam['idveci'].'.png\');">';
 
-				if ($zaznam['vykon'] <= 0)
-				$skryt = ' sr-only';
-				else
-				$skryt = '';
-				echo '<span class="badge power'.$skryt.'">'.$zaznam['vykon'].'</span>';
+			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 
-				if ($vlastnictvi[$zaznam['idveci']] <= 0)
-				$skryt = ' sr-only';
-				else
-				$skryt = '';
-				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
-				echo '<span class="label label-default name"><input type="checkbox"></input><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
-				if ($zaznam['typ'] == '')
-				echo '<span class="label label-default category">Surovina</span>';
-				else
-				echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
-				echo '</div>';
-				//IDEA php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
-				//IDEA do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
+			echo '<span class="badge count">'.$vlastnictvi[$zaznam['idveci']].'</span>';
+
+			echo '<span class="label label-default name"><input type="checkbox"></input><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
+
+			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
+
+			echo '</div>';
+			//IDEA php veci podle kterych filtrovat dat do classy divu, veci na trideni do spanu pokud se maji zobrazit, pokud ne tak do data-neco
+			//IDEA do data-neco pridat ruzne veci podle kterych se to da tridit a filtrovat, pak apply Combination filters UI from http://isotope.metafizzy.co/filtering.html
 		}
-		?>
+	}
+	?>
 </div>
 <div class="col-xs-12 col-md-2" id="infoitemu">
 	Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
