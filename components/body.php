@@ -9,7 +9,7 @@
   </div>
   <div class="panel-body" style="width: 100%; heigth: 100%">
     <?php
-    echo 'Výzkumové body: '.$hrac['vyzkum'].'<br><strong>Výherní body: '.$hrac['body'].'</strong>';
+    echo 'Výzkumové body: '.number_format($hrac['vyzkum'], 0, "", " ").'<br><strong>Výherní body: '.number_format($hrac['body'], 0, "", " ").'</strong>';
     ?>
   </div>
 </div>
