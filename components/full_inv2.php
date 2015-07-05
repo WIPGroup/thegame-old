@@ -70,6 +70,32 @@ include 'updatesestav.php';
 	}
 	?>
 </div>
+<div class="col-xs-12 col-md-2">
+	Motherboard
+	<ul>
+		<li>None</li>
+	</ul>
+	CPU
+	<ul>
+		<li>None</li>
+	</ul>
+	RAM
+	<ul>
+		<li>None</li>
+	</ul>
+	GPU
+	<ul>
+		<li>None</li>
+	</ul>
+	Storage
+	<ul>
+		<li>None</li>
+	</ul>s
+	PSU
+	<ul>
+		<li>None</li>
+	</ul>
+</div>
 <div class="col-xs-12 col-md-2" id="infoitemu">
 	Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
 	Core (Threads):	8(16)<br/>
@@ -80,9 +106,4 @@ include 'updatesestav.php';
 	MicroArchitecture Code-name:	Haswell-E<br/>
 	Vykon:	23 711 280 000 000<br/>
 	<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
-</div>
-<div class="col-xs-12">
-	<ul>Motherboard
-		<li>None</li>
-	</ul>
 </div>

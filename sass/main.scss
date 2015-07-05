@@ -9,7 +9,6 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1280px;
-	text-align: center;
 }
 
 // @ TODO #000 pozadi na mobilu
@@ -92,8 +91,8 @@ $odsazeni: 5px;
 	min-width: 160px;
 }
 .grid-item:hover {
-		background-color: $inventory;
-	}
+	background-color: $inventory;
+}
 .grid-item2 {
 	float: left;
 }
