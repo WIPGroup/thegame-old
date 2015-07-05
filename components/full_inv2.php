@@ -57,7 +57,7 @@ include 'updatesestav.php';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
 
-			echo '<span class="badge count"><input type="checkbox"><input type="number" min="1" max="'.$vlastnictvi[$zaznam['idveci']].'"> z '.$vlastnictvi[$zaznam['idveci']].'</span>';
+			echo '<span class="badge count"><!--input type="checkbox"><input type="number" min="1" max="'.$vlastnictvi[$zaznam['idveci']].'"--><button class="btn btn-primary">Pridať</button>'.$vlastnictvi[$zaznam['idveci']].'</span>';
 
 			echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 
@@ -80,4 +80,9 @@ include 'updatesestav.php';
 	MicroArchitecture Code-name:	Haswell-E<br/>
 	Vykon:	23 711 280 000 000<br/>
 	<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
+</div>
+<div class="col-xs-12">
+	<ul>Motherboard
+		<li>None</li>
+	</ul>
 </div>
