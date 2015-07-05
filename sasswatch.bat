@@ -1,1 +1,1 @@
-node-sass sass/main.scss main.css -w  --output-style compressed
+node-sass sass/main.scss main.css -w  --output-style nested

@@ -1,1 +1,129 @@
-body{background-attachment:fixed;background-image:url("background.jpg");background-size:cover;margin-left:auto;margin-right:auto;max-width:1280px}#item{height:52px;width:52px}#item-sm,.grid-craft-item .craft-suroviny img{height:24px;width:24px}td{text-align:center;vertical-align:middle}th{text-align:center}.tableimage{background-position:center center;background-repeat:no-repeat;background-size:52px 52px;height:52px;padding:5px;text-align:right;vertical-align:bottom;width:52px}.center{margin-left:auto;margin-right:auto}.nav .active{background-image:linear-gradient(#6284ab, #385ab0 50%, #2a4563);font-weight:bold}.nav li:hover{background-image:linear-gradient(#6284ab, #385ab0 50%, #2a4563)}@media (max-width: 768px){.col-xs-12{padding-left:0 !important;padding-right:0 !important}}@media (min-width: 768px) and (max-width: 992px){.col-sm-12{padding-left:0 !important;padding-right:0 !important}}@media (min-width: 992px) and (max-width: 1200px){.col-md-12{padding-left:0 !important;padding-right:0 !important}}@media (min-width: 1200px){.col-lg-12{padding-left:0 !important;padding-right:0 !important}}.grid-item,.grid-craft-item{background-position:center;background-repeat:no-repeat;background-size:128px 128px;border:1px solid #ddd;cursor:pointer;float:left;min-height:160px;min-width:160px}.grid-item:hover,.grid-craft-item:hover{background-color:#ddd}.grid-item2{float:left}.grid-craft-item{min-height:160px;min-width:320px;cursor:default;background-color:#fff;text-align:left}.grid-craft-item .craft-name{max-width:100% !important}.grid-craft-item .craft-vyzkum{top:5px;right:5px}.inv-parts,.grid-craft-item .craft-time,.grid-craft-item .craft-vyzkum,.name,.grid-craft-item .craft-name,.count,.grid-craft-item .craft-vyrob,.power,.category{max-width:50%;overflow:hidden;position:absolute;text-overflow:ellipsis;white-space:nowrap}.name,.grid-craft-item .craft-name{bottom:5px;font-size:90%;max-width:92% !important;right:5px;text-align:right}.count,.grid-craft-item .craft-vyrob{font-size:110%;bottom:25px;right:5px;max-width:100% !important}.power{background-color:#f55;right:5px;top:5px}.category{font-size:90%;left:5px;top:5px}.grid{margin:15px 0 0;padding:0}
+/* WARNING: ZMENY V CSS BUDOU PREPSANY, navod v .scss */
+body {
+	background-attachment: fixed;
+	background-image: url("background.jpg");
+	background-size: cover;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1280px; }
+
+#item {
+	height: 52px;
+	width: 52px; }
+
+#item-sm, .grid-craft-item .craft-suroviny img {
+	height: 24px;
+	width: 24px; }
+
+td {
+	text-align: center;
+	vertical-align: middle; }
+
+th {
+	text-align: center; }
+
+.tableimage {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 52px 52px;
+	height: 52px;
+	padding: 5px;
+	text-align: right;
+	vertical-align: bottom;
+	width: 52px; }
+
+.center {
+	margin-left: auto;
+	margin-right: auto; }
+
+.nav .active {
+	background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
+	font-weight: bold; }
+
+.nav li:hover {
+	background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563); }
+
+@media (max-width: 768px) {
+	.col-xs-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important; } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.col-sm-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	.col-md-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important; } }
+
+@media (min-width: 1200px) {
+	.col-lg-12 {
+		padding-left: 0 !important;
+		padding-right: 0 !important; } }
+
+.grid-item, .grid-craft-item {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 128px 128px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	float: left;
+	min-height: 160px;
+	min-width: 160px; }
+
+.grid-item-selected {
+	background-color: #8d8; }
+
+.grid-item:hover, .grid-craft-item:hover {
+	background-color: #ddd; }
+
+.grid-item2 {
+	float: left; }
+
+.grid-craft-item {
+	min-height: 160px;
+	min-width: 320px;
+	cursor: default;
+	background-color: #fff;
+	text-align: left; }
+	.grid-craft-item .craft-name {
+		max-width: 100% !important; }
+	.grid-craft-item .craft-vyzkum {
+		top: 5px;
+		right: 5px; }
+
+.inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category {
+	max-width: 50%;
+	overflow: hidden;
+	position: absolute;
+	text-overflow: ellipsis;
+	white-space: nowrap; }
+
+.name, .grid-craft-item .craft-name {
+	bottom: 5px;
+	font-size: 90%;
+	max-width: 92% !important;
+	right: 5px;
+	text-align: right; }
+
+.count, .grid-craft-item .craft-vyrob {
+	font-size: 110%;
+	bottom: 25px;
+	right: 5px;
+	max-width: 100% !important; }
+
+.power {
+	background-color: #f55;
+	right: 5px;
+	top: 5px; }
+
+.category {
+	font-size: 90%;
+	left: 5px;
+	top: 5px; }
+
+.grid {
+	margin: 15px 0 0;
+	padding: 0; }

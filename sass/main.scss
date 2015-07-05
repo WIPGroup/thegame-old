@@ -79,6 +79,7 @@ $screen-md-max: 1200px;
 	}
 }
 $inventory: #ddd;
+$selected: #8d8;
 $odsazeni: 5px;
 .grid-item {
 	background-position: center;
@@ -89,6 +90,9 @@ $odsazeni: 5px;
 	float: left;
 	min-height: 160px;
 	min-width: 160px;
+}
+.grid-item-selected {
+	background-color: $selected;
 }
 .grid-item:hover {
 	background-color: $inventory;
