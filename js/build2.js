@@ -1,4 +1,9 @@
-var mb = cpu = ram = hdd = gpu = psu = "Nic";
+var mb = new Object();
+var cpu = new Object();
+var psu = new Object();
+var ram = new Array();
+var hdd = new Array();
+var gpu = new Array();
 var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
@@ -103,13 +108,11 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
-			window[typ+"counter"]++;
-			window[typ+window[typ+"counter"]].idveci = toto.data("idveci");
-			window[typ+window[typ+"counter"]].nazev = toto.find("abbr").attr("title");
-			console.log(window[typ+window[typ+"counter"]]);
+			console.log("todo array");
 		}else{
 			window[typ].idveci = toto.data("idveci");
 			window[typ].nazev = toto.find("abbr").attr("title");
+			console.log(toto.find("abbr").attr("title"));
 		}
 		showCurrentBuild();
 	});
@@ -223,7 +226,7 @@ function disableUnavailable() {
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
 		var x = $(this).attr("id");
-		if (shouldReturnArray === true){
+		if (shouldReturnArray(x) === true){
 			//todo
 			console.log("swag");
 		}else{
