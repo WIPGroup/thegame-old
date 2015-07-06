@@ -184,7 +184,7 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 		toggleWhich("cpu","hide");
 		toggleCPUs(mb.tier,"show");
 	}
-	$('.grid').isotope('reloadItems').isotope(); 
+//	$('.grid').isotope('reloadItems').isotope(); 
 }
 function toggleWhich(type,action){ //doplnujici funkce pro display properly
 	if (action==="show"){
