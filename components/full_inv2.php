@@ -88,7 +88,6 @@ include 'updatesestav.php';
 	</ul>
 	PSU
 	<ul id="psu">
-		<button class="btn btn-xs btn-danger">Odobrať</button>
 	</ul>
 </div>
 <div class="col-xs-12 col-md-3" id="infoitemu">

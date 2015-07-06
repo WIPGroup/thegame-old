@@ -109,13 +109,13 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
-			window[typ+"counter"]++;
 			var pocet = window[typ+"counter"];
 			window[typ][pocet].nazev = toto.find("abbr").attr("title");
 			window[typ][pocet].idveci = toto.data("idveci");
 			window[typ][pocet].tier = toto.data("tier");
 			window[typ][pocet].type = toto.data("type");
 			console.log(toto.find("abbr").attr("title"));
+			window[typ+"counter"]++;
 		}else{
 			window[typ].idveci = toto.data("idveci");
 			window[typ].nazev = toto.find("abbr").attr("title");
@@ -240,23 +240,27 @@ function disableUnavailable() {
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
 		var x = $(this).attr("id");
+		var htmlcontent = "";
 		if (shouldReturnArray(x) === true){
-			var htmlcontent = "";
 			for (i=0;i<mb[x];i++){
 				if (window[x][i].nazev != undefined){
 					htmlcontent += '<li>'+window[x][i].nazev;
 					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
-					htmlcontent += '<li>'+NENI+'</li>';
+					htmlcontent += '<li>NENI</li>';
 				}
 			}
 			$(this).html(htmlcontent);
 		}else{
-			var htmlcontent = "<li>"+window[x].nazev;
-			htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
-			htmlcontent += '</li>';
-			$(this).html(htmlcontent);
+			if (window[x].nazev != undefined){
+				htmlcontent += "<li>"+window[x].nazev;
+				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+				htmlcontent += '</li>';
+				$(this).html(htmlcontent);
+			}else{
+				htmlcontent += '<li>NENI</li>';
+			}
 		}
 	});
 }
