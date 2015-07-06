@@ -1,3 +1,11 @@
+	var mb = {};
+	var cpu = {};
+	var psu = {};
+	var ram = new Array({},{},{},{},{},{},{},{});
+	var hdd = new Array({},{},{},{});
+	var gpu = new Array({},{},{},{});
+	var ramnumber = 8, hddnumber = 4, gpunumber = 4;
+	var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -96,14 +104,6 @@ function shouldReturnArray(x){
 }
 function initForm(){
 	itemInfo();
-	var mb = {};
-	var cpu = {};
-	var psu = {};
-	var ram = new Array({},{},{},{},{},{},{},{});
-	var hdd = new Array({},{},{},{});
-	var gpu = new Array({},{},{},{});
-	var ramnumber = 8, hddnumber = 4, gpunumber = 4;
-	var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 	$(".grid button").click(function(){
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
