@@ -147,7 +147,7 @@ function showCurrentBuild(){
 				for (i=0;i<mb[x];i++){
 					if (window[x][i].nazev != undefined){
 						htmlcontent += '<li>'+window[x][i].nazev;
-						htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty("'+x+'",'+i+')">Odobrať</button>';
+						htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="'+i+'">Odobrať</button>';
 						htmlcontent += '</li>';
 					}else{
 						htmlcontent += '<li>Nic</li>';
@@ -156,7 +156,7 @@ function showCurrentBuild(){
 			}else{
 				if (window[x].nazev != undefined){
 					htmlcontent += "<li>"+window[x].nazev;
-					htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty("'+x+'",-1)">Odobrať</button>';
+					htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="-1">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
 					htmlcontent += '<li>Nic</li>';
@@ -166,6 +166,11 @@ function showCurrentBuild(){
 			htmlcontent += "<li>Musíte vybrat základní desku</li>";
 		}
 		$(this).html(htmlcontent);
+	});
+	$(".odobrat").click(function(){
+		typis = $(this).data("type");
+		indexis = $(this).data("index");
+		empty(typis,indexis);
 	});
 	displayProperly();
 	$('.grid').isotope('reloadItems').isotope();
