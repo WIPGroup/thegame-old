@@ -102,7 +102,7 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		console.log("idveci "+toto.data("idveci"));
-		if shouldReturnArray(typ) === true{
+		if (shouldReturnArray(typ) === true){
 			window[typ].push(toto.data("idveci"));
 		}else{
 			window[typ] = toto.data("idveci");
