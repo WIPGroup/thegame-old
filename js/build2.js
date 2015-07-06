@@ -137,8 +137,7 @@ function initForm(){
 		}
 		showCurrentBuild();
 	});
-	toggleEverything("show");
-	toggleWhich("mb","show");
+
 }
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
@@ -161,6 +160,16 @@ function showCurrentBuild(){
 		}
 		$(this).html(htmlcontent);
 	});
+	displayProperly();
+}
+function displayProperly(){
+	if(mb.nazev === undefined){
+		toggleEverything("hide");
+		toggleWhich("mb","show");
+	} else {
+		toggleEverything("show");
+		toggleWhich("mb","hide");
+	}
 }
 function toggleWhich(type,action){
 	if (action==="show"){
