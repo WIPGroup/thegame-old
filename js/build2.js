@@ -1,4 +1,4 @@
-var mb,cpu,ram,hdd,gpu,psu;
+var mb = cpu = ram = hdd = gpu = psu = "Nic";
 var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
