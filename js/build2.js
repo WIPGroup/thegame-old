@@ -137,7 +137,6 @@ function initForm(){
 		}
 		showCurrentBuild();
 	});
-
 }
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
@@ -161,6 +160,7 @@ function showCurrentBuild(){
 		$(this).html(htmlcontent);
 	});
 	displayProperly();
+	$('.grid').isotope('reloadItems').isotope();
 }
 function displayProperly(){
 	if(mb.nazev === undefined){
@@ -169,6 +169,8 @@ function displayProperly(){
 	} else {
 		toggleEverything("show");
 		toggleWhich("mb","hide");
+		toggleWhich("cpu","hide");
+		toggleCPUs(mb.tier,"show");
 	}
 }
 function toggleWhich(type,action){
@@ -185,6 +187,14 @@ function toggleEverything(action){
 	}
 	if (action==="hide"){
 		$(".grid div").hide();
+	}
+}
+function toggleCPUs(tier,action){
+	if (action==="show"){
+		$(".grid div[data-tier="+tier+"]").show();
+	}
+	if (action==="hide"){
+		$(".grid div[data-tier="+tier+"]").hide();
 	}
 }
 function reloadSestavy() {
