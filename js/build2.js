@@ -142,10 +142,20 @@ function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
 		var x = $(this).attr("id");
 		var htmlcontent = "";
-		if (shouldReturnArray(x) === true){
-			for (i=0;i<mb[x];i++){
-				if (window[x][i].nazev != undefined){
-					htmlcontent += '<li>'+window[x][i].nazev;
+		if (mb.nazev === undefined){
+			if (shouldReturnArray(x) === true){
+				for (i=0;i<mb[x];i++){
+					if (window[x][i].nazev != undefined){
+						htmlcontent += '<li>'+window[x][i].nazev;
+						htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+						htmlcontent += '</li>';
+					}else{
+						htmlcontent += '<li>Nic</li>';
+					}
+				}
+			}else{
+				if (window[x].nazev != undefined){
+					htmlcontent += "<li>"+window[x].nazev;
 					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
@@ -153,13 +163,7 @@ function showCurrentBuild(){
 				}
 			}
 		}else{
-			if (window[x].nazev != undefined){
-				htmlcontent += "<li>"+window[x].nazev;
-				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
-				htmlcontent += '</li>';
-			}else{
-				htmlcontent += '<li>Nic</li>';
-			}
+			htmlcontent += "<li>Musíte vybrat základní desku</li>";
 		}
 		$(this).html(htmlcontent);
 	});
