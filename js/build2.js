@@ -109,13 +109,16 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
-			var pocet = window[typ+"counter"];
-			window[typ][pocet].nazev = toto.find("abbr").attr("title");
-			window[typ][pocet].idveci = toto.data("idveci");
-			window[typ][pocet].tier = toto.data("tier");
-			window[typ][pocet].type = toto.data("type");
-			console.log(toto.find("abbr").attr("title"));
-			window[typ+"counter"]++;
+			var aktualnipocet = window[typ+"counter"];
+			var maximalnipocet = window[typ+"number"];
+			if (aktualnipocet<maximalnipocet){
+				window[typ][pocet].nazev = toto.find("abbr").attr("title");
+				window[typ][pocet].idveci = toto.data("idveci");
+				window[typ][pocet].tier = toto.data("tier");
+				window[typ][pocet].type = toto.data("type");
+				console.log(toto.find("abbr").attr("title"));
+				window[typ+"counter"]++;
+			}
 		}else{
 			window[typ].idveci = toto.data("idveci");
 			window[typ].nazev = toto.find("abbr").attr("title");
@@ -129,6 +132,32 @@ function initForm(){
 			console.log(toto.find("abbr").attr("title"));
 		}
 		showCurrentBuild();
+	});
+}
+function showCurrentBuild(){
+	$("#currentbuild ul").each(function(){
+		var x = $(this).attr("id");
+		var htmlcontent = "";
+		if (shouldReturnArray(x) === true){
+			for (i=0;i<mb[x];i++){
+				if (window[x][i].nazev != undefined){
+					htmlcontent += '<li>'+window[x][i].nazev;
+					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+					htmlcontent += '</li>';
+				}else{
+					htmlcontent += '<li>NENI</li>';
+				}
+			}
+		}else{
+			if (window[x].nazev != undefined){
+				htmlcontent += "<li>"+window[x].nazev;
+				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+				htmlcontent += '</li>';
+			}else{
+				htmlcontent += '<li>NENI</li>';
+			}
+		}
+		$(this).html(htmlcontent);
 	});
 }
 function reloadSestavy() {
@@ -237,33 +266,6 @@ function disableUnavailable() {
 	disablePCI();
 	$("#build select").selectpicker('refresh');
 }*/
-function showCurrentBuild(){
-	$("#currentbuild ul").each(function(){
-		var x = $(this).attr("id");
-		var htmlcontent = "";
-		if (shouldReturnArray(x) === true){
-			for (i=0;i<mb[x];i++){
-				if (window[x][i].nazev != undefined){
-					htmlcontent += '<li>'+window[x][i].nazev;
-					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
-					htmlcontent += '</li>';
-				}else{
-					htmlcontent += '<li>NENI</li>';
-				}
-			}
-			$(this).html(htmlcontent);
-		}else{
-			if (window[x].nazev != undefined){
-				htmlcontent += "<li>"+window[x].nazev;
-				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
-				htmlcontent += '</li>';
-				$(this).html(htmlcontent);
-			}else{
-				htmlcontent += '<li>NENI</li>';
-			}
-		}
-	});
-}
 $(function() {
 	reloadSestavy();
 	reloadSkladaniSestav();
