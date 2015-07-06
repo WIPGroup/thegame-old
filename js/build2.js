@@ -1,4 +1,4 @@
-	var mb = {};
+	var mb = {}; //vytvoreni potrebnych varu
 	var cpu = {};
 	var psu = {};
 	var ram = new Array({},{},{},{},{},{},{},{});
@@ -69,7 +69,7 @@ function initIsotope() {
   }
   console.log('initIsotope');
 }
-function itemInfo() {
+function itemInfo() { //pri kliknuti na item se zobrazi info o nem
 	$(".grid-item").click(function() { 
 		var idveci = $(this).attr("data-idveci");
 		console.log('Id veci je ' + idveci);
@@ -85,7 +85,7 @@ function itemInfo() {
 		});
 	});
 }
-function shouldReturnArray(x){
+function shouldReturnArray(x){ //doplnujici funkce pro ostatni funkce, zjisti jestli se s tim ma pocitat jako s polem nebo jen jednim objektem
 	switch(x){
 		case "mb":
 			return false;
@@ -101,7 +101,7 @@ function shouldReturnArray(x){
 			return true;
 	}
 }
-function initForm(){
+function initForm(){ //inicializace funkcionality pridavani itemu
 	itemInfo();
 	showCurrentBuild();
 	$(".grid button").click(function(){
@@ -138,8 +138,8 @@ function initForm(){
 		showCurrentBuild();
 	});
 }
-function showCurrentBuild(){
-	$("#currentbuild ul").each(function(){
+function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
+	$("#currentbuild ul").each(function(){ //naplneni seznamu pro kazdou komponentu
 		var x = $(this).attr("id");
 		var htmlcontent = "";
 		if (mb.nazev !== undefined){
@@ -167,15 +167,14 @@ function showCurrentBuild(){
 		}
 		$(this).html(htmlcontent);
 	});
-	$(".odobrat").click(function(){
+	$(".odobrat").click(function(){ //zprovozneni odobrat tlacitek
 		typis = $(this).data("type");
 		indexis = $(this).data("index");
-		empty(typis,indexis);
+		odebrat(typis,indexis);
 	});
-	displayProperly();
-	$('.grid').isotope('reloadItems').isotope();
+	displayProperly();//reload isotope
 }
-function displayProperly(){
+function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz nemuzou pridat atd.
 	if(mb.nazev === undefined){
 		toggleEverything("hide");
 		toggleWhich("mb","show");
@@ -185,8 +184,9 @@ function displayProperly(){
 		toggleWhich("cpu","hide");
 		toggleCPUs(mb.tier,"show");
 	}
+	$('.grid').isotope('reloadItems').isotope(); 
 }
-function toggleWhich(type,action){
+function toggleWhich(type,action){ //doplnujici funkce pro display properly
 	if (action==="show"){
 		$(".grid div[data-type="+type+"]").show();
 	}
@@ -194,7 +194,7 @@ function toggleWhich(type,action){
 		$(".grid div[data-type="+type+"]").hide();
 	}
 }
-function toggleEverything(action){
+function toggleEverything(action){ //totez co toggleWhich
 	if (action==="show"){
 		$(".grid div").show();
 	}
@@ -202,7 +202,7 @@ function toggleEverything(action){
 		$(".grid div").hide();
 	}
 }
-function toggleCPUs(tier,action){
+function toggleCPUs(tier,action){ //totez co toggleWhich
 	if (action==="show"){
 		$(".grid div[data-tier="+tier+"][data-type='cpu']").show();
 	}
@@ -210,7 +210,7 @@ function toggleCPUs(tier,action){
 		$(".grid div[data-tier="+tier+"][data-type='cpu']").hide();
 	}
 }
-function empty(type,index){
+function odebrat(type,index){ //pro odebirani
 	if (index===-1){
 		window[type] = {};
 	}else{
@@ -218,7 +218,7 @@ function empty(type,index){
 	}
 	showCurrentBuild();
 }
-function reloadSestavy() {
+function reloadSestavy() { //nacte sestavy
 	$.ajax({
 		url: "components/sestavy.php", //vykona se to co je v url
 		success: function(data) { //prijdou zpatky nejake data
@@ -237,7 +237,7 @@ function reloadSestavy() {
 		}
 	});
 }
-function reloadSkladaniSestav() {
+function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 	$.ajax({
 		url: "components/full_inv2.php", //vykona se to co je v url
 		success: function(data) { //prijdou zpatky nejake data
