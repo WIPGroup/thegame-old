@@ -137,7 +137,7 @@ function initForm(){
 		}
 		showCurrentBuild();
 	});
-	hideEverything();
+	toggleEverything("show");
 	toggleWhich("mb","show");
 }
 function showCurrentBuild(){
@@ -170,8 +170,13 @@ function toggleWhich(type,action){
 		$(".grid div[data-type="+type+"]").hide();
 	}
 }
-function hideEverything(){
-	$(".grid div").hide();
+function toggleEverything(action){
+	if (action==="show"){
+		$(".grid div").show();
+	}
+	if (action==="hide"){
+		$(".grid div").hide();
+	}
 }
 function reloadSestavy() {
 	$.ajax({
