@@ -4,7 +4,6 @@
 	var ram = new Array({},{},{},{},{},{},{},{});
 	var hdd = new Array({},{},{},{});
 	var gpu = new Array({},{},{},{});
-	var ramnumber = 8, hddnumber = 4, gpunumber = 4;
 	var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
@@ -104,32 +103,37 @@ function shouldReturnArray(x){
 }
 function initForm(){
 	itemInfo();
+	showCurrentBuild();
 	$(".grid button").click(function(){
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
-		if (shouldReturnArray(typ) === true){
-			var pocet = window[typ+"counter"];
-			var maximalnipocet = window[typ+"number"];
-			if (pocet<maximalnipocet){
-				window[typ][pocet].nazev = toto.find("abbr").attr("title");
-				window[typ][pocet].idveci = toto.data("idveci");
-				window[typ][pocet].tier = toto.data("tier");
-				window[typ][pocet].type = toto.data("type");
+		if (typ === "mb"){
+			mb.gpu = toto.data("pci");
+			mb.hdd = toto.data("hdd");
+			mb.ram = toto.data("ram");
+		}
+		if (mb.gpu === undefined){
+			alert('Nejdříve vyberte základovku');
+		} else {
+			if (shouldReturnArray(typ) === true){
+				var pocet = window[typ+"counter"];
+				var maximalnipocet = mb[typ];
+				if (pocet<maximalnipocet){
+					window[typ][pocet].nazev = toto.find("abbr").attr("title");
+					window[typ][pocet].idveci = toto.data("idveci");
+					window[typ][pocet].tier = toto.data("tier");
+					window[typ][pocet].type = toto.data("type");
+					console.log(toto.find("abbr").attr("title"));
+					window[typ+"counter"]++;
+				}
+			}else{
+				window[typ].idveci = toto.data("idveci");
+				window[typ].nazev = toto.find("abbr").attr("title");
+				window[typ].tier = toto.data("tier");
+				window[typ].type = toto.data("type");
 				console.log(toto.find("abbr").attr("title"));
-				window[typ+"counter"]++;
 			}
-		}else{
-			window[typ].idveci = toto.data("idveci");
-			window[typ].nazev = toto.find("abbr").attr("title");
-			window[typ].tier = toto.data("tier");
-			window[typ].type = toto.data("type");
-			if (typ === "mb"){
-				mb.gpu = toto.data("pci");
-				mb.hdd = toto.data("hdd");
-				mb.ram = toto.data("ram");
-			}
-			console.log(toto.find("abbr").attr("title"));
 		}
 		showCurrentBuild();
 	});
