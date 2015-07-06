@@ -137,6 +137,8 @@ function initForm(){
 		}
 		showCurrentBuild();
 	});
+	hideEverything();
+	toggleWhich(mb,show);
 }
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
@@ -148,8 +150,6 @@ function showCurrentBuild(){
 					htmlcontent += '<li>'+window[x][i].nazev;
 					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 					htmlcontent += '</li>';
-				}else{
-					htmlcontent += '<li>NENI</li>';
 				}
 			}
 		}else{
@@ -157,12 +157,21 @@ function showCurrentBuild(){
 				htmlcontent += "<li>"+window[x].nazev;
 				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 				htmlcontent += '</li>';
-			}else{
-				htmlcontent += '<li>NENI</li>';
 			}
 		}
 		$(this).html(htmlcontent);
 	});
+}
+function toggleWhich(type,action){
+	if (action==="show"){
+		$(".grid div[data-type="+type+"]").show();
+	}
+	if (action==="hide"){
+		$(".grid div[data-type="+type+"]").hide();
+	}
+}
+function hideEverything(){
+	$(".grid div").hide();
 }
 function reloadSestavy() {
 	$.ajax({
