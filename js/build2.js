@@ -1,3 +1,4 @@
+var mb,cpu,ram,hdd,gpu,psu;
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -60,139 +61,163 @@ function initIsotope() {
       timeout = setTimeout(delayed, threshold || 100);
     };
   }
-  itemInfo();
   console.log('initIsotope');
 }
-
 function itemInfo() {
-  $(".grid-item").click(function() { //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
-    var idveci = $(this).attr("data-idveci");
-    console.log('Id veci je ' + idveci);
-    $.ajax({
-      data: {
-        id: idveci
-      },
-      type: "GET",
-      url: "components/getinfo.php",
-      success: function(data) {
-        $("#infoitemu").html(data);
-      }
-    });
-  });
+	$(".grid-item").click(function() { 
+		var idveci = $(this).attr("data-idveci");
+		console.log('Id veci je ' + idveci);
+		$.ajax({
+			data: {
+			id: idveci
+		},
+			type: "GET",
+			url: "components/getinfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
 }
-
+function shouldReturnArray(x){
+	switch(x){
+		case "mb":
+			return false;
+		case "cpu":
+			return false;
+		case "ram":
+			return true;
+		case "hdd":
+			return true;
+		case "psu":
+			return false;
+		case "gpu":
+			return true;
+	}
+}
+function initForm(){
+	itemInfo();
+	$(".grid button").click(function(){
+		var toto = $(this).closest("div");
+		var typ = toto.data("type");
+		console.log("typ "+typ);
+		console.log("idveci "+toto.data("idveci"));
+		if shouldReturnArray(typ) === true{
+			window[typ].push(toto.data("idveci"));
+		}else{
+			window[typ] = toto.data("idveci");
+		}
+	});
+}
 function reloadSestavy() {
-  $.ajax({
-    url: "components/sestavy.php", //vykona se to co je v url
-    success: function(data) { //prijdou zpatky nejake data
-      $("#sestavy").html(data); //data se hodi do neceho s id inventar, easy
-      console.log('reloadSestavy');
-      $('.disass').click(function() {
-        var idsestavy = $(this).data('idsestavy');
-        disass(idsestavy);
-        return false;
-      });
-      $('.switch').click(function() {
-        var idsestavy = $(this).data('idsestavy');
-        zmenit(idsestavy);
-        return false;
-      });
-    }
-  });
+	$.ajax({
+		url: "components/sestavy.php", //vykona se to co je v url
+		success: function(data) { //prijdou zpatky nejake data
+			$("#sestavy").html(data); //data se hodi do neceho s id inventar, easy
+			console.log('reloadSestavy');
+			$('.disass').click(function() {
+				var idsestavy = $(this).data('idsestavy');
+				disass(idsestavy);
+				return false;
+			});
+			$('.switch').click(function() {
+				var idsestavy = $(this).data('idsestavy');
+				zmenit(idsestavy);
+				return false;
+			});
+		}
+	});
 }
-
 function reloadSkladaniSestav() {
-  $.ajax({
-    url: "components/full_inv2.php", //vykona se to co je v url
-    success: function(data) { //prijdou zpatky nejake data
-      $("#build").html(data); //data se hodi do neceho s id inventar, easy
+	$.ajax({
+		url: "components/full_inv2.php", //vykona se to co je v url
+		success: function(data) { //prijdou zpatky nejake data
+			$("#build").html(data); //data se hodi do neceho s id inventar, easy
       //	disableUnavailable();
-      console.log('reloadSkladaniSestav');
+			console.log('reloadSkladaniSestav');
 			initIsotope();
       /*	$("select#mb").change(function(){
 		        console.log('selectchange');
 	    	    disableUnavailable();
 	        });*/
-    }
-  });
+			initForm();
+		}
+	});
 }
-
 function disass(idsestavy) {
-  console.log('ID sestavy, ktera se bude rusit, je ' + idsestavy); //TODO potvrzovaci tlacitko
-  $.ajax({
-    url: "components/sestavit.php",
-    type: "GET",
-    data: {
-      disass: idsestavy
-    },
-    success: function(data) {
-      reloadSestavy();
-      reloadSkladaniSestav();
-      if (data !== '') {
-        swal(data);
-      }
-    }
-  });
+	 console.log('ID sestavy, ktera se bude rusit, je ' + idsestavy); //TODO potvrzovaci tlacitko
+	 $.ajax({
+		url: "components/sestavit.php",
+		type: "GET",
+		data: {
+			disass: idsestavy
+		},
+		success: function(data) {
+			reloadSestavy();
+			reloadSkladaniSestav();
+			if (data !== '') {
+				swal(data);
+			}
+		}
+	});
 }
-
 function zmenit(idsestavy) {
-  $.ajax({
-    url: "components/sestavit.php",
-    type: "GET",
-    data: {
-      switch: idsestavy
-    },
-    success: function(data) {
-      reloadSestavy();
-      if (data !== '') {
-        swal(data);
-      }
-    }
-  });
+	$.ajax({
+		url: "components/sestavit.php",
+		type: "GET",
+		data: {
+			switch: idsestavy
+		},
+		success: function(data) {
+			reloadSestavy();
+			if (data !== '') {
+				swal(data);
+			}
+		}
+	});
 }
-
 function disableRAM() {
-  var pocetram = $("#build #mb option:selected").data('ram');
-  console.log('RAM k dispozici ' + pocetram);
-  $("select[id*=ram]").each(function() {
-    $(this).prop("disabled", true);
-  });
-  for (i = 1; i <= pocetram; i++) {
-    $("#ram" + i).prop("disabled", false);
-  }
+	var pocetram = $("#build #mb option:selected").data('ram');
+	console.log('RAM k dispozici ' + pocetram);
+	$("select[id*=ram]").each(function() {
+		$(this).prop("disabled", true);
+	});
+	for (i = 1; i <= pocetram; i++) {
+		$("#ram" + i).prop("disabled", false);
+	}
 }
 
 function disableHDD() {
-  var pocethdd = $("#build #mb option:selected").data('hdd');
-  console.log('HDD k dispozici ' + pocethdd);
-  $("select[id*=hdd]").each(function() {
-    $(this).prop("disabled", true);
-  });
-  for (i = 1; i <= pocethdd; i++) {
-    $("#hdd" + i).prop("disabled", false);
-  }
+	var pocethdd = $("#build #mb option:selected").data('hdd');
+	console.log('HDD k dispozici ' + pocethdd);
+	$("select[id*=hdd]").each(function() {
+		$(this).prop("disabled", true);
+	});
+	for (i = 1; i <= pocethdd; i++) {
+		$("#hdd" + i).prop("disabled", false);
+	}
 }
 
 function disablePCI() {
-  var pocetpci = $("#build #mb option:selected").data('pci');
-  console.log('PCI k dispozici ' + pocetpci);
-  $("select[id*=gpu]").each(function() {
-    $(this).prop("disabled", true);
-  });
-  for (i = 1; i <= pocetpci; i++) {
-    $("#gpu" + i).prop("disabled", false);
-  }
+	var pocetpci = $("#build #mb option:selected").data('pci');
+	console.log('PCI k dispozici ' + pocetpci);
+	$("select[id*=gpu]").each(function() {
+		$(this).prop("disabled", true);
+	});
+	for (i = 1; i <= pocetpci; i++) {
+		$("#gpu" + i).prop("disabled", false);
+	}
 }
-
+/*
 function disableUnavailable() {
-  disableRAM();
-  disableHDD();
-  disablePCI();
-  $("#build select").selectpicker('refresh');
-}
+	disableRAM();
+	disableHDD();
+	disablePCI();
+	$("#build select").selectpicker('refresh');
+}*/
 $(function() {
-  reloadSestavy();
-  reloadSkladaniSestav();
+	reloadSestavy();
+	reloadSkladaniSestav();
   /*	$('#build').submit(function() {
   		$.ajax({
   			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit

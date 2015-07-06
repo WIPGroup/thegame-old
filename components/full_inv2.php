@@ -72,28 +72,23 @@ include 'updatesestav.php';
 </div>
 <div class="col-xs-12 col-md-3">
 	Motherboard
-	<ul>
-		<li>None</li>
+	<ul id="mb">
 	</ul>
 	CPU
-	<ul>
-		<li>None</li>
+	<ul id="cpu">
 	</ul>
 	RAM
-	<ul>
-		<li>None</li>
+	<ul id="ram">
 	</ul>
 	GPU
-	<ul>
-		<li>None</li>
+	<ul id="gpu">
 	</ul>
 	Storage
-	<ul>
-		<li>None</li>
-	</ul>s
+	<ul id="storage">
+	</ul>
 	PSU
-	<ul>
-		<li>(nazev psu) <button class="btn btn-xs btn-danger">Odobrať</button></li>
+	<ul id="psu">
+		<button class="btn btn-xs btn-danger">Odobrať</button>
 	</ul>
 </div>
 <div class="col-xs-12 col-md-3" id="infoitemu">
