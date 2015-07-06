@@ -215,6 +215,7 @@ function odebrat(type,index){ //pro odebirani
 		window[type] = {};
 	}else{
 		window[type][index] = {};
+		window[type+"counter"]--;
 	}
 	showCurrentBuild();
 }
