@@ -109,9 +109,9 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
-			var aktualnipocet = window[typ+"counter"];
+			var pocet = window[typ+"counter"];
 			var maximalnipocet = window[typ+"number"];
-			if (aktualnipocet<maximalnipocet){
+			if (pocet<maximalnipocet){
 				window[typ][pocet].nazev = toto.find("abbr").attr("title");
 				window[typ][pocet].idveci = toto.data("idveci");
 				window[typ][pocet].tier = toto.data("tier");
