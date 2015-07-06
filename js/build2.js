@@ -6,12 +6,13 @@ function fillArray(name,number){
 var mb = new Object();
 var cpu = new Object();
 var psu = new Object();
-var ram = new Array();
-var hdd = new Array();
-var gpu = new Array();
-fillArray(ram,8);
-fillArray(hdd,4);
-fillArray(gpu,4);
+var ram = new Array(ramnumber);
+var hdd = new Array(hddnumber);
+var gpu = new Array(gpunumber);
+var ramnumber = 8, hddnumber = 4, gpunumber = 4;
+fillArray(ram,ramnumber);
+fillArray(hdd,hddnumber);
+fillArray(gpu,gpunumber);
 var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
