@@ -148,6 +148,8 @@ function showCurrentBuild(){
 					htmlcontent += '<li>'+window[x][i].nazev;
 					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 					htmlcontent += '</li>';
+				}else{
+					htmlcontent += '<li>Nic</li>';
 				}
 			}
 		}else{
@@ -155,6 +157,8 @@ function showCurrentBuild(){
 				htmlcontent += "<li>"+window[x].nazev;
 				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
 				htmlcontent += '</li>';
+			}else{
+				htmlcontent += '<li>Nic</li>';
 			}
 		}
 		$(this).html(htmlcontent);
@@ -191,10 +195,10 @@ function toggleEverything(action){
 }
 function toggleCPUs(tier,action){
 	if (action==="show"){
-		$(".grid div[data-tier="+tier+"]").show();
+		$(".grid div[data-tier="+tier+"][data-type='cpu']").show();
 	}
 	if (action==="hide"){
-		$(".grid div[data-tier="+tier+"]").hide();
+		$(".grid div[data-tier="+tier+"][data-type='cpu']").hide();
 	}
 }
 function reloadSestavy() {
