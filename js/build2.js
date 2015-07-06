@@ -138,7 +138,7 @@ function initForm(){
 		showCurrentBuild();
 	});
 	hideEverything();
-	toggleWhich(mb,show);
+	toggleWhich("mb","show");
 }
 function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
