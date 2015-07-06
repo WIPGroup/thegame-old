@@ -147,7 +147,7 @@ function showCurrentBuild(){
 				for (i=0;i<mb[x];i++){
 					if (window[x][i].nazev != undefined){
 						htmlcontent += '<li>'+window[x][i].nazev;
-						htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty('+x+','+i+')">Odobrať</button>';
+						htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty("'+x+'",'+i+')">Odobrať</button>';
 						htmlcontent += '</li>';
 					}else{
 						htmlcontent += '<li>Nic</li>';
@@ -156,7 +156,7 @@ function showCurrentBuild(){
 			}else{
 				if (window[x].nazev != undefined){
 					htmlcontent += "<li>"+window[x].nazev;
-					htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty('+x+',-1)">Odobrať</button>';
+					htmlcontent += '<button class="btn btn-xs btn-danger" onClick="empty("'+x+'",-1)">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
 					htmlcontent += '<li>Nic</li>';
@@ -207,9 +207,9 @@ function toggleCPUs(tier,action){
 }
 function empty(type,index){
 	if (index===-1){
-		window[type] = undefined;
+		window[type] = {};
 	}else{
-		window[type][index] = undefined;
+		window[type][index] = {};
 	}
 	showCurrentBuild();
 }
