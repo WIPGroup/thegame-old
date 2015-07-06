@@ -1,9 +1,17 @@
+function fillArray(name,number){
+	for(i=0;i<number;i++){
+		window[name][i] = new Object();
+	}
+}
 var mb = new Object();
 var cpu = new Object();
 var psu = new Object();
 var ram = new Array();
 var hdd = new Array();
 var gpu = new Array();
+fillArray(ram,8);
+fillArray(hdd,4);
+fillArray(gpu,4);
 var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
@@ -108,7 +116,10 @@ function initForm(){
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
-			console.log("todo array");
+			var pocet = window[typ+"counter"];
+			window[typ][pocet].nazev = toto.find("abbr").attr("title");
+			window[typ][pocet].nazev = toto.data("idveci");
+			console.log(toto.find("abbr").attr("title"));
 		}else{
 			window[typ].idveci = toto.data("idveci");
 			window[typ].nazev = toto.find("abbr").attr("title");
@@ -227,8 +238,13 @@ function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
 		var x = $(this).attr("id");
 		if (shouldReturnArray(x) === true){
-			//todo
-			console.log("swag");
+			var htmlcontent = "";
+			for (i=0;i<window[x].length;i++){
+				htmlcontent += '<li>'+window[x][i].nazev;
+				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+				htmlcontent += '</li>';
+			}
+			$(this).html(htmlcontent);
 		}else{
 			var htmlcontent = "<li>"+window[x].nazev;
 			htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';

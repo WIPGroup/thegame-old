@@ -84,7 +84,7 @@ include 'updatesestav.php';
 	<ul id="gpu">
 	</ul>
 	Storage
-	<ul id="storage">
+	<ul id="hdd">
 	</ul>
 	PSU
 	<ul id="psu">
