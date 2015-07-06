@@ -1,18 +1,10 @@
-function fillArray(name,number){
-	for(i=0;i<number;i++){
-		window[name][i] = new Object();
-	}
-}
 var mb = new Object();
 var cpu = new Object();
 var psu = new Object();
-var ram = new Array(ramnumber);
-var hdd = new Array(hddnumber);
-var gpu = new Array(gpunumber);
+var ram = new Array({},{},{},{},{},{},{},{});
+var hdd = new Array({},{},{},{});
+var gpu = new Array({},{},{},{});
 var ramnumber = 8, hddnumber = 4, gpunumber = 4;
-fillArray(ram,ramnumber);
-fillArray(hdd,hddnumber);
-fillArray(gpu,gpunumber);
 var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
