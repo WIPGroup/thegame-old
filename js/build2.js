@@ -1,11 +1,3 @@
-var mb = new Object();
-var cpu = new Object();
-var psu = new Object();
-var ram = new Array({},{},{},{},{},{},{},{});
-var hdd = new Array({},{},{},{});
-var gpu = new Array({},{},{},{});
-var ramnumber = 8, hddnumber = 4, gpunumber = 4;
-var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -104,18 +96,36 @@ function shouldReturnArray(x){
 }
 function initForm(){
 	itemInfo();
+	var mb = {};
+	var cpu = {};
+	var psu = {};
+	var ram = new Array({},{},{},{},{},{},{},{});
+	var hdd = new Array({},{},{},{});
+	var gpu = new Array({},{},{},{});
+	var ramnumber = 8, hddnumber = 4, gpunumber = 4;
+	var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 	$(".grid button").click(function(){
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		if (shouldReturnArray(typ) === true){
+			window[typ+"counter"]++;
 			var pocet = window[typ+"counter"];
 			window[typ][pocet].nazev = toto.find("abbr").attr("title");
-			window[typ][pocet].nazev = toto.data("idveci");
+			window[typ][pocet].idveci = toto.data("idveci");
+			window[typ][pocet].tier = toto.data("tier");
+			window[typ][pocet].type = toto.data("type");
 			console.log(toto.find("abbr").attr("title"));
 		}else{
 			window[typ].idveci = toto.data("idveci");
 			window[typ].nazev = toto.find("abbr").attr("title");
+			window[typ].tier = toto.data("tier");
+			window[typ].type = toto.data("type");
+			if (typ === "mb"){
+				mb.gpu = toto.data("pci");
+				mb.hdd = toto.data("hdd");
+				mb.ram = toto.data("ram");
+			}
 			console.log(toto.find("abbr").attr("title"));
 		}
 		showCurrentBuild();
@@ -232,10 +242,14 @@ function showCurrentBuild(){
 		var x = $(this).attr("id");
 		if (shouldReturnArray(x) === true){
 			var htmlcontent = "";
-			for (i=0;i<window[x].length;i++){
-				htmlcontent += '<li>'+window[x][i].nazev;
-				htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
-				htmlcontent += '</li>';
+			for (i=0;i<mb[x];i++){
+				if (window[x][i].nazev != undefined){
+					htmlcontent += '<li>'+window[x][i].nazev;
+					htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+					htmlcontent += '</li>';
+				}else{
+					htmlcontent += '<li>'+NENI+'</li>';
+				}
 			}
 			$(this).html(htmlcontent);
 		}else{
