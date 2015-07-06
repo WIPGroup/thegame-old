@@ -156,7 +156,7 @@ function showCurrentBuild(){
 			}else{
 				if (window[x].nazev != undefined){
 					htmlcontent += "<li>"+window[x].nazev;
-					htmlcontent += '<button class="btn btn-xs btn-danger onClick="empty('window[x]+',-1')">Odobrať</button>';
+					htmlcontent += '<button class="btn btn-xs btn-danger onClick="empty('window[x]+',-1)">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
 					htmlcontent += '<li>Nic</li>';
