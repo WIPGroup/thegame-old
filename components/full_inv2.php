@@ -70,7 +70,7 @@ include 'updatesestav.php';
 	}
 	?>
 </div>
-<div class="col-xs-12 col-md-3">
+<div class="col-xs-12 col-md-3"  id="currentbuild">
 	Motherboard
 	<ul id="mb">
 	</ul>

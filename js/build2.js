@@ -1,4 +1,5 @@
 var mb,cpu,ram,hdd,gpu,psu;
+var ramcounter = 0, hddcounter = 0, gpucounter = 0;
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -101,12 +102,16 @@ function initForm(){
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
-		console.log("idveci "+toto.data("idveci"));
 		if (shouldReturnArray(typ) === true){
-			window[typ].push(toto.data("idveci"));
+			window[typ+"counter"]++;
+			window[typ+window[typ+"counter"]].idveci = toto.data("idveci");
+			window[typ+window[typ+"counter"]].nazev = toto.find("abbr").attr("title");
+			console.log(window[typ+window[typ+"counter"]]);
 		}else{
-			window[typ] = toto.data("idveci");
+			window[typ].idveci = toto.data("idveci");
+			window[typ].nazev = toto.find("abbr").attr("title");
 		}
+		showCurrentBuild();
 	});
 }
 function reloadSestavy() {
@@ -215,6 +220,20 @@ function disableUnavailable() {
 	disablePCI();
 	$("#build select").selectpicker('refresh');
 }*/
+function showCurrentBuild(){
+	$("#currentbuild ul").each(function(){
+		var x = $(this).attr("id");
+		if (shouldReturnArray === true){
+			//todo
+			console.log("swag");
+		}else{
+			var htmlcontent = "<li>"+window[x].nazev;
+			htmlcontent += '<button class="btn btn-xs btn-danger">Odobrať</button>';
+			htmlcontent += '</li>';
+			$(this).html(htmlcontent);
+		}
+	});
+}
 $(function() {
 	reloadSestavy();
 	reloadSkladaniSestav();
