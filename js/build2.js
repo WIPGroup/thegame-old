@@ -142,7 +142,7 @@ function showCurrentBuild(){
 	$("#currentbuild ul").each(function(){
 		var x = $(this).attr("id");
 		var htmlcontent = "";
-		if (mb.nazev === undefined){
+		if (mb.nazev !== undefined){
 			if (shouldReturnArray(x) === true){
 				for (i=0;i<mb[x];i++){
 					if (window[x][i].nazev != undefined){
