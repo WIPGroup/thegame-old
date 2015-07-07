@@ -45,7 +45,7 @@ include 'body.php';    //TODO: hodit na ajax
 				</ul>
 			</div>
 		</div>
-		<div class="grid col-xs-12 col-md-10">
+		<div class="grid col-xs-12 col-md-9">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -78,7 +78,7 @@ include 'body.php';    //TODO: hodit na ajax
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-md-2" style="padding-top: 5px;">
+		<div class="col-xs-12 col-md-3" style="padding-top: 5px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o itemu</h1>
