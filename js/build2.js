@@ -278,7 +278,24 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 				populateObject("ram");
 				populateObject("hdd");
 				populateObject("psu");
-				console.log($.param(computer));
+				var computerstring = $.param(computer);
+				console.log(computerstring);
+				$.ajax({
+					data: computerstring;
+					type: "GET",
+					url: "components/sestavit.php",
+					success: function(data) {
+						var contains = data.indexOf('Složena sestava');
+						if (contains==-1){
+							swal(data);
+						} else {
+							reloadSestavy();
+							reloadSkladaniSestav();
+							//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
+							swal(data);
+						}
+					}
+				});
 			});
 		}
 	});
