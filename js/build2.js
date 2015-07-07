@@ -272,9 +272,9 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 			initForm();	
 			$('#sestavit').click(function(){
 				var params = {mb:mb.idveci,cpu:cpu.idveci,psu:psu.idveci};
-				populateObject(gpu);
-				populateObject(ram);
-				populateObject(hdd);
+				populateObject("gpu");
+				populateObject("ram");
+				populateObject("hdd");
 				console.log($.param(params));
 			});
 		}
