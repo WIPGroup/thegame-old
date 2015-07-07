@@ -192,7 +192,7 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 							return false;
 						}
 					}else{
-						if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<window[typ].length)){
+						if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<mb[typ])){
 							return true;
 						}else{
 							if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
