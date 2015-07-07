@@ -11,11 +11,11 @@ include 'updatesestav.php';
 	</div>
 	<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group sort-by-button-group">
 		<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			Třídění <span class="caret"></span>
+			Radenie <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a data-sort-by="original-order">Původní (ID)</a></li>
-			<li><a data-sort-by="name">Jméno</a></li>
+			<li><a data-sort-by="original-order">Pvodné (ID)</a></li>
+			<li><a data-sort-by="name">Meno</a></li>
 			<li><a data-sort-by="power">Výkon</a></li>
 			<li><a data-sort-by="count">Počet</a></li>
 			<li><a data-sort-by="tier">Tier</a></li>
@@ -27,7 +27,7 @@ include 'updatesestav.php';
 			Filter <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a data-filter="*">Zobrazit vše</a></li>
+			<li><a data-filter="*">Zobraziť všetko</a></li>
 			<li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</a></li>
 			<li><a data-filter=".cpu">CPUs</a></li>
 			<li><a data-filter=".psu">PSUs</a></li>

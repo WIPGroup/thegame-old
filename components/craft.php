@@ -13,7 +13,7 @@ if (isset($_GET['craft']))
 	{
 		//kontrola
 		if ($hrac['vyzkum'] < $zaznam['body'])
-			die('Neostatečná úroveň výzkumu.');
+			die('Nedostatočná úroveň výzkumu');
 		$suroviny = explode(';', $zaznam['suroviny']);
 		$pocsurovin = count($suroviny);
 		$splnuje = true;
@@ -44,7 +44,7 @@ if (isset($_GET['craft']))
 			mysql_query($dotaz);
 		}
 		else
-			echo 'Nemáte dostatek surovin.';
+			echo 'Nemáš dosť surovín.';
 	}
 	else
 		echo 'Tento recept neexistuje.';

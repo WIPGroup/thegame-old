@@ -14,7 +14,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 
 //pouzivaji se datatables (https://datatables.net/manual/)
 //nabídky ostatních
-echo '<div id="maincontainer"><table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Nabízí</th><th>A chce</th><th></th></tr></thead><tbody>';
+echo '<div id="maincontainer"><table id="main" class="table table-striped table-bordered table-hover"><thead><tr><th>Hráč</th><th>Ponúka</th><th>A chce</th><th></th></tr></thead><tbody>';
 
 $dotaz = 'SELECT * FROM obchod, hraci WHERE hrac=idhrace AND hrac<>'.$_SESSION['hrac'];
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));

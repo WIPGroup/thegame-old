@@ -18,15 +18,15 @@ if (isset($_GET['kupon']))
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
 
-		//smazat kupón
+		//smazat kupó
 		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
 		mysql_query($dotaz);
 
-		echo 'Kupó přijat. Zíkals ';
+		echo 'Kupó přijat. Obdržal si ';
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupón '.$zaznam['kod'].' (';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupó '.$zaznam['kod'].' (';
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
@@ -39,5 +39,5 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 	}
 	else
-		echo 'Tento kupón neexistuje.';
+		echo 'Tento kupó neexistuje.';
 }

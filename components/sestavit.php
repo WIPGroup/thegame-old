@@ -38,25 +38,25 @@ if (isset($_GET['mb']))
 		$sestava[$zaznam['idveci']]++;
 	}
 	else
-		die('Takovou základní desku nevlastníš.');
+		die('Takú základnú dosku nemáš.');
 
 	//info a kompatibilita procesoru
 	if (!isset($_GET['cpu']))
-		die("Nemáš vybraný procesor.");
+		die('Nemáš vybraný procesor.');
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['cpu'].' AND typ="cpu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($socket != $zaznam['socket'])
-			die('Nekompatibilní základní deska a procesor.');
+			die('Nekompatibilná základná doska a procesor.');
 
 		$vlastnictvi[$zaznam['idveci']]--;
 		$sestava[$zaznam['idveci']]++;
 		$cpupwr = $zaznam['vykon'];
 	}
 	else
-		die('Takový procesor nevlastníš.');
+		die('Taký procesor nemáš.');
 
 	//ram sloty
 	for ($i = 1; $i <= $sloty[0]; $i++)
@@ -73,7 +73,7 @@ if (isset($_GET['mb']))
 			$rampwr += $zaznam['vykon'];
 		}
 		else
-			die('Takovou ramku nevlastníš.');
+			die('Takú ramku nemáš.');
 	}
 
 	//gpu karty
@@ -91,7 +91,7 @@ if (isset($_GET['mb']))
 			$gpupwr = $zaznam['vykon'];
 		}
 		else
-			die('Takovou grafárnu nevlastníš.');
+			die('Takú grafiku nemáš.');
 	}
 
 	//hdd
@@ -109,12 +109,12 @@ if (isset($_GET['mb']))
 			$hddpwr = max($zaznam['vykon'], $hddpwr);
 		}
 		else
-			die('Takový harddisk nevlastníš.');
+			die('Taký harddisk nemáš.');
 	}
 
 	//psu
 	if (!isset($_GET['psu']))
-		die("Nemáš vybraný zdroj.");
+		die('Nemáš vybraný zdroj.');
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['psu'].' AND typ="psu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
@@ -125,7 +125,7 @@ if (isset($_GET['mb']))
 		$psupwr = $zaznam['vykon'];
 	}
 	else
-		die('Takový zdroj nevlastníš.');
+		die('Taký zdroj nemáš.');
 
 	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
 
@@ -160,9 +160,9 @@ if (isset($_GET['switch']))
 	if (count($zaznam) > 1)
 	{
 		if ($zaznam['hrac'] != $_SESSION['hrac'])
-			die('Tuto sestavu nevlastníš.');
+			die('Takú zostavu nemáš.');
 
-		if ($zaznam['vyzkum'] == 1)	//přepnout na body
+		if ($zaznam['vyzkum'] == 1)    //přepnout na body
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
@@ -171,7 +171,7 @@ if (isset($_GET['switch']))
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$zaznam['obsah'].' o výkonu '.$zaznam['vykon'].' přepnuta na body.")';
 			mysql_query($dotaz);
 		}
-		else	//přepnout na výzkum
+		else    //přepnout na výzkum
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
@@ -182,7 +182,7 @@ if (isset($_GET['switch']))
 		}
 	}
 	else
-		echo 'Tato sestava neexistuje.';
+		echo 'Taká zostava neexistuje.';
 }
 
 //rozebrání sestavy
@@ -194,10 +194,10 @@ if (isset($_GET['disass']))
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) <= 1)
-		die('Tato sestava neexistuje.');
+		die('Táto zostava neexistuje.');
 
 	if ($zaznam['hrac'] != $_SESSION['hrac'])
-		die('Tuto sestavu nevlastníš.');
+		die('Túto zostavu nevlastníš.');
 
 	$sestava = explode(';', $zaznam['obsah']);
 

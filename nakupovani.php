@@ -16,11 +16,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		<div class="form-group">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title">Zadat objednávku:</h2>
+					<h2 class="panel-title">Zadať objednávku:</h2>
 				</div>
 				<div class="panel-body">
 					<div class="input-group panel panel-primary col-xs-6" style="float: left">
-						<div class="panel-heading">Nabízím:</div>
+						<div class="panel-heading">Ponúkam:</div>
 						<div class="panel-body">
 							<select name="nabizi" id="nabizi" class="form-control">
 								<?php
@@ -31,7 +31,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 						</div>
 					</div>
 					<div class="input-group panel panel-primary col-xs-6">
-						<div class="panel-heading">Hledám:</div>
+						<div class="panel-heading">Hľadám:</div>
 						<div class="panel-body">
 							<select name="chce" id="chce" class="form-control">
 								<?php
@@ -50,11 +50,11 @@ while ($zaznam = mysql_fetch_array($vysledek))
 <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 	<div class="panel panel-primary" id="trziste">
 		<div class="panel-heading">
-			<h2 class="panel-title">Tržiště:</h2>
+			<h2 class="panel-title">Tržnica:</h2>
 		</div>
 		<ul class="nav nav-tabs" id="trzistetabs">
 			<li role="presentation" onClick="toggleTable('main');" id="maintab"><a href="#">Vše</a></li> <!-- Každý tab musí mít onclick toggleTable('idtabulky') a mit id='idtab'-->
-			<li role="presentation" onClick="toggleTable('moje');" id="mojetab"><a href="#">Moje nabídky</a></li>
+			<li role="presentation" onClick="toggleTable('moje');" id="mojetab"><a href="#">Moje ponuky</a></li>
 		</ul>
 		<div class="panel-body">
 			<span id="nabidky"></span>

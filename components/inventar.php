@@ -6,7 +6,7 @@ include 'updatesestav.php';
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
-		<h1 class="panel-title">Inventář</h1>
+		<h1 class="panel-title">Inventár</h1>
 	</div>
 	<div id="inv" class="panel-collapse collapse in" style="text-align: left">
 		<ul id="items" class="list-group" style="text-align: left">

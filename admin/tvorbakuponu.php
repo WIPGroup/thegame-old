@@ -1,4 +1,5 @@
 <?php
+
 //TODO: jakmile se tento skript nebude includovat, ale volat samostatně, odkomentovat tyto 3 řádky
 //session_start();
 //require "../dblogin.php";
@@ -16,14 +17,14 @@ if (isset($_GET['0']))
 	{
 		for ($i = 0; $i < 8; $i++)
 		{
-    	    $kod .= $znaky[rand(0, $pocznaku - 1)];
-	   	}
+					$kod .= $znaky[rand(0, $pocznaku - 1)];
+			}
 		$dotaz = 'SELECT COUNT(*) FROM kupony WHERE kod="'.$kod.'"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
 	}
 	while ($zaznam['COUNT(*)'] > 1);
-	
+
 	$obsah = null;
 	$i = 0;
 	while (isset($_GET[$i]))
@@ -35,7 +36,7 @@ if (isset($_GET['0']))
 	$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $obsah).'", '.time().')';
 	mysql_query($dotaz);
 }
-else if (isset($_GET['rm']))
+elseif (isset($_GET['rm']))
 {
 	$dotaz = 'DELETE FROM kupony WHERE kod="'.$_GET['rm'].'"';
 	mysql_query($dotaz);

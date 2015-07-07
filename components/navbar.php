@@ -1,4 +1,4 @@
-<?php include_once("components/analyticstracking.php") ?>
+<?php include_once('components/analyticstracking.php') ?>
 <nav class="navbar navbar-default navbar-inverse">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
@@ -29,15 +29,15 @@
 			<?php
 			if ($prihlasen && $_SESSION['hrac'] == 1)
 			{
-				echo "<li>";
+				echo '<li>';
 				echo '<a href="admin.php">ADMIN</a>';
-				echo "</li>";
+				echo '</li>';
 			}
 			?>
 		</ul>
 		<?php
 		if ($prihlasen) {
-				include "components/hrac_menu.php";
+				include 'components/hrac_menu.php';
 		}
 		?>
 	</div>

@@ -31,7 +31,7 @@ $rams .= '<option value="-1">Nic</option>'."\n";
 $gpus .= '<option value="-1">Nic</option>'."\n";
 $hdds .= '<option value="-1">Nic</option>'."\n";
 
-echo 'Základní deska:';
+echo 'Základná doska:';
 echo '<select class="form-control selectpicker" name="mb" id="mb">'.$mbs.'</select>';
 echo '<br>Procesor:';
 echo '<select class="form-control selectpicker" name="cpu" id="cpu">'.$cpus.'</select>';

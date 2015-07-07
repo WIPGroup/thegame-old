@@ -50,7 +50,7 @@ include 'admin/tvorbakuponu.php';
 				if ($obsah[$i] > 0)
 					echo ' '.$veci[$i];
 			echo '">'; // style="float: left; width: 64px; heigth '.(13+24*$pocveci).'px">';
-			echo '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">'.$zaznam['kod'].'</h3></div><div class="panel-body">Vytvořeno '.date('j.n.Y G:i:s', $zaznam['cas']).'<br><a href="admin.php?rm='.$zaznam['kod'].'">Smazat</a></div><ul class="list-group">';
+			echo '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">'.$zaznam['kod'].'</h3></div><div class="panel-body">Vytvorené '.date('j.n.Y G:i:s', $zaznam['cas']).'<br><a href="admin.php?rm='.$zaznam['kod'].'">Zmazať</a></div><ul class="list-group">';
 			for ($i = 0; $i < $pocveci; $i++)
 				if ($obsah[$i] > 0)
 					echo '<li class="list-group-item"><img id="item-sm" src="icons/'.$i.'.png"></img>'.$veci[$i].' '.$obsah[$i].'</li>';

@@ -19,7 +19,7 @@ include 'body.php';    //TODO: hodit na ajax
 					Poradie <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu">
-					<li><a data-sort-by="original-order">Povodný (ID)</a></li>
+					<li><a data-sort-by="original-order">Pvodný (ID)</a></li>
 					<li><a data-sort-by="name">Meno</a></li>
 					<li><a data-sort-by="power">Výkon</a></li>
 					<li><a data-sort-by="count">Počet</a></li>
@@ -34,7 +34,7 @@ include 'body.php';    //TODO: hodit na ajax
 				<ul class="dropdown-menu" role="menu">
 					<li><a data-filter="*">Zobraziť všetko</a></li>
 					<li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Komponenty</a></li>
-					<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent</a></li>
+					<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent(ov)</a></li>
 					<li><a data-filter=".cpu">CPUs</a></li>
 					<li><a data-filter=".psu">PSUs</a></li>
 					<li><a data-filter=".hdd">HDDs</a></li>
@@ -69,7 +69,7 @@ include 'body.php';    //TODO: hodit na ajax
 				echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
 				echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
 				if ($zaznam['typ'] == '')
-						echo '<span class="label label-default category">Surovina</span>';
+						echo '<span class="label label-default category">Surovina</span>'; //TODO soucastky
 				else
 						echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
 				echo '</div>';

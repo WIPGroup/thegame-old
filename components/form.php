@@ -4,7 +4,7 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-3">
 	<div class="login-panel panel panel-primary">
 		<div class="panel-heading">
-			<h2 class="panel-title">Prosím, prihlásťe sa</h2>
+			<h2 class="panel-title">Prosím, prihlásťe sa:</h2>
 		</div>
 		<div class="panel-body">
 			<form role="form" action="index.php" method="POST" class="form-signin">
