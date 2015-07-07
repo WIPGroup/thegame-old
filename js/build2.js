@@ -188,14 +188,12 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 	if(mb.nazev === undefined){
 		$(".grid").isotope({filter:'.mb'});
 	} else {
-		var count = $(this).find(".count").find(".badge").html();
-		console.log('count is '+count);
-		if(count==0){
-			console.log('returnere');
-			return false;
-		} else {
-			$(".grid").isotope({
-				filter:function(){
+		$(".grid").isotope({
+			filter:function(){
+				var count = $(this).find(".count").find(".badge").html();
+				if(count==0){
+					return false;
+				} else {
 					var typ = $(this).data("type");
 					if(typ==="mb"){ //už je nastavená základovka, pokud to je mb, neukázat
 						return false;
@@ -220,8 +218,8 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 						}
 					}
 				}
-			});
-		}
+			}
+		});
 	}
 //	$('.grid').isotope('reloadItems').isotope(); 
 }
