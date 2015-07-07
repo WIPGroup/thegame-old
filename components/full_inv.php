@@ -3,7 +3,7 @@ session_start();
 include '../vlastnictvi.php';
 include 'updatevyrob.php';
 include 'updatesestav.php';
-include "body.php";	//TODO: hodit na ajax
+include 'body.php';	//TODO: hodit na ajax
 ?>
 <div class="panel panel-primary">
   <div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
@@ -68,7 +68,7 @@ include "body.php";	//TODO: hodit na ajax
         	$skryt = '';
         echo '<span class="badge count'.$skryt.'">'.$vlastnictvi[$zaznam['idveci']].'</span>';
         echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
-        if ($zaznam['typ'] == "")
+        if ($zaznam['typ'] == '')
 			echo '<span class="label label-default category">Surovina</span>';
 		else
 			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
@@ -78,16 +78,23 @@ include "body.php";	//TODO: hodit na ajax
       }
       ?>
     </div>
-    <div class="col-xs-12 col-md-2" id="infoitemu">
-      Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
-      Core (Threads):	8(16)<br/>
-      L3 Cache:	20<br/>
-      Graphics:	0<br/>
-      Controller:	2<br/>
-      Brand:	Core i7-E<br/>
-      MicroArchitecture Code-name:	Haswell-E<br/>
-      Vykon:	23 711 280 000 000<br/>
-      <button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
+    <div class="col-xs-12 col-md-2">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Info o itemu</h1>
+        </div>
+        <div class="panel-body" id="infoitemu">
+          Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
+          Core (Threads):	8(16)<br/>
+          L3 Cache:	20<br/>
+          Graphics:	0<br/>
+          Controller:	2<br/>
+          Brand:	Core i7-E<br/>
+          MicroArchitecture Code-name:	Haswell-E<br/>
+          Vykon:	23 711 280 000 000<br/>
+          <button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
+        </div>
+      </div>
     </div>
   </div>
 </div>
