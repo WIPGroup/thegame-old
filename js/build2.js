@@ -176,39 +176,11 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 }
 function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz nemuzou pridat atd.
 	if(mb.nazev === undefined){
-		toggleEverything("hide");
-		toggleWhich("mb","show");
+		$(".grid").isotope({filter:'.mb'});
 	} else {
-		toggleEverything("show");
-		toggleWhich("mb","hide");
-		toggleWhich("cpu","hide");
-		toggleCPUs(mb.tier,"show");
+		$(".grid").isotope({filter:'*:not(.mb):not(.cpu),.cpu[data-type="'+mb.tier+'"]'});
 	}
 //	$('.grid').isotope('reloadItems').isotope(); 
-}
-function toggleWhich(type,action){ //doplnujici funkce pro display properly
-	if (action==="show"){
-		$(".grid div[data-type="+type+"]").show();
-	}
-	if (action==="hide"){
-		$(".grid div[data-type="+type+"]").hide();
-	}
-}
-function toggleEverything(action){ //totez co toggleWhich
-	if (action==="show"){
-		$(".grid div").show();
-	}
-	if (action==="hide"){
-		$(".grid div").hide();
-	}
-}
-function toggleCPUs(tier,action){ //totez co toggleWhich
-	if (action==="show"){
-		$(".grid div[data-tier="+tier+"][data-type='cpu']").show();
-	}
-	if (action==="hide"){
-		$(".grid div[data-tier="+tier+"][data-type='cpu']").hide();
-	}
 }
 function odebrat(type,index){ //pro odebirani
 	if (index===-1){
