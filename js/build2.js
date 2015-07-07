@@ -4,7 +4,7 @@
 	var ram = new Array({},{},{},{},{},{},{},{});
 	var hdd = new Array({},{},{},{});
 	var gpu = new Array({},{},{},{});
-	var ramcounter = 0, hddcounter = 0, gpucounter = 0;
+	var ramcounter = 0, hddcounter = 0, gpucounter = 0, ramindex = 0, hddindex = 0, gpuindex = 0;
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -122,14 +122,16 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		} else {
 			if (shouldReturnArray(typ) === true){
 				var pocet = window[typ+"counter"];
+				var index = window[typ+"index"];
 				var maximalnipocet = mb[typ];
 				if (pocet<maximalnipocet){
-					window[typ][pocet].nazev = toto.find("abbr").attr("title");
-					window[typ][pocet].idveci = toto.data("idveci");
-					window[typ][pocet].tier = toto.data("tier");
-					window[typ][pocet].type = toto.data("type");
+					window[typ][index].nazev = toto.find("abbr").attr("title");
+					window[typ][index].idveci = toto.data("idveci");
+					window[typ][index].tier = toto.data("tier");
+					window[typ][index].type = toto.data("type");
 					console.log(toto.find("abbr").attr("title"));
 					window[typ+"counter"]++;
+					window[typ+"index"]++;
 				}
 			}else{
 				window[typ].idveci = toto.data("idveci");
@@ -224,15 +226,10 @@ function odebrat(type,index,value){ //pro odebirani
 	}else{
 		window[type][index] = {};
 		window[type+"counter"]--;
-		var counter = 0;
-		var delka = window[type].length;
-		for(i=0;i<delka;i++){
-			if (window[type][counter]===undefined){
-				for(j=i;j<delka;j++){
-					window[type][j] = window[type][j+1];
-				}
-			}else{
-				counter++;
+		for(i=0;i<window[type].length;i++){
+			if(window[type][i]===undefined){
+				window[type+"index"] = i;
+				break;
 			}
 		}
 	}
