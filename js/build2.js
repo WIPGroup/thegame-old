@@ -185,11 +185,19 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 				if(typ==="mb"){
 					return false;
 				}else{
-					if(typ==="cpu"){
+					if((typ==="cpu") && (cpu.nazev===undefined){
 						if(tier===mb.tier){
 							return true;
 						}else{
-							return false;
+							if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<window[typ].length)){
+								return true;
+							}else{
+								if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
+									return true;
+								}else{
+									return false;
+								}
+							}
 						}
 					}else{
 						return true;
@@ -337,4 +345,5 @@ $(function() {
   		});
   		return false;  //zastavi normalni submit, tj. zadny refresh
   	});*/
+	$("html").css("overflow-y":"scroll");
 });
