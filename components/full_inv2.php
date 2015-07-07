@@ -59,7 +59,7 @@ include 'updatesestav.php';
 
 			echo '<span class="count"><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span><button class="btn btn-xs btn-primary">Pridať</button></span>';
 
-			echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>
+			echo '<span class="label label-default name"><abbr title="'.$zaznam['nazev'].'">'.$zaznam['nazev'].'</abbr></span>'; //TODO <abbr title="nazev">zkratka nebo cast nazvu</abbr>, pokud je dlouhy tak se urizne
 
 			echo '<span class="label label-default category">'.strtoupper($zaznam['typ']).'</span>';
 
@@ -70,27 +70,36 @@ include 'updatesestav.php';
 	}
 	?>
 </div>
-<div class="col-xs-12 col-md-3"  id="currentbuild">
-	Motherboard
-	<ul id="mb">
-	</ul>
-	CPU
-	<ul id="cpu">
-	</ul>
-	RAM
-	<ul id="ram">
-	</ul>
-	GPU
-	<ul id="gpu">
-	</ul>
-	Storage
-	<ul id="hdd">
-	</ul>
-	PSU
-	<ul id="psu">
-	</ul>
+<div class="col-xs-12 col-md-3">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">Vybrané komponenty</h1>
+		</div>
+		<div class="panel-body">
+			<div id="currentbuild">
+				<span class="label label-default">Motherboard</span>
+				<ul id="mb">
+				</ul>
+				<span class="label label-default">CPU</span>
+				<ul id="cpu">
+				</ul>
+				<span class="label label-default">RAM</span>
+				<ul id="ram">
+				</ul>
+				<span class="label label-default">GPU</span>
+				<ul id="gpu">
+				</ul>
+				<span class="label label-default">Storage</span>
+				<ul id="hdd">
+				</ul>
+				<span class="label label-default">PSU</span>
+				<ul id="psu">
+				</ul>
+			</div>
+		</div>
+		<button class="btn btn-primaty btn-block" id="sestavit">SESTAVIT</button>
+	</div>
 </div>
-<button id="sestavit">SESTAVIT</button>
 <div class="col-xs-12 col-md-3" id="infoitemu">
 	Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
 	Core (Threads):	8(16)<br/>
