@@ -307,7 +307,11 @@ function zmenit(idsestavy) {
 }
 function populateObject(type){
 	for(i=1;i<=window[type].length;i++){
-		params[type+i] = window[type][i].idveci;
+		if(window[type][i].idveci===undefined){
+			params[type+i] = -1;
+		} else {
+			params[type+i] = window[type][i].idveci
+		}
 	}
 }
 $(function() {
@@ -318,7 +322,7 @@ $(function() {
 		populateObject(gpu);
 		populateObject(ram);
 		populateObject(hdd);
-		console.log(params);
+		console.log($.param(params));
   /*	$.ajax({
   			data: 
   			type: "GET",
