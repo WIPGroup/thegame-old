@@ -178,7 +178,25 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 	if(mb.nazev === undefined){
 		$(".grid").isotope({filter:'.mb'});
 	} else {
-		$(".grid").isotope({filter:'*:not(.mb):not(.cpu),.cpu[data-type="'+mb.tier+'"]'});
+		$(".grid").isotope({
+			filter:function(){
+				var typ = $(this).data("type");
+				var tier = $(this).data("tier");
+				if(typ==="mb"){
+					return false;
+				}else{
+					if(typ==="cpu"){
+						if(tier===mb.tier){
+							return true;
+						}else{
+							return false;
+						}
+					}else{
+						return true;
+					}
+				}
+			}
+		});
 	}
 //	$('.grid').isotope('reloadItems').isotope(); 
 }
