@@ -70,7 +70,7 @@ include 'updatesestav.php';
 	}
 	?>
 </div>
-<div class="col-xs-12 col-md-3">
+<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Vybrané komponenty</h1>
@@ -100,14 +100,21 @@ include 'updatesestav.php';
 		<button class="btn btn-primaty btn-block" id="sestavit">SESTAVIT</button>
 	</div>
 </div>
-<div class="col-xs-12 col-md-3" id="infoitemu">
-	Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
-	Core (Threads):	8(16)<br/>
-	L3 Cache:	20<br/>
-	Graphics:	0<br/>
-	Controller:	2<br/>
-	Brand:	Core i7-E<br/>
-	MicroArchitecture Code-name:	Haswell-E<br/>
-	Vykon:	23 711 280 000 000<br/>
-	<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
+<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">Info o itemu</h1>
+		</div>
+		<div class="panel-body" id="infoitemu">
+			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
+			Core (Threads):	8(16)<br/>
+			L3 Cache:	20<br/>
+			Graphics:	0<br/>
+			Controller:	2<br/>
+			Brand:	Core i7-E<br/>
+			MicroArchitecture Code-name:	Haswell-E<br/>
+			Vykon:	23 711 280 000 000<br/>
+			<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
+		</div>
+	</div>
 </div>
