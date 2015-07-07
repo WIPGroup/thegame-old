@@ -281,7 +281,7 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 				var computerstring = $.param(computer);
 				console.log(computerstring);
 				$.ajax({
-					data: computerstring;
+					data: computerstring,
 					type: "GET",
 					url: "components/sestavit.php",
 					success: function(data) {
