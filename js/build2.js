@@ -106,16 +106,16 @@ function shouldReturnArray(x){ //doplnujici funkce pro ostatni funkce, zjisti je
 function initForm(){ //inicializace funkcionality pridavani itemu
 	itemInfo();
 	showCurrentBuild();
-	$(".grid button").click(function(){
+	$(".grid button").click(function(){ //po kliknuti na přidat
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
 		var badge =	$(this).siblings(".badge");
 		var count = badge.text();
-		count--;
+		count--; //snížit počet
 		badge.text(count);
 		if (typ === "mb"){
-			variables();
+			variables(); //reset všeho
 			mb.gpu = toto.data("pci");
 			mb.hdd = toto.data("hdd");
 			mb.ram = toto.data("ram");
@@ -123,11 +123,11 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		if (mb.gpu === undefined){
 			alert('Nejdříve vyberte základovku');
 		} else {
-			if (shouldReturnArray(typ) === true){
+			if (shouldReturnArray(typ) === true){ //pokud je to array
 				var pocet = window[typ+"counter"];
 				var index = window[typ+"index"];
 				var maximalnipocet = mb[typ];
-				if (pocet<maximalnipocet){
+				if (pocet<maximalnipocet){ //pokud se tam jeste muze neco pridat
 					window[typ][index].nazev = toto.find("abbr").attr("title");
 					window[typ][index].idveci = toto.data("idveci");
 					window[typ][index].tier = toto.data("tier");
@@ -229,14 +229,14 @@ function odebrat(type,index,value){ //pro odebirani
 	}else{
 		window[type][index] = {};
 		window[type+"counter"]--;
-		for(i=0;i<window[type].length;i++){
+		for(i=0;i<window[type].length;i++){ //najiti prazdneho indexu kam se muze dat nova komponenta
 			if(window[type][i].nazev===undefined){
 				window[type+"index"] = i;
 				break;
 			}
 		}
 	}
-	var badge = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge");
+	var badge = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge"); //zvyseni poctu
 	var pocet = badge.text();
 	pocet++;
 	badge.text(pocet);
@@ -266,14 +266,10 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 		url: "components/full_inv2.php", //vykona se to co je v url
 		success: function(data) { //prijdou zpatky nejake data
 			$("#build").html(data); //data se hodi do neceho s id inventar, easy
-      //	disableUnavailable();
+			variables();
 			console.log('reloadSkladaniSestav');
 			initIsotope();
-      /*	$("select#mb").change(function(){
-		        console.log('selectchange');
-	    	    disableUnavailable();
-	        });*/
-			initForm();
+			initForm();	
 		}
 	});
 }
@@ -309,52 +305,22 @@ function zmenit(idsestavy) {
 		}
 	});
 }
-function disableRAM() {
-	var pocetram = $("#build #mb option:selected").data('ram');
-	console.log('RAM k dispozici ' + pocetram);
-	$("select[id*=ram]").each(function() {
-		$(this).prop("disabled", true);
-	});
-	for (i = 1; i <= pocetram; i++) {
-		$("#ram" + i).prop("disabled", false);
+function populateObject(type){
+	for(i=1;i<=window[type].length;i++){
+		params[type+i] = window[type][i].idveci;
 	}
 }
-
-function disableHDD() {
-	var pocethdd = $("#build #mb option:selected").data('hdd');
-	console.log('HDD k dispozici ' + pocethdd);
-	$("select[id*=hdd]").each(function() {
-		$(this).prop("disabled", true);
-	});
-	for (i = 1; i <= pocethdd; i++) {
-		$("#hdd" + i).prop("disabled", false);
-	}
-}
-
-function disablePCI() {
-	var pocetpci = $("#build #mb option:selected").data('pci');
-	console.log('PCI k dispozici ' + pocetpci);
-	$("select[id*=gpu]").each(function() {
-		$(this).prop("disabled", true);
-	});
-	for (i = 1; i <= pocetpci; i++) {
-		$("#gpu" + i).prop("disabled", false);
-	}
-}
-/*
-function disableUnavailable() {
-	disableRAM();
-	disableHDD();
-	disablePCI();
-	$("#build select").selectpicker('refresh');
-}*/
 $(function() {
-	variables();
 	reloadSestavy();
 	reloadSkladaniSestav();
-  /*	$('#build').submit(function() {
-  		$.ajax({
-  			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
+  	$('#sestavit').click(function() {
+		var params = {mb:mb.idveci,cpu:cpu.idveci,psu:psu.idveci};
+		populateObject(gpu);
+		populateObject(ram);
+		populateObject(hdd);
+		console.log(params);
+  /*	$.ajax({
+  			data: 
   			type: "GET",
   			url: "components/sestavit.php",
   			success: function(data) {
@@ -362,14 +328,13 @@ $(function() {
   				if (contains==-1){
   					swal(data);
   				} else {
-  				//	location.reload();
   					reloadSestavy();
   					reloadSkladaniSestav();
   					//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
   				}
   			}
   		});
-  		return false;  //zastavi normalni submit, tj. zadny refresh
-  	});*/
+  		return false; */ //zastavi normalni submit, tj. zadny refresh
+  	});
 //	$("html").css("overflow-y":"scroll");
 });

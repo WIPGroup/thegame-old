@@ -90,6 +90,7 @@ include 'updatesestav.php';
 	<ul id="psu">
 	</ul>
 </div>
+<button id="sestavit">SESTAVIT</button>
 <div class="col-xs-12 col-md-3" id="infoitemu">
 	Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
 	Core (Threads):	8(16)<br/>
