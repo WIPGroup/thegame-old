@@ -110,7 +110,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		console.log("typ "+typ);
 		var badge =	$(this).siblings(".badge");
 		var count = badge.text();
-		count++;
+		count--;
 		badge.text(count);
 		if (typ === "mb"){
 			mb.gpu = toto.data("pci");
@@ -224,6 +224,17 @@ function odebrat(type,index,value){ //pro odebirani
 	}else{
 		window[type][index] = {};
 		window[type+"counter"]--;
+		var counter = 0;
+		var delka = window[type].length;
+		for(i=0;i<delka;i++){
+			if (window[type][counter]===undefined){
+				for(j=i;j<delka;j++){
+					window[type][j] = window[type][j+1];
+				}
+			}else{
+				counter++;
+			}
+		}
 	}
 	var badge = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge");
 	var pocet = badge.text();
