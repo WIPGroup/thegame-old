@@ -345,5 +345,5 @@ $(function() {
   		});
   		return false;  //zastavi normalni submit, tj. zadny refresh
   	});*/
-	$("html").css("overflow-y":"scroll");
+//	$("html").css("overflow-y":"scroll");
 });
