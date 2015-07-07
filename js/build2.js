@@ -292,14 +292,21 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 								type:'error'
 							});
 						} else {
-							reloadSestavy();
-							reloadSkladaniSestav();
-							//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
-							swal({
-								title:'Gratulujeme!',
-								text:'Úspešne si zostavil počítač o výkone '+data,
-								type:'success'
-							});
+							if(data==""){
+								swal({
+									title:'Chyba!',
+									text:'Musíš vybrat základní desku!',
+									type:'error'
+								});
+							}else{
+								reloadSestavy();
+								reloadSkladaniSestav();
+								swal({
+									title:'Gratulujeme!',
+									text:'Úspešne si zostavil počítač o výkone '+data,
+									type:'success'
+								});
+							}
 						}
 					}
 				});
