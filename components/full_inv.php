@@ -78,7 +78,7 @@ include 'body.php';    //TODO: hodit na ajax
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-md-2">
+		<div class="col-xs-12 col-md-2" style="padding-top: 5px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o itemu</h1>
