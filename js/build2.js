@@ -271,10 +271,13 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 			initIsotope();
 			initForm();	
 			$('#sestavit').click(function(){
-				computer = {mb:mb.idveci,cpu:cpu.idveci,psu:psu.idveci};
+				computer = {};
+				populateObject("mb");	
+				populateObject("cpu");
 				populateObject("gpu");
 				populateObject("ram");
 				populateObject("hdd");
+				populateObject("psu");
 				console.log($.param(computer));
 			});
 		}
@@ -313,11 +316,19 @@ function zmenit(idsestavy) {
 	});
 }
 function populateObject(type){
-	for(i=0;i<window[type].length;i++){
-		if(window[type][i].idveci===undefined){
-			computer[type+(i+1)] = -1;
+	if(shouldReturnArray(type)===true){
+		for(i=0;i<window[type].length;i++){
+			if(window[type][i].idveci===undefined){
+				computer[type+(i+1)] = -1;
+			} else {
+				computer[type+(i+1)] = window[type][i].idveci
+			}
+		}
+	} else {
+		if(window[type].idveci===undefined){
+			computer[type] = -1;
 		} else {
-			computer[type+(i+1)] = window[type][i].idveci
+			computer[type] = window[type].idveci;
 		}
 	}
 }
