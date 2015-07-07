@@ -270,6 +270,13 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 			console.log('reloadSkladaniSestav');
 			initIsotope();
 			initForm();	
+			$('#sestavit').click(function(){
+				var params = {mb:mb.idveci,cpu:cpu.idveci,psu:psu.idveci};
+				populateObject(gpu);
+				populateObject(ram);
+				populateObject(hdd);
+				console.log($.param(params));
+			});
 		}
 	});
 }
@@ -317,12 +324,6 @@ function populateObject(type){
 $(function() {
 	reloadSestavy();
 	reloadSkladaniSestav();
-  	$('#sestavit').click(function() {
-		var params = {mb:mb.idveci,cpu:cpu.idveci,psu:psu.idveci};
-		populateObject(gpu);
-		populateObject(ram);
-		populateObject(hdd);
-		console.log($.param(params));
   /*	$.ajax({
   			data: 
   			type: "GET",
@@ -339,6 +340,6 @@ $(function() {
   			}
   		});
   		return false; */ //zastavi normalni submit, tj. zadny refresh
-  	});
+
 //	$("html").css("overflow-y":"scroll");
 });
