@@ -144,7 +144,8 @@ if (isset($_GET['mb']))
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.join(';', $sestava).' o výkonu '.$vykon.'")';
 	mysql_query($dotaz);
 
-	echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
+	//echo 'Složena sestava '.join(';', $sestava).' o výkonu '.$vykon;
+	echo $vykon;
 }
 
 //přepínání body/výzkum

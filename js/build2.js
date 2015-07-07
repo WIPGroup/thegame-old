@@ -285,14 +285,21 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 					type: "GET",
 					url: "components/sestavit.php",
 					success: function(data) {
-						var contains = data.indexOf('Složena sestava');
-						if (contains==-1){
-							swal(data);
+						if (isNaN(data)===true){
+							swal({
+								title:'Chyba!',
+								text:data,
+								type:'error'
+							});
 						} else {
 							reloadSestavy();
 							reloadSkladaniSestav();
 							//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
-							swal(data);
+							swal({
+								title:'Gratulujeme!',
+								text:'Úspešne si zostavil počítač o výkone '+data,
+								type:'success'
+							});
 						}
 					}
 				});
@@ -352,22 +359,6 @@ function populateObject(type){
 $(function() {
 	reloadSestavy();
 	reloadSkladaniSestav();
-  /*	$.ajax({
-  			data: 
-  			type: "GET",
-  			url: "components/sestavit.php",
-  			success: function(data) {
-  				var contains = data.indexOf('Složena sestava');
-  				if (contains==-1){
-  					swal(data);
-  				} else {
-  					reloadSestavy();
-  					reloadSkladaniSestav();
-  					//TODO MAGICKY SWEETALERT WOOO POSTAVILS KOMP WOOOOOOOOOOOOOOOOOO 420 BLAZE IT
-  				}
-  			}
-  		});
-  		return false; */ //zastavi normalni submit, tj. zadny refresh
 
 //	$("html").css("overflow-y":"scroll");
 });
