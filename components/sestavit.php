@@ -166,10 +166,18 @@ if (isset($_GET['switch']))
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
+			
+			//log
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$zaznam['obsah'].' o výkonu '.$zaznam['vykon'].' přepnuta na body.")';
+			mysql_query($dotaz);
 		}
 		else	//přepnout na výzkum
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
+			mysql_query($dotaz);
+			
+			//log
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$zaznam['obsah'].' o výkonu '.$zaznam['vykon'].' přepnuta na výzkum.")';
 			mysql_query($dotaz);
 		}
 	}
@@ -203,5 +211,9 @@ if (isset($_GET['disass']))
 	mysql_query($dotaz);
 
 	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
+	mysql_query($dotaz);
+	
+	//log
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozebrána sestava '.$zaznam['obsah'].' o výkonu '.$zaznam['vykon'].'")';
 	mysql_query($dotaz);
 }
