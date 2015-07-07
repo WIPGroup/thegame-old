@@ -1,10 +1,12 @@
-	var mb = {}; //vytvoreni potrebnych varu
-	var cpu = {};
-	var psu = {};
-	var ram = new Array({},{},{},{},{},{},{},{});
-	var hdd = new Array({},{},{},{});
-	var gpu = new Array({},{},{},{});
-	var ramcounter = 0, hddcounter = 0, gpucounter = 0, ramindex = 0, hddindex = 0, gpuindex = 0;
+function variables(){
+	mb = {}; //vytvoreni potrebnych varu
+	cpu = {};
+	psu = {};
+	ram = new Array({},{},{},{},{},{},{},{});
+	hdd = new Array({},{},{},{});
+	gpu = new Array({},{},{},{});
+	ramcounter = 0, hddcounter = 0, gpucounter = 0, ramindex = 0, hddindex = 0, gpuindex = 0;
+}
 function initIsotope() {
   // init Isotope
   var $grid = $('.grid').isotope({
@@ -113,6 +115,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		count--;
 		badge.text(count);
 		if (typ === "mb"){
+			variables();
 			mb.gpu = toto.data("pci");
 			mb.hdd = toto.data("hdd");
 			mb.ram = toto.data("ram");
@@ -186,7 +189,9 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 		$(".grid").isotope({filter:'.mb'});
 	} else {
 		var count = $(this).find(".count").find(".badge").html();
+		console.log('count is '+count);
 		if(count==0){
+			console.log('returnere');
 			return false;
 		} else {
 			$(".grid").isotope({
@@ -346,6 +351,7 @@ function disableUnavailable() {
 	$("#build select").selectpicker('refresh');
 }*/
 $(function() {
+	variables();
 	reloadSestavy();
 	reloadSkladaniSestav();
   /*	$('#build').submit(function() {
