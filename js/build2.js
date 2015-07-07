@@ -313,11 +313,11 @@ function zmenit(idsestavy) {
 	});
 }
 function populateObject(type){
-	for(i=1;i<=window[type].length;i++){
+	for(i=0;i<window[type].length;i++){
 		if(window[type][i].idveci===undefined){
-			computer[type+i] = -1;
+			computer[type+(i+1)] = -1;
 		} else {
-			computer[type+i] = window[type][i].idveci
+			computer[type+(i+1)] = window[type][i].idveci
 		}
 	}
 }
