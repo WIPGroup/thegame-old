@@ -227,7 +227,7 @@ function odebrat(type,index,value){ //pro odebirani
 		window[type][index] = {};
 		window[type+"counter"]--;
 		for(i=0;i<window[type].length;i++){
-			if(window[type][i]===undefined){
+			if(window[type][i].nazev===undefined){
 				window[type+"index"] = i;
 				break;
 			}
