@@ -181,12 +181,12 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 		$(".grid").isotope({
 			filter:function(){
 				var typ = $(this).data("type");
-				var tier = $(this).data("tier");
-				if(typ==="mb"){
+				if(typ==="mb"){ //už je nastavená základovka, pokud to je mb, neukázat
 					return false;
 				}else{
-					if((typ==="cpu") && (cpu.nazev===undefined){
-						if(tier===mb.tier){
+					if((typ==="cpu") && (cpu.nazev===undefined)){ //pokud je to cpu a nemáme ho nastavený
+						var tier = $(this).data("tier");
+						if(tier===mb.tier){ //pokud odpovídají tiery
 							return true;
 						}else{
 							return false;
