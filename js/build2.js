@@ -336,14 +336,14 @@ function populateObject(type){
 	if(shouldReturnArray(type)===true){
 		for(i=0;i<window[type].length;i++){
 			if(window[type][i].idveci===undefined){
-				computer[type+(i+1)] = -1;
+			//	computer[type+(i+1)] = -1;
 			} else {
 				computer[type+(i+1)] = window[type][i].idveci
 			}
 		}
 	} else {
 		if(window[type].idveci===undefined){
-			computer[type] = -1;
+		//	computer[type] = -1;
 		} else {
 			computer[type] = window[type].idveci;
 		}
