@@ -263,7 +263,7 @@ function reloadSestavy() { //nacte sestavy
 }
 function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 	$.ajax({
-		url: "components/full_inv.php", //vykona se to co je v url
+		url: "components/stavbakomponenty.php", //vykona se to co je v url
 		success: function(data) { //prijdou zpatky nejake data
 			$("#build").html(data); //data se hodi do neceho s id inventar, easy
 			variables();
