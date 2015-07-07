@@ -108,8 +108,10 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
-		var count =	$(this).siblings(".badge");
-		count.html(parseInt(count)-1);
+		var badge =	$(this).siblings(".badge");
+		var count = badge.text();
+		count++;
+		badge.text(count);
 		if (typ === "mb"){
 			mb.gpu = toto.data("pci");
 			mb.hdd = toto.data("hdd");
@@ -223,8 +225,10 @@ function odebrat(type,index,value){ //pro odebirani
 		window[type][index] = {};
 		window[type+"counter"]--;
 	}
-	var pocet = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge");
-	pocet.html(parseInt(pocet)+1);
+	var badge = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge");
+	var pocet = badge.text();
+	pocet++;
+	badge.text(pocet);
 	showCurrentBuild();
 }
 function reloadSestavy() { //nacte sestavy
