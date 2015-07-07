@@ -108,6 +108,8 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
 		console.log("typ "+typ);
+		var count =	$(this).siblings(".badge");
+		count.html(parseInt(count)-1);
 		if (typ === "mb"){
 			mb.gpu = toto.data("pci");
 			mb.hdd = toto.data("hdd");
@@ -147,7 +149,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 				for (i=0;i<mb[x];i++){
 					if (window[x][i].nazev != undefined){
 						htmlcontent += '<li>'+window[x][i].nazev;
-						htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="'+i+'">Odobrať</button>';
+						htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="'+i+'" data-value="'+window[x][i].idveci+'">Odobrať</button>';
 						htmlcontent += '</li>';
 					}else{
 						htmlcontent += '<li>Nic</li>';
@@ -156,7 +158,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 			}else{
 				if (window[x].nazev != undefined){
 					htmlcontent += "<li>"+window[x].nazev;
-					htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="-1">Odobrať</button>';
+					htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="-1" data-value="'+window[x].idveci+'">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
 					htmlcontent += '<li>Nic</li>';
@@ -170,7 +172,8 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 	$(".odobrat").click(function(){ //zprovozneni odobrat tlacitek
 		typis = $(this).data("type");
 		indexis = $(this).data("index");
-		odebrat(typis,indexis);
+		valuis = $(this).data("value");
+		odebrat(typis,indexis,valuis);
 	});
 	displayProperly();//reload isotope
 }
@@ -178,43 +181,50 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 	if(mb.nazev === undefined){
 		$(".grid").isotope({filter:'.mb'});
 	} else {
-		$(".grid").isotope({
-			filter:function(){
-				var typ = $(this).data("type");
-				if(typ==="mb"){ //už je nastavená základovka, pokud to je mb, neukázat
-					return false;
-				}else{
-					if((typ==="cpu") && (cpu.nazev===undefined)){ //pokud je to cpu a nemáme ho nastavený
-						var tier = $(this).data("tier");
-						if(tier===mb.tier){ //pokud odpovídají tiery
-							return true;
-						}else{
-							return false;
-						}
+		var count = $(this).find(".count").find(".badge").html();
+		if(count==0){
+			return false;
+		} else {
+			$(".grid").isotope({
+				filter:function(){
+					var typ = $(this).data("type");
+					if(typ==="mb"){ //už je nastavená základovka, pokud to je mb, neukázat
+						return false;
 					}else{
-						if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<mb[typ])){
-							return true;
-						}else{
-							if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
+						if((typ==="cpu") && (cpu.nazev===undefined)){ //pokud je to cpu a nemáme ho nastavený
+							var tier = $(this).data("tier");
+							if(tier===mb.tier){ //pokud odpovídají tiery
 								return true;
 							}else{
 								return false;
 							}
+						}else{
+							if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<mb[typ])){
+								return true;
+							}else{
+								if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
+									return true;
+								}else{
+									return false;
+								}
+							}
 						}
 					}
 				}
-			}
-		});
+			});
+		}
 	}
 //	$('.grid').isotope('reloadItems').isotope(); 
 }
-function odebrat(type,index){ //pro odebirani
+function odebrat(type,index,value){ //pro odebirani
 	if (index===-1){
 		window[type] = {};
 	}else{
 		window[type][index] = {};
 		window[type+"counter"]--;
 	}
+	var pocet = $(".grid").find("[data-idveci="+value+"]").find(".count").find(".badge");
+	pocet.html(parseInt(pocet)+1);
 	showCurrentBuild();
 }
 function reloadSestavy() { //nacte sestavy
