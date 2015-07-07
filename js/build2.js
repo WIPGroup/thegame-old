@@ -189,18 +189,18 @@ function displayProperly(){ //funkce pro schovani veci ktere se do pocitace uz n
 						if(tier===mb.tier){
 							return true;
 						}else{
-							if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<window[typ].length)){
-								return true;
-							}else{
-								if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
-									return true;
-								}else{
-									return false;
-								}
-							}
+							return false;
 						}
 					}else{
-						return true;
+						if((shouldReturnArray(typ)===true) && (window[typ+"counter"]<window[typ].length)){
+							return true;
+						}else{
+							if((shouldReturnArray(typ)===false) && (window[typ].nazev===undefined)){
+								return true;
+							}else{
+								return false;
+							}
+						}
 					}
 				}
 			}
