@@ -21,7 +21,7 @@
 				<a href="crafting.php"><span class="fa fa-wrench"></span> Výroba</a>
 			</li>
 			<li>
-				<a href="build.php"><span class="material-icons">desktop windows</span> Stavba PC</a>
+				<a href="build.php"><span class="fa fa-cog fa-spin"></span> Stavba PC</a>
 			</li>
 			<li>
 				<a href="research.php"><span class="glyphicon glyphicon-education"></span> Výzkum</a>

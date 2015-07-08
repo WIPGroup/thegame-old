@@ -16,7 +16,7 @@ include 'body.php';    //TODO: hodit na ajax
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group sort-by-button-group">
 				<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-					Poradie <span class="caret"></span>
+					<span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Poradie <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu">
 					<li><a data-sort-by="original-order">Pvodný (ID)</a></li>
@@ -29,7 +29,7 @@ include 'body.php';    //TODO: hodit na ajax
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group filter-button-group">
 				<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-					Filter <span class="caret"></span>
+					<span class="glyphicon glyphicon-filter"></span> Filter <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu">
 					<li><a data-filter="*">Zobraziť všetko</a></li>
@@ -61,13 +61,13 @@ include 'body.php';    //TODO: hodit na ajax
 				else
 						$skryt = '';
 				echo '<span class="badge power'.$skryt.'">'.$zaznam['vykon'].'</span>';
-				
+
 				if ($zaznam['spotreba'] <= 0)
 						$skryt = ' sr-only';
 				else
 						$skryt = '';
 
-				echo '<span class="badge wattage'.$skryt.'">'.$zaznam['spotreba'].'</span>';	//TODO: nějak hezky si to upravte
+				echo '<span class="badge wattage'.$skryt.'">'.$zaznam['spotreba'].'</span>';    //TODO: nějak hezky si to upravte
 
 				if ($vlastnictvi[$zaznam['idveci']] <= 0)
 						$skryt = ' sr-only';
