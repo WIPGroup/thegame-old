@@ -22,22 +22,23 @@ if (isset($_GET['kupon']))
 		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
 		mysql_query($dotaz);
 
-		echo 'Kupó přijat. Obdržal si ';
+		echo 'Kupón přijat. Obdržal si:<ul>';
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupó '.$zaznam['kod'].' (';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupón '.$zaznam['kod'].' (';
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
 			{
 				$dotaz .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].') ';
-				echo $zazn['nazev'].'('.$obsah[$zazn['idveci']].') ';
+				echo '<li>'.$zazn['nazev'].'('.$obsah[$zazn['idveci']].')</li>';
 			}
 		}
+		echo '</ul>';
 		$dotaz .= ')")';
 		mysql_query($dotaz);
 	}
 	else
-		echo 'Tento kupó neexistuje.';
+		echo 'Tento kupón neexistuje.';
 }
