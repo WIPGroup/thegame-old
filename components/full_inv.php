@@ -61,6 +61,13 @@ include 'body.php';    //TODO: hodit na ajax
 				else
 						$skryt = '';
 				echo '<span class="badge power'.$skryt.'">'.$zaznam['vykon'].'</span>';
+				
+				if ($zaznam['spotreba'] <= 0)
+						$skryt = ' sr-only';
+				else
+						$skryt = '';
+
+				echo '<span class="badge power'.$skryt.'">'.$zaznam['spotreba'].'</span>';	//TODO: nějak hezky si to upravte
 
 				if ($vlastnictvi[$zaznam['idveci']] <= 0)
 						$skryt = ' sr-only';

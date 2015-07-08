@@ -18,6 +18,8 @@ if (isset($_GET['id']))
 			echo '<div id="typ">Trieda: '.$zaznam['socket'].'</div>';
 		if ($zaznam['vykon'] > 0)
 			echo '<div id="vykon">Výkon: '.$zaznam['vykon'].'</div>';
+		if ($zaznam['spotreba'] > 0)
+			echo '<div id="spotreba">Spotřeba: '.$zaznam['spotreba'].'</div>';
 		echo '<div id="popis">Popis: '.$zaznam['popis'].'</div>';
 	}
 	else
