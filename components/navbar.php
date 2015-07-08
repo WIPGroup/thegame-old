@@ -12,19 +12,19 @@
 	<div class="collapse navbar-collapse" id="main-nav">
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="index.php">Úvod</a>
+				<a href="index.php"><span class="glyphicon glyphicon-home"></span> Úvod</a>
 			</li>
 			<li>
-				<a href="trh.php">Trh</a>
+				<a href="trh.php"><span class="glyphicon glyphicon-transfer"></span> Trh</a>
 			</li>
 			<li>
-				<a href="crafting.php">Výroba</a>
+				<a href="crafting.php"><span class="fa fa-wrench"></span> Výroba</a>
 			</li>
 			<li>
-				<a href="build.php">Stavba PC</a>
+				<a href="build.php"><span class="material-icons">desktop windows</span> Stavba PC</a>
 			</li>
 			<li>
-				<a href="research.php">Výzkum</a>
+				<a href="research.php"><span class="glyphicon glyphicon-education"></span> Výzkum</a>
 			</li>
 			<?php
 			if ($prihlasen && $_SESSION['hrac'] == 1)

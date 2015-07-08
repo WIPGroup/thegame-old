@@ -39,6 +39,8 @@
 	<!-- Isotope -->
 	<script  src="bower_components\isotope\dist\isotope.pkgd.min.js"></script>
 	<script  src="bower_components\isotope-packery\packery-mode.pkgd.min.js"></script>
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
 	<!-- Nase veci -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="shortcut icon" href="favicon.ico">
