@@ -1,8 +1,8 @@
 function itemInfo(){
 	$(".grid-item").click(function(){ //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
-	    var idveci = $(this).attr("data-idveci");
-	    console.log('Id veci je '+idveci);
-	    $.ajax({
+			var idveci = $(this).attr("data-idveci");
+			console.log('Id veci je '+idveci);
+			$.ajax({
 			data: {id:idveci},
 			type: "GET",
 			url: "components/getinfo.php",
@@ -16,19 +16,19 @@ function initIsotope(){
 	// init Isotope
 	var $grid = $('.grid').isotope({
 		itemSelector: '.grid-item',
-	  layoutMode: 'packery',
+		layoutMode: 'packery',
 		filter: function() {
 			return qsRegex ? $(this).text().match( qsRegex ) : true;
 		},
 		getSortData: {
 			name: '.name',
 			power: '.power parseInt',
-	    count: '.count parseInt',
-    	tier: '[data-tier]',
+			count: '.count parseInt',
+			tier: '[data-tier]',
 			type: '[data-type]',
-  	},
+		},
 		sortAscending: {
-    	name: true,
+			name: true,
 			power: false,
 			count: false,
 			tier: true,
@@ -37,12 +37,12 @@ function initIsotope(){
 	});
 	// filter items on button click
 	$('.filter-button-group').on( 'click', 'a', function() {
-	  var filterValue = $(this).attr('data-filter');
-	  $grid.isotope({ filter: filterValue });
+		var filterValue = $(this).attr('data-filter');
+		$grid.isotope({ filter: filterValue });
 	});
 	$('.sort-by-button-group').on( 'click', 'a', function() {
-  	var sortByValue = $(this).attr('data-sort-by');
-  	$grid.isotope({ sortBy: sortByValue });
+		var sortByValue = $(this).attr('data-sort-by');
+		$grid.isotope({ sortBy: sortByValue });
 	});
 	var qsRegex;
 	// use value of search field to filter
