@@ -85,7 +85,19 @@ $(function() { //odeslani formulare s nabidkou
 			url: "components/redeem.php",
 			success: function(data) {
 				reloadFullInv(); //po odeslani se nacte interface
-				swal(data);
+				if(data.indexOf('<ul>')===-1){
+					swal({
+						type:"error",
+						text:data
+					});
+				}else{
+					swal({
+						title:"Kupón přijat",
+						text:data,
+						html:true,
+						type:"success"
+					});
+				}
 			}
 		});
 		return false;  //zastavi normalni submit, tj. zadny refresh

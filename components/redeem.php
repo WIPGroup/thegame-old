@@ -22,7 +22,7 @@ if (isset($_GET['kupon']))
 		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
 		mysql_query($dotaz);
 
-		echo 'Kupón přijat. Obdržal si:<ul>';
+		echo '<ul>';
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
