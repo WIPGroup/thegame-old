@@ -84,7 +84,7 @@ $(function() { //odeslani formulare s nabidkou
 			type: "GET",
 			url: "components/redeem.php",
 			success: function(data) { //po odeslani se nacte interface
-				if(data.indexOf('<ul>')===-1){
+				if(data.indexOf('<ul')===-1){
 					swal({
 						type:"error",
 						text:data,
