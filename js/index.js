@@ -83,8 +83,7 @@ $(function() { //odeslani formulare s nabidkou
 			data: $(this).serialize(), //odesle se to co je vybrane jako klasicka get metoda, vybrane hodnoty se prevedou na tentyz string, jako kdyby to byl normalni submit
 			type: "GET",
 			url: "components/redeem.php",
-			success: function(data) {
-				reloadFullInv(); //po odeslani se nacte interface
+			success: function(data) { //po odeslani se nacte interface
 				if(data.indexOf('<ul>')===-1){
 					swal({
 						type:"error",
@@ -98,6 +97,7 @@ $(function() { //odeslani formulare s nabidkou
 						html:true,
 						type:"success"
 					});
+					reloadFullInv();
 				}
 			}
 		});
