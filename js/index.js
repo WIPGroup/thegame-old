@@ -88,11 +88,12 @@ $(function() { //odeslani formulare s nabidkou
 				if(data.indexOf('<ul>')===-1){
 					swal({
 						type:"error",
-						text:data
+						text:data,
+						title:"Chyba!"
 					});
 				}else{
 					swal({
-						title:"Kupón přijat",
+						title:"Kupón přijat!",
 						text:data,
 						html:true,
 						type:"success"
