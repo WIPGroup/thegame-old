@@ -124,9 +124,6 @@ $odsazeni: 5px;
 	min-height: 160px;
 	min-width: 182px;
 }
-.grid-item-selected {
-	background-color: $selected;
-}
 .grid-item:hover {
 	background-color: $inventory;
 }
@@ -195,6 +192,11 @@ $power-color: #f55;
 	font-size: 90%;
 	left: $odsazeni;
 	top: $odsazeni;
+}
+.wattage {
+	@extend .inv-parts;
+	right: $odsazeni;
+	top: ($odsazeni*2)+18;
 }
 .grid {
 	margin: 15px 0 0;

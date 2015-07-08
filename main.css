@@ -103,9 +103,6 @@ th {
 	min-height: 160px;
 	min-width: 182px; }
 
-.grid-item-selected {
-	background-color: #8d8; }
-
 .grid-item:hover, .grid-craft-item:hover {
 	background-color: #ddd; }
 
@@ -124,7 +121,7 @@ th {
 		top: 5px;
 		right: 5px; }
 
-.inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category {
+.inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category, .wattage {
 	max-width: 50%;
 	overflow: hidden;
 	position: absolute;
@@ -153,6 +150,10 @@ th {
 	font-size: 90%;
 	left: 5px;
 	top: 5px; }
+
+.wattage {
+	right: 5px;
+	top: 28px; }
 
 .grid {
 	margin: 15px 0 0;
