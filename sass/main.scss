@@ -41,8 +41,8 @@ th {
 	margin-left: auto;
 	margin-right: auto;
 }
-$active: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
-.nav {
+$active: linear-gradient(#6284ab, 50%, #2a4563);
+#main-nav {
 	.active {
 		background-image: $active;
 		font-weight: bold;

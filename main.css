@@ -36,12 +36,12 @@ th {
 	margin-left: auto;
 	margin-right: auto; }
 
-.nav .active {
-	background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563);
+#main-nav .active {
+	background-image: linear-gradient(#6284ab, 50%, #2a4563);
 	font-weight: bold; }
 
-.nav li:hover {
-	background-image: linear-gradient(#6284ab, #385ab0 50%, #2a4563); }
+#main-nav li:hover {
+	background-image: linear-gradient(#6284ab, 50%, #2a4563); }
 
 @media (max-width: 768px) {
 	.col-xs-12 {
