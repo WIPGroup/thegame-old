@@ -5,6 +5,8 @@ session_start();
 if (isset($_GET['mb']))
 {
 	require '../vlastnictvi.php';
+	
+	$spotreba = 0;
 
 	$rampwr = 0;
 	$gpupwr = 0;
@@ -36,6 +38,7 @@ if (isset($_GET['mb']))
 		$socket = $zaznam['socket'];
 		$vlastnictvi[$zaznam['idveci']]--;
 		$sestava[$zaznam['idveci']]++;
+		$spotreba += $zaznam['spotreba'];
 	}
 	else
 		die('Takú základnú dosku nemáš.');
@@ -54,6 +57,7 @@ if (isset($_GET['mb']))
 		$vlastnictvi[$zaznam['idveci']]--;
 		$sestava[$zaznam['idveci']]++;
 		$cpupwr = $zaznam['vykon'];
+		$spotreba += $zaznam['spotreba'];
 	}
 	else
 		die('Taký procesor nemáš.');
@@ -71,6 +75,7 @@ if (isset($_GET['mb']))
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
 			$rampwr += $zaznam['vykon'];
+			$spotreba += $zaznam['spotreba'];
 		}
 		else
 			die('Takú ramku nemáš.');
@@ -89,6 +94,7 @@ if (isset($_GET['mb']))
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
 			$gpupwr = $zaznam['vykon'];
+			$spotreba += $zaznam['spotreba'];
 		}
 		else
 			die('Takú grafiku nemáš.');
@@ -107,6 +113,7 @@ if (isset($_GET['mb']))
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
 			$hddpwr = max($zaznam['vykon'], $hddpwr);
+			$spotreba += $zaznam['spotreba'];
 		}
 		else
 			die('Taký harddisk nemáš.');
@@ -129,7 +136,7 @@ if (isset($_GET['mb']))
 
 	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
 
-	if ($psupwr < $vykon)
+	if ($psupwr < $spotreba)
 		$vykon = 0;
 
 	//poskládat hráči sestavu
