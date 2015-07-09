@@ -23,6 +23,21 @@ include 'admin/tvorbakuponu.php';
 		</div>
 	</div>
 </div>
+<!-- přerozdělění kuponů -->
+<div class="col-xs-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">Přerozdělení surovinných kuponů/poukázek</h1>
+		</div>
+		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
+			<form action="admin.php" method="GET">
+				<label>Počet nových kuponů: <input type="number" name="prerozdelit" id="prerozdelit" min="1" max="10000" class="form-control" placeholder="Počet kuponů"></label>
+				<button type="submit" class="btn btn-primary btn-block">Přerozdělit surovinné kupony</button>
+			</form>
+			<a href="admin/tisk.php" target="_blank">Verze kuponů na tisk</a>
+		</div>
+	</div>
+</div>
 <!--zobrazení kuponů-->
 <div class="col-xs-12">
 	<div class="grid js-isotope" data-isotope-options='{ "itemSelector": ".grid-item2", "layoutMode": "packery" , "packery": {"gutter": 10}}'>

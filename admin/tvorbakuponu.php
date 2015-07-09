@@ -17,8 +17,8 @@ if (isset($_GET['0']))
 	{
 		for ($i = 0; $i < 8; $i++)
 		{
-					$kod .= $znaky[rand(0, $pocznaku - 1)];
-			}
+			$kod .= $znaky[rand(0, $pocznaku - 1)];
+		}
 		$dotaz = 'SELECT COUNT(*) FROM kupony WHERE kod="'.$kod.'"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
