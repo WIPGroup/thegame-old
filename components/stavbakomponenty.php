@@ -11,10 +11,10 @@ include 'updatesestav.php';
 	</div>
 	<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group sort-by-button-group">
 		<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			Radenie <span class="caret"></span>
+			<span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Poradie <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a data-sort-by="original-order">Pvodné (ID)</a></li>
+			<li><a data-sort-by="original-order">Pôvodné (ID)</a></li>
 			<li><a data-sort-by="name">Meno</a></li>
 			<li><a data-sort-by="power">Výkon</a></li>
 			<li><a data-sort-by="count">Počet</a></li>
@@ -24,7 +24,7 @@ include 'updatesestav.php';
 	</div>
 	<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group filter-button-group">
 		<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			Filter <span class="caret"></span>
+			<span class="glyphicon glyphicon-filter"></span> Filter <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a data-filter="*">Zobraziť všetko</a></li>
