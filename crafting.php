@@ -13,6 +13,9 @@ if ($prihlasen)
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
 	echo '<div class="col-md-9 col-sm-12 col-xs-12">';
+	
+	include 'components/craft-sort.php';
+
 	echo '<div class="grid js-isotope" data-isotope-options=\'{ "itemSelector": ".grid-craft-item", "layoutMode": "packery" , "packery": {"gutter": 10}}\'>';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';

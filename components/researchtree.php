@@ -4,11 +4,7 @@
 			<h1 class="panel-title">Výzkum</h1>
 		</div>
 		<div class="panel-body">
-			Nejake kecy
-			bla
-			bla
-			bla
-			co je vyzkum a tak mozna? jirvoz: tak to sem napiš
+Vyzkum je dležitý, bez neho sa nikam nedostanes.
 			<?php
 				include 'vlastnictvi.php';
 				include 'updatesestav.php';
@@ -31,7 +27,7 @@
 				if ($vyzkum < $zaznam['body'])
 					if ($zkoumany)
 					{
-						echo 'Ostáva '.number_format($zaznam['body'] - $vyzkum, 0, '', ' ').' bodů<div class="progress"><div class="progress-bar" role="progressbar" style="width:'.(($vyzkum / $zaznam['body']) * 100).'%"></div></div>';
+						echo 'Ostáva '.number_format($zaznam['body'] - $vyzkum, 0, '', ' ').' bodov<div class="progress"><div class="progress-bar" role="progressbar" style="width:'.(($vyzkum / $zaznam['body']) * 100).'%"></div></div>';
 						$zkoumany = false;
 					}
 					else
