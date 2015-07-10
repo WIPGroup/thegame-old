@@ -71,7 +71,13 @@ $(function(){
 		},
 		getSortData: {
 			name: '.craft-name',
-			type: '[data-typ]'
+			type: function(itemElem){
+				$(this).attr('class').split(' ').each(function(){
+					if((this!=="")&&(this!=="grid-craft-item")){
+						return this;
+					}
+				});
+			}
 		}
 	});
 	$('.filter-button-group').on( 'click', 'a', function() {
