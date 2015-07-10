@@ -14,7 +14,7 @@ include 'admin/tvorbakuponu.php';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
-					echo '<label><img id="item-sm" src="icons/'.$zaznam['idveci'].'.png"></img><input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="10000" class="form-control" placeholder="'.$zaznam['nazev'].'"></label>';
+					echo '<label><img id="item-sm" src="icons/'.$zaznam['idveci'].'.png"></img><input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="1000000000" class="form-control" placeholder="'.$zaznam['nazev'].'"></label>';
 				}
 				?>
 				<button type="submit" class="btn btn-primary btn-block">Vytvořit</button>
