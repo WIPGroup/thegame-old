@@ -67,7 +67,7 @@ include 'body.php';    //TODO: hodit na ajax
 				else
 						$skryt = '';
 
-				echo '<span class="badge wattage'.$skryt.'">'.$zaznam['spotreba'].'</span>';    //TODO: nějak hezky si to upravte
+				echo '<span class="badge wattage'.$skryt.'">'.$zaznam['spotreba'].'W</span>';    //TODO: nějak hezky si to upravte
 
 				if ($vlastnictvi[$zaznam['idveci']] <= 0)
 						$skryt = ' sr-only';
