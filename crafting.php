@@ -24,7 +24,6 @@ if ($prihlasen)
 	{
 		$veci[$zaznam['idveci']] = $zaznam['nazev'];
 		$typ[$zaznam['idveci']] = $zaznam['typ'];
-		$tier[$zaznam['idveci']] = $zaznam['tier'];
 	}
 
 	//seznam receptů
