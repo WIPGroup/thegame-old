@@ -21,6 +21,7 @@ if (isset($_GET['id']))
 		if ($zaznam['spotreba'] > 0)
 			echo '<div id="spotreba">Spotřeba: '.$zaznam['spotreba'].'</div>';
 		echo '<div id="popis">Popis: '.$zaznam['popis'].'</div>';
+		echo '<img src="icons/'.$zaznam['idveci'].'.png" width="100%">';
 	}
 	else
 		echo 'Nepodarilo sa získať informácie o: '.$_GET['id'];
