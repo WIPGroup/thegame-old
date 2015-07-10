@@ -52,17 +52,17 @@ function initIsotope(){
 
 	// debounce so filtering doesn't happen every millisecond
 	function debounce( fn, threshold ) {
-	var timeout;
-	return function debounced() {
-		if ( timeout ) {
-			clearTimeout( timeout );
-		}
-		function delayed() {
-			fn();
-			timeout = null;
-		}
-		timeout = setTimeout( delayed, threshold || 100 );
-	};
+		var timeout;
+		return function debounced() {
+			if ( timeout ) {
+				clearTimeout( timeout );
+			}
+			function delayed() {
+				fn();
+				timeout = null;
+			}
+			timeout = setTimeout( delayed, threshold || 100 );
+		};
 	}
 	itemInfo();
 		console.log('initIsotope');
@@ -74,6 +74,9 @@ function reloadFullInv(){
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
 			initIsotope();
 			console.log('reloadFullInv');
+			$(window).scroll(function(){ 
+				$("#infoitemucontainer").css('top', $(window).scrollTop());
+			}).trigger('scroll');
 		}
 	});
 }

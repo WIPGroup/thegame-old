@@ -9,20 +9,22 @@ if ($prihlasen)
 	include 'vlastnictvi.php';
 	include 'components/updatesestav.php';
 	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';
-
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
-
-	echo '<div class="col-md-9 col-sm-12 col-xs-12">';
+	echo '<div class="col-md-9 col-sm-12 col-xs-12"><div class="panel panel-primary">';
+	echo '<div class="panel-heading"><h1 class="panel-title">Recepty</h1></div>';
+	echo '<div class="panel-body" style="position:relative;">';
 	
 	include 'components/craft-sort.php';
 
-	echo '<div class="grid js-isotope" data-isotope-options=\'{ "itemSelector": ".grid-craft-item", "layoutMode": "packery" , "packery": {"gutter": 10}}\'>';
+	echo '<div class="grid col-md-9 col-sm-12 col-xs-12">';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		$veci[$zaznam['idveci']] = $zaznam['nazev'];
+		$typ[$zaznam['idveci']] = $zaznam['typ'];
+		$idveci[$zaznam['idveci']] = $zaznam['idveci'];
 	}
 
 	//seznam receptů
@@ -31,7 +33,12 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: mobile  friendly
-		echo '<div class="grid-craft-item" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)">';
+		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].' t'.$zaznam['vyzkum'].' ';
+		if ($hrac['vyzkum'] < $zaznam['body']) 
+			echo 'no';
+		else
+			echo 'yes';
+		echo '" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)" data-type="'.$typ[$zaznam['vyrobek']].'" data-idveci="'.$idveci[$zaznam['vyrobek']].'" data-tier="'.$zaznam['vyzkum'].'">';
 		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
@@ -60,6 +67,9 @@ if ($prihlasen)
 			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		echo '</div></div>';
 	}
+	echo '</div>';
+	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;" id="infoitemucontainer"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">Info o itemu</h1></div><div class="panel-body" id="infoitemu"></div></div></div>';
+	echo '</div>';
 	echo '</div>';
 }
 else
