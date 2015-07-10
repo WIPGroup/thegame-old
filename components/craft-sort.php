@@ -20,8 +20,8 @@
     </button>
     <ul class="dropdown-menu" role="menu">
       <li><a data-filter="*">Zobraziť všetko</a></li>
-	  <li><a data-filter="yes">Vyskúmané</a></li>
-	  <li><a data-filter="no">Nevyskúmané</a></li>
+	  <li><a data-filter=".yes">Vyskúmané</a></li>
+	  <li><a data-filter=".no">Nevyskúmané</a></li>
       <li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Komponenty</a></li>
       <li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent(ov)</a></li>
       <li><a data-filter=".cpu">CPUs</a></li>
