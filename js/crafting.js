@@ -58,4 +58,13 @@ function reloadVyroba(){
 		}
 	});
 }
-$(reloadVyroba());
+$(function(){
+	reloadVyroba();
+	$(".grid").isotope({
+		itemSelector:".grid-craft-item",
+		layoutMode:"packery",
+		packery:{
+			gutter:10
+		}
+	});
+});

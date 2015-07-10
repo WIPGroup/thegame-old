@@ -12,11 +12,11 @@ if ($prihlasen)
 
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 
-	echo '<div class="col-md-9 col-sm-12 col-xs-12">';
+	echo '<div class="col-md-9 col-sm-12 col-xs-12"><div class="panel panel-primary">';
 	
 	include 'components/craft-sort.php';
 
-	echo '<div class="grid js-isotope" data-isotope-options=\'{ "itemSelector": ".grid-craft-item", "layoutMode": "packery" , "packery": {"gutter": 10}}\'>';
+	echo '<div class="grid col-md-9 col-sm-12 col-xs-12">';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -60,7 +60,7 @@ if ($prihlasen)
 			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		echo '</div></div>';
 	}
-	echo '</div>';
+	echo '</div></div>';
 }
 else
 {
