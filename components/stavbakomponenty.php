@@ -56,6 +56,8 @@ include 'updatesestav.php';
 			echo '>';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
+			
+			echo '<span class="badge wattage">'.$zaznam['spotreba'].'W</span>';
 
 			echo '<span class="count"><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span><button class="btn btn-xs btn-primary">Pridať</button></span>';
 

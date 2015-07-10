@@ -71,7 +71,13 @@ $(function(){
 		},
 		getSortData: {
 			name: '.craft-name',
-			type: '[data-type]'
+			type: '[data-type]',
+			tier: '.craft-vyzkum'
+		},
+		sortAscending: {
+			name: true,
+			tier: false,
+			type: true
 		}
 	});
 	$('.filter-button-group').on( 'click', 'a', function() {

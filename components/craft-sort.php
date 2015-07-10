@@ -11,6 +11,7 @@
       <li><a data-sort-by="name">Meno</a></li>
 <!--  <li><a data-sort-by="tier">Tier</a></li>-->
       <li><a data-sort-by="type">Typ</a></li>
+	  <li><a data-sort-by="tier">Tier</a></li>
     </ul>
   </div>
   <div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group filter-button-group">
