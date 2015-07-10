@@ -11,10 +11,10 @@ include 'updatesestav.php';
 	</div>
 	<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group sort-by-button-group">
 		<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			Radenie <span class="caret"></span>
+			<span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Poradie <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a data-sort-by="original-order">Pvodné (ID)</a></li>
+			<li><a data-sort-by="original-order">Pôvodné (ID)</a></li>
 			<li><a data-sort-by="name">Meno</a></li>
 			<li><a data-sort-by="power">Výkon</a></li>
 			<li><a data-sort-by="count">Počet</a></li>
@@ -24,7 +24,7 @@ include 'updatesestav.php';
 	</div>
 	<div class="col-xs-12 col-sm-4 col-md-3 btn-group button-group filter-button-group">
 		<button type="button" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			Filter <span class="caret"></span>
+			<span class="glyphicon glyphicon-filter"></span> Filter <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
 			<li><a data-filter="*">Zobraziť všetko</a></li>
@@ -56,6 +56,8 @@ include 'updatesestav.php';
 			echo '>';
 
 			echo '<span class="badge power">'.$zaznam['vykon'].'</span>';
+			
+			echo '<span class="badge wattage">'.$zaznam['spotreba'].'W</span>';
 
 			echo '<span class="count"><span class="badge">'.$vlastnictvi[$zaznam['idveci']].'</span><button class="btn btn-xs btn-primary">Pridať</button></span>';
 
@@ -97,24 +99,15 @@ include 'updatesestav.php';
 				</ul>
 			</div>
 		</div>
-		<button class="btn btn-primaty btn-block" id="sestavit">SESTAVIT</button>
+		<button class="btn btn-primary btn-block" id="sestavit">SESTAVIT</button>
 	</div>
 </div>
-<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;">
+<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;float:right;">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Info o itemu</h1>
 		</div>
 		<div class="panel-body" id="infoitemu">
-			Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
-			Core (Threads):	8(16)<br/>
-			L3 Cache:	20<br/>
-			Graphics:	0<br/>
-			Controller:	2<br/>
-			Brand:	Core i7-E<br/>
-			MicroArchitecture Code-name:	Haswell-E<br/>
-			Vykon:	23 711 280 000 000<br/>
-			<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
 		</div>
 	</div>
 </div>

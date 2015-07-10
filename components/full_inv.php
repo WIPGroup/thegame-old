@@ -9,7 +9,7 @@ include 'body.php';    //TODO: hodit na ajax
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
 		<h1 class="panel-title">Inventář</h1>
 	</div>
-	<div id="inv" class="panel-body panel-collapse collapse in">
+	<div id="inv" class="panel-body panel-collapse collapse in" style="position:relative;">
 		<div class="col-xs-12">
 			<div class="col-xs-12 col-sm-4 col-md-6">
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
@@ -19,7 +19,7 @@ include 'body.php';    //TODO: hodit na ajax
 					<span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Poradie <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu" role="menu">
-					<li><a data-sort-by="original-order">Pvodný (ID)</a></li>
+					<li><a data-sort-by="original-order">Pôvodné (ID)</a></li>
 					<li><a data-sort-by="name">Meno</a></li>
 					<li><a data-sort-by="power">Výkon</a></li>
 					<li><a data-sort-by="count">Počet</a></li>
@@ -85,21 +85,12 @@ include 'body.php';    //TODO: hodit na ajax
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-md-3" style="padding-top: 5px;">
+		<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o itemu</h1>
 				</div>
 				<div class="panel-body" id="infoitemu">
-					Názov:	<a href="http://ark.intel.com/products/82930/Intel-Core-i7-5960X-Processor-Extreme-Edition-20M-Cache-up-to-3_50-GHz">5960X</a><br/>
-					Core (Threads):	8(16)<br/>
-					L3 Cache:	20<br/>
-					Graphics:	0<br/>
-					Controller:	2<br/>
-					Brand:	Core i7-E<br/>
-					MicroArchitecture Code-name:	Haswell-E<br/>
-					Vykon:	23 711 280 000 000<br/>
-					<button class="btn btn-primary btn-block">More...</button> <!-- TODO info text z databaze, sloupec extrapopis -->
 				</div>
 			</div>
 		</div>

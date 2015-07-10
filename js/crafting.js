@@ -1,4 +1,18 @@
 var timerExists = false;
+function itemInfo(){
+	$(".grid-craft-item").click(function(){ 
+			var idveci = $(this).attr("data-idveci");
+			console.log('Id veci je '+idveci);
+			$.ajax({
+			data: {id:idveci},
+			type: "GET",
+			url: "components/getinfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
+}
 function craft(idreceptu){
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
 	console.log(kolikrat);
@@ -58,4 +72,53 @@ function reloadVyroba(){
 		}
 	});
 }
-$(reloadVyroba());
+$(function(){
+	reloadVyroba();
+	var $grid = $(".grid").isotope({
+		itemSelector:".grid-craft-item",
+		layoutMode:"packery",
+		packery:{
+			gutter:10
+		},
+		filter: function() {
+			return qsRegex ? $(this).text().match( qsRegex ) : true;
+		},
+		getSortData: {
+			name: '.craft-name',
+			type: '[data-type]',
+			tier: '[data-tier]'
+		}
+	});
+	$('.filter-button-group').on( 'click', 'a', function() {
+		var filterValue = $(this).attr('data-filter');
+		$grid.isotope({ filter: filterValue });
+	});
+	$('.sort-by-button-group').on( 'click', 'a', function() {
+		var sortByValue = $(this).attr('data-sort-by');
+		$grid.isotope({ sortBy: sortByValue });
+	});
+	var qsRegex;
+	// use value of search field to filter
+	var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+		qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+		$grid.isotope({filter: function() {return qsRegex ? $(this).text().match( qsRegex ) : true;},});}, 200 ) );
+
+	// debounce so filtering doesn't happen every millisecond
+	function debounce( fn, threshold ) {
+		var timeout;
+		return function debounced() {
+			if ( timeout ) {
+				clearTimeout( timeout );
+			}
+			function delayed() {
+				fn();
+				timeout = null;
+			}
+			timeout = setTimeout( delayed, threshold || 100 );
+		};
+	}
+	itemInfo();
+	$(window).scroll(function(){ 
+		$("#infoitemucontainer").css('top', $(window).scrollTop());
+	}).trigger('scroll');
+});
