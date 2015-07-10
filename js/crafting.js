@@ -1,4 +1,18 @@
 var timerExists = false;
+function itemInfo(){
+	$(".grid-craft-item").click(function(){ 
+			var idveci = $(this).attr("data-idveci");
+			console.log('Id veci je '+idveci);
+			$.ajax({
+			data: {id:idveci},
+			type: "GET",
+			url: "components/getinfo.php",
+			success: function(data) {
+				$("#infoitemu").html(data);
+			}
+		});
+	});
+}
 function craft(idreceptu){
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
 	console.log(kolikrat);
@@ -108,4 +122,5 @@ $(function(){
 			timeout = setTimeout( delayed, threshold || 100 );
 		};
 	}
+	itemInfo();
 });
