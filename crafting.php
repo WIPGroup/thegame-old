@@ -34,7 +34,10 @@ if ($prihlasen)
 	{
 		//TODO: mobile  friendly
 		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].' t'.$zaznam['vyzkum'].' ';
-		if ($hrac['vyzkum'] < $zaznam['body']) echo 'yes' else echo 'no';
+		if ($hrac['vyzkum'] < $zaznam['body']) 
+			echo 'yes';
+		else
+			echo 'no';
 		echo '" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)" data-type="'.$typ[$zaznam['vyrobek']].'" data-idveci="'.$idveci[$zaznam['vyrobek']].'" data-tier="'.$zaznam['vyzkum'].'">';
 		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
