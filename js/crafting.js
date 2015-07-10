@@ -72,7 +72,7 @@ $(function(){
 		getSortData: {
 			name: '.craft-name',
 			type: function(itemElem){
-				$(this).attr('class').split(' ').each(function(){
+				$(itemElem).attr('class').split(' ').each(function(){
 					if((this!=="")&&(this!=="grid-craft-item")){
 						return this;
 					}
