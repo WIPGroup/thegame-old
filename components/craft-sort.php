@@ -9,9 +9,7 @@
     <ul class="dropdown-menu" role="menu">
       <li><a data-sort-by="original-order">Pôvodný (ID)</a></li>
       <li><a data-sort-by="name">Meno</a></li>
-      <li><a data-sort-by="power">Výkon</a></li>
-      <li><a data-sort-by="count">Počet</a></li>
-      <li><a data-sort-by="tier">Tier</a></li>
+<!--  <li><a data-sort-by="tier">Tier</a></li>-->
       <li><a data-sort-by="type">Typ</a></li>
     </ul>
   </div>

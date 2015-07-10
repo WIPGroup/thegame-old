@@ -70,11 +70,8 @@ $(function(){
 			return qsRegex ? $(this).text().match( qsRegex ) : true;
 		},
 		getSortData: {
-			name: '.name',
-			power: '.power parseInt',
-			count: '.count parseInt',
-			tier: '[data-tier]',
-			type: '[data-type]',
+			name: '.craft-name',
+			type: '[data-typ]'
 		}
 	});
 	$('.filter-button-group').on( 'click', 'a', function() {
