@@ -32,7 +32,7 @@ if ($prihlasen)
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
 		//TODO: mobile  friendly
-		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].'" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)">';
+		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].'" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)" data-type="'.$typ[$zaznam['vyrobek']].'">';
 		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
 		$suroviny = explode(';', $zaznam['suroviny']);
