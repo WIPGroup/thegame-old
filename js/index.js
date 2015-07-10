@@ -8,9 +8,8 @@ function itemInfo(){
 			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
-				var info = $("#infoitemucontainer");
 				$(window).scroll(function(){ 
-					info.css('top', $(window).scrollTop());
+					$("#infoitemucontainer").css('top', $(window).scrollTop());
 				}).trigger('scroll');
 			}
 		});
