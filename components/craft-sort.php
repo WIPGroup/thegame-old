@@ -28,6 +28,13 @@
       <li><a data-filter=".gpu">GPUs</a></li>
       <li><a data-filter=".ram">RAMs</a></li>
       <li><a data-filter=".mb">Motherboards</a></li>
+	  <li><a data-filter=".t0">Základ</a></li>
+	  <li><a data-filter=".t1">Pentium</a></li>
+	  <li><a data-filter=".t2">Core</a></li>
+	  <li><a data-filter=".t3">Nehalem</a></li>
+	  <li><a data-filter=".t4">Sandy Bridge</a></li>
+	  <li><a data-filter=".t5">Placeholder</a></li>
+	  <li><a data-filter=".t6">Quantum Computers!!!</a></li>
       <!--li><a data-filter=".metal:not(.transition)">metal but not transition</a></li-->
     </ul>
   </div>

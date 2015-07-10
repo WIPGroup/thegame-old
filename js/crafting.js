@@ -9,9 +9,6 @@ function itemInfo(){
 			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
-				$(window).scroll(function(){ 
-					$("#infoitemucontainer").css('top', $(window).scrollTop());
-				}).trigger('scroll');
 			}
 		});
 	});
@@ -89,12 +86,7 @@ $(function(){
 		getSortData: {
 			name: '.craft-name',
 			type: '[data-type]',
-			tier: '.craft-vyzkum'
-		},
-		sortAscending: {
-			name: true,
-			tier: false,
-			type: true
+			tier: '[data-tier]'
 		}
 	});
 	$('.filter-button-group').on( 'click', 'a', function() {
@@ -126,4 +118,7 @@ $(function(){
 		};
 	}
 	itemInfo();
+	$(window).scroll(function(){ 
+		$("#infoitemucontainer").css('top', $(window).scrollTop());
+	}).trigger('scroll');
 });

@@ -8,9 +8,6 @@ function itemInfo(){
 			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
-				$(window).scroll(function(){ 
-					$("#infoitemucontainer").css('top', $(window).scrollTop());
-				}).trigger('scroll');
 			}
 		});
 	});
@@ -77,6 +74,9 @@ function reloadFullInv(){
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
 			initIsotope();
 			console.log('reloadFullInv');
+			$(window).scroll(function(){ 
+				$("#infoitemucontainer").css('top', $(window).scrollTop());
+			}).trigger('scroll');
 		}
 	});
 }
