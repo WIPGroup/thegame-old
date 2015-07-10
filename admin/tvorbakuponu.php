@@ -78,8 +78,6 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	//vytvořit nové kupony
 	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']); 
 
-	echo $maxhodnota."<br>";
-
 	while ($iron > 0 || $copper > 0 || $gold > 0 || $silicon > 0)
 	{
 		$hodnota = 0;
@@ -127,6 +125,8 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$obsah[3] = $gold;
 			$obsah[4] = $silicon;
 			
+			//aby měl jiný čas a šel rozlišit
+
 			$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 			break;
 		}
