@@ -9,10 +9,10 @@ if ($prihlasen)
 	include 'vlastnictvi.php';
 	include 'components/updatesestav.php';
 	echo '<div class="col-md-3 col-sm-6 col-xs-12"><span id="inventar"></span></div>';
-
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
-
 	echo '<div class="col-md-9 col-sm-12 col-xs-12"><div class="panel panel-primary">';
+	echo '<div class="panel-heading"><h1 class="panel-title">Recepty</h1></div>';
+	echo '<div class="panel-body">';
 	
 	include 'components/craft-sort.php';
 
@@ -60,7 +60,7 @@ if ($prihlasen)
 			echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
 		echo '</div></div>';
 	}
-	echo '</div></div>';
+	echo '</div></div></div>';
 }
 else
 {

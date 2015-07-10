@@ -60,11 +60,39 @@ function reloadVyroba(){
 }
 $(function(){
 	reloadVyroba();
-	$(".grid").isotope({
+	var $grid = $(".grid").isotope({
 		itemSelector:".grid-craft-item",
 		layoutMode:"packery",
 		packery:{
 			gutter:10
 		}
 	});
+	$('.filter-button-group').on( 'click', 'a', function() {
+		var filterValue = $(this).attr('data-filter');
+		$grid.isotope({ filter: filterValue });
+	});
+	$('.sort-by-button-group').on( 'click', 'a', function() {
+		var sortByValue = $(this).attr('data-sort-by');
+		$grid.isotope({ sortBy: sortByValue });
+	});
+	var qsRegex;
+	// use value of search field to filter
+	var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+		qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+		$grid.isotope({filter: function() {return qsRegex ? $(this).text().match( qsRegex ) : true;},});}, 200 ) );
+
+	// debounce so filtering doesn't happen every millisecond
+	function debounce( fn, threshold ) {
+		var timeout;
+		return function debounced() {
+			if ( timeout ) {
+				clearTimeout( timeout );
+			}
+			function delayed() {
+				fn();
+				timeout = null;
+			}
+			timeout = setTimeout( delayed, threshold || 100 );
+		};
+	}
 });
