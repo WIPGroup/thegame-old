@@ -12,7 +12,7 @@ if ($prihlasen)
 	echo '<div class="col-md-9 col-sm-6 col-xs-12"><span id="seznamvyrob"></span></div>';
 	echo '<div class="col-md-9 col-sm-12 col-xs-12"><div class="panel panel-primary">';
 	echo '<div class="panel-heading"><h1 class="panel-title">Recepty</h1></div>';
-	echo '<div class="panel-body">';
+	echo '<div class="panel-body" style="position:relative;">';
 	
 	include 'components/craft-sort.php';
 
@@ -63,7 +63,7 @@ if ($prihlasen)
 		echo '</div></div>';
 	}
 	echo '</div>';
-	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;"><div class="panel panel-primary" id="infoitemucontainer"><div class="panel-heading"><h1 class="panel-title">Info o itemu</h1></div><div class="panel-body" id="infoitemu"></div></div></div>';
+	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;" id="infoitemucontainer"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">Info o itemu</h1></div><div class="panel-body" id="infoitemu"></div></div></div>';
 	echo '</div>';
 	echo '</div>';
 }

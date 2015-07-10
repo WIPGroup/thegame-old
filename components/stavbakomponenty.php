@@ -102,8 +102,8 @@ include 'updatesestav.php';
 		<button class="btn btn-primary btn-block" id="sestavit">SESTAVIT</button>
 	</div>
 </div>
-<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;float:right;position:relative;">
-	<div class="panel panel-primary" id="infoitemucontainer">
+<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;float:right;">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Info o itemu</h1>
 		</div>

@@ -9,7 +9,7 @@ include 'body.php';    //TODO: hodit na ajax
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
 		<h1 class="panel-title">Inventář</h1>
 	</div>
-	<div id="inv" class="panel-body panel-collapse collapse in">
+	<div id="inv" class="panel-body panel-collapse collapse in" style="position:relative;">
 		<div class="col-xs-12">
 			<div class="col-xs-12 col-sm-4 col-md-6">
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
@@ -85,8 +85,8 @@ include 'body.php';    //TODO: hodit na ajax
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;">
-			<div class="panel panel-primary" id="infoitemucontainer">
+		<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer">
+			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o itemu</h1>
 				</div>

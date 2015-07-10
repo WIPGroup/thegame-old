@@ -83,10 +83,6 @@ function itemInfo() { //pri kliknuti na item se zobrazi info o nem
 			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
-				var info = $("#infoitemucontainer");
-				$(window).scroll(function(){ 
-					info.css('top', $(window).scrollTop());
-				}).trigger('scroll');
 			}
 		});
 	});
