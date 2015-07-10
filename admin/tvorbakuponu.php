@@ -44,6 +44,7 @@ else if (isset($_GET['rm']))
 }
 else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 {
+	$cas = time();
 	//sebrat suroviny z čistě surovinných kuponů
 	$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 
@@ -120,15 +121,15 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		if ($hodnota < $maxhodnota)
 		{
 			//naházet zbytek
-			$obsah[1] = $iron;
-			$obsah[2] = $copper;
-			$obsah[3] = $gold;
-			$obsah[4] = $silicon;
+			$obsah[1] += $iron;
+			$obsah[2] += $copper;
+			$obsah[3] += $gold;
+			$obsah[4] += $silicon;
 			
-			//aby měl jiný čas a šel rozlišit
+			$cas += 1;
 
 			$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
-			break;
+			//break;
 		}
 
 		//zapsat do db
@@ -148,7 +149,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 		while ($zaznam['COUNT(*)'] > 1);
 
-		$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $obsah).'", '.time().')';
+		$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $obsah).'", '.$cas.')';
 		mysql_query($dotaz);
 	}
 }
