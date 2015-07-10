@@ -65,6 +65,16 @@ $(function(){
 		layoutMode:"packery",
 		packery:{
 			gutter:10
+		},
+		filter: function() {
+			return qsRegex ? $(this).text().match( qsRegex ) : true;
+		},
+		getSortData: {
+			name: '.name',
+			power: '.power parseInt',
+			count: '.count parseInt',
+			tier: '[data-tier]',
+			type: '[data-type]',
 		}
 	});
 	$('.filter-button-group').on( 'click', 'a', function() {

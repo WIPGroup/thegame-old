@@ -7,7 +7,7 @@
       <span class="glyphicon glyphicon-sort-by-attributes-alt"></span> Poradie <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu">
-      <li><a data-sort-by="original-order">Pvodný (ID)</a></li>
+      <li><a data-sort-by="original-order">Pôvodný (ID)</a></li>
       <li><a data-sort-by="name">Meno</a></li>
       <li><a data-sort-by="power">Výkon</a></li>
       <li><a data-sort-by="count">Počet</a></li>
