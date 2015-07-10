@@ -42,7 +42,7 @@ else if (isset($_GET['rm']))
 	$dotaz = 'DELETE FROM kupony WHERE kod="'.$_GET['rm'].'"';
 	mysql_query($dotaz);
 }
-else if (isset($_GET['prerozdelit']))
+else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 {
 	//sebrat suroviny z čistě surovinných kuponů
 	$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
@@ -68,14 +68,12 @@ else if (isset($_GET['prerozdelit']))
 		if (!$jenveci)
 			continue;
 
-		echo $zaznam['kod']."<br>";
 
 		$iron += $veci[1]; $copper += $veci[2]; $gold += $veci[3]; $silicon += $veci[4];
 
 		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
 		mysql_query($dotaz);
 	}
-	echo $iron." ".$copper." ".$gold." ".$silicon."<br>";
 
 	//vytvořit nové kupony
 	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']); 
