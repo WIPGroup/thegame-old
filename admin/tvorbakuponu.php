@@ -45,6 +45,12 @@ else if (isset($_GET['prerozdelit']))
 {
 	$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 
+	$dotaz = 'SELECT * FROM kupony';
+	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	while ($zaznam = mysql_fetch_array($vysledek))
+	{
+		echo $zaznam['kod']."<br>";
+	}
 	//TODO: vzít suroviny z patřičných kuponů
 	//TODO: smazat původní kupony
 	//TODO: rodělit suroviny na nové kupony a zapisovat je
