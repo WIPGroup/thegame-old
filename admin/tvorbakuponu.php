@@ -9,7 +9,7 @@ if ($_SESSION['hrac'] != 1)
 
 if (isset($_GET['0']))
 {
-	$znaky = '0123456789abcdefghijklmnopqrstuvwxyz';
+	$znaky = '0123456789abcdefghijklmnpqrstuvwxyz';
 	$pocznaku = strlen($znaky);
 	$zaznam = null;
 	$kod = '';
@@ -36,8 +36,16 @@ if (isset($_GET['0']))
 	$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $obsah).'", '.time().')';
 	mysql_query($dotaz);
 }
-elseif (isset($_GET['rm']))
+else if (isset($_GET['rm']))
 {
 	$dotaz = 'DELETE FROM kupony WHERE kod="'.$_GET['rm'].'"';
 	mysql_query($dotaz);
+}
+else if (isset($_GET['prerozdelit']))
+{
+	$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
+
+	//TODO: vzít suroviny z patřičných kuponů
+	//TODO: smazat původní kupony
+	//TODO: rodělit suroviny na nové kupony a zapisovat je
 }

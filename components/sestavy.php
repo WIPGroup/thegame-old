@@ -16,7 +16,7 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<div class="col-md-5 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
-	echo 'Výkon: '.$zaznam['vykon'];
+	echo 'Výkon: '.$zaznam['vykon'].', spotřeba: '.$zaznam['spotreba'];
 	echo '</h1></div><div class="panel-body">';
 
 	if ($zaznam['vyzkum'] == 1)
