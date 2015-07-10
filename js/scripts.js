@@ -66,4 +66,9 @@ function navbarActive(){
 $(function(){
 	navbarActive();
 //	enableRefresh();
+	var infoitemu = $("#infoitemu");
+	infoitemu.parents(':eq(2)').css('position','relative');
+	$(window).scroll(function(){ 
+		infoitemu.css('top', $(window).scrollTop());
+	}).trigger('scroll');
 });
