@@ -85,8 +85,8 @@ include 'body.php';    //TODO: hodit na ajax
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-md-3" style="padding-top: 5px;">
-			<div class="panel panel-primary">
+		<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;">
+			<div class="panel panel-primary" id="infoitemucontainer">
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o itemu</h1>
 				</div>
