@@ -136,7 +136,7 @@ if (isset($_GET['mb']))
 
 	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
 
-	if ($psupwr < $spotreba)
+	if ($psupwr < $spotreba * 1.1)
 		$vykon = 0;
 
 	//poskládat hráči sestavu
