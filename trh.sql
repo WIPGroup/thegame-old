@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vytvořeno: Sob 11. čec 2015, 20:16
+-- Vytvořeno: Sob 11. čec 2015, 21:56
 -- Verze serveru: 5.5.42-cll
 -- Verze PHP: 5.4.34
 
@@ -40,9 +40,9 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`, `body`, `vyzkum`) VALUES
-(1, 'root', 'greyjoy', '11387;429;649;2098;1870;48;31;42;45;47;45;16;150;18;21;21;21;21;12;12;12;12;12;12;12;12;13;13;12;12;8;11;12;10;12;12;12;22;23;23;22;23;23;27;66;22;21;64;10;10;11;10;11;11;11;11;60;60;60;60;9;10;10;10;10;10;10;10;9;10;10;10;10;8;7;9;9;9;10;10;8;10;10;9;10;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;26;5;8;9;6;9;15;8;9;9;9;9;55;9;6;9;9;8;15;9;9;8;9;9;56', 12052553, 0),
+(1, 'root', 'greyjoy', '11684;726;3646;2395;1897;75;58;69;72;74;72;43;177;45;48;48;48;48;39;39;39;39;39;39;39;39;40;40;39;39;37;38;39;37;39;39;39;49;50;50;49;50;50;54;93;49;48;93;37;37;38;37;38;38;38;38;87;87;87;87;36;37;37;37;37;37;37;37;36;37;37;37;37;35;36;36;36;36;37;37;35;37;37;36;37;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;55;32;35;36;35;36;42;35;36;36;36;36;82;36;35;36;36;35;42;36;36;35;36;36;83', 13550625, 0),
 (2, 'test1', 'test1', '10000;1003;2005;1006;1001;1;1;1;1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0', 0, 0),
-(3, 'test2', 'test2', '10000;1000;1570;1000;1000;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0', 0, 0);
+(3, 'test2', 'test2', '10000;1000;1570;1000;1000;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0', 50, 0);
 
 -- --------------------------------------------------------
 
@@ -61,50 +61,17 @@ CREATE TABLE IF NOT EXISTS `kupony` (
 --
 
 INSERT INTO `kupony` (`kod`, `obsah`, `cas`) VALUES
-('0er32iin', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('1iz6yxy1', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('2cft7ve8', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('2p7j8efp', '0;15;0;0;0;0;0;0;0;0', 1436563340),
-('2yaad9p5', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('3yzhx3ef', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('437icxnk', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('48m0a1hc', '0;12744;4350;0;0;0;0;0;0;0', 1436563339),
-('52i162t5', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('55xzbqxg', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('5czcc3hx', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('6bn7ayw3', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('7f99qbdh', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('95bcpu0v', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('dn8cw172', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('dw9pu6sx', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('dx6ltku3', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('dxv398kn', '0;0;8;0;859;0;0;0;0;0', 1436563339),
-('e1z67z45', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('fyr8bj21', '99;99;999;99;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9', 1436566507),
-('gdh9zbdq', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('hkeenj80', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('ht6i8hg8', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('jf1uhi7v', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('klivv4is', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('kx024fxs', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('l0yyrvek', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('lezfv1dh', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('mm17ez3x', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('nuvcd4cs', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('pitltlnd', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('r5ff0fax', '0;25794;0;0;0;0;0;0;0;0', 1436563339),
-('rkla4wh2', '99;99;999;99;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9', 1436566508),
-('s19rz8sv', '0;0;8;154;397;0;0;0;0;0', 1436563339),
-('syr42913', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('t4168ezd', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('t5z62mrf', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('tbynlprb', '99;99;999;99;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9;9', 1436566504),
-('vxit1y9p', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('wu0tv8v8', '0;0;8338;0;26;0;0;0;0;0', 1436563339),
-('xiw3kp97', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('xktuh6fu', '0;0;8;286;1;0;0;0;0;0', 1436563339),
-('yjkutg2y', '0;0;8598;0;0;0;0;0;0;0', 1436563339),
-('z71kxat1', '0;25794;0;0;0;0;0;0;0;0', 1436563339);
+('e2ebleh7', '0;541;122;1131;16;0;0;0;0;0', 1436649950),
+('igxluke1', '0;7;170;1137;11;0;0;0;0;0', 1436649950),
+('ke0igihw', '0;265;34154;3;6;0;0;0;0;0', 1436649950),
+('kw76bqeb', '0;139;34146;1;17;0;0;0;0;0', 1436649950),
+('q6j7p139', '0;101779;6;1;43;0;0;0;0;0', 1436649950),
+('v6myx1hz', '0;577;10;1138;5;0;0;0;0;0', 1436649950),
+('vjjpy92u', '0;721;34022;4;1;0;0;0;0;0', 1436649950),
+('vlzq7ds2', '0;520;139;4;3396;0;0;0;0;0', 1436649950),
+('w1j3fb51', '0;88672;4415;12;6;0;0;0;0;0', 1436649950),
+('ybg92vkx', '0;2;1;0;0;0;0;0;0;0', 1436649950),
+('z458uepc', '0;94;241;155;2947;0;0;0;0;0', 1436649950);
 
 -- --------------------------------------------------------
 
@@ -418,7 +385,14 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1436629335, 1, 'Složena sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD 2900 XT(1x) Kingston 2GB(4x) Kingston KC 960 1024 GB(1x) Enermax Platimax 850W(1x)  o výkonu 1 a spotřebě 295 W.'),
 (1436643915, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
 (1436644464, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
-(1436644597, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.');
+(1436644597, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436646530, 1, 'Použit kupón tbynlprb (Peníze(99) Železo(99) Měď(999) Zlato(99) Křemík(9) Northbridge(9) Southbridge(9) Flash Bios(9) RAM slots(9) PCI-e(9) Core(9) L3 Cache(9) Graphics(9) Controller(9) Graphics core [64](9) VRAM(9) PCB (GPU)(9) MOSFET(9) DRAM [1024](9) PCB (RAM)(9) HEAD(9) SPINDLE(9) ACTUATOR(9) PLATTER(9) NAND Flash(9) Controller(9) CACHE(9) SATA(9) Kondík(9) PCB (PSU)(9) Intel D975XBX (Pentium)(9) Abit IP35 (Core)(9) Asus P5Q Deluxe (Core)(9) Asus EVGA 132-CK-NF78-A1 (Core)(9) Asus P7P55D Deluxe (Nehalem)(9) EVGA P55 Classified (Nehalem)(9) EVGA X58 Classified 4x SLI (Nehalem)(9) ASUS H61-PLUS (Sandy Bridge)(9) MSI Z68A-GD65 (Sandy Bridge)(9) ASRock X79 Extreme11 (Sandy Bridge)(9) MSI B75A-G43 (Ivy Bridge)(9) Gigabyte GA-Z77X-UP7 (Ivy Bridge)(9) MSI Big Bang XPower II (Ivy Bridge)(9) GIGABYTE GA-B85M-D3H (Haswell)(9) Gigabyte GA-Z97X-UD5H (Haswell)(9) ASUS ROG RAMPAGE V EXTREME (Haswell)(9) Pentium 4 630 (Pentium)(9) Pentium D 960 (Pentium)(9) Celeron E3500 (Core)(9) Pentium E5500 (Core)(9) Core 2 Duo E8400 (Core)(9) Core 2 Quad Q9300 (Core)(9) Core 2 Quad Q9650 (Core)(9) Core i3 550 (Nehalem)(9) Core i5 760 (Nehalem)(9) Core i7 950 (Nehalem)(9) Core i7-E 980x (Nehalem)(9) Pentium G645 (Sandy Bridge)(9) Core i5 2500k (Sandy Bridge)(9) Core i7 2700k (Sandy Bridge)(9) Core i7-E 3930k (Sandy Bridge)(9) Pentium G2130 (Ivy Bridge)(9) Core i3 3220 (Ivy Bridge)(9) Core i5 3350P (Ivy Bridge)(9) Core i5 3570K (Ivy Bridge)(9) Core i7 3770K (Ivy Bridge)(9) Pentium G3258 (Haswell)(9) Core i5 4690K (Haswell)(9) Xeon 1230 v3 (Haswell)(9) Core i7 4790K (Haswell)(9) Core i7-E 5930K (Haswell)(9) Core i7-E 5960X (Haswell)(9) Xeon 2699 v3 (Haswell)(9) nVidia 6800 Ultra(9) AMD x850 XT PE(9) nVidia 7600 GT(9) AMD x1950 XT(9) nVidia 7950 GX2(9) nVidia 8600 GT(9) nVidia 9600 GT(9) AMD 2900 XT(9) AMD 3870(9) nVidia 9800 GTX(9) nVidia 8800 Ultra(9) nVidia 260(9) nVidia 285(9) nVidia 9800 GX2(9) AMD 3870(9) AMD 3870x2(9) nVidia 465(9) nVidia 640(9) AMD 5870(9) nVidia 480(9) AMD 6870(9) nVidia 750ti(9) nVidia 295(9) AMD 4870x2(9) nVidia 560ti(9) nVidia 660ti(9) nVidia 960(9) nVidia 580(9) AMD 6970(9) nVidia 760(9) nVidia 680(9) AMD 7970(9) AMD 280X(9) nVidia 770(9) AMD 5970(9) AMD 290X(9) nVidia 590(9) nVidia Titan(9) nVidia 970(9) nVidia 780ti(9) nVidia 980ti(9) nVidia Titan X(9) AMD 7990(9) nVidia 690(9) AMD 295X2(9) nVidia Titan Z(9) Kingston 1GB(9) Kingston 2GB(9) Crucial Ballistix 4GB(9) Kingston 8GB HyperX Fury(9) WD Green(9) WD Blue(9) WD Black(9) WD VelociRaptor(9) Crucial MX200 64 GB(9) SAMSUNG 850 PRO 128 GB(9) Crucial MX200 256 GB(9) Intel 730 512 GB(9) Kingston KC 960 1024 GB(9) SAMSUNG 850 PRO 2048 GB(9) Corsair CX430(9) Corsair RM450(9) Corsair CX500(9) Corsair CS550(9) Seasonic G550W(9) Seasonic P660(9) Corsair HX750(9) Enermax Platimax 850W(9) Corsair HX1000i(9) Seasonic X1250(9) Corsair AX1500i(9) )'),
+(1436646541, 1, 'Použit kupón fyr8bj21 (Peníze(99) Železo(99) Měď(999) Zlato(99) Křemík(9) Northbridge(9) Southbridge(9) Flash Bios(9) RAM slots(9) PCI-e(9) Core(9) L3 Cache(9) Graphics(9) Controller(9) Graphics core [64](9) VRAM(9) PCB (GPU)(9) MOSFET(9) DRAM [1024](9) PCB (RAM)(9) HEAD(9) SPINDLE(9) ACTUATOR(9) PLATTER(9) NAND Flash(9) Controller(9) CACHE(9) SATA(9) Kondík(9) PCB (PSU)(9) Intel D975XBX (Pentium)(9) Abit IP35 (Core)(9) Asus P5Q Deluxe (Core)(9) Asus EVGA 132-CK-NF78-A1 (Core)(9) Asus P7P55D Deluxe (Nehalem)(9) EVGA P55 Classified (Nehalem)(9) EVGA X58 Classified 4x SLI (Nehalem)(9) ASUS H61-PLUS (Sandy Bridge)(9) MSI Z68A-GD65 (Sandy Bridge)(9) ASRock X79 Extreme11 (Sandy Bridge)(9) MSI B75A-G43 (Ivy Bridge)(9) Gigabyte GA-Z77X-UP7 (Ivy Bridge)(9) MSI Big Bang XPower II (Ivy Bridge)(9) GIGABYTE GA-B85M-D3H (Haswell)(9) Gigabyte GA-Z97X-UD5H (Haswell)(9) ASUS ROG RAMPAGE V EXTREME (Haswell)(9) Pentium 4 630 (Pentium)(9) Pentium D 960 (Pentium)(9) Celeron E3500 (Core)(9) Pentium E5500 (Core)(9) Core 2 Duo E8400 (Core)(9) Core 2 Quad Q9300 (Core)(9) Core 2 Quad Q9650 (Core)(9) Core i3 550 (Nehalem)(9) Core i5 760 (Nehalem)(9) Core i7 950 (Nehalem)(9) Core i7-E 980x (Nehalem)(9) Pentium G645 (Sandy Bridge)(9) Core i5 2500k (Sandy Bridge)(9) Core i7 2700k (Sandy Bridge)(9) Core i7-E 3930k (Sandy Bridge)(9) Pentium G2130 (Ivy Bridge)(9) Core i3 3220 (Ivy Bridge)(9) Core i5 3350P (Ivy Bridge)(9) Core i5 3570K (Ivy Bridge)(9) Core i7 3770K (Ivy Bridge)(9) Pentium G3258 (Haswell)(9) Core i5 4690K (Haswell)(9) Xeon 1230 v3 (Haswell)(9) Core i7 4790K (Haswell)(9) Core i7-E 5930K (Haswell)(9) Core i7-E 5960X (Haswell)(9) Xeon 2699 v3 (Haswell)(9) nVidia 6800 Ultra(9) AMD x850 XT PE(9) nVidia 7600 GT(9) AMD x1950 XT(9) nVidia 7950 GX2(9) nVidia 8600 GT(9) nVidia 9600 GT(9) AMD 2900 XT(9) AMD 3870(9) nVidia 9800 GTX(9) nVidia 8800 Ultra(9) nVidia 260(9) nVidia 285(9) nVidia 9800 GX2(9) AMD 3870(9) AMD 3870x2(9) nVidia 465(9) nVidia 640(9) AMD 5870(9) nVidia 480(9) AMD 6870(9) nVidia 750ti(9) nVidia 295(9) AMD 4870x2(9) nVidia 560ti(9) nVidia 660ti(9) nVidia 960(9) nVidia 580(9) AMD 6970(9) nVidia 760(9) nVidia 680(9) AMD 7970(9) AMD 280X(9) nVidia 770(9) AMD 5970(9) AMD 290X(9) nVidia 590(9) nVidia Titan(9) nVidia 970(9) nVidia 780ti(9) nVidia 980ti(9) nVidia Titan X(9) AMD 7990(9) nVidia 690(9) AMD 295X2(9) nVidia Titan Z(9) Kingston 1GB(9) Kingston 2GB(9) Crucial Ballistix 4GB(9) Kingston 8GB HyperX Fury(9) WD Green(9) WD Blue(9) WD Black(9) WD VelociRaptor(9) Crucial MX200 64 GB(9) SAMSUNG 850 PRO 128 GB(9) Crucial MX200 256 GB(9) Intel 730 512 GB(9) Kingston KC 960 1024 GB(9) SAMSUNG 850 PRO 2048 GB(9) Corsair CX430(9) Corsair RM450(9) Corsair CX500(9) Corsair CS550(9) Seasonic G550W(9) Seasonic P660(9) Corsair HX750(9) Enermax Platimax 850W(9) Corsair HX1000i(9) Seasonic X1250(9) Corsair AX1500i(9) )'),
+(1436646554, 1, 'Použit kupón rkla4wh2 (Peníze(99) Železo(99) Měď(999) Zlato(99) Křemík(9) Northbridge(9) Southbridge(9) Flash Bios(9) RAM slots(9) PCI-e(9) Core(9) L3 Cache(9) Graphics(9) Controller(9) Graphics core [64](9) VRAM(9) PCB (GPU)(9) MOSFET(9) DRAM [1024](9) PCB (RAM)(9) HEAD(9) SPINDLE(9) ACTUATOR(9) PLATTER(9) NAND Flash(9) Controller(9) CACHE(9) SATA(9) Kondík(9) PCB (PSU)(9) Intel D975XBX (Pentium)(9) Abit IP35 (Core)(9) Asus P5Q Deluxe (Core)(9) Asus EVGA 132-CK-NF78-A1 (Core)(9) Asus P7P55D Deluxe (Nehalem)(9) EVGA P55 Classified (Nehalem)(9) EVGA X58 Classified 4x SLI (Nehalem)(9) ASUS H61-PLUS (Sandy Bridge)(9) MSI Z68A-GD65 (Sandy Bridge)(9) ASRock X79 Extreme11 (Sandy Bridge)(9) MSI B75A-G43 (Ivy Bridge)(9) Gigabyte GA-Z77X-UP7 (Ivy Bridge)(9) MSI Big Bang XPower II (Ivy Bridge)(9) GIGABYTE GA-B85M-D3H (Haswell)(9) Gigabyte GA-Z97X-UD5H (Haswell)(9) ASUS ROG RAMPAGE V EXTREME (Haswell)(9) Pentium 4 630 (Pentium)(9) Pentium D 960 (Pentium)(9) Celeron E3500 (Core)(9) Pentium E5500 (Core)(9) Core 2 Duo E8400 (Core)(9) Core 2 Quad Q9300 (Core)(9) Core 2 Quad Q9650 (Core)(9) Core i3 550 (Nehalem)(9) Core i5 760 (Nehalem)(9) Core i7 950 (Nehalem)(9) Core i7-E 980x (Nehalem)(9) Pentium G645 (Sandy Bridge)(9) Core i5 2500k (Sandy Bridge)(9) Core i7 2700k (Sandy Bridge)(9) Core i7-E 3930k (Sandy Bridge)(9) Pentium G2130 (Ivy Bridge)(9) Core i3 3220 (Ivy Bridge)(9) Core i5 3350P (Ivy Bridge)(9) Core i5 3570K (Ivy Bridge)(9) Core i7 3770K (Ivy Bridge)(9) Pentium G3258 (Haswell)(9) Core i5 4690K (Haswell)(9) Xeon 1230 v3 (Haswell)(9) Core i7 4790K (Haswell)(9) Core i7-E 5930K (Haswell)(9) Core i7-E 5960X (Haswell)(9) Xeon 2699 v3 (Haswell)(9) nVidia 6800 Ultra(9) AMD x850 XT PE(9) nVidia 7600 GT(9) AMD x1950 XT(9) nVidia 7950 GX2(9) nVidia 8600 GT(9) nVidia 9600 GT(9) AMD 2900 XT(9) AMD 3870(9) nVidia 9800 GTX(9) nVidia 8800 Ultra(9) nVidia 260(9) nVidia 285(9) nVidia 9800 GX2(9) AMD 3870(9) AMD 3870x2(9) nVidia 465(9) nVidia 640(9) AMD 5870(9) nVidia 480(9) AMD 6870(9) nVidia 750ti(9) nVidia 295(9) AMD 4870x2(9) nVidia 560ti(9) nVidia 660ti(9) nVidia 960(9) nVidia 580(9) AMD 6970(9) nVidia 760(9) nVidia 680(9) AMD 7970(9) AMD 280X(9) nVidia 770(9) AMD 5970(9) AMD 290X(9) nVidia 590(9) nVidia Titan(9) nVidia 970(9) nVidia 780ti(9) nVidia 980ti(9) nVidia Titan X(9) AMD 7990(9) nVidia 690(9) AMD 295X2(9) nVidia Titan Z(9) Kingston 1GB(9) Kingston 2GB(9) Crucial Ballistix 4GB(9) Kingston 8GB HyperX Fury(9) WD Green(9) WD Blue(9) WD Black(9) WD VelociRaptor(9) Crucial MX200 64 GB(9) SAMSUNG 850 PRO 128 GB(9) Crucial MX200 256 GB(9) Intel 730 512 GB(9) Kingston KC 960 1024 GB(9) SAMSUNG 850 PRO 2048 GB(9) Corsair CX430(9) Corsair RM450(9) Corsair CX500(9) Corsair CS550(9) Seasonic G550W(9) Seasonic P660(9) Corsair HX750(9) Enermax Platimax 850W(9) Corsair HX1000i(9) Seasonic X1250(9) Corsair AX1500i(9) )'),
+(1436651633, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436651661, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436651667, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436651673, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.');
 
 -- --------------------------------------------------------
 
@@ -757,18 +731,16 @@ CREATE TABLE IF NOT EXISTS `sestavy` (
   `obsah` varchar(500) NOT NULL,
   `sbercas` int(11) NOT NULL,
   `vyzkum` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 --
 -- Vypisuji data pro tabulku `sestavy`
 --
 
 INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `spotreba`, `obsah`, `sbercas`, `vyzkum`) VALUES
-(54, 1, 1, 289, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0', 1436645477, 0),
-(55, 1, 1, 295, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0', 1436645477, 0),
-(56, 1, 80, 189, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0', 1436645477, 0),
-(57, 1, 80, 189, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0', 1436645477, 0),
-(58, 1, 80, 189, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0', 1436645477, 0);
+(54, 1, 1, 289, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0', 1436651673, 0),
+(55, 1, 1, 295, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0', 1436651673, 0),
+(59, 1, 80, 189, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0', 1436651673, 0);
 
 -- --------------------------------------------------------
 
@@ -969,9 +941,9 @@ CREATE TABLE IF NOT EXISTS `vyzkumy` (
 --
 
 INSERT INTO `vyzkumy` (`idvyzkumu`, `nazev`, `body`, `popis`) VALUES
-(0, 'Základ', 0, '<img src="icons/10.png" width="100%">'),
-(1, 'Pentium', 0, '<img src="icons/10.png" width="100%">'),
-(2, 'Core', 1000000, '<img src="icons/10.png" width="100%">'),
+(0, 'Základ', 0, 'Máš to jednoduché, počítač už za teba vymysleli :)'),
+(1, 'Pentium', 0, 'Nejako sa začínať musí'),
+(2, 'Core', 1000000, ''),
 (3, 'Nehalem', 1000000000, '<img src="icons/10.png" width="100%">'),
 (4, 'Sandy Bridge', 1000000000000, '<img src="icons/10.png" width="100%">'),
 (5, 'Ivy Bridge', 1000000000000000, '<img src="icons/10.png" width="100%">'),
@@ -1073,7 +1045,7 @@ ALTER TABLE `recepty`
 -- AUTO_INCREMENT pro tabulku `sestavy`
 --
 ALTER TABLE `sestavy`
-  MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+  MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT pro tabulku `veci`
 --
