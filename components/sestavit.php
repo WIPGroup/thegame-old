@@ -201,7 +201,7 @@ if (isset($_GET['mb']))
 			throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
 		}
 	} else {
-		elseif ($ssdsize  = 4){
+		if ($ssdsize  = 4){
 			$storagekoe = 0.8;
 		}
 		elseif ($ssdsize  = 3){
