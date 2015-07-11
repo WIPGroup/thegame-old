@@ -258,6 +258,16 @@ function reloadSestavy() { //nacte sestavy
 				zmenit(idsestavy);
 				return false;
 			});
+			$(".sestavahidden").each(function(){
+				var toto = $(this);
+				var seznam = ["mb","cpu","ram","gpu","hdd","psu"];
+				seznam.forEach(function(name){
+					var obsah = $("."+name,toto);
+					obsah.each(function(){
+						$(".sestava"+name,toto).append(this.text());
+					});
+				});
+			});
 		}
 	});
 }

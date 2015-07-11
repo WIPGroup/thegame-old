@@ -28,15 +28,29 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	echo '<button href="#prepnout" class="switch btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</button>';
 	echo '<button href="#rozebrat" class="disass btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</button>';
 
-	echo '</div><ul class="list-group">';
+	echo '</div><ul class="sestavahidden" style="display:none;">';
 	$obsah = explode(';', $zaznam['obsah']);
 	for ($i = 0; $i < $pocveci; $i++)
 		if ($obsah[$i] > 0)
 		{
-			echo '<li class="list-group-item '.$typ[$i].'">';
+			echo '<li class="'.$typ[$i].'">';
 			if ($obsah[$i] > 1)
 				echo $obsah[$i].'x ';
 			echo $veci[$i].'</li>';
 		}
-	echo '</ul></div></div>';
+	echo '</ul>';
+	echo '<div class="sestava">';
+	echo '<ul class="sestavamb">';
+	echo '</ul>';
+	echo '<ul class="sestavacpu">';
+	echo '</ul>';
+	echo '<ul class="sestavagpu">';
+	echo '</ul>';
+	echo '<ul class="sestavaram">';
+	echo '</ul>';
+	echo '<ul class="sestavahdd">';
+	echo '</ul>';
+	echo '<ul class="sestavapsu">';
+	echo '</ul>';
+	echo '</div></div></div>';
 }
