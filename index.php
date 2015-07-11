@@ -8,6 +8,7 @@ if ($prihlasen)
 {
 	include 'components/index/jumbotron.php';
 	include 'components/kupony.php';
+	include 'components/poradie.php';
 	echo '<div class="col-xs-12" id="fullinv">';
 //	include "components/full_inv.php";
 	echo '</div>';
@@ -16,7 +17,6 @@ else
 {
 	include 'components/form.php';
 }
-include 'components/poradie.php';
 ?>
 <script src="js/index.js"></script>
 </body>
