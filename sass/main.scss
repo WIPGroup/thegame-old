@@ -231,8 +231,11 @@ $power-color: #f55;
 	}
 
 	table tr td:first-child::before {
-		content: counter(rowNumber);
+		content: counter(rowNumber)".";
 		min-width: 1em;
 		margin-right: 0.5em;
+	}
+	table td {
+		min-width:100px;
 	}
 }

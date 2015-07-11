@@ -180,6 +180,9 @@ th {
   counter-increment: rowNumber; }
 
 #poradi table tr td:first-child::before {
-  content: counter(rowNumber);
+  content: counter(rowNumber) ".";
   min-width: 1em;
   margin-right: 0.5em; }
+
+#poradi table td {
+  min-width: 100px; }
