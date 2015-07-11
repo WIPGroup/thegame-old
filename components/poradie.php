@@ -9,7 +9,7 @@
 	$dotaz = 'SELECT jmeno,body FROM hraci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek)){
-		echo'<li><span class="poradie">'.$zaznam['body'].'</span>'.$zaznam['jmeno'].'</li>';
+		echo'<li data-body="'.$zaznam['body'].'">'.$zaznam['body'].$zaznam['jmeno'].'</li>';
 	}
 ?>
 			</ol>

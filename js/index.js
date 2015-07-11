@@ -106,8 +106,8 @@ $(function() { //odeslani formulare s nabidkou
 		return false;  //zastavi normalni submit, tj. zadny refresh
 	});
 	var $wrapper = $('#poradie');
-	$wrapper.find('#poradie li').sort(function (a, b) {
-		return +a.innerHTML - +b.innerHTML;
+	$wrapper.find('.poradie').sort(function (a, b) {
+		return +a.getAttribute("data-body") - +b.getAttribute("data-body");
 	}).appendTo( $wrapper );
 });
 $(reloadFullInv());
