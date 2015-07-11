@@ -263,8 +263,8 @@ function reloadSestavy() { //nacte sestavy
 				var seznam = ["mb","cpu","ram","gpu","hdd","psu"];
 				seznam.forEach(function(name){
 					var obsah = $("."+name,toto);
-					obsah.each(function(){
-						$(".sestava"+name,toto).append(this.text());
+					obsah.each(function(index,value){
+						$(".sestava"+name,toto).append($(value).text);
 					});
 				});
 			});
