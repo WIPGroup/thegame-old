@@ -169,7 +169,7 @@ if (isset($_GET['mb']))
 	elseif ($ramkap  >= 1){
 		$ramkoe = 0.2;
 	}
-	elseif ($ramkap  else){
+	else {
 		$ramkoe = 0;
 	}
 	if ($ssdsize > 0) {
@@ -197,7 +197,7 @@ if (isset($_GET['mb']))
 		{
 			$storagekoe = 1;
 		}
-		elseif ($ssdsize  else){
+		else {
 			throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
 		}
 	} else {
@@ -213,7 +213,7 @@ if (isset($_GET['mb']))
 		elseif ($ssdsize  = 1){
 			$storagekoe = 0.2;
 		}
-		elseif ($ssdsize  else){
+		else {
 			throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
 		}
 	}
