@@ -264,7 +264,7 @@ function reloadSestavy() { //nacte sestavy
 				seznam.forEach(function(name){
 					var obsah = $("."+name,toto);
 					obsah.each(function(index,value){
-						$(".sestava"+name,toto).append($(value).text);
+						$(".sestava"+name,toto).append("<li>"+$(value).text()+"</li>");
 					});
 				});
 			});
