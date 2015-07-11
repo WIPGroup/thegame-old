@@ -5,7 +5,7 @@ session_start();
 if (isset($_GET['mb']))
 {
 	require '../vlastnictvi.php';
-	
+
 	$spotreba = 0;
 
 	$rampwr = 0;
@@ -134,7 +134,9 @@ if (isset($_GET['mb']))
 	else
 		die('Taký zdroj nemáš.');
 
-	$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
+	//$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
+	//TODO udelat vykon tak jak ma byt
+	$vykon = 1;
 
 	if ($psupwr < $spotreba * 1.1)
 		$vykon = 0;
@@ -186,7 +188,7 @@ if (isset($_GET['switch']))
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
-			
+
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na body.")';
 			mysql_query($dotaz);
@@ -195,7 +197,7 @@ if (isset($_GET['switch']))
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
 			mysql_query($dotaz);
-			
+
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na výzkum.")';
 			mysql_query($dotaz);
@@ -232,7 +234,7 @@ if (isset($_GET['disass']))
 
 	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
 	mysql_query($dotaz);
-	
+
 	//log
 	$nazvy = "";
 	$obsah = explode(';', $zaznam['obsah']);
