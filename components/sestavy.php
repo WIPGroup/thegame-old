@@ -10,6 +10,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 {
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
 	$typ[$zaznam['idveci']] = $zaznam['typ'];
+	$id[$zaznam['idveci']] = $zaznam['idveci'];
 }
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
@@ -26,7 +27,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		$prepnout = 'výzkum';
 
 	echo '<button href="#prepnout" class="switch btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</button>';
-	echo '<button href="#rozebrat" class="disass btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</button>';
+	echo '<button href="#rozebrat" style="float:right;" class="disass btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</button>';
 
 	echo '</div><ul class="sestavahidden" style="display:none;">';
 	$obsah = explode(';', $zaznam['obsah']);
@@ -34,12 +35,13 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		if ($obsah[$i] > 0)
 		{
 			echo '<li class="'.$typ[$i].'">';
+			echo '<img src="icons/'.$zaznam['idveci'].'.png" width="24px">';
 			if ($obsah[$i] > 1)
 				echo $obsah[$i].'x ';
 			echo $veci[$i].'</li>';
 		}
 	echo '</ul>';
-	echo '<div class="sestava">';
+	echo '<div class="sestava" style="padding-left:15px;">';
 	echo '<span class="label label-default">Motherboard</span>';
 	echo '<ul class="sestavamb">';
 	echo '</ul>';
