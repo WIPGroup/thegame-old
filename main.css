@@ -38,11 +38,11 @@ body {
 	font-feature-settings: 'liga'; }
 
 #item {
-	height: 52px;
+	height: auto;
 	width: 52px; }
 
 #item-sm, .grid-craft-item .craft-suroviny img {
-	height: 24px;
+	height: auto;
 	width: 24px; }
 
 td {
@@ -55,8 +55,8 @@ th {
 .tableimage {
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 52px 52px;
-	height: 52px;
+	background-size: 52px auto;
+	height: auto;
 	padding: 5px;
 	text-align: right;
 	vertical-align: bottom;
@@ -96,7 +96,7 @@ th {
 .grid-item, .grid-craft-item {
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 128px 128px;
+	background-size: 128px auto;
 	border: 1px solid #ddd;
 	cursor: pointer;
 	float: left;
