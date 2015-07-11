@@ -16,7 +16,7 @@ if ($prihlasen)
 	
 	include 'components/craft-sort.php';
 
-	echo '<div class="grid col-md-9 col-sm-12 col-xs-12">';
+	echo '<div class="grid col-md-12 col-sm-12 col-xs-12">';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));

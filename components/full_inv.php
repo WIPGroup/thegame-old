@@ -45,7 +45,7 @@ include 'body.php';    //TODO: hodit na ajax
 				</ul>
 			</div>
 		</div>
-		<div class="grid col-xs-12 col-md-9">
+		<div class="grid col-xs-12 col-md-12">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
