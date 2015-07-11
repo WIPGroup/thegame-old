@@ -46,11 +46,9 @@ body {
 
 // @ TODO #000 pozadi na mobilu
 #item {
-	height: 52px;
 	width: 52px;
 }
 #item-sm {
-	height: 24px;
 	width: 24px;
 }
 td {
@@ -63,8 +61,7 @@ th {
 .tableimage {
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 52px 52px;
-	height: 52px;
+	background-size: 52px auto;
 	padding: 5px;
 	text-align: right;
 	vertical-align: bottom;
@@ -117,7 +114,7 @@ $odsazeni: 5px;
 .grid-item {
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 128px 128px;
+	background-size: 128px auto;
 	border: 1px solid $inventory;
 	cursor: pointer;
 	float: left;
