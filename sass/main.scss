@@ -106,6 +106,7 @@ $screen-md-max: 1200px;
 		position:fixed;
 		bottom:0px;
 		right:0px;
+		display:none;
 	}
 }
 @media (min-width: $screen-md-max) {
@@ -116,6 +117,7 @@ $screen-md-max: 1200px;
 		position:fixed;
 		bottom:0px;
 		right:0px;
+		display:none;
 	}
 }
 $inventory: #ddd;

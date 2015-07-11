@@ -87,7 +87,8 @@ th {
   #infoitemucontainer {
     position: fixed;
     bottom: 0px;
-    right: 0px; } }
+    right: 0px;
+    display: none; } }
 
 @media (min-width: 1200px) {
   .col-lg-12 {
@@ -96,7 +97,8 @@ th {
   #infoitemucontainer {
     position: fixed;
     bottom: 0px;
-    right: 0px; } }
+    right: 0px;
+    display: none; } }
 
 .grid-item, .grid-craft-item {
   background-position: center;

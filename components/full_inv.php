@@ -88,7 +88,8 @@ include 'body.php';    //TODO: hodit na ajax
 		<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h1 class="panel-title">Info o itemu</h1>
+					<h1 class="panel-title">Info o predmete</h1>
+					<button style="float:right" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="panel-body" id="infoitemu">
 				</div>
