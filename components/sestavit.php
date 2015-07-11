@@ -72,9 +72,9 @@ if (isset($_GET['mb']))
 		$zaznam = mysql_fetch_array($vysledek);
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 		{
-			$vlastnictvi[$zaznam['idveci']]--;
+			$vlastnictvi[$zaznam['idveci']]--; //TODO opravy
 			$sestava[$zaznam['idveci']]++;
-			$rampwr += $zaznam['vykon'];
+			$ramkap += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
@@ -112,7 +112,11 @@ if (isset($_GET['mb']))
 		{
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
-			$hddpwr = max($zaznam['vykon'], $hddpwr);
+			//$hddpwr = max($zaznam['vykon'], $hddpwr); TODO opravit
+			if ($zaznam['vykon'] < 10)
+				$hddtier = max($hddtier,$zaznam['vykon']);
+			if ($zaznam['vykon'] > 10)
+				$ssdsize += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
@@ -134,9 +138,86 @@ if (isset($_GET['mb']))
 	else
 		die('Taký zdroj nemáš.');
 
-	//$vykon = min($cpupwr, $gpupwr) * $rampwr * $hddpwr;
+	switch ($ramkap) {
+    case >= 64:
+        $ramkoe = 2;
+        break;
+		case >= 32:
+				$ramkoe = 1.8;
+				break;
+		case >= 24:
+				$ramkoe = 1.6;
+				break;
+		case >= 16:
+				$ramkoe = 1.4;
+				break;
+		case >= 12:
+				$ramkoe = 1.2;
+				break;
+		case >= 8:
+				$ramkoe = 1;
+				break;
+		case >= 6:
+				$ramkoe = 0.8;
+				break;
+		case >= 4:
+				$ramkoe = 0.6;
+				break;
+		case >= 2:
+				$ramkoe = 0.4;
+				break;
+		case >= 1:
+				$ramkoe = 0.2;
+				break;
+		case else:
+				$ramkoe = 0;
+				break;
+	}
+	if ($ssdsize > 0) {
+			switch ($ssdsize) {
+		    case >= 2048:
+		        $storagekoe = 2;
+		        break;
+				case >= 1024:
+						$storagekoe = 1.8;
+						break;
+				case >= 512:
+						$storagekoe = 1.6;
+						break;
+				case >= 256:
+						$storagekoe = 1.4;
+						break;
+				case >= 128:
+						$storagekoe = 1.2;
+						break;
+				case >= 64:
+						$storagekoe = 1;
+						break;
+				case else:
+						throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
+						break;
+			}
+	} else {
+		switch ($ssdsize) {
+			case = 4:
+					$storagekoe = 0.8;
+					break;
+			case = 3:
+					$storagekoe = 0.6;
+					break;
+			case = 2:
+					$storagekoe = 0.4;
+					break;
+			case = 1:
+					$storagekoe = 0.2;
+					break;
+			case else:
+					throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
+					break;
+	}
+	$vykon = min($cpupwr, $gpupwr) * 2 * $ramkoe * $storagekoe;
 	//TODO udelat vykon tak jak ma byt
-	$vykon = 1;
+	//$vykon = 1;
 
 	if ($psupwr < $spotreba * 1.1)
 		$vykon = 0;
