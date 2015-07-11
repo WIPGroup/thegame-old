@@ -1,7 +1,7 @@
-<div class="col-xs-12 col-md-12">
+<div class="col-xs-12 col-md-6">
 	<div class="panel panel-primary">
 		<div class="panel-heading" data-toggle="collapse" href="#poradi" style="cursor: pointer">
-				<h1 class="panel-title">Inventár</h1>
+				<h1 class="panel-title">Poradie</h1>
 		</div>
 		<div class="panel-body panel-collapse collapse in" id="poradi">
 			<ol id="poradie">

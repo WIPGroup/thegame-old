@@ -107,7 +107,7 @@ $(function() { //odeslani formulare s nabidkou
 	});
 	var $wrapper = $('#poradie');
 	$wrapper.find('li').sort(function (a, b) {
-		return +a.getAttribute("data-body") - +b.getAttribute("data-body");
+		return +b.getAttribute("data-body") - +a.getAttribute("data-body");
 	}).appendTo( $wrapper );
 });
 $(reloadFullInv());
