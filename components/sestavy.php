@@ -18,15 +18,15 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<div class="col-md-5 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
-	echo 'Výkon: '.$zaznam['vykon'].', spotřeba: '.$zaznam['spotreba'];
+	echo 'Výkon: '.$zaznam['vykon'].', spotreba: '.$zaznam['spotreba'];
 	echo '</h1></div><div class="panel-body">';
 
 	if ($zaznam['vyzkum'] == 1)
 		$prepnout = 'skóre';
 	else
-		$prepnout = 'výzkum';
+		$prepnout = 'výskum';
 
-	echo '<button href="#prepnout" class="switch btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Přepnout na '.$prepnout.'</button>';
+	echo '<button href="#prepnout" class="switch btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Prepnúť na '.$prepnout.'</button>';
 	echo '<button href="#rozebrat" style="float:right;" class="disass btn btn-primary" data-idsestavy="'.$zaznam['idsestavy'].'">Rozobrať</button>';
 
 	echo '</div><ul class="sestavahidden" style="display:none;">';

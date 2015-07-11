@@ -1,7 +1,6 @@
 var aktualniTab = 'main';
 function toggleTable(n){ //prepinani mezi Vse a Moje nabidky
 	aktualniTab=n; //v trh.js puvodne 'main'
-	console.log('toggleTable na '+aktualniTab);
 	$("#nabidky>div").hide(); //schovani vsech divu
 	$("#nabidky #"+aktualniTab+"container").show(); //ukaze se ten, ktery ma v nazvu parametr
 	$("#trzistetabs>li").removeClass('active'); //spravny aktivni tab v navbaru
@@ -40,28 +39,25 @@ function reloadNabidky(){ //reload nabidek v trhu
 			$("#nabidky").html(data); //da se to do id nabidky
 			toggleTable(aktualniTab); //prepne se na spravny tab
 			trziste();                //opravi se celkove trziste (datatables,tooltipy,sweetalerts)
-			console.log('reloadNabidky');
 		}
 	});
 }
 function reloadTrh(){
 	reloadInv();
 	reloadNabidky();
-	console.log('reloadTrh');
 }
 function trziste(){
 	$('[data-toggle="tooltip"]').tooltip();
 	$('.oteviranikoupeni').click(function(){ //sweetalerts
 		var aktualniID = $(this).data('idnab');
-		console.log('ID tohoto trade je '+aktualniID);
 		swal({
-			title: "Jsi si jistý?",
-			text: "Pokračováním koupíš tuto nabídku! ("+aktualniID+")",
+			title: "Si si istý?",
+			text: "Pokračovaním kúpiš ponuku!",
 			type: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#DD6B55",
-			cancelButtonText: "Ne, zavřít",
-			confirmButtonText: "Ano, chci koupit nabídku",
+			cancelButtonText: "Nie, zavrieť",
+			confirmButtonText: "Ano, potvrdzujem",
 			closeOnConfirm: true
 		},
 		function(){
@@ -70,15 +66,14 @@ function trziste(){
 	});
 	$('.oteviranizruseni').click(function(){
 		var aktualniID = $(this).data('idnab');
-		console.log('ID tohoto trade je '+aktualniID);
 		swal({
-			title: "Jsi si jistý?",
-			text: "Pokračováním bude tvoje nabídka zrušena! ("+aktualniID+")",
+			title: "Si si istý?",
+			text: "Pokračovaním bude ponuka zrušená!",
 			type: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#DD6B55",
-			cancelButtonText: "Ne, zavřít",
-			confirmButtonText: "Ano, chci zrušit nabídku",
+			cancelButtonText: "Nie, zavrieť",
+			confirmButtonText: "Ano, chcem zrušiť ponuku",
 			closeOnConfirm: true
 		},
 		function(){
@@ -87,7 +82,6 @@ function trziste(){
 	});
 	$('#main').DataTable(); //todo Preklad
 	$('#moje').DataTable(); //todo pagination pri reloadu
-	console.log('trziste');
 }
 $(function() { //odeslani formulare s nabidkou
 	$('#nabidka').submit(function() {

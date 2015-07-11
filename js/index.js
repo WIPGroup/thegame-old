@@ -1,7 +1,6 @@
 function itemInfo(){
 	$(".grid-item").click(function(){ //nefunguje, ani to nevi ze se klika, nutno asi prepsat pomoci nejake posrane isotope metoddy
 			var idveci = $(this).attr("data-idveci");
-			console.log('Id veci je '+idveci);
 			$.ajax({
 			data: {id:idveci},
 			type: "GET",
@@ -73,7 +72,6 @@ function reloadFullInv(){
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
 			initIsotope();
-			console.log('reloadFullInv');
 		}
 	});
 }
@@ -92,7 +90,7 @@ $(function() { //odeslani formulare s nabidkou
 					});
 				}else{
 					swal({
-						title:"Kupón přijat!",
+						title:"Kupón bol akceptovaný!",
 						text:data,
 						html:true,
 						type:"success"

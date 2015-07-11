@@ -13,7 +13,6 @@ function reloadInv(){                //obnoveni inventare
 		url : "components/inventar.php", //vykona se to co je v url
 		success : function (data) {  //prijdou zpatky nejake data
 			$("#inventar").html(data);  //data se hodi do neceho s id inventar, easy
-			console.log('reloadInv');
 		}
 	});
 }

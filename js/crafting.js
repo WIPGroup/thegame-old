@@ -2,7 +2,6 @@ var timerExists = false;
 function itemInfo(){
 	$(".grid-craft-item").click(function(){ 
 			var idveci = $(this).attr("data-idveci");
-			console.log('Id veci je '+idveci);
 			$.ajax({
 			data: {id:idveci},
 			type: "GET",
@@ -15,7 +14,6 @@ function itemInfo(){
 }
 function craft(idreceptu){
 	var kolikrat = $('input[data-idreceptu='+idreceptu+']').val();
-	console.log(kolikrat);
 	$.ajax({
 		url : "components/craft.php",
 		type : "GET",
@@ -60,7 +58,6 @@ function reloadVyroba(){
 			$('.casvyroby').each(function(){
 				if (parseInt($(this).html())<0){
 					$(this).html('0');
-					console.log('oprava ze zaporne hodnoty na 0');
 				}
 			});
 			if (timerExists === true){ //ochrana kdyz uzivatel moc rychle klika
