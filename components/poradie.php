@@ -4,7 +4,7 @@
 				<h1 class="panel-title">Poradie</h1>
 		</div>
 		<div class="panel-body panel-collapse collapse in" id="poradi">
-			<table id="poradie">
+			<table id="poradie" class="table">
 <?php
 	$dotaz = 'SELECT jmeno,body FROM hraci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
