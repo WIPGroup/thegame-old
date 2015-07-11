@@ -45,6 +45,8 @@ else if (isset($_GET['rm']))
 else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 {
 	$cas = time();
+	srand(time());
+	$kupony = null;
 	//sebrat suroviny z čistě surovinných kuponů
 	$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 
@@ -131,8 +133,61 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 			//break;
 		}
+		
+		//přidat vše do seznamu
+		//array_push($kupony, $obsah);
+		$kupony[count($kupony)] = $obsah;
+	}
 
-		//zapsat do db
+	//zamíchat
+	$pockuponu = count($kupony);
+	if ($pockuponu > 1)
+	for ($i = 0; $i < 1000; $i++)
+	{
+		//měď za 3 železa
+		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
+		if ($kupony[$a][2] > 1 && $kupony[$b][1] > 3)
+		{
+			$kupony[$a][2] -= 1;
+			$kupony[$a][1] += 3;
+			$kupony[$b][2] += 1;
+			$kupony[$b][1] -= 3;
+		}
+		
+		//křemík za 10 měďi
+		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
+		if ($kupony[$a][4] > 1 && $kupony[$b][2] > 10)
+		{
+			$kupony[$a][4] -= 1;
+			$kupony[$a][2] += 10;
+			$kupony[$b][4] += 1;
+			$kupony[$b][2] -= 10;
+		}
+		
+		//zlato za 3 křemíky
+		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
+		if ($kupony[$a][3] > 1 && $kupony[$b][4] > 3)
+		{
+			$kupony[$a][3] -= 1;
+			$kupony[$a][4] += 3;
+			$kupony[$b][3] += 1;
+			$kupony[$b][4] -= 3;
+		}
+		
+		//90 železa za zlato
+		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
+		if ($kupony[$a][1] > 90 && $kupony[$b][3] > 1)
+		{
+			$kupony[$a][1] -= 90;
+			$kupony[$a][3] += 1;
+			$kupony[$b][1] += 90;
+			$kupony[$b][3] -= 1;
+		}
+	}
+	
+	foreach ($kupony as $kup)
+	{
+		//zapsat vše do db
 		$znaky = '0123456789abcdefghijklmnpqrstuvwxyz';
 		$pocznaku = strlen($znaky);
 		$zaznam = null;
@@ -148,8 +203,8 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$zaznam = mysql_fetch_array($vysledek);
 		}
 		while ($zaznam['COUNT(*)'] > 1);
-
-		$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $obsah).'", '.$cas.')';
+	
+		$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $kup).'", '.$cas.')';
 		mysql_query($dotaz);
 	}
 }
