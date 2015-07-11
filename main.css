@@ -106,7 +106,7 @@ th {
   cursor: pointer;
   float: left;
   min-height: 160px;
-  min-width: 182px; }
+  min-width: 160px; }
 
 .grid-item:hover, .grid-craft-item:hover {
   background-color: #ddd; }
@@ -116,7 +116,7 @@ th {
 
 .grid-craft-item {
   min-height: 160px;
-  min-width: 320px;
+  min-width: 280px;
   cursor: default;
   background-color: #fff;
   text-align: left; }

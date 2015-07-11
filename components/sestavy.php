@@ -9,6 +9,7 @@ $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	$veci[$zaznam['idveci']] = $zaznam['nazev'];
+	$typ[$zaznam['idveci']] = $zaznam['typ'];
 }
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
@@ -32,7 +33,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 	for ($i = 0; $i < $pocveci; $i++)
 		if ($obsah[$i] > 0)
 		{
-			echo '<li class="list-group-item">';
+			echo '<li class="list-group-item '.$typ[$i].'">';
 			if ($obsah[$i] > 1)
 				echo $obsah[$i].'x ';
 			echo $veci[$i].'</li>';

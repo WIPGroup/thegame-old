@@ -129,7 +129,7 @@ $odsazeni: 5px;
 	cursor: pointer;
 	float: left;
 	min-height: 160px;
-	min-width: 182px;
+	min-width: 160px;
 }
 .grid-item:hover {
 	background-color: $inventory;
@@ -140,7 +140,7 @@ $odsazeni: 5px;
 .grid-craft-item {
 	@extend .grid-item;
 	min-height: 160px;
-	min-width: 320px;
+	min-width: 280px;
 	cursor: default;
 	background-color: #fff;
 	text-align: left;
