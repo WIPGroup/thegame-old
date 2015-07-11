@@ -54,7 +54,7 @@ include 'body.php';    //TODO: hodit na ajax
 				echo '<div data-tier="'.$zaznam['socket'].'" data-type="'.$zaznam['typ'].'" data-idveci="'.$zaznam['idveci'].'" class="grid-item '.$zaznam['typ'].'" style="';
 				if ($vlastnictvi[$zaznam['idveci']] < 1)
 				echo 'opacity: 0.4; ';
-				echo 'background-image: url(\'icons/'.$zaznam['idveci'].'.png\'); background-size: 128px 128px;">';
+				echo 'background-image: url(\'icons/'.$zaznam['idveci'].'.png\'); background-size: 128px auto;">';
 
 				if ($zaznam['vykon'] <= 0)
 						$skryt = ' sr-only';
