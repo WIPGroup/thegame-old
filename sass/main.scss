@@ -102,10 +102,20 @@ $screen-md-max: 1200px;
 	.col-md-12 {
 		@include pad;
 	}
+	#infoitemucontainer{
+		position:fixed;
+		bottom:0px;
+		right:0px;
+	}
 }
 @media (min-width: $screen-md-max) {
 	.col-lg-12 {
 		@include pad;
+	}
+	#infoitemucontainer{
+		position:fixed;
+		bottom:0px;
+		right:0px;
 	}
 }
 $inventory: #ddd;
@@ -119,7 +129,7 @@ $odsazeni: 5px;
 	cursor: pointer;
 	float: left;
 	min-height: 160px;
-	min-width: 182px;
+	min-width: 160px;
 }
 .grid-item:hover {
 	background-color: $inventory;
@@ -130,7 +140,7 @@ $odsazeni: 5px;
 .grid-craft-item {
 	@extend .grid-item;
 	min-height: 160px;
-	min-width: 320px;
+	min-width: 280px;
 	cursor: default;
 	background-color: #fff;
 	text-align: left;
@@ -198,4 +208,17 @@ $power-color: #f55;
 .grid {
 	margin: 15px 0 0;
 	padding: 0;
+}
+.sestava {
+	ul{
+		list-style-type:none;
+	}
+	img{
+		margin-right:10px;
+	}
+}
+.craft-vyrob{
+	input{
+		width:30px;
+	}
 }

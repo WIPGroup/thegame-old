@@ -16,7 +16,7 @@ if ($prihlasen)
 	
 	include 'components/craft-sort.php';
 
-	echo '<div class="grid col-md-9 col-sm-12 col-xs-12">';
+	echo '<div class="grid col-md-12 col-sm-12 col-xs-12">';
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -68,7 +68,7 @@ if ($prihlasen)
 		echo '</div></div>';
 	}
 	echo '</div>';
-	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;position:relative;" id="infoitemucontainer"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">Info o itemu</h1></div><div class="panel-body" id="infoitemu"></div></div></div>';
+	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">Info o itemu<button style="float:right" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h1></div><div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.</div></div></div>';
 	echo '</div>';
 	echo '</div>';
 }

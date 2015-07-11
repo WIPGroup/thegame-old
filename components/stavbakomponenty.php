@@ -99,15 +99,15 @@ include 'updatesestav.php';
 				</ul>
 			</div>
 		</div>
-		<button class="btn btn-primary btn-block" id="sestavit">SESTAVIT</button>
+		<button class="btn btn-primary btn-block" id="sestavit">ZOSTAVIŤ</button>
 	</div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 15px;float:right;">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h1 class="panel-title">Info o itemu</h1>
+			<h1 class="panel-title">Info o komponente</h1>
 		</div>
-		<div class="panel-body" id="infoitemu">
+		<div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.
 		</div>
 	</div>
 </div>

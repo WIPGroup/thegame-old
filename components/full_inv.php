@@ -9,7 +9,7 @@ include 'body.php';    //TODO: hodit na ajax
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
 		<h1 class="panel-title">Inventář</h1>
 	</div>
-	<div id="inv" class="panel-body panel-collapse collapse in" style="position:relative;">
+	<div id="inv" class="panel-body panel-collapse collapse in">
 		<div class="col-xs-12">
 			<div class="col-xs-12 col-sm-4 col-md-6">
 				<input type="text" class="quicksearch form-control" placeholder="Search" />
@@ -45,7 +45,7 @@ include 'body.php';    //TODO: hodit na ajax
 				</ul>
 			</div>
 		</div>
-		<div class="grid col-xs-12 col-md-9">
+		<div class="grid col-xs-12 col-md-12">
 			<?php
 			$dotaz = 'SELECT * FROM veci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -88,9 +88,9 @@ include 'body.php';    //TODO: hodit na ajax
 		<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h1 class="panel-title">Info o itemu</h1>
+					<h1 class="panel-title">Info o predmete<button style="float:right" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h1>
 				</div>
-				<div class="panel-body" id="infoitemu">
+				<div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.
 				</div>
 			</div>
 		</div>

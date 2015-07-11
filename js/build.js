@@ -74,7 +74,6 @@ function initIsotope() {
 function itemInfo() { //pri kliknuti na item se zobrazi info o nem
 	$(".grid-item").click(function() { 
 		var idveci = $(this).attr("data-idveci");
-		console.log('Id veci je ' + idveci);
 		$.ajax({
 			data: {
 			id: idveci
@@ -109,7 +108,6 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 	$(".grid button").click(function(){ //po kliknuti na přidat
 		var toto = $(this).closest("div");
 		var typ = toto.data("type");
-		console.log("typ "+typ);
 		var badge =	$(this).siblings(".badge");
 		var count = badge.text();
 		count--; //snížit počet
@@ -121,7 +119,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 			mb.ram = toto.data("ram");
 		}
 		if (mb.gpu === undefined){
-			alert('Nejdříve vyberte základovku');
+			alert('Najskôr vyber základnú dosku!');
 		} else {
 			if (shouldReturnArray(typ) === true){ //pokud je to array
 				var pocet = window[typ+"counter"];
@@ -159,7 +157,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 						htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="'+i+'" data-value="'+window[x][i].idveci+'">Odobrať</button>';
 						htmlcontent += '</li>';
 					}else{
-						htmlcontent += '<li>Nic</li>';
+						htmlcontent += '<li>Nič</li>';
 					}
 				}
 			}else{
@@ -168,11 +166,11 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 					htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="-1" data-value="'+window[x].idveci+'">Odobrať</button>';
 					htmlcontent += '</li>';
 				}else{
-					htmlcontent += '<li>Nic</li>';
+					htmlcontent += '<li>Nič</li>';
 				}
 			}
 		}else{
-			htmlcontent += "<li>Musíte vybrat základní desku</li>";
+			htmlcontent += "<li>Vyber základnú dosku</li>";
 		}
 		$(this).html(htmlcontent);
 	});
@@ -258,6 +256,17 @@ function reloadSestavy() { //nacte sestavy
 				zmenit(idsestavy);
 				return false;
 			});
+			$(".sestavahidden").each(function(){
+				var toto = $(this);
+				var seznam = ["mb","cpu","ram","gpu","hdd","psu"];
+				seznam.forEach(function(name){
+					var obsah = $("."+name,toto);
+					obsah.each(function(index,value){
+						$(".sestava"+name,toto.siblings(".sestava")).append("<li>"+$(value).html()+"</li>");
+					});
+				});
+				toto.remove();
+			});
 		}
 	});
 }
@@ -267,7 +276,6 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 		success: function(data) { //prijdou zpatky nejake data
 			$("#build").html(data); //data se hodi do neceho s id inventar, easy
 			variables();
-			console.log('reloadSkladaniSestav');
 			initIsotope();
 			initForm();	
 			$('#sestavit').click(function(){
@@ -295,7 +303,7 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 							if(data==""){
 								swal({
 									title:'Chyba!',
-									text:'Musíš vybrat základní desku!',
+									text:'Musíš vybrať základnú dosku!',
 									type:'error'
 								});
 							}else{
@@ -315,7 +323,6 @@ function reloadSkladaniSestav() { //nacte seznam komponent pro nove sestavy
 	});
 }
 function disass(idsestavy) {
-	 console.log('ID sestavy, ktera se bude rusit, je ' + idsestavy); //TODO potvrzovaci tlacitko
 	 $.ajax({
 		url: "components/sestavit.php",
 		type: "GET",
