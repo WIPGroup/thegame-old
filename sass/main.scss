@@ -107,6 +107,11 @@ $screen-md-max: 1200px;
 	.col-lg-12 {
 		@include pad;
 	}
+	#infoitemu{
+		position:fixed;
+		bottom:0px;
+		right:0px;
+	}
 }
 $inventory: #ddd;
 $selected: #8d8;
