@@ -11,6 +11,9 @@ if (isset($_GET['mb']))
 	$rampwr = 0;
 	$gpupwr = 0;
 	$hddpwr = 0;
+	$ramkap = 0;
+	$hddtier = 0;
+	$ssdsize = 0;
 
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
@@ -114,13 +117,13 @@ if (isset($_GET['mb']))
 			$sestava[$zaznam['idveci']]++;
 			//$hddpwr = max($zaznam['vykon'], $hddpwr); TODO opravit
 			if ($zaznam['vykon'] < 10)
-			$hddtier = max($hddtier,$zaznam['vykon']);
+				$hddtier = max($hddtier, $zaznam['vykon']);
 			if ($zaznam['vykon'] > 10)
-			$ssdsize += $zaznam['vykon'];
+				$ssdsize += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
-		die('Taký harddisk nemáš.');
+			die('Taký harddisk nemáš.');
 	}
 
 	//psu
