@@ -163,3 +163,9 @@ th {
 .grid {
   margin: 15px 0 0;
   padding: 0; }
+
+.sestava ul {
+  list-style-type: none; }
+
+.sestava img {
+  margin-right: 10px; }
