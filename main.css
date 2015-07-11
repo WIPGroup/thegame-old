@@ -83,13 +83,17 @@ th {
 @media (min-width: 992px) and (max-width: 1200px) {
   .col-md-12 {
     padding-left: 0 !important;
-    padding-right: 0 !important; } }
+    padding-right: 0 !important; }
+  #infoitemucontainer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; } }
 
 @media (min-width: 1200px) {
   .col-lg-12 {
     padding-left: 0 !important;
     padding-right: 0 !important; }
-  #infoitemu {
+  #infoitemucontainer {
     position: fixed;
     bottom: 0px;
     right: 0px; } }

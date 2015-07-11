@@ -102,12 +102,17 @@ $screen-md-max: 1200px;
 	.col-md-12 {
 		@include pad;
 	}
+	#infoitemucontainer{
+		position:fixed;
+		bottom:0px;
+		right:0px;
+	}
 }
 @media (min-width: $screen-md-max) {
 	.col-lg-12 {
 		@include pad;
 	}
-	#infoitemu{
+	#infoitemucontainer{
 		position:fixed;
 		bottom:0px;
 		right:0px;
