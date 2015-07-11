@@ -179,7 +179,7 @@ th {
 #poradi table tr {
   counter-increment: rowNumber; }
 
-#poradi table tr td:first-child::before {
+#poradi table tr::before {
   content: counter(rowNumber) ".";
   min-width: 1em;
   margin-right: 0.5em; }
