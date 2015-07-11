@@ -172,3 +172,8 @@ th {
 
 .craft-vyrob input {
   width: 30px; }
+
+.poradie {
+  display: table; }
+  .poradie span {
+    display: table-cell; }
