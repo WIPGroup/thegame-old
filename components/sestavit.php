@@ -41,18 +41,18 @@ if (isset($_GET['mb']))
 		$spotreba += $zaznam['spotreba'];
 	}
 	else
-		die('Takú základnú dosku nemáš.');
+	die('Takú základnú dosku nemáš.');
 
 	//info a kompatibilita procesoru
 	if (!isset($_GET['cpu']))
-		die('Nemáš vybraný procesor.');
+	die('Nemáš vybraný procesor.');
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['cpu'].' AND typ="cpu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
 	{
 		if ($socket != $zaznam['socket'])
-			die('Nekompatibilná základná doska a procesor.');
+		die('Nekompatibilná základná doska a procesor.');
 
 		$vlastnictvi[$zaznam['idveci']]--;
 		$sestava[$zaznam['idveci']]++;
@@ -60,13 +60,13 @@ if (isset($_GET['mb']))
 		$spotreba += $zaznam['spotreba'];
 	}
 	else
-		die('Taký procesor nemáš.');
+	die('Taký procesor nemáš.');
 
 	//ram sloty
 	for ($i = 1; $i <= $sloty[0]; $i++)
 	{
 		if (!isset($_GET['ram'.$i]) || $_GET['ram'.$i] < 0)
-			continue;
+		continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['ram'.$i].' AND typ="ram"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -78,14 +78,14 @@ if (isset($_GET['mb']))
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
-			die('Takú ramku nemáš.');
+		die('Takú ramku nemáš.');
 	}
 
 	//gpu karty
 	for ($i = 1; $i <= $sloty[1]; $i++)
 	{
 		if (!isset($_GET['gpu'.$i]) || $_GET['gpu'.$i] < 0)
-			continue;
+		continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['gpu'.$i].' AND typ="gpu"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -97,14 +97,14 @@ if (isset($_GET['mb']))
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
-			die('Takú grafiku nemáš.');
+		die('Takú grafiku nemáš.');
 	}
 
 	//hdd
 	for ($i = 1; $i <= $sloty[2]; $i++)
 	{
 		if (!isset($_GET['hdd'.$i]) || $_GET['hdd'.$i] < 0)
-			continue;
+		continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'.$i].' AND typ="hdd"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -114,18 +114,18 @@ if (isset($_GET['mb']))
 			$sestava[$zaznam['idveci']]++;
 			//$hddpwr = max($zaznam['vykon'], $hddpwr); TODO opravit
 			if ($zaznam['vykon'] < 10)
-				$hddtier = max($hddtier,$zaznam['vykon']);
+			$hddtier = max($hddtier,$zaznam['vykon']);
 			if ($zaznam['vykon'] > 10)
-				$ssdsize += $zaznam['vykon'];
+			$ssdsize += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
-			die('Taký harddisk nemáš.');
+		die('Taký harddisk nemáš.');
 	}
 
 	//psu
 	if (!isset($_GET['psu']))
-		die('Nemáš vybraný zdroj.');
+	die('Nemáš vybraný zdroj.');
 	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['psu'].' AND typ="psu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
@@ -136,91 +136,93 @@ if (isset($_GET['mb']))
 		$psupwr = $zaznam['vykon'];
 	}
 	else
-		die('Taký zdroj nemáš.');
+	die('Taký zdroj nemáš.');
 
-	switch ($ramkap) {
-    case >= 64:
-        $ramkoe = 2;
-        break;
-		case >= 32:
-				$ramkoe = 1.8;
-				break;
-		case >= 24:
-				$ramkoe = 1.6;
-				break;
-		case >= 16:
-				$ramkoe = 1.4;
-				break;
-		case >= 12:
-				$ramkoe = 1.2;
-				break;
-		case >= 8:
-				$ramkoe = 1;
-				break;
-		case >= 6:
-				$ramkoe = 0.8;
-				break;
-		case >= 4:
-				$ramkoe = 0.6;
-				break;
-		case >= 2:
-				$ramkoe = 0.4;
-				break;
-		case >= 1:
-				$ramkoe = 0.2;
-				break;
-		case else:
-				$ramkoe = 0;
-				break;
+
+	if ($ramkap  >= 64){
+		$ramkoe = 2;
+	}
+	elseif ($ramkap  >= 32){
+		$ramkoe = 1.8;
+	}
+	elseif ($ramkap  >= 24){
+		$ramkoe = 1.6;
+	}
+	elseif ($ramkap  >= 16){
+		$ramkoe = 1.4;
+	}
+	elseif ($ramkap  >= 12){
+		$ramkoe = 1.2;
+	}
+	elseif ($ramkap  >= 8){
+		$ramkoe = 1;
+	}
+	elseif ($ramkap  >= 6){
+		$ramkoe = 0.8;
+	}
+	elseif ($ramkap  >= 4){
+		$ramkoe = 0.6;
+	}
+	elseif ($ramkap  >= 2){
+		$ramkoe = 0.4;
+	}
+	elseif ($ramkap  >= 1){
+		$ramkoe = 0.2;
+	}
+	elseif ($ramkap  else){
+		$ramkoe = 0;
 	}
 	if ($ssdsize > 0) {
-			switch ($ssdsize) {
-		    case >= 2048:
-		        $storagekoe = 2;
-		        break;
-				case >= 1024:
-						$storagekoe = 1.8;
-						break;
-				case >= 512:
-						$storagekoe = 1.6;
-						break;
-				case >= 256:
-						$storagekoe = 1.4;
-						break;
-				case >= 128:
-						$storagekoe = 1.2;
-						break;
-				case >= 64:
-						$storagekoe = 1;
-						break;
-				case else:
-						throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
-						break;
-			}
+		if ($ssdsize  >= 2048)
+		{
+			$storagekoe = 2;
+		}
+		elseif ($ssdsize  >= 1024)
+		{
+			$storagekoe = 1.8;
+		}
+		elseif ($ssdsize  >= 512)
+		{
+			$storagekoe = 1.6;
+		}
+		elseif ($ssdsize  >= 256)
+		{
+			$storagekoe = 1.4;
+		}
+		elseif ($ssdsize  >= 128)
+		{
+			$storagekoe = 1.2;
+		}
+		elseif ($ssdsize  >= 64)
+		{
+			$storagekoe = 1;
+		}
+		elseif ($ssdsize  else){
+			throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
+		}
 	} else {
-		switch ($ssdsize) {
-			case = 4:
-					$storagekoe = 0.8;
-					break;
-			case = 3:
-					$storagekoe = 0.6;
-					break;
-			case = 2:
-					$storagekoe = 0.4;
-					break;
-			case = 1:
-					$storagekoe = 0.2;
-					break;
-			case else:
-					throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
-					break;
+		elseif ($ssdsize  = 4){
+			$storagekoe = 0.8;
+		}
+		elseif ($ssdsize  = 3){
+			$storagekoe = 0.6;
+		}
+		elseif ($ssdsize  = 2){
+			$storagekoe = 0.4;
+		}
+		elseif ($ssdsize  = 1){
+			$storagekoe = 0.2;
+		}
+		elseif ($ssdsize  else){
+			throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
+		}
 	}
 	$vykon = min($cpupwr, $gpupwr) * 2 * $ramkoe * $storagekoe;
 	//TODO udelat vykon tak jak ma byt
 	//$vykon = 1;
 
 	if ($psupwr < $spotreba * 1.1)
-		$vykon = 0;
+	$vykon = 0;
 
 	//poskládat hráči sestavu
 	$dotaz = 'INSERT INTO sestavy (hrac, vykon, spotreba, obsah, sbercas) VALUES ('.$_SESSION['hrac'].', '.$vykon.', '.$spotreba.', "'.join(';', $sestava).'", '.time().')';
@@ -235,8 +237,8 @@ if (isset($_GET['mb']))
 	$dotaz = 'SELECT * FROM veci';
 	$vysl = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zazn = mysql_fetch_array($vysl))
-		if ($sestava[$zazn['idveci']] > 0)
-			$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
+	if ($sestava[$zazn['idveci']] > 0)
+	$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.$nazvy.' o výkonu '.$vykon.' a spotřebě '.$spotreba.' W.")';
 	mysql_query($dotaz);
 
@@ -255,15 +257,15 @@ if (isset($_GET['switch']))
 	if (count($zaznam) > 1)
 	{
 		if ($zaznam['hrac'] != $_SESSION['hrac'])
-			die('Takú zostavu nemáš.');
+		die('Takú zostavu nemáš.');
 
 		$nazvy = "";
 		$obsah = explode(';', $zaznam['obsah']);
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zazn = mysql_fetch_array($vysl))
-			if ($obsah[$zazn['idveci']] > 0)
-				$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
+		if ($obsah[$zazn['idveci']] > 0)
+		$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
 
 		if ($zaznam['vyzkum'] == 1)    //přepnout na body
 		{
@@ -285,7 +287,7 @@ if (isset($_GET['switch']))
 		}
 	}
 	else
-		echo 'Taká zostava neexistuje.';
+	echo 'Taká zostava neexistuje.';
 }
 
 //rozebrání sestavy
@@ -297,10 +299,10 @@ if (isset($_GET['disass']))
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) <= 1)
-		die('Táto zostava neexistuje.');
+	die('Táto zostava neexistuje.');
 
 	if ($zaznam['hrac'] != $_SESSION['hrac'])
-		die('Túto zostavu nevlastníš.');
+	die('Túto zostavu nevlastníš.');
 
 	$sestava = explode(';', $zaznam['obsah']);
 
@@ -322,8 +324,8 @@ if (isset($_GET['disass']))
 	$dotaz = 'SELECT * FROM veci';
 	$vysl = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zazn = mysql_fetch_array($vysl))
-		if ($obsah[$zazn['idveci']] > 0)
-			$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
+	if ($obsah[$zazn['idveci']] > 0)
+	$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozebrána sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W.")';
 	mysql_query($dotaz);
 }
