@@ -107,7 +107,7 @@ include 'updatesestav.php';
 		<div class="panel-heading">
 			<h1 class="panel-title">Info o komponente</h1>
 		</div>
-		<div class="panel-body" id="infoitemu">
+		<div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.
 		</div>
 	</div>
 </div>

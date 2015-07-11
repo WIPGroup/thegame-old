@@ -90,7 +90,7 @@ include 'body.php';    //TODO: hodit na ajax
 				<div class="panel-heading">
 					<h1 class="panel-title">Info o predmete<button style="float:right" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h1>
 				</div>
-				<div class="panel-body" id="infoitemu">
+				<div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.
 				</div>
 			</div>
 		</div>

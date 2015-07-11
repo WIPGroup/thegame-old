@@ -7,8 +7,12 @@ function itemInfo(){
 			url: "components/getinfo.php",
 			success: function(data) {
 				$("#infoitemu").html(data);
+				$("#infoitemucontainer").show();
 			}
 		});
+	});
+	$("#infoitemucontainer .close").click(function(){
+		$("#infoitemucontainer").hide();
 	});
 }
 function initIsotope(){
