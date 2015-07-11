@@ -16,6 +16,7 @@ else
 {
 	include 'components/form.php';
 }
+include 'components/poradie.php';
 ?>
 <script src="js/index.js"></script>
 </body>
