@@ -7,7 +7,7 @@ include 'body.php';    //TODO: hodit na ajax
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
-		<h1 class="panel-title">Inventář</h1>
+		<h1 class="panel-title">Inventár</h1>
 	</div>
 	<div id="inv" class="panel-body panel-collapse collapse in">
 		<div class="col-xs-12">
@@ -34,7 +34,7 @@ include 'body.php';    //TODO: hodit na ajax
 				<ul class="dropdown-menu" role="menu">
 					<li><a data-filter="*">Zobraziť všetko</a></li>
 					<li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Komponenty</a></li>
-					<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent(ov)</a></li>
+					<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent</a></li>
 					<li><a data-filter=".cpu">CPUs</a></li>
 					<li><a data-filter=".psu">PSUs</a></li>
 					<li><a data-filter=".hdd">HDDs</a></li>

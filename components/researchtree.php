@@ -4,7 +4,7 @@
 			<h1 class="panel-title">Výzkum</h1>
 		</div>
 		<div class="panel-body">
-Vyzkum je dležitý, bez neho sa nikam nedostanes.
+Výskum je dôležitý, bez výskumu sa nikam nedostaneš.
 			<?php
 				include 'vlastnictvi.php';
 				include 'updatesestav.php';

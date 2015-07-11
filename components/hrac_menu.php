@@ -17,7 +17,7 @@
 			$dotaz = 'SELECT jmeno FROM hraci WHERE idhrace='.$_SESSION['hrac'];
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			$zaznam = mysql_fetch_array($vysledek);
-			echo 'Užívaťel: '.$zaznam['jmeno'];
+			echo 'Používatel: '.$zaznam['jmeno'];
 			?>
 		</a>
 	</li>

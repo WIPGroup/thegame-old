@@ -46,4 +46,4 @@ for ($i = 1; $i <= 4; $i++)
 	echo '<select class="form-control selectpicker" name="hdd'.$i.'" id="hdd'.$i.'">'.$hdds.'</select>';
 echo '<br>Zdroj:';
 echo '<select class="form-control selectpicker" name="psu" id="psu">'.$psus.'</select>';
-echo '<br><button class="btn btn-primary btn-block" type="submit">Sestavit</button>';
+echo '<br><button class="btn btn-primary btn-block" type="submit">Zostaviť</button>';

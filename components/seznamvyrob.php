@@ -4,7 +4,7 @@ include '../vlastnictvi.php';
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading">
-		<h1 class="panel-title">Moje výroba</h1>
+		<h1 class="panel-title">Moja výroba</h1>
 	</div>
 	<ul class="list-group" style="text-align: left">
 		<?php
@@ -26,7 +26,7 @@ include '../vlastnictvi.php';
 			echo '<div class="progress" style="margin-top:auto; margin-bottom:auto">';
 			echo '<div class="progress-bar" data-zbyva="'.($zaznam['hotovo'] - time()).'" data-celkem="'.$zaznam['doba'].'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
 			echo '</div></td><td style="width: 150px; text-align: right">';
-			echo '<span class="badge">zbývá <span class="casvyroby">'.($zaznam['hotovo'] - time()).'</span> sekund</span>';
+			echo '<span class="badge">ostáva <span class="casvyroby">'.($zaznam['hotovo'] - time()).'</span> sekund</span>';
 			echo '</td></tr></table></li>';
 		}
 		?>
