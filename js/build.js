@@ -265,9 +265,9 @@ function reloadSestavy() { //nacte sestavy
 					var obsah = $("."+name,toto);
 					obsah.each(function(index,value){
 						$(".sestava"+name,toto.siblings(".sestava")).append("<li>"+$(value).text()+"</li>");
-						console.log($(value).text());
 					});
 				});
+				toto.remove();
 			});
 		}
 	});

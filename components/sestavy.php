@@ -40,16 +40,22 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		}
 	echo '</ul>';
 	echo '<div class="sestava">';
+	echo '<span class="label label-default">Motherboard</span>';
 	echo '<ul class="sestavamb">';
 	echo '</ul>';
+	echo '<span class="label label-default">CPU</span>';
 	echo '<ul class="sestavacpu">';
 	echo '</ul>';
+	echo '<span class="label label-default">GPU</span>';
 	echo '<ul class="sestavagpu">';
 	echo '</ul>';
+	echo '<span class="label label-default">RAM</span>';
 	echo '<ul class="sestavaram">';
 	echo '</ul>';
+	echo '<span class="label label-default">Storage</span>';
 	echo '<ul class="sestavahdd">';
 	echo '</ul>';
+	echo '<span class="label label-default">PSU</span>';
 	echo '<ul class="sestavapsu">';
 	echo '</ul>';
 	echo '</div></div></div>';
