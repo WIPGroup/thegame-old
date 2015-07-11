@@ -74,9 +74,6 @@ function reloadFullInv(){
 			$("#fullinv").html(data);  //data se hodi do neceho s id inventar, easy
 			initIsotope();
 			console.log('reloadFullInv');
-			$(window).scroll(function(){ 
-				$("#infoitemucontainer").css('top', $(window).scrollTop());
-			}).trigger('scroll');
 		}
 	});
 }

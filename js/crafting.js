@@ -118,7 +118,4 @@ $(function(){
 		};
 	}
 	itemInfo();
-	$(window).scroll(function(){ 
-		$("#infoitemucontainer").css('top', $(window).scrollTop());
-	}).trigger('scroll');
 });
