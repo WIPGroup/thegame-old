@@ -35,7 +35,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		if ($obsah[$i] > 0)
 		{
 			echo '<li class="'.$typ[$i].'">';
-			echo '<img src="icons/'.$zaznam['idveci'].'.png" width="24px">';
+			echo '<img src="icons/'.$id[$i].'.png" width="24px">';
 			if ($obsah[$i] > 1)
 				echo $obsah[$i].'x ';
 			echo $veci[$i].'</li>';
