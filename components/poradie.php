@@ -8,7 +8,7 @@
 			$dotaz = 'SELECT jmeno,body FROM hraci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)){
-				if($zaznam['jmeno']!='root')
+				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug'))
 					echo'<tr data-body="'.$zaznam['body'].'"><td class="cislo"></td><td>'.$zaznam['body']."</td><td>".$zaznam['jmeno'].'</td></tr>';
 			}
 			?>
