@@ -14,7 +14,7 @@ if (isset($_SESSION['hrac']))
 }
 elseif (isset($_POST['hrac']))
 {
-	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.$_POST['hrac'].'" AND heslo="'.$_POST['heslo'].'"';
+	$dotaz = 'SELECT * FROM hraci WHERE jmeno="'.mysql_real_escape_string($_POST['hrac']).'" AND heslo="'.mysql_real_escape_string($_POST['heslo']).'"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 

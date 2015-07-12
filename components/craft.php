@@ -6,7 +6,7 @@ include '../vlastnictvi.php';
 if (isset($_GET['craft']))
 {
 	//započat výrobu
-	$dotaz = 'SELECT * FROM recepty, vyzkumy WHERE idreceptu='.$_GET['craft'].' AND vyzkum=idvyzkumu';
+	$dotaz = 'SELECT * FROM recepty, vyzkumy WHERE idreceptu='.mysql_real_escape_string($_GET['craft']).' AND vyzkum=idvyzkumu';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
@@ -24,7 +24,7 @@ if (isset($_GET['craft']))
 		if ($splnuje)
 		{
 			//spuštění výroby
-			$dotaz = 'INSERT INTO vyroba (hrac, recept, pocet, hotovo) VALUES ('.$_SESSION['hrac'].', '.$_GET['craft'].', '.$_GET['pocet'].', '.(time() + $zaznam['doba']).')';
+			$dotaz = 'INSERT INTO vyroba (hrac, recept, pocet, hotovo) VALUES ('.$_SESSION['hrac'].', '.mysql_real_escape_string($_GET['craft']).', '.mysql_real_escape_string($_GET['pocet']).', '.(time() + $zaznam['doba']).')';
 			mysql_query($dotaz);
 
 			//odečtení surovin
@@ -40,7 +40,7 @@ if (isset($_GET['craft']))
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
 			$zazn = mysql_fetch_array($vysl);
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.$_GET['pocet'].'x '.$zazn['nazev'].'")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Spuštěna výroba '.mysql_real_escape_string($_GET['pocet']).'x '.$zazn['nazev'].'")';
 			mysql_query($dotaz);
 		}
 		else

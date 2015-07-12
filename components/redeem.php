@@ -4,7 +4,7 @@ session_start();
 require '../vlastnictvi.php';
 if (isset($_GET['kupon']))
 {
-	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower($_GET['kupon']).'"';
+	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower(mysql_real_escape_string($_GET['kupon'])).'"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
@@ -19,7 +19,7 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 
 		//smazat kupó
-		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
+		$dotaz = 'DELETE FROM kupony WHERE kod="'.mysql_real_escape_string($zaznam['kod']).'"';
 		mysql_query($dotaz);
 
 		echo '<ul style="padding-left:0;list-style-type:none;">';
