@@ -242,7 +242,7 @@ if (isset($_GET['mb']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($sestava[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.$nazvy.' o výkonu '.$vykon.' a spotřebě '.$spotreba.' W.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zložená zostava '.$nazvy.' o výkone '.$vykon.' a spotrebe '.$spotreba.' W.")';
 	mysql_query($dotaz);
 
 	echo $vykon;
@@ -276,7 +276,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na body.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W prepnutá na body.")';
 			mysql_query($dotaz);
 		}
 		else    //přepnout na výzkum
@@ -285,7 +285,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na výzkum.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W prepnutá na výzkum.")';
 			mysql_query($dotaz);
 		}
 	}
@@ -329,6 +329,6 @@ if (isset($_GET['disass']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($obsah[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozebrána sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozobraná zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W.")';
 	mysql_query($dotaz);
 }

@@ -33,7 +33,14 @@ include 'admin/tvorbakuponu.php';
 				<label>Počet nových kuponů: <input type="number" name="prerozdelit" id="prerozdelit" min="1" max="10000" class="form-control" placeholder="Počet kuponů"></label>
 				<button type="submit" class="btn btn-primary btn-block">Přerozdělit surovinné kupony</button>
 			</form>
-			<a href="admin/tisk.php" target="_blank">Verze kuponů na tisk</a>
+			<?php
+				$dotaz = 'SELECT COUNT(*) FROM hraci WHERE idhrace>1';
+				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+				$zaznam = mysql_fetch_array($vysledek);
+				
+				echo '<a href="admin.php?prerozdelit='.$zaznam['COUNT(*)'].'&pridelit=1">Přerozdělit surovinné kupony zrovna mezi hráče</a>';
+			?>
+			<br><a href="admin/tisk.php" target="_blank">Verze kuponů na tisk</a>
 		</div>
 	</div>
 </div>

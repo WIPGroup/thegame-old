@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.3
+-- version 4.4.11
 -- http://www.phpmyadmin.net
 --
--- Počítač: localhost
--- Vytvořeno: Sob 11. čec 2015, 21:56
--- Verze serveru: 5.5.42-cll
--- Verze PHP: 5.4.34
+-- Host: localhost
+-- Generation Time: Jul 12, 2015 at 10:56 AM
+-- Server version: 5.5.41-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,16 +14,16 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Databáze: `rctorg_antre`
+-- Database: `hardware_pcbs`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `hraci`
+-- Table structure for table `hraci`
 --
 
 CREATE TABLE IF NOT EXISTS `hraci` (
@@ -36,18 +36,16 @@ CREATE TABLE IF NOT EXISTS `hraci` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `hraci`
+-- Dumping data for table `hraci`
 --
 
 INSERT INTO `hraci` (`idhrace`, `jmeno`, `heslo`, `vlastnictvi`, `body`, `vyzkum`) VALUES
-(1, 'root', 'greyjoy', '11684;726;3646;2395;1897;75;58;69;72;74;72;43;177;45;48;48;48;48;39;39;39;39;39;39;39;39;40;40;39;39;37;38;39;37;39;39;39;49;50;50;49;50;50;54;93;49;48;93;37;37;38;37;38;38;38;38;87;87;87;87;36;37;37;37;37;37;37;37;36;37;37;37;37;35;36;36;36;36;37;37;35;37;37;36;37;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;55;32;35;36;35;36;42;35;36;36;36;36;82;36;35;36;36;35;42;36;36;35;36;36;83', 13550625, 0),
-(2, 'test1', 'test1', '10000;1003;2005;1006;1001;1;1;1;1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0', 0, 0),
-(3, 'test2', 'test2', '10000;1000;1570;1000;1000;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0', 50, 0);
+(1, 'root', 'greyjoy', '11684;340;3517;2391;1884;76;59;69;72;74;72;43;177;45;48;48;48;48;39;39;39;39;39;39;39;39;40;40;39;39;39;39;39;36;39;39;39;49;50;50;49;49;50;53;93;49;49;94;37;38;38;36;38;38;38;38;87;87;87;87;36;37;37;37;37;36;37;37;36;36;37;37;37;37;37;36;36;36;37;36;36;37;36;36;37;36;36;36;36;36;36;36;36;36;36;36;35;36;36;36;36;35;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;36;35;56;36;31;34;36;36;41;36;36;35;36;36;83;35;36;36;36;35;41;36;36;36;36;35;83', 192893778, 7072);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `kupony`
+-- Table structure for table `kupony`
 --
 
 CREATE TABLE IF NOT EXISTS `kupony` (
@@ -57,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `kupony` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `kupony`
+-- Dumping data for table `kupony`
 --
 
 INSERT INTO `kupony` (`kod`, `obsah`, `cas`) VALUES
@@ -76,7 +74,7 @@ INSERT INTO `kupony` (`kod`, `obsah`, `cas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `log`
+-- Table structure for table `log`
 --
 
 CREATE TABLE IF NOT EXISTS `log` (
@@ -86,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `log`
+-- Dumping data for table `log`
 --
 
 INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
@@ -392,12 +390,48 @@ INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES
 (1436651633, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
 (1436651661, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
 (1436651667, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
-(1436651673, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.');
+(1436651673, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436652352, 1, 'Složena sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 20 a spotřebě 189 W.'),
+(1436652357, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium 4 630 (Pentium)(1x) nVidia 6800 Ultra(2x) Crucial Ballistix 4GB(1x) WD VelociRaptor(1x) Corsair CS550(1x)  o výkonu 1 a spotřebě 289 W.'),
+(1436652360, 1, 'Rozebrána sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD 2900 XT(1x) Kingston 2GB(4x) Kingston KC 960 1024 GB(1x) Enermax Platimax 850W(1x)  o výkonu 1 a spotřebě 295 W.'),
+(1436652362, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 80 a spotřebě 189 W.'),
+(1436653289, 1, 'Složena sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD x850 XT PE(1x) Kingston 2GB(4x) WD Blue(1x) Corsair RM450(1x)  o výkonu 208 a spotřebě 170 W.'),
+(1436653324, 1, 'Sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD x850 XT PE(1x) Kingston 2GB(4x) WD Blue(1x) Corsair RM450(1x)  o výkonu 208 a spotřebě 170 W přepnuta na výzkum.'),
+(1436653326, 1, 'Sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD x850 XT PE(1x) Kingston 2GB(4x) WD Blue(1x) Corsair RM450(1x)  o výkonu 208 a spotřebě 170 W přepnuta na body.'),
+(1436654547, 1, 'Složena sestava Asus EVGA 132-CK-NF78-A1 (Core)(1x) Core 2 Quad Q9650 (Core)(1x) nVidia 660ti(1x) Kingston 2GB(1x) WD Blue(1x) Corsair CX430(1x)  o výkonu 467.2 a spotřebě 256 W.'),
+(1436654555, 1, 'Rozebrána sestava Abit IP35 (Core)(1x) Pentium E5500 (Core)(1x) AMD x850 XT PE(1x) Kingston 2GB(4x) WD Blue(1x) Corsair RM450(1x)  o výkonu 208 a spotřebě 170 W.'),
+(1436655087, 1, 'Složena sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) AMD 295X2(1x) Kingston 2GB(1x) WD Black(1x) Corsair CX500(1x)  o výkonu 0 a spotřebě 643 W.'),
+(1436655096, 1, 'Rozebrána sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) AMD 295X2(1x) Kingston 2GB(1x) WD Black(1x) Corsair CX500(1x)  o výkonu 0 a spotřebě 643 W.'),
+(1436655513, 1, 'Složena sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i5 760 (Nehalem)(1x) AMD 5970(1x) Crucial Ballistix 4GB(1x) WD Black(1x) Corsair CX500(1x)  o výkonu 1224 a spotřebě 408 W.'),
+(1436658787, 1, 'Složena sestava Abit IP35 (Core)(1x) Core 2 Duo E8400 (Core)(1x) nVidia 7600 GT(1x) Crucial Ballistix 4GB(4x) WD Black(1x) Corsair CX500(1x)  o výkonu 470.4 a spotřebě 152 W.'),
+(1436658809, 1, 'Složena sestava Asus P7P55D Deluxe (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(3x) Kingston 1GB(4x) WD Green(1x) Corsair CX430(1x)  o výkonu 0 a spotřebě 433 W.'),
+(1436658826, 1, 'Rozebrána sestava Asus P7P55D Deluxe (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(3x) Kingston 1GB(4x) WD Green(1x) Corsair CX430(1x)  o výkonu 0 a spotřebě 433 W.'),
+(1436658827, 1, 'Rozebrána sestava Abit IP35 (Core)(1x) Core 2 Duo E8400 (Core)(1x) nVidia 7600 GT(1x) Crucial Ballistix 4GB(4x) WD Black(1x) Corsair CX500(1x)  o výkonu 470 a spotřebě 152 W.'),
+(1436658830, 1, 'Rozebrána sestava Asus EVGA 132-CK-NF78-A1 (Core)(1x) Core 2 Quad Q9650 (Core)(1x) nVidia 660ti(1x) Kingston 2GB(1x) WD Blue(1x) Corsair CX430(1x)  o výkonu 467 a spotřebě 256 W.'),
+(1436658831, 1, 'Rozebrána sestava Intel D975XBX (Pentium)(1x) Pentium D 960 (Pentium)(1x) AMD x850 XT PE(1x) Kingston 1GB(1x) WD Green(1x) Corsair CX430(1x)  o výkonu 20 a spotřebě 189 W.'),
+(1436658832, 1, 'Rozebrána sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i5 760 (Nehalem)(1x) AMD 5970(1x) Crucial Ballistix 4GB(1x) WD Black(1x) Corsair CX500(1x)  o výkonu 1224 a spotřebě 408 W.'),
+(1436659035, 1, 'Složena sestava MSI Z68A-GD65 (Sandy Bridge)(1x) Core i5 2500k (Sandy Bridge)(1x) nVidia Titan X(1x) Kingston 8GB HyperX Fury(1x) Kingston KC 960 1024 GB(1x) Corsair CX500(1x)  o výkonu 5280 a spotřebě 351 W.'),
+(1436659728, 1, 'Složena sestava Asus P7P55D Deluxe (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(3x) Kingston 1GB(4x) WD Green(1x) Corsair CX430(1x)  o výkonu 0 a spotřebě 433 W.'),
+(1436659741, 1, 'Rozebrána sestava Asus P7P55D Deluxe (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(3x) Kingston 1GB(4x) WD Green(1x) Corsair CX430(1x)  o výkonu 0 a spotřebě 433 W.'),
+(1436688248, 1, 'Spuštěna výroba 1x Northbridge'),
+(1436688250, 1, 'Spuštěna výroba 1x Southbridge'),
+(1436688297, 1, 'Složena sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(2x) nVidia 7600 GT(2x) Kingston 1GB(6x) WD Green(1x) Corsair HX1000i(1x)  o výkonu 73.6 a spotřebě 474 W.'),
+(1436688461, 1, 'Dokončena výroba 1x Northbridge'),
+(1436688461, 1, 'Dokončena výroba 1x Southbridge'),
+(1436689157, 1, 'Složena sestava Gigabyte GA-Z77X-UP7 (Ivy Bridge)(1x) Core i5 3350P (Ivy Bridge)(1x) nVidia Titan(2x) AMD 295X2(2x) Kingston 8GB HyperX Fury(4x) SAMSUNG 850 PRO 2048 GB(1x) Corsair AX1500i(1x)  o výkonu 0 a spotřebě 1584 W.'),
+(1436689175, 1, 'Rozebrána sestava EVGA X58 Classified 4x SLI (Nehalem)(1x) Core i7-E 980x (Nehalem)(1x) nVidia 6800 Ultra(2x) nVidia 7600 GT(2x) Kingston 1GB(6x) WD Green(1x) Corsair HX1000i(1x)  o výkonu 74 a spotřebě 474 W.'),
+(1436689177, 1, 'Rozebrána sestava MSI Z68A-GD65 (Sandy Bridge)(1x) Core i5 2500k (Sandy Bridge)(1x) nVidia Titan X(1x) Kingston 8GB HyperX Fury(1x) Kingston KC 960 1024 GB(1x) Corsair CX500(1x)  o výkonu 5280 a spotřebě 351 W.'),
+(1436689178, 1, 'Rozebrána sestava Gigabyte GA-Z77X-UP7 (Ivy Bridge)(1x) Core i5 3350P (Ivy Bridge)(1x) nVidia Titan(2x) AMD 295X2(2x) Kingston 8GB HyperX Fury(4x) SAMSUNG 850 PRO 2048 GB(1x) Corsair AX1500i(1x)  o výkonu 0 a spotřebě 1584 W.'),
+(1436689353, 1, 'Složena sestava Gigabyte GA-Z97X-UD5H (Haswell)(1x) Core i7 4790K (Haswell)(1x) AMD x850 XT PE(3x) Crucial Ballistix 4GB(2x) WD Black(1x) Corsair AX1500i(1x)  o výkonu 312 a spotřebě 359 W.'),
+(1436689362, 1, 'Rozebrána sestava Gigabyte GA-Z97X-UD5H (Haswell)(1x) Core i7 4790K (Haswell)(1x) AMD x850 XT PE(3x) Crucial Ballistix 4GB(2x) WD Black(1x) Corsair AX1500i(1x)  o výkonu 312 a spotřebě 359 W.'),
+(1436689423, 1, 'Složena sestava Asus EVGA 132-CK-NF78-A1 (Core)(1x) Core 2 Quad Q9300 (Core)(1x) nVidia 9800 GTX(1x) AMD 4870x2(1x) AMD 6970(1x) Crucial Ballistix 4GB(4x) WD Black(1x) Seasonic X1250(1x)  o výkonu 2352 a spotřebě 767 W.'),
+(1436689452, 1, 'Složena sestava GIGABYTE GA-B85M-D3H (Haswell)(1x) Core i7 4790K (Haswell)(1x) nVidia 9600 GT(1x) Crucial Ballistix 4GB(1x) SAMSUNG 850 PRO 2048 GB(1x) Seasonic G550W(1x)  o výkonu 756 a spotřebě 190 W.'),
+(1436690023, 1, 'Složena sestava Gigabyte GA-Z77X-UP7 (Ivy Bridge)(1x) Core i7 3770K (Ivy Bridge)(1x) nVidia Titan Z(1x) Kingston 8GB HyperX Fury(2x) SAMSUNG 850 PRO 128 GB(1x) Corsair CS550(1x)  o výkonu 7000 a spotřebě 461 W.');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `obchod`
+-- Table structure for table `obchod`
 --
 
 CREATE TABLE IF NOT EXISTS `obchod` (
@@ -410,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `obchod` (
 ) ENGINE=InnoDB AUTO_INCREMENT=309 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `obchod`
+-- Dumping data for table `obchod`
 --
 
 INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce`) VALUES
@@ -561,7 +595,7 @@ INSERT INTO `obchod` (`idnab`, `hrac`, `nabizi`, `mnoznabizi`, `chce`, `mnozchce
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `recepty`
+-- Table structure for table `recepty`
 --
 
 CREATE TABLE IF NOT EXISTS `recepty` (
@@ -573,7 +607,7 @@ CREATE TABLE IF NOT EXISTS `recepty` (
 ) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `recepty`
+-- Dumping data for table `recepty`
 --
 
 INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`, `vyzkum`) VALUES
@@ -720,7 +754,7 @@ INSERT INTO `recepty` (`idreceptu`, `vyrobek`, `suroviny`, `doba`, `vyzkum`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `sestavy`
+-- Table structure for table `sestavy`
 --
 
 CREATE TABLE IF NOT EXISTS `sestavy` (
@@ -731,21 +765,21 @@ CREATE TABLE IF NOT EXISTS `sestavy` (
   `obsah` varchar(500) NOT NULL,
   `sbercas` int(11) NOT NULL,
   `vyzkum` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `sestavy`
+-- Dumping data for table `sestavy`
 --
 
 INSERT INTO `sestavy` (`idsestavy`, `hrac`, `vykon`, `spotreba`, `obsah`, `sbercas`, `vyzkum`) VALUES
-(54, 1, 1, 289, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0', 1436651673, 0),
-(55, 1, 1, 295, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;1;0;0;0', 1436651673, 0),
-(59, 1, 80, 189, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0', 1436651673, 0);
+(72, 1, 2352, 767, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0', 1436691188, 0),
+(73, 1, 756, 190, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;1;0;0;0;0;0;0', 1436691188, 0),
+(74, 1, 7000, 461, '0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;2;0;0;0;0;0;1;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0', 1436691188, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `veci`
+-- Table structure for table `veci`
 --
 
 CREATE TABLE IF NOT EXISTS `veci` (
@@ -760,44 +794,44 @@ CREATE TABLE IF NOT EXISTS `veci` (
 ) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `veci`
+-- Dumping data for table `veci`
 --
 
 INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis`) VALUES
-(0, 'Peníze', '', 0, 0, '', '', 'Základní prostředek pro směnu, počítač z ních ale neposkládáš.'),
+(0, '€', '', 0, 0, '', '', 'Základní prostředek pro směnu, počítač z ních ale neposkládáš.'),
 (1, 'Železo', '', 0, 0, '', '', 'Surovina s chemickou značkou Fe.'),
 (2, 'Měď', '', 0, 0, '', '', 'Surovina s chemickou značkou Cu.'),
 (3, 'Zlato', '', 0, 0, '', '', 'Surovina s chemickou značkou Au.'),
-(4, 'Křemík', '', 0, 0, '', '', 'Surovina s chemickou značkou Si.'),
-(5, 'Northbridge', '', 0, 0, '', '', 'Materiál na základní desku.'),
-(6, 'Southbridge', '', 0, 0, '', '', 'Materiál na základní desku.'),
-(7, 'Flash Bios', '', 0, 0, '', '', 'Materiál na základní desku.'),
-(8, 'RAM slots', '', 0, 0, '', '', 'Materiál na základní desku.'),
-(9, 'PCI-e', '', 0, 0, '', '', 'Materiál na základní desku.'),
-(10, 'Core', '', 0, 0, '', '', 'Materiál na procesor.'),
-(11, 'L3 Cache', '', 0, 0, '', '', 'Materiál na procesor.'),
-(12, 'Graphics', '', 0, 0, '', '', 'Materiál na procesor.'),
-(13, 'Controller', '', 0, 0, '', '', 'Materiál na procesor.'),
-(14, 'Graphics core [64]', '', 0, 0, '', '', 'Materiál na grafickou kartu.'),
-(15, 'VRAM', '', 0, 0, '', '', 'Materiál na grafickou kartu.'),
-(16, 'PCB (GPU)', '', 0, 0, '', '', 'Materiál na grafickou kartu.'),
-(17, 'MOSFET', '', 0, 0, '', '', 'Materiál na grafickou kartu.'),
-(18, 'DRAM [1024]', '', 0, 0, '', '', 'Materiál na RAM.'),
-(19, 'PCB (RAM)', '', 0, 0, '', '', 'Materiál na RAM.'),
-(20, 'HEAD', '', 0, 0, '', '', 'Materiál na HDD.'),
-(21, 'SPINDLE', '', 0, 0, '', '', 'Materiál na HDD.'),
-(22, 'ACTUATOR', '', 0, 0, '', '', 'Materiál na HDD.'),
-(23, 'PLATTER', '', 0, 0, '', '', 'Materiál na HDD.'),
-(24, 'NAND Flash', '', 0, 0, '', '', 'Materiál na SSD.'),
-(25, 'Controller', '', 0, 0, '', '', 'Materiál na SSD.'),
-(26, 'CACHE', '', 0, 0, '', '', 'Materiál na SSD.'),
-(27, 'SATA', '', 0, 0, '', '', 'Materiál na SSD.'),
-(28, 'Kondík', '', 0, 0, '', '', 'Materiál na PSU.'),
-(29, 'PCB (PSU)', '', 0, 0, '', '', 'Materiál na PSU.'),
-(30, 'Intel D975XBX (Pentium)', 'mb', 1, 0, 'Pentium', '4;3;1', 'Třída Pentium'),
-(31, 'Abit IP35 (Core)', 'mb', 1, 0, 'Core', '4;1;1', 'Třída Core'),
-(32, 'Asus P5Q Deluxe (Core)', 'mb', 1, 0, 'Core', '4;2;1', 'Třída Core'),
-(33, 'Asus EVGA 132-CK-NF78-A1 (Core)', 'mb', 1, 0, 'Core', '4;3;1', 'Třída Core'),
+(4, 'Kremík', '', 0, 0, '', '', 'Surovina s chemickou značkou Si.'),
+(5, 'Northbridge', '', 0, 0, '', '', 'Súčiastka na základnú dosku.'),
+(6, 'Southbridge', '', 0, 0, '', '', 'Súčiastka na základnú dosku.'),
+(7, 'Flash Bios', '', 0, 0, '', '', 'Súčiastka na základnú dosku.'),
+(8, 'RAM Sloty', '', 0, 0, '', '', 'Súčiastka na základnú dosku.'),
+(9, 'PCI-e Sloty', '', 0, 0, '', '', 'Súčiastka na základnú dosku.'),
+(10, 'Core', '', 0, 0, '', '', 'Súčiastka na základnú procesor.'),
+(11, 'L3 Cache', '', 0, 0, '', '', 'Súčiastka na základnú procesor.'),
+(12, 'Integreted Graphics', '', 0, 0, '', '', 'Súčiastka na základnú procesor.'),
+(13, 'Controller', '', 0, 0, '', '', 'Súčiastka na základnú procesor.'),
+(14, 'Graphics core [64]', '', 0, 0, '', '', 'Súčiastka na grafickú kartu.'),
+(15, 'VRAM', '', 0, 0, '', '', 'Súčiastka na grafickú kartu.'),
+(16, 'PCB (GPU)', '', 0, 0, '', '', 'Súčiastka na grafickú kartu.'),
+(17, 'MOSFET', '', 0, 0, '', '', 'Súčiastka na grafickú kartu.'),
+(18, 'DRAM [1024]', '', 0, 0, '', '', 'Súčiastka na RAM.'),
+(19, 'PCB (RAM)', '', 0, 0, '', '', 'Súčiastka na RAM.'),
+(20, 'HEAD', '', 0, 0, '', '', 'Súčiastka na HDD.'),
+(21, 'SPINDLE', '', 0, 0, '', '', 'Súčiastka na HDD.'),
+(22, 'ACTUATOR', '', 0, 0, '', '', 'Súčiastka na HDD.'),
+(23, 'PLATTER', '', 0, 0, '', '', 'Súčiastka na HDD.'),
+(24, 'NAND Flash', '', 0, 0, '', '', 'Súčiastka na SSD.'),
+(25, 'Controller', '', 0, 0, '', '', 'Súčiastka na SSD.'),
+(26, 'CACHE', '', 0, 0, '', '', 'Súčiastka na SSD.'),
+(27, 'SATA', '', 0, 0, '', '', 'Súčiastka na SSD.'),
+(28, 'Kondík', '', 0, 0, '', '', 'Súčiastka na Zdroj.'),
+(29, 'PCB (PSU)', '', 0, 0, '', '', 'Súčiastka na Zdroj.'),
+(30, 'Intel D975XBX (Pentium)', 'mb', 1, 0, 'Pentium', '4;3;1', 'Procesor architektúry Pentium'),
+(31, 'Abit IP35 (Core)', 'mb', 1, 0, 'Core', '4;1;1', 'Procesor architektúry Core'),
+(32, 'Asus P5Q Deluxe (Core)', 'mb', 1, 0, 'Core', '4;2;1', 'Procesor architektúry Core'),
+(33, 'Asus EVGA 132-CK-NF78-A1 (Core)', 'mb', 1, 0, 'Core', '4;3;1', 'Procesor architektúry Core'),
 (34, 'Asus P7P55D Deluxe (Nehalem)', 'mb', 1, 0, 'Nehalem', '4;3;1', 'Třída Nehalem'),
 (35, 'EVGA P55 Classified (Nehalem)', 'mb', 1, 0, 'Nehalem', '4;4;1', 'Třída Nehalem'),
 (36, 'EVGA X58 Classified 4x SLI (Nehalem)', 'mb', 1, 0, 'Nehalem', '6;4;1', 'Třída Nehalem'),
@@ -912,7 +946,7 @@ INSERT INTO `veci` (`idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sl
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `vyroba`
+-- Table structure for table `vyroba`
 --
 
 CREATE TABLE IF NOT EXISTS `vyroba` (
@@ -921,12 +955,12 @@ CREATE TABLE IF NOT EXISTS `vyroba` (
   `recept` int(11) NOT NULL,
   `pocet` int(11) NOT NULL,
   `hotovo` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `vyzkumy`
+-- Table structure for table `vyzkumy`
 --
 
 CREATE TABLE IF NOT EXISTS `vyzkumy` (
@@ -937,24 +971,24 @@ CREATE TABLE IF NOT EXISTS `vyzkumy` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
--- Vypisuji data pro tabulku `vyzkumy`
+-- Dumping data for table `vyzkumy`
 --
 
 INSERT INTO `vyzkumy` (`idvyzkumu`, `nazev`, `body`, `popis`) VALUES
-(0, 'Základ', 0, 'Máš to jednoduché, počítač už za teba vymysleli :)'),
+(0, 'Základ', 0, 'Máš to jednoduché, počítač už za Vás vymysleli...'),
 (1, 'Pentium', 0, 'Nejako sa začínať musí'),
-(2, 'Core', 1000000, ''),
-(3, 'Nehalem', 1000000000, '<img src="icons/10.png" width="100%">'),
-(4, 'Sandy Bridge', 1000000000000, '<img src="icons/10.png" width="100%">'),
-(5, 'Ivy Bridge', 1000000000000000, '<img src="icons/10.png" width="100%">'),
-(6, 'Hashwell', 1000000000000000000, '<img src="icons/10.png" width="100%">');
+(2, 'Core', 576000, 'Dostávate sa do dôb vlády Core 2 Quad'),
+(3, 'Nehalem', 13455360, 'Core or not to core ? Whut ?'),
+(4, 'Sandy Bridge', 35251200, 'Výrobné procesy blízkej minulosti.'),
+(5, 'Ivy Bridge', 152064000, 'Moar...!'),
+(6, 'Hashwell', 1000000000000000000, 'Unlock your bragging rights.');
 
 --
--- Klíče pro exportované tabulky
+-- Indexes for dumped tables
 --
 
 --
--- Klíče pro tabulku `hraci`
+-- Indexes for table `hraci`
 --
 ALTER TABLE `hraci`
   ADD PRIMARY KEY (`idhrace`),
@@ -962,7 +996,7 @@ ALTER TABLE `hraci`
   ADD KEY `id_2` (`idhrace`);
 
 --
--- Klíče pro tabulku `kupony`
+-- Indexes for table `kupony`
 --
 ALTER TABLE `kupony`
   ADD PRIMARY KEY (`kod`),
@@ -971,34 +1005,34 @@ ALTER TABLE `kupony`
   ADD KEY `kod_3` (`kod`);
 
 --
--- Klíče pro tabulku `log`
+-- Indexes for table `log`
 --
 ALTER TABLE `log`
   ADD KEY `cas` (`cas`);
 
 --
--- Klíče pro tabulku `obchod`
+-- Indexes for table `obchod`
 --
 ALTER TABLE `obchod`
   ADD PRIMARY KEY (`idnab`),
   ADD KEY `id` (`idnab`);
 
 --
--- Klíče pro tabulku `recepty`
+-- Indexes for table `recepty`
 --
 ALTER TABLE `recepty`
   ADD PRIMARY KEY (`idreceptu`),
   ADD KEY `id` (`idreceptu`);
 
 --
--- Klíče pro tabulku `sestavy`
+-- Indexes for table `sestavy`
 --
 ALTER TABLE `sestavy`
   ADD PRIMARY KEY (`idsestavy`),
   ADD KEY `idsestavy` (`idsestavy`);
 
 --
--- Klíče pro tabulku `veci`
+-- Indexes for table `veci`
 --
 ALTER TABLE `veci`
   ADD PRIMARY KEY (`idveci`),
@@ -1006,7 +1040,7 @@ ALTER TABLE `veci`
   ADD KEY `id_2` (`idveci`);
 
 --
--- Klíče pro tabulku `vyroba`
+-- Indexes for table `vyroba`
 --
 ALTER TABLE `vyroba`
   ADD PRIMARY KEY (`idvyroby`),
@@ -1015,7 +1049,7 @@ ALTER TABLE `vyroba`
   ADD KEY `idvyroby_2` (`idvyroby`);
 
 --
--- Klíče pro tabulku `vyzkumy`
+-- Indexes for table `vyzkumy`
 --
 ALTER TABLE `vyzkumy`
   ADD PRIMARY KEY (`idvyzkumu`),
@@ -1023,41 +1057,41 @@ ALTER TABLE `vyzkumy`
   ADD KEY `idvyzkumu_2` (`idvyzkumu`);
 
 --
--- AUTO_INCREMENT pro tabulky
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pro tabulku `hraci`
+-- AUTO_INCREMENT for table `hraci`
 --
 ALTER TABLE `hraci`
   MODIFY `idhrace` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT pro tabulku `obchod`
+-- AUTO_INCREMENT for table `obchod`
 --
 ALTER TABLE `obchod`
   MODIFY `idnab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=309;
 --
--- AUTO_INCREMENT pro tabulku `recepty`
+-- AUTO_INCREMENT for table `recepty`
 --
 ALTER TABLE `recepty`
   MODIFY `idreceptu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=140;
 --
--- AUTO_INCREMENT pro tabulku `sestavy`
+-- AUTO_INCREMENT for table `sestavy`
 --
 ALTER TABLE `sestavy`
-  MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
+  MODIFY `idsestavy` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=75;
 --
--- AUTO_INCREMENT pro tabulku `veci`
+-- AUTO_INCREMENT for table `veci`
 --
 ALTER TABLE `veci`
   MODIFY `idveci` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=144;
 --
--- AUTO_INCREMENT pro tabulku `vyroba`
+-- AUTO_INCREMENT for table `vyroba`
 --
 ALTER TABLE `vyroba`
-  MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `idvyroby` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
--- AUTO_INCREMENT pro tabulku `vyzkumy`
+-- AUTO_INCREMENT for table `vyzkumy`
 --
 ALTER TABLE `vyzkumy`
   MODIFY `idvyzkumu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
