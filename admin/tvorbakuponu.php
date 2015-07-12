@@ -80,6 +80,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 
 	//vytvořit nové kupony
 	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']); 
+	$celychkuponu = 0;
 
 	while ($iron > 0 || $copper > 0 || $gold > 0 || $silicon > 0)
 	{
@@ -131,11 +132,11 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$cas += 1;
 
 			$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
-			//break;
 		}
+		else
+			$celychkuponu++;
 		
 		//přidat vše do seznamu
-		//array_push($kupony, $obsah);
 		$kupony[count($kupony)] = $obsah;
 	}
 
@@ -187,6 +188,9 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	
 	if ($_GET['pridelit'] = 1)
 	{
+		if ($celychkuponu < $_GET['prerozdelit'])
+			die ("Nejde rozdělit mezi všechny hráče.");
+
 		$dotaz = 'SELECT * FROM hraci WHERE idhrace>1';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 
