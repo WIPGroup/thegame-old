@@ -1,7 +1,14 @@
 <?php
 if (isset($_POST['newpasswd']))
 {
-//jirvoz na tom pracuje
+	if ($_POST['newpasswd'] == $_POST['newpasswd2'])
+	{
+		$dotaz = 'UPDATE hraci SET heslo="'.$_POST['newpasswd'].'" WHERE idhrace="'.$_SESSION['hrac'].'"';
+		mysql_query($dotaz);
+		echo "Heslo úspěšně změněno.";
+	}
+	else
+		echo "Hesla se ti neshodují.";
 }
 ?>
 <form action="profile.php" method="POST">
