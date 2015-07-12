@@ -185,6 +185,40 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 	}
 	
+	if ($_GET['pridelit'] = 1)
+	{
+		$dotaz = 'SELECT * FROM hraci WHERE idhrace>1';
+		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+
+		while ($zaznam = mysql_fetch_array($vysledek))
+		{
+			if (count($kupony) < 1)
+				break;
+
+			$vlastnictvi = explode(';', $zaznam['vlastnictvi']);
+			$kupon = array_shift($kupony);
+			$velkuponu = count($kupon);
+
+			for ($i = 0; $i < $velkuponu; $i++)
+				$vlastnictvi[$i] += $kupon[$i];
+
+			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$zaznam['idhrace'].'"';
+			mysql_query($dotaz);
+
+			//log
+			$dotaz = 'SELECT * FROM veci';
+			$vysl = mysql_query($dotaz) or die(mysql_error($db));
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Přiděleno rootem  ';
+			while ($zazn = mysql_fetch_array($vysl))
+			{
+				if ($obsah[$zazn['idveci']] > 0)
+					$dotaz .= $zazn['nazev'].'('.$kupon[$zazn['idveci']].') ';
+			}
+			$dotaz .= '")';
+			mysql_query($dotaz);
+		}
+	}
+
 	foreach ($kupony as $kup)
 	{
 		//zapsat vše do db
