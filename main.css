@@ -176,5 +176,5 @@ th {
 table#poradie td {
   min-width: 100px; }
 
-table#poradie td:nth-child(2) {
+table#poradie td:nth-child(3) {
   width: 100%; }
