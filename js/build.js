@@ -5,7 +5,7 @@ function variables(){
 	ram = new Array({},{},{},{},{},{},{},{});
 	hdd = new Array({},{},{},{});
 	gpu = new Array({},{},{},{});
-	ramcounter = 0, hddcounter = 0, gpucounter = 0, ramindex = 0, hddindex = 0, gpuindex = 0;
+	ramcounter = 0, hddcounter = 0, gpucounter = 0, ramindex = 0, hddindex = 0, gpuindex = 0, wattage = 0;
 }
 function initIsotope() {
   // init Isotope
@@ -22,6 +22,7 @@ function initIsotope() {
       tier: '[data-tier]',
       type: '[data-type]',
     },
+	sortBy: 'power',
     sortAscending: {
       name: true,
       power: false,
@@ -130,6 +131,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 					window[typ][index].idveci = toto.data("idveci");
 					window[typ][index].tier = toto.data("tier");
 					window[typ][index].type = toto.data("type");
+					window[typ][index].wattage = parseInt(toto.find(".wattage").text());
 					console.log(toto.find("abbr").attr("title"));
 					window[typ+"counter"]++;
 					window[typ+"index"]++;
@@ -139,6 +141,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 				window[typ].nazev = toto.find("abbr").attr("title");
 				window[typ].tier = toto.data("tier");
 				window[typ].type = toto.data("type");
+				window[typ].wattage = parseInt(toto.find(".wattage").text());
 				console.log(toto.find("abbr").attr("title"));
 			}
 		}
@@ -174,6 +177,18 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 		}
 		$(this).html(htmlcontent);
 	});
+	if (shouldReturnArray(x) === true){
+		for (i=0;i<mb[x];i++){
+			if (window[x][i].nazev != undefined){
+				wattage += window[x][i].wattage;
+			}
+		}
+	}else{
+		if (window[x].nazev != undefined){
+			wattage += window[x].wattage;
+		}
+	}
+	$("#wattaz").html(wattage);
 	$(".odobrat").click(function(){ //zprovozneni odobrat tlacitek
 		typis = $(this).data("type");
 		indexis = $(this).data("index");
