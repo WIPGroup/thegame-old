@@ -186,7 +186,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 	}
 
-	if ($_GET['pridelit'] = 1)
+	if ($_GET['pridelit'] == 1)
 	{
 		if ($celychkuponu < $_GET['prerozdelit'])
 			die ("Nejde rozdělit mezi všechny hráče.");
