@@ -5,7 +5,7 @@ require 'vlastnictvi.php';
 if (isset($_GET['trade']))
 {
 	//uskutečnit obchod
-	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['trade'];
+	$dotaz = 'SELECT * FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['trade']);
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
@@ -29,7 +29,7 @@ if (isset($_GET['trade']))
 			mysql_query($dotaz);
 
 			//odstranění nabídky
-			$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['trade'];
+			$dotaz = 'DELETE FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['trade']);
 			mysql_query($dotaz);
 
 			//názvy věcí pro log
@@ -40,7 +40,7 @@ if (isset($_GET['trade']))
 				$veci[$zazn['idveci']] = $zazn['nazev'];
 			}
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutečněn nákup '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutočnený nákup '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'")';
 			mysql_query($dotaz);
 
 			echo 'Koupils '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'.';
@@ -60,21 +60,21 @@ elseif (isset($_GET['mnoznabizi']))
 	{
 		$vlastnictvi[$_GET['nabizi']] -= $_GET['mnoznabizi'];
 
-		$dotaz = 'INSERT INTO obchod (hrac, nabizi, mnoznabizi, chce, mnozchce) VALUES ('.$_SESSION['hrac'].', '.$_GET['nabizi'].', '.$_GET['mnoznabizi'].', '.$_GET['chce'].', '.$_GET['mnozchce'].')';
+		$dotaz = 'INSERT INTO obchod (hrac, nabizi, mnoznabizi, chce, mnozchce) VALUES ('.$_SESSION['hrac'].', '.mysql_real_escape_string($_GET['nabizi']).', '.mysql_real_escape_string($_GET['mnoznabizi']).', '.mysql_real_escape_string($_GET['chce']).', '.mysql_real_escape_string($_GET['mnozchce']).')';
 		mysql_query($dotaz);
 
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
 
 		//názvy věcí pro log
-		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['chce'].' OR idveci='.$_GET['nabizi'];
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['chce']).' OR idveci='.mysql_real_escape_string($_GET['nabizi']);
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.mysql_real_escape_string($veci[$_GET['nabizi']]).'('.mysql_real_escape_string($_GET['mnoznabizi']).') za '.mysql_real_escape_string($veci[$_GET['chce']]).'('.mysql_real_escape_string($_GET['mnozchce']).')")';
 		mysql_query($dotaz);
 
 		echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
@@ -85,7 +85,7 @@ elseif (isset($_GET['mnoznabizi']))
 //zrušit nabídku
 elseif (isset($_GET['cancel']))
 {
-	$dotaz = 'SELECT * FROM obchod WHERE idnab='.$_GET['cancel'];
+	$dotaz = 'SELECT * FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['cancel']);
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 
@@ -95,11 +95,11 @@ elseif (isset($_GET['cancel']))
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$zaznam['hrac'].'"';
 		mysql_query($dotaz);
 
-		$dotaz = 'DELETE FROM obchod WHERE idnab='.$_GET['cancel'];
+		$dotaz = 'DELETE FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['cancel']);
 		mysql_query($dotaz);
 
 		//názvy věcí pro log
-		$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['chce'].' OR idveci='.$zaznam['nabizi'];
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($zaznam['chce']).' OR idveci='.mysql_real_escape_string($zaznam['nabizi']);
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zazn = mysql_fetch_array($vysl))
 		{

@@ -32,7 +32,7 @@ if (isset($_GET['mb']))
 	}
 
 	//získat údaje o desce
-	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['mb'].' AND typ="mb"';
+	$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['mb']).' AND typ="mb"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -49,7 +49,7 @@ if (isset($_GET['mb']))
 	//info a kompatibilita procesoru
 	if (!isset($_GET['cpu']))
 	die('Nemáš vybraný procesor.');
-	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['cpu'].' AND typ="cpu"';
+	$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['cpu']).' AND typ="cpu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -70,7 +70,7 @@ if (isset($_GET['mb']))
 	{
 		if (!isset($_GET['ram'.$i]) || $_GET['ram'.$i] < 0)
 		continue;
-		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['ram'.$i].' AND typ="ram"';
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['ram'.$i]).' AND typ="ram"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -89,7 +89,7 @@ if (isset($_GET['mb']))
 	{
 		if (!isset($_GET['gpu'.$i]) || $_GET['gpu'.$i] < 0)
 		continue;
-		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['gpu'.$i].' AND typ="gpu"';
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['gpu'.$i]).' AND typ="gpu"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -108,7 +108,7 @@ if (isset($_GET['mb']))
 	{
 		if (!isset($_GET['hdd'.$i]) || $_GET['hdd'.$i] < 0)
 		continue;
-		$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['hdd'.$i].' AND typ="hdd"';
+		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['hdd'.$i]).' AND typ="hdd"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
 		if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -129,7 +129,7 @@ if (isset($_GET['mb']))
 	//psu
 	if (!isset($_GET['psu']))
 	die('Nemáš vybraný zdroj.');
-	$dotaz = 'SELECT * FROM veci WHERE idveci='.$_GET['psu'].' AND typ="psu"';
+	$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['psu']).' AND typ="psu"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1 && $vlastnictvi[$zaznam['idveci']] > 0)
@@ -242,7 +242,7 @@ if (isset($_GET['mb']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($sestava[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Složena sestava '.$nazvy.' o výkonu '.$vykon.' a spotřebě '.$spotreba.' W.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zložená zostava '.$nazvy.' o výkone '.$vykon.' a spotrebe '.$spotreba.' W.")';
 	mysql_query($dotaz);
 
 	echo $vykon;
@@ -254,7 +254,7 @@ if (isset($_GET['switch']))
 	require '../dblogin.php';
 	require '../login.php';
 	//přepnout na body/výzkum
-	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['switch'];
+	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.mysql_real_escape_string($_GET['switch']);
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
@@ -276,7 +276,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na body.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W prepnutá na body.")';
 			mysql_query($dotaz);
 		}
 		else    //přepnout na výzkum
@@ -285,7 +285,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W přepnuta na výzkum.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W prepnutá na výzkum.")';
 			mysql_query($dotaz);
 		}
 	}
@@ -298,7 +298,7 @@ if (isset($_GET['disass']))
 {
 	require '../vlastnictvi.php';
 
-	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.$_GET['disass'];
+	$dotaz = 'SELECT * FROM sestavy WHERE idsestavy='.mysql_real_escape_string($_GET['disass']);
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) <= 1)
@@ -318,7 +318,7 @@ if (isset($_GET['disass']))
 	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace='.$_SESSION['hrac'];
 	mysql_query($dotaz);
 
-	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.$_GET['disass'];
+	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.mysql_real_escape_string($_GET['disass']);
 	mysql_query($dotaz);
 
 	//log
@@ -329,6 +329,6 @@ if (isset($_GET['disass']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($obsah[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozebrána sestava '.$nazvy.' o výkonu '.$zaznam['vykon'].' a spotřebě '.$zaznam['spotreba'].' W.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozobraná zostava '.$nazvy.' o výkone '.$zaznam['vykon'].' a spotrebe '.$zaznam['spotreba'].' W.")';
 	mysql_query($dotaz);
 }

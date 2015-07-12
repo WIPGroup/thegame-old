@@ -79,7 +79,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	}
 
 	//vytvořit nové kupony
-	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']); 
+	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']);
 	$celychkuponu = 0;
 
 	while ($iron > 0 || $copper > 0 || $gold > 0 || $silicon > 0)
@@ -128,14 +128,14 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$obsah[2] += $copper;
 			$obsah[3] += $gold;
 			$obsah[4] += $silicon;
-			
+
 			$cas += 1;
 
 			$iron = 0; $copper = 0; $gold = 0; $silicon = 0;
 		}
 		else
 			$celychkuponu++;
-		
+
 		//přidat vše do seznamu
 		$kupony[count($kupony)] = $obsah;
 	}
@@ -154,7 +154,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$kupony[$b][2] += 1;
 			$kupony[$b][1] -= 3;
 		}
-		
+
 		//křemík za 10 měďi
 		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
 		if ($kupony[$a][4] > 1 && $kupony[$b][2] > 10)
@@ -164,7 +164,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$kupony[$b][4] += 1;
 			$kupony[$b][2] -= 10;
 		}
-		
+
 		//zlato za 3 křemíky
 		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
 		if ($kupony[$a][3] > 1 && $kupony[$b][4] > 3)
@@ -174,7 +174,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$kupony[$b][3] += 1;
 			$kupony[$b][4] -= 3;
 		}
-		
+
 		//90 železa za zlato
 		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
 		if ($kupony[$a][1] > 90 && $kupony[$b][3] > 1)
@@ -185,7 +185,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$kupony[$b][3] -= 1;
 		}
 	}
-	
+
 	if ($_GET['pridelit'] = 1)
 	{
 		if ($celychkuponu < $_GET['prerozdelit'])
@@ -212,7 +212,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			//log
 			$dotaz = 'SELECT * FROM veci';
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Přiděleno rootem  ';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Pridelené rootom  ';
 			while ($zazn = mysql_fetch_array($vysl))
 			{
 				if ($obsah[$zazn['idveci']] > 0)
@@ -241,7 +241,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$zaznam = mysql_fetch_array($vysledek);
 		}
 		while ($zaznam['COUNT(*)'] > 1);
-	
+
 		$dotaz = 'INSERT INTO kupony (kod, obsah, cas) VALUES ("'.$kod.'", "'.join(';', $kup).'", '.$cas.')';
 		mysql_query($dotaz);
 	}

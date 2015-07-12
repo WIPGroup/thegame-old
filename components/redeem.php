@@ -4,7 +4,7 @@ session_start();
 require '../vlastnictvi.php';
 if (isset($_GET['kupon']))
 {
-	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower($_GET['kupon']).'"';
+	$dotaz = 'SELECT * FROM kupony WHERE kod="'.strtolower(mysql_real_escape_string($_GET['kupon'])).'"';
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	$zaznam = mysql_fetch_array($vysledek);
 	if (count($zaznam) > 1)
@@ -19,14 +19,14 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 
 		//smazat kupó
-		$dotaz = 'DELETE FROM kupony WHERE kod="'.$zaznam['kod'].'"';
+		$dotaz = 'DELETE FROM kupony WHERE kod="'.mysql_real_escape_string($zaznam['kod']).'"';
 		mysql_query($dotaz);
 
 		echo '<ul style="padding-left:0;list-style-type:none;">';
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použit kupón '.$zaznam['kod'].' (';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použitý kupón '.$zaznam['kod'].' (';
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
