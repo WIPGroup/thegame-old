@@ -222,20 +222,17 @@ $power-color: #f55;
 		width:30px;
 	}
 }
-#poradi{
-	table {
-		counter-reset: rowNumber;
-	}
-	table tr {
-		counter-increment: rowNumber;
-	}
-
-	table tr::before {
-		content: counter(rowNumber)".";
-		min-width: 1em;
-		margin-right: 0.5em;
-	}
-	table td {
-		min-width:100px;
-	}
+table#poradie {
+	counter-reset: rowNumber;
+}
+table#poradie tr {
+	counter-increment: rowNumber;
+}
+table#poradie tr::before {
+	content: counter(rowNumber)".";
+	min-width: 1em;
+	margin-right: 0.5em;
+}
+table#poradie td {
+	min-width:100px;
 }

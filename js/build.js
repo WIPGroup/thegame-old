@@ -149,6 +149,7 @@ function initForm(){ //inicializace funkcionality pridavani itemu
 	});
 }
 function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
+	wattage = 0;
 	$("#currentbuild ul").each(function(){ //naplneni seznamu pro kazdou komponentu
 		var x = $(this).attr("id");
 		var htmlcontent = "";

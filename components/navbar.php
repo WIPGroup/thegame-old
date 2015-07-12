@@ -24,7 +24,7 @@
 				<a href="build.php"><span class="fa fa-cog fa-spin"></span> Stavba PC</a>
 			</li>
 			<li>
-				<a href="research.php"><span class="glyphicon glyphicon-education"></span> Výzkum</a>
+				<a href="research.php"><span class="glyphicon glyphicon-education"></span> Výskum</a>
 			</li>
 			<?php
 			if ($prihlasen && $_SESSION['hrac'] == 1)

@@ -97,7 +97,7 @@ include 'updatesestav.php';
 				<span class="label label-default">PSU</span>
 				<ul id="psu">
 				</ul>
-				<span class="label label-danger">Aktuálna spotreba: </span><span id="wattaz">0</span>W
+				<span class="label label-danger">Aktuálna spotreba:</span> <span id="wattaz">0</span>W
 			</div>
 		</div>
 		<button class="btn btn-primary btn-block" id="sestavit">ZOSTAVIŤ</button>
