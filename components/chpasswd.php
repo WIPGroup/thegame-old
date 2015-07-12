@@ -8,11 +8,20 @@ if (isset($_POST['newpasswd']))
 		echo "Heslo úspěšně změněno.";
 	}
 	else
-		echo "Hesla se ti neshodují.";
+	echo "Hesla se ti neshodují.";
 }
 ?>
-<form action="profile.php" method="POST">
-	<label>Nové heslo: <input type="password" name="newpasswd" id="newpasswd" class="form-control" placeholder="Nové heslo"></label>
-	<label>Nové heslo ešče raz: <input type="password" name="newpasswd2" id="newpasswd2" class="form-control" placeholder="Nové heslo ešče raz"></label>
-	<button type="submit" class="btn btn-primary btn-block">Změnit heslo</button>
-</form>
+<div class="col-xs-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading" >
+			<h1 class="panel-title">Zmena hesla</h1>
+		</div>
+		<div class="panel-body">
+			<form class="form-inline" action="profile.php" method="POST">
+				<input type="password" name="newpasswd" id="newpasswd" class="form-control" placeholder="Nové heslo">
+				<input type="password" name="newpasswd2" id="newpasswd2" class="form-control" placeholder="Nové heslo ešče raz">
+				<button type="submit" class="btn btn-primary">Zmeniť heslo</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -3,7 +3,7 @@
 		<div class="panel-heading" data-toggle="collapse" href="#log" style="cursor: pointer">
 			<h1 class="panel-title">Log</h1>
 		</div>
-		<div id="log" class="panel-collapse collapse" style="text-align: left">
+		<div id="log" class="panel-collapse collapse in" style="text-align: left">
 			<ul class="list-group">
 				<?php
 				$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 100';
