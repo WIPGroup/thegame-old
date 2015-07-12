@@ -55,7 +55,7 @@ if (isset($_GET['trade']))
 elseif (isset($_GET['mnoznabizi']))
 {
 	if ($_GET['nabizi'] == $_GET['chce'])
-		echo 'Nepřijde ti to jako blbost, nabízet stejnou věc za stejnou? (pokud ne, kontaktuj admina)';
+		echo 'Nemôžeš vytvoriť ponuku na rovnaké položky!';
 	elseif ($vlastnictvi[$_GET['nabizi']] >= $_GET['mnoznabizi'])
 	{
 		$vlastnictvi[$_GET['nabizi']] -= $_GET['mnoznabizi'];
@@ -74,13 +74,13 @@ elseif (isset($_GET['mnoznabizi']))
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvořena nabídka '.mysql_real_escape_string($veci[$_GET['nabizi']]).'('.mysql_real_escape_string($_GET['mnoznabizi']).') za '.mysql_real_escape_string($veci[$_GET['chce']]).'('.mysql_real_escape_string($_GET['mnozchce']).')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Vytvorená ponuka '.mysql_real_escape_string($veci[$_GET['nabizi']]).'('.mysql_real_escape_string($_GET['mnoznabizi']).') za '.mysql_real_escape_string($veci[$_GET['chce']]).'('.mysql_real_escape_string($_GET['mnozchce']).')")';
 		mysql_query($dotaz);
 
-		echo 'Vytvořils nabídku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
+		echo 'Vytvoril si ponuku '.$veci[$_GET['nabizi']].'('.$_GET['mnoznabizi'].') za '.$veci[$_GET['chce']].'('.$_GET['mnozchce'].').';
 	}
 	else
-		echo 'Nemáš dost surovin na vytvoření nabídky.';
+		echo 'Nemáš dostatok surovin na vytvorenie ponuky.';
 }
 //zrušit nabídku
 elseif (isset($_GET['cancel']))
@@ -106,11 +106,11 @@ elseif (isset($_GET['cancel']))
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušena nabídka '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušená ponuka '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].')")';
 		mysql_query($dotaz);
 
-		echo 'Zrušils svou nabídku '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].').';
+		echo 'Zrušil si ponuku '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].').';
 	}
 	else
-	echo 'Zrušení se nepodařilo.';
+	echo 'Zrušenie sa nepodarilo.';
 }
