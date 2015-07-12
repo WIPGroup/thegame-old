@@ -1,6 +1,6 @@
 var timerExists = false;
 function itemInfo(){
-	$("#infoitemucontainer").appendTo("body");
+	$("#infoitemucontainer").appendTo("body"); //swag
 	$(".grid-craft-item").click(function(){ 
 			var idveci = $(this).attr("data-idveci");
 			$.ajax({
