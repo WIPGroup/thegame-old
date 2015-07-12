@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- jQuery -->
 	<script  src="bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Rollbar JS -->
-	<script  src="js/rollbar.js"></script>
 	<!-- Pace v devu zakazan
 	<link href="bower_components/pace/themes/green/pace-theme-corner-indicator.css" rel="stylesheet" />
 	<script src="bower_components/pace/pace.min.js"></script>-->
@@ -49,16 +47,7 @@
 <body>
 	<?php //Crash monitoring
 		error_reporting(E_ALL);
-		require_once 'rollbar.php';
-		$config = array(
-				'access_token' => '41a7de13241f499ab0849238a8b7b00e',
-				'environment' => 'production',
-				'root' => '/',
-		);
-		$config['environment'] = getcwd();
-		Rollbar::init($config);
-		?>
-
+	?>
 	<!-- Kdyby nahodou
 	<script>
 	$(function(){

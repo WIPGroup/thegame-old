@@ -9,7 +9,7 @@ if ($prihlasen && $_SESSION['hrac'] == 1)
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
-		echo strtoupper($zaznam['kod'])." ";
+		echo strtoupper($zaznam['kod'])."<br>";
 	}
 
 }
