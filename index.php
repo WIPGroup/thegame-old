@@ -12,6 +12,7 @@ if ($prihlasen)
 	echo '<div class="col-xs-12" id="fullinv">';
 //	include "components/full_inv.php";
 	echo '</div>';
+	include 'components/footer.php';
 }
 else
 {

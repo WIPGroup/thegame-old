@@ -8,6 +8,7 @@ if ($prihlasen && $_SESSION['hrac'] == 1)
 {
 	include 'admin/kupony.php';
 	include 'admin/log.php';
+	include 'components/footer.php';
 }
 else
 	include 'components/form.php';
