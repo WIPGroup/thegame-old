@@ -109,7 +109,7 @@ $(function() { //odeslani formulare s nabidkou
 	$wrapper.find('tr').sort(function (a, b) {
 		return +b.getAttribute("data-body") - +a.getAttribute("data-body");
 	}).appendTo( $wrapper );
-	$(".cislo").each(function(v,i){
+	$(".cislo").each(function(i){
 		$(this).html((i+1)+".");
 	});
 });
