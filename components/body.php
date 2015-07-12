@@ -2,6 +2,9 @@
 //TODO odkomentovat pro ajax
 //session_start();
 //include '../vlastnictvi.php';
+$dotaz = 'SELECT * FROM hraci WHERE idhrace='.$_SESSION['hrac'];
+$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+$hrac = mysql_fetch_array($vysledek);
 ?>
 <div class="col-xs-12 col-md-4">
 	<div class="panel panel-primary">

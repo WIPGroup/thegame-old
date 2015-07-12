@@ -216,7 +216,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			while ($zazn = mysql_fetch_array($vysl))
 			{
 				if ($obsah[$zazn['idveci']] > 0)
-					$dotaz .= $zazn['nazev'].'('.$kupon[$zazn['idveci']].') ';
+					$dotaz .= '<code>'.$zazn['nazev'].'</code>('.$kupon[$zazn['idveci']].') ';
 			}
 			$dotaz .= '")';
 			mysql_query($dotaz);
