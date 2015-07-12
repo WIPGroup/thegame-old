@@ -176,27 +176,27 @@ if (isset($_GET['mb']))
 		$ramkoe = 0;
 	}
 	if ($ssdsize > 0) {
-		if ($ssdsize  >= 2048)
+		if ($ssdsize  >= 512)
 		{
 			$storagekoe = 2;
 		}
-		elseif ($ssdsize  >= 1024)
+		elseif ($ssdsize  >= 256)
 		{
 			$storagekoe = 1.8;
 		}
-		elseif ($ssdsize  >= 512)
+		elseif ($ssdsize  >= 128)
 		{
 			$storagekoe = 1.6;
 		}
-		elseif ($ssdsize  >= 256)
+		elseif ($ssdsize  >= 64)
 		{
 			$storagekoe = 1.4;
 		}
-		elseif ($ssdsize  >= 128)
+		elseif ($ssdsize  >= 32)
 		{
 			$storagekoe = 1.2;
 		}
-		elseif ($ssdsize  >= 64)
+		elseif ($ssdsize  >= 16)
 		{
 			$storagekoe = 1;
 		}
