@@ -159,6 +159,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 						htmlcontent += '<li>'+window[x][i].nazev;
 						htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="'+i+'" data-value="'+window[x][i].idveci+'">Odobrať</button>';
 						htmlcontent += '</li>';
+						wattage += window[x][i].wattage;
 					}else{
 						htmlcontent += '<li>Nič</li>';
 					}
@@ -168,6 +169,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 					htmlcontent += "<li>"+window[x].nazev;
 					htmlcontent += '<button class="btn btn-xs btn-danger odobrat" data-type="'+x+'" data-index="-1" data-value="'+window[x].idveci+'">Odobrať</button>';
 					htmlcontent += '</li>';
+					wattage += window[x].wattage;
 				}else{
 					htmlcontent += '<li>Nič</li>';
 				}
@@ -176,18 +178,7 @@ function showCurrentBuild(){ //ukazani aktualniho stavu staviciho se pocitace
 			htmlcontent += "<li>Vyber základnú dosku</li>";
 		}
 		$(this).html(htmlcontent);
-	});
-	if (shouldReturnArray(x) === true){
-		for (i=0;i<mb[x];i++){
-			if (window[x][i].nazev != undefined){
-				wattage += window[x][i].wattage;
-			}
-		}
-	}else{
-		if (window[x].nazev != undefined){
-			wattage += window[x].wattage;
-		}
-	}
+	});	
 	$("#wattaz").html(wattage);
 	$(".odobrat").click(function(){ //zprovozneni odobrat tlacitek
 		typis = $(this).data("type");
