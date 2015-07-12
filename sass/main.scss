@@ -225,3 +225,6 @@ $power-color: #f55;
 table#poradie td {
 	min-width:100px;
 }
+table#poradie td:nth-child(2){
+	width:100%;
+}
