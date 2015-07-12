@@ -26,12 +26,12 @@ if (isset($_GET['kupon']))
 		//log
 		$dotaz = 'SELECT * FROM veci';
 		$vysl = mysql_query($dotaz) or die(mysql_error($db));
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použitý kupón <code>'.$zaznam['kod'].'</code> (';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použitý kupón <kbd>'.$zaznam['kod'].'</kbd> (';
 		while ($zazn = mysql_fetch_array($vysl))
 		{
 			if ($obsah[$zazn['idveci']] > 0)
 			{
-				$dotaz .= '<code>'.$zazn['nazev'].'</code>('.$obsah[$zazn['idveci']].') ';
+				$dotaz .= '<kbd>'.$zazn['nazev'].'</kbd>('.$obsah[$zazn['idveci']].') ';
 				echo '<li>'.$zazn['nazev'].'('.$obsah[$zazn['idveci']].')</li>';
 			}
 		}

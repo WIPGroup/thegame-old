@@ -8,7 +8,7 @@ include 'admin/tvorbakuponu.php';
 			<h1 class="panel-title">Tvorba kuponů/poukázek</h1>
 		</div>
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
-			<form action="admin.php" method="GET">
+			<form class="form-inline" action="admin.php" method="GET">
 				<?php
 				$dotaz = 'SELECT * FROM veci';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
@@ -17,7 +17,7 @@ include 'admin/tvorbakuponu.php';
 					echo '<label><abbr title="'.$zaznam['nazev'].'"><img id="item-sm" src="icons/'.$zaznam['idveci'].'.png"></img></abbr><input type="number" name="'.$zaznam['idveci'].'" id="'.$zaznam['idveci'].'" min="0" max="1000000000" class="form-control" placeholder="'.$zaznam['nazev'].'"></label>';
 				}
 				?>
-				<button type="submit" class="btn btn-primary btn-block">Vytvořit</button>
+				<button type="submit" class="btn btn-primary">Vytvořit</button>
 			</form>
 		</div>
 	</div>
@@ -31,7 +31,7 @@ include 'admin/tvorbakuponu.php';
 		<div class="panel-body" style="width: 100%; heigth: 100%; text-align:left;">
 			<form action="admin.php" method="GET" class="form-inline">
 				<label>Počet nových kuponů: <input type="number" name="prerozdelit" id="prerozdelit" min="1" max="10000" class="form-control" placeholder="Počet kuponů"></label>
-				<button type="submit" class="btn btn-primary btn-block">Přerozdělit surovinné kupony</button>
+				<button type="submit" class="btn btn-primary">Přerozdělit surovinné kupony</button>
 			</form>
 			<?php
 				$dotaz = 'SELECT COUNT(*) FROM hraci WHERE idhrace>1';
