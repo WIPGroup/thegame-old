@@ -7,7 +7,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="http://antre.417rct.org/"><img src="favicon.ico" style="display: inline" alt=""/>PC Building Simulator</a>
+		<a class="navbar-brand" href="http://hardware.pcbs/index.php"><img src="favicon.ico" style="display: inline" alt=""/>PC Building Simulator</a>
 	</div>
 	<div class="collapse navbar-collapse" id="main-nav">
 		<ul class="nav navbar-nav">
