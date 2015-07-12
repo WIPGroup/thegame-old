@@ -26,7 +26,7 @@
       <li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent</a></li>
       <li><a data-filter=".cpu">CPUs</a></li>
       <li><a data-filter=".psu">PSUs</a></li>
-      <li><a data-filter=".hdd">HDDs</a></li>
+      <li><a data-filter=".hdd">Storage</a></li>
       <li><a data-filter=".gpu">GPUs</a></li>
       <li><a data-filter=".ram">RAMs</a></li>
       <li><a data-filter=".mb">Motherboards</a></li>

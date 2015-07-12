@@ -31,7 +31,7 @@ include 'updatesestav.php';
 			<li><a data-filter=".cpu, .psu, .hdd, .gpu, .ram, .mb">Components</a></li>
 			<li><a data-filter=".cpu">CPUs</a></li>
 			<li><a data-filter=".psu">PSUs</a></li>
-			<li><a data-filter=".hdd">HDDs</a></li>
+			<li><a data-filter=".hdd">Storage</a></li>
 			<li><a data-filter=".gpu">GPUs</a></li>
 			<li><a data-filter=".ram">RAMs</a></li>
 			<li><a data-filter=".mb">Motherboards</a></li>
@@ -97,6 +97,7 @@ include 'updatesestav.php';
 				<span class="label label-default">PSU</span>
 				<ul id="psu">
 				</ul>
+				<span class="label label-danger">Aktuálna spotreba:</span> <span id="wattaz">0</span>W
 			</div>
 		</div>
 		<button class="btn btn-primary btn-block" id="sestavit">ZOSTAVIŤ</button>

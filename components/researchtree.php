@@ -23,7 +23,7 @@ Výskum je dôležitý, bez výskumu sa nikam nedostaneš.
 				echo '<div class="col-md-3 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">'.$zaznam['nazev'].' ('.number_format($zaznam['body'], 0, '', ' ').' research bodů)</div><div class="panel-body">'.$zaznam['popis'].'<br>';
 
 				if ($vyzkum > $zaznam['body'])
-					echo 'Výzkum hotový.';
+					echo 'Výskum hotový.';
 				if ($vyzkum < $zaznam['body'])
 					if ($zkoumany)
 					{

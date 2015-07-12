@@ -3,7 +3,6 @@ session_start();
 include '../vlastnictvi.php';
 include 'updatevyrob.php';
 include 'updatesestav.php';
-include 'body.php';    //TODO: hodit na ajax
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
@@ -37,7 +36,7 @@ include 'body.php';    //TODO: hodit na ajax
 					<li><a data-filter=":not(.cpu, .psu, .hdd, .gpu, .ram, .mb)">Bez komponent</a></li>
 					<li><a data-filter=".cpu">CPUs</a></li>
 					<li><a data-filter=".psu">PSUs</a></li>
-					<li><a data-filter=".hdd">HDDs</a></li>
+					<li><a data-filter=".hdd">Storage</a></li>
 					<li><a data-filter=".gpu">GPUs</a></li>
 					<li><a data-filter=".ram">RAMs</a></li>
 					<li><a data-filter=".mb">Motherboards</a></li>
