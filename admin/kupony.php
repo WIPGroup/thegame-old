@@ -38,9 +38,9 @@ include 'admin/tvorbakuponu.php';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				$zaznam = mysql_fetch_array($vysledek);
 
-				echo '<button class="btn btn-primary" href="admin.php?prerozdelit='.$zaznam['COUNT(*)'].'&pridelit=1">Přerozdělit surovinné kupony zrovna mezi hráče</button>';
+				echo '<a class="btn btn-primary" href="admin.php?prerozdelit='.$zaznam['COUNT(*)'].'&pridelit=1">Přerozdělit surovinné kupony zrovna mezi hráče</a>';
 			?>
-			<button href="admin/tisk.php" target="_blank">Verze kuponů na tisk</button>
+			<a href="admin/tisk.php" target="_blank">Verze kuponů na tisk</a>
 		</div>
 	</div>
 </div>
