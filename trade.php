@@ -40,7 +40,7 @@ if (isset($_GET['trade']))
 				$veci[$zazn['idveci']] = $zazn['nazev'];
 			}
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutočnený nákup <code>'.$veci[$zaznam['nabizi']].'</code>('.$zaznam['mnoznabizi'].') za <code>'.$veci[$zaznam['chce']].'</code>('.$zaznam['mnozchce'].') od <code>'.$autor['jmeno'].'</code>")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutočnený nákup <kbd>'.$veci[$zaznam['nabizi']].'</kbd>('.$zaznam['mnoznabizi'].') za <kbd>'.$veci[$zaznam['chce']].'</kbd>('.$zaznam['mnozchce'].') od <kbd>'.$autor['jmeno'].'</kbd>")';
 			mysql_query($dotaz);
 
 			echo 'Koupils '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'.';
@@ -106,7 +106,7 @@ elseif (isset($_GET['cancel']))
 			$veci[$zazn['idveci']] = $zazn['nazev'];
 		}
 		//log
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušená ponuka <code>'.$veci[$zaznam['nabizi']].'</code>('.$zaznam['mnoznabizi'].') za <code>'.$veci[$zaznam['chce']].'</code>('.$zaznam['mnozchce'].')")';
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zrušená ponuka <kbd>'.$veci[$zaznam['nabizi']].'</kbd>('.$zaznam['mnoznabizi'].') za <kbd>'.$veci[$zaznam['chce']].'</kbd>('.$zaznam['mnozchce'].')")';
 		mysql_query($dotaz);
 
 		echo 'Zrušil si ponuku '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].').';

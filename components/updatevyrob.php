@@ -21,7 +21,7 @@
 			$vysl = mysql_query($dotaz) or die(mysql_error($db));
 			$zazn = mysql_fetch_array($vysl);
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Dokončena výroba '.$zaznam['pocet'].'x <code>'.$zazn['nazev'].'</code>")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Dokončena výroba '.$zaznam['pocet'].'x <kbd>'.$zazn['nazev'].'</kbd>")';
 			mysql_query($dotaz);
 		}
 	}
