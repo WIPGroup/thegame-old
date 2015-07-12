@@ -6,7 +6,7 @@ require 'login.php';
 include 'components/navbar.php';
 if ($prihlasen)
 {
-  //TODO include components/zmena hesla
+	include 'components/chpasswd.php';
 	include 'components/loghrace.php';
 	include 'components/footer.php';
 }
