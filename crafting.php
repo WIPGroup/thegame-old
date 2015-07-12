@@ -55,10 +55,13 @@ if ($prihlasen)
 
 		$splnuje = true;
 
-		for ($i = 0; $i < $pocsurovin; $i++)
-			if ($vlastnictvi[$i] < $suroviny[$i])
+		for ($i = 0; $i < $pocsurovin; $i++){
+			if (!(isset($vlastnictvi[$i])) and ($suroviny[$i]>0)){ 
 				$splnuje = false;
-
+			} else if ($vlastnictvi[$i] < $suroviny[$i]){					
+				$splnuje = false;
+			}
+		}
 		if ($hrac['vyzkum'] < $zaznam['body'])
 			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else if (!$splnuje)
