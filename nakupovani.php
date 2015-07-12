@@ -27,7 +27,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 								echo $selectitems;
 								?>
 							</select>
-							<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+							<input type="number" name="mnoznabizi" id="mnoznabizi" min="1" max="1250000" value="1" class="form-control" placeholder="Množstvo">
 						</div>
 					</div>
 					<div class="input-group panel panel-primary col-xs-6">
@@ -38,7 +38,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 								echo $selectitems;
 								?>
 							</select>
-							<input type="number" name="mnozchce" id="mnozchce" min="1" max="1000" value="1" class="form-control" placeholder="Množstvo">
+							<input type="number" name="mnozchce" id="mnozchce" min="1" max="1250000" value="1" class="form-control" placeholder="Množstvo">
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary btn-block">Odoslať</button>
