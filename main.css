@@ -173,16 +173,5 @@ th {
 .craft-vyrob input {
   width: 30px; }
 
-table#poradie {
-  counter-reset: rowNumber; }
-
-table#poradie tr {
-  counter-increment: rowNumber; }
-
-table#poradie tr::before {
-  content: counter(rowNumber) ".";
-  min-width: 1em;
-  margin-right: 0.5em; }
-
 table#poradie td {
   min-width: 100px; }
