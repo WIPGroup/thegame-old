@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-md-12">
+<div class="col-xs-12 col-md-4">
 	<div class="panel panel-primary">
 		<div class="panel-heading" data-toggle="collapse" href="#poradi" style="cursor: pointer">
 			<h1 class="panel-title">Poradie</h1>

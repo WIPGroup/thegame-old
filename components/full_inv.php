@@ -3,7 +3,6 @@ session_start();
 include '../vlastnictvi.php';
 include 'updatevyrob.php';
 include 'updatesestav.php';
-include 'body.php';    //TODO: hodit na ajax
 ?>
 <div class="panel panel-primary">
 	<div class="panel-heading" data-toggle="collapse" href="#inv" style="cursor: pointer">
