@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-md-4">
 	<div class="panel panel-primary">
-		<div class="panel-heading" data-toggle="collapse" href="#poradi" style="cursor: pointer">
+		<div class="panel-heading" data-toggle="collapse" href="#poradie" style="cursor: pointer">
 			<h1 class="panel-title">Poradie</h1>
 		</div>
 		<table id="poradie" class="table table-condensed table-hover table-bordered panel-collapse collapse in">
