@@ -8,6 +8,7 @@ if ($prihlasen)
 {
 	include 'vlastnictvi.php';
 	include 'components/stavba.php';
+	include 'components/footer.php';
 }
 else
 	include 'components/form.php';

@@ -21,3 +21,6 @@ if (isset($_POST['hrac'])) echo '<div class="alert alert-danger alert-dismissabl
 		</div>
 	</div>
 </div>
+<?php
+	include 'components/footer.php';
+ ?>

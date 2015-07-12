@@ -13,7 +13,7 @@ if ($prihlasen)
 	echo '<div class="col-md-9 col-sm-12 col-xs-12"><div class="panel panel-primary">';
 	echo '<div class="panel-heading"><h1 class="panel-title">Recepty</h1></div>';
 	echo '<div class="panel-body" style="position:relative;">';
-	
+
 	include 'components/craft-sort.php';
 
 	echo '<div class="grid col-md-12 col-sm-12 col-xs-12">';
@@ -34,7 +34,7 @@ if ($prihlasen)
 	{
 		//TODO: mobile  friendly
 		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].' t'.$zaznam['vyzkum'].' ';
-		if ($hrac['vyzkum'] < $zaznam['body']) 
+		if ($hrac['vyzkum'] < $zaznam['body'])
 			echo 'no';
 		else
 			echo 'yes';
@@ -71,6 +71,7 @@ if ($prihlasen)
 	echo '<div class="col-xs-12 col-md-3" style="padding-top: 5px;" id="infoitemucontainer"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">Info o itemu<button style="float:right" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h1></div><div class="panel-body" id="infoitemu">Kliknite na predmet pre zobrazenie ďalších informácií.</div></div></div>';
 	echo '</div>';
 	echo '</div>';
+	include 'components/footer.php';
 }
 else
 {
