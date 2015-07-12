@@ -242,7 +242,7 @@ if (isset($_GET['mb']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($sestava[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zložená zostava <code>'.$nazvy.'</code> o výkone <code>'.$vykon.'</code> a spotrebe <code>'.$spotreba.' W</code>.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zložená zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$vykon.'</kbd> a spotrebe <kbd>'.$spotreba.' W</kbd>.")';
 	mysql_query($dotaz);
 
 	echo $vykon;
@@ -276,7 +276,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <code>'.$nazvy.'</code> o výkone <code>'.$zaznam['vykon'].'</code> a spotrebe <code>'.$zaznam['spotreba'].' W</code> prepnutá na body.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd> prepnutá na body.")';
 			mysql_query($dotaz);
 		}
 		else    //přepnout na výzkum
@@ -285,7 +285,7 @@ if (isset($_GET['switch']))
 			mysql_query($dotaz);
 
 			//log
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <code>'.$nazvy.'</code> o výkone <code>'.$zaznam['vykon'].'</code> a spotrebe <code>'.$zaznam['spotreba'].' W</code> prepnutá na výzkum.")';
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd> prepnutá na výzkum.")';
 			mysql_query($dotaz);
 		}
 	}
@@ -329,6 +329,6 @@ if (isset($_GET['disass']))
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($obsah[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
-	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozobraná zostava <code>'.$nazvy.'</code> o výkone <code>'.$zaznam['vykon'].'</code> a spotrebe <code>'.$zaznam['spotreba'].' W</code>.")';
+	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozobraná zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd>.")';
 	mysql_query($dotaz);
 }
