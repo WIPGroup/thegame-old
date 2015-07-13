@@ -1,3 +1,24 @@
+<?php
+$cas = time();
+$dotaz = 'SELECT * FROM sestavy';
+$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+while ($zaznam = mysql_fetch_array($vysledek))
+{
+	if ($zaznam['vyzkum'] == 0)
+	{
+		$dotaz = 'UPDATE hraci SET body=body+'.$zaznam['vykon'] * ($cas - $zaznam['sbercas']).' WHERE idhrace='.$zaznam['hrac'];
+		mysql_query($dotaz);
+	}
+	else
+	{
+		$dotaz = 'UPDATE hraci SET vyzkum=vyzkum+'.$zaznam['vykon'] * ($cas - $zaznam['sbercas']).' WHERE idhrace='.$zaznam['hrac'];
+		mysql_query($dotaz);
+	}
+	
+	$dotaz = 'UPDATE sestavy SET sbercas='.$cas.' WHERE idsestavy='.$zaznam['idsestavy'];
+	mysql_query($dotaz);
+}
+?>
 <div class="col-xs-12 col-md-4">
 	<div class="panel panel-primary">
 		<div class="panel-heading" data-toggle="collapse" href="#poradie" style="cursor: pointer">
