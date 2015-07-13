@@ -19,7 +19,7 @@ if ($_SESSION['hrac'] == 1)
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
-	echo '<div class="col-md-5 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
+	echo '<div class="col-md-4 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
 	echo 'Výkon: '.$zaznam['vykon'].', spotreba: '.$zaznam['spotreba'];
 	echo '</h1></div><div class="panel-body">';
 
