@@ -31,11 +31,12 @@ while ($zaznam = mysql_fetch_array($vysledek))
 				$dotaz .= ' ORDER BY vyzkum DESC';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) {
-				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug'))
+				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug')) {
 					echo'<tr data-body="'.$zaznam['body'].'"><td class="cislo"></td><td class="por-cis">'.number_format($zaznam['body'], 0, '', ' ').'</td><td class="por-name">'.$zaznam['jmeno'].'</td>';
 					if ($_SESSION['hrac'] == 1)
 						echo '<td class="por-cis">'.number_format($zaznam['vyzkum'], 0, '', ' ').'</td>';
 					echo '</tr>';
+				}
 			}
 			?>
 		</table>
