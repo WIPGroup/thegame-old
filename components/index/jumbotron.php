@@ -20,6 +20,9 @@
 			<p>
 				Veľmi by pomohlo, keby tý, čo nechcú hrať, išli za Ľubom a nechali si odstrániť účet.
 			</p>
+			<p>
+				Podporujeme iba <a href="http://www.google.com/chrome/">Google Chrome!</a>
+			</p>
 		</div>
 	</div>
 </div>
