@@ -116,9 +116,9 @@ if (isset($_GET['mb']))
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
 			//$hddpwr = max($zaznam['vykon'], $hddpwr); TODO opravit
-			if ($zaznam['vykon'] < 10)
+			if ($zaznam['vykon'] < 5)
 				$hddtier = max($hddtier, $zaznam['vykon']);
-			if ($zaznam['vykon'] > 10)
+			if ($zaznam['vykon'] > 5)
 				$ssdsize += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
