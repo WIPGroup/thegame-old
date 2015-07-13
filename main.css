@@ -171,6 +171,8 @@ th {
   margin-right: 10px; }
 
 .craft-vyrob input {
+  margin-left:auto;
+  display:block;
   width: 60px; }
 
 table#poradie td {
