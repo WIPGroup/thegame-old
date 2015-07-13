@@ -5,10 +5,10 @@ if (isset($_POST['newpasswd']))
 	{
 		$dotaz = 'UPDATE hraci SET heslo="'.$_POST['newpasswd'].'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
-		echo "<div class="alert alert-success alert-dismissable col-lg-12"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Heslo úspěšně změněno.</div>";
+		echo '<div class="alert alert-success alert-dismissable col-lg-12"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Heslo úspěšně změněno.</div>';
 	}
 	else
-	echo "<div class="alert alert-danger alert-dismissable col-lg-12"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Hesla se ti neshodují.</div>";
+	echo '<div class="alert alert-danger alert-dismissable col-lg-12"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Hesla se ti neshodují.</div>';
 }
 ?>
 <div class="col-xs-12">
