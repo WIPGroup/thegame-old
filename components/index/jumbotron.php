@@ -14,8 +14,11 @@
 			</ol>
 			<p>Dávajte si preto pozor na to, v akom kurze vytvoríte ponuku.</p>
 			<p>
-				Počítanie výkonu sa blíži realite, davájte si preto pozor na to, že niekedy môže mať výmena komponenty za lepšiu malý alebo dokonca žiadny efekt.
+				Počítanie výkonu sa blíži realite, davájte si preto pozor na to, že niekedy môže mať výmena komponentu za lepší malý alebo dokonca žiadny efekt.
 				Výkon PC je ovplyvnený rôznymi komponentami inak. Správa sa podobne ako výkon pre "Herné" PC IRL.
+			</p>
+			<p>
+				Veľmi by pomohlo, keby tý, čo nechcú hrať, išli za Ľubom a nechali si odstrániť účet.
 			</p>
 		</div>
 	</div>
