@@ -12,6 +12,7 @@
 				<li>Meď</li>
 				<li>Železo</li>
 			</ol>
+			<p>Dávajte si pozor na to, v akom kurze vytvoríte ponuku.</p>
 		</div>
 	</div>
 </div>
