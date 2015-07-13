@@ -80,6 +80,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 
 	//vytvořit nové kupony
 	$maxhodnota = floor(($iron * 1 + $copper * 3 + $gold * 90 + $silicon * 30) / $_GET['prerozdelit']);
+	$maxiron = $iron; $maxcopper = $copper; $maxgold = $gold; $maxsilicon = $silicon;
 	$celychkuponu = 0;
 
 	while ($iron > 0 || $copper > 0 || $gold > 0 || $silicon > 0)
@@ -139,60 +140,71 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		//přidat vše do seznamu
 		$kupony[count($kupony)] = $obsah;
 	}
+	
+	$pockuponu = count($kupony);
 
 	//zamíchat
-	$pockuponu = count($kupony);
 	if ($pockuponu > 1)
-	for ($i = 0; $i < $pockuponu * 10000; $i++)
+	for ($i = 0; $i < $pockuponu * 1000; $i++)
 	{
-		//měď za 3 železa
 		$a = $i % $pockuponu;
-		do {
-			$b = rand(0, $pockuponu - 1);
-		} while ($b == $a);
-		if ($kupony[$a][2] > 1 + $iron / ($pockuponu * 2) && $kupony[$b][1] > 3 + $copper / ($pockuponu * 2))
-		{
-			$kupony[$a][2] -= 1;
-			$kupony[$a][1] += 3;
-			$kupony[$b][2] += 1;
-			$kupony[$b][1] -= 3;
-		}
 
-		//křemík za 10 měďi
+		//měď za 3 železa
 		do {
-			$b = rand(0, $pockuponu - 1);
-		} while ($b == $a);
-		if ($kupony[$a][4] > 1 + $silicon / ($pockuponu * 2) && $kupony[$b][2] > 10 + $copper / ($pockuponu * 2))
-		{
-			$kupony[$a][4] -= 1;
-			$kupony[$a][2] += 10;
-			$kupony[$b][4] += 1;
-			$kupony[$b][2] -= 10;
-		}
+			do {
+				$b = rand(0, $pockuponu - 1);
+			} while ($b == $a);
 
-		//zlato za 3 křemíky
-		do {
-			$b = rand(0, $pockuponu - 1);
-		} while ($b == $a);
-		if ($kupony[$a][3] > 1 + $gold / ($pockuponu * 2) && $kupony[$b][4] > 3 + $silicon / ($pockuponu * 2))
-		{
-			$kupony[$a][3] -= 1;
-			$kupony[$a][4] += 3;
-			$kupony[$b][3] += 1;
-			$kupony[$b][4] -= 3;
-		}
+			if ($kupony[$a][2] > 1 + $maxcopper / ($pockuponu * 2) && $kupony[$b][1] > 3 + $maxiron / ($pockuponu * 2))
+			{
+				$kupony[$a][2] -= 1;
+				$kupony[$a][1] += 3;
+				$kupony[$b][2] += 1;
+				$kupony[$b][1] -= 3;
+			}
 
-		//90 železa za zlato
-		do {
-			$b = rand(0, $pockuponu - 1);
-		} while ($b == $a);
-		if ($kupony[$a][1] > 90 + $iron / ($pockuponu * 2) && $kupony[$b][3] > 1 + $gold / ($pockuponu * 2))
-		{
-			$kupony[$a][1] -= 90;
-			$kupony[$a][3] += 1;
-			$kupony[$b][1] += 90;
-			$kupony[$b][3] -= 1;
-		}
+			//křemík za 10 měďi
+			do {
+				$b = rand(0, $pockuponu - 1);
+			} while ($b == $a);
+	
+			if ($kupony[$a][4] > 1 + $maxsilicon / ($pockuponu * 2) && $kupony[$b][2] > 10 + $maxcopper / ($pockuponu * 2))
+			{
+				$kupony[$a][4] -= 1;
+				$kupony[$a][2] += 10;
+				$kupony[$b][4] += 1;
+				$kupony[$b][2] -= 10;
+			}
+	
+			//zlato za 3 křemíky
+			do {
+				$b = rand(0, $pockuponu - 1);
+			} while ($b == $a);
+	
+			if ($kupony[$a][3] > 1 + $maxgold / ($pockuponu * 2) && $kupony[$b][4] > 3 + $maxsilicon / ($pockuponu * 2))
+			{
+				$kupony[$a][3] -= 1;
+				$kupony[$a][4] += 3;
+				$kupony[$b][3] += 1;
+				$kupony[$b][4] -= 3;
+			}
+	
+			//90 železa za zlato
+			do {
+				$b = rand(0, $pockuponu - 1);
+			} while ($b == $a);
+	
+			if ($kupony[$a][1] > 90 + $maxiron / ($pockuponu * 2) && $kupony[$b][3] > 1 + $maxgold / ($pockuponu * 2))
+			{
+				$kupony[$a][1] -= 90;
+				$kupony[$a][3] += 1;
+				$kupony[$b][1] += 90;
+				$kupony[$b][3] -= 1;
+			}
+		} while ($kupony[$a][1] < $maxiron / ($pockuponu * 2)
+			&& $kupony[$a][2] < $maxcopper / ($pockuponu * 2)
+			&& $kupony[$a][3] < $maxgold / ($pockuponu * 2)
+			&& $kupony[$a][4] < $maxsilicon / ($pockuponu * 2));
 	}
 
 	if ($_GET['pridelit'] == 1)
