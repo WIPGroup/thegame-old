@@ -23,6 +23,9 @@
 			<p>
 				Podporujeme iba <a href="http://www.google.com/chrome/">Google Chrome!</a>
 			</p>
+			<p>
+				Kupóny platia len do polnoci!
+			</p>
 		</div>
 	</div>
 </div>
