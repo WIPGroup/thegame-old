@@ -40,5 +40,7 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 	}
 	else
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použitý neplatný kupón <kbd>'.$zaznam['kod'].'</kbd>. Brute Force?';
+		mysql_query($dotaz);
 		echo 'Tento kupón neexistuje.';
 }
