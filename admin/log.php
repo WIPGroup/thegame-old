@@ -6,7 +6,7 @@
 		<div id="log" class="panel-collapse collapse in" style="text-align: left">
 			<ul class="list-group">
 				<?php
-				$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 100';
+				$dotaz = 'SELECT * FROM log, hraci WHERE hrac=idhrace ORDER BY cas DESC LIMIT 1000';
 				$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 				while ($zaznam = mysql_fetch_array($vysledek))
 				{
