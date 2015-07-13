@@ -90,7 +90,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$obsah[$i] = 0;
 
 		//gold
-		while ($hodnota + 90 <= $maxhodnota / 8 && $gold > 0 )
+		while ($hodnota + 90 <= $maxhodnota && $gold > 0 )
 		{
 			$obsah[3]++;
 			$gold--;
@@ -98,7 +98,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//silicon
-		while ($hodnota + 30 <= $maxhodnota / 4 && $silicon > 0 )
+		while ($hodnota + 30 <= $maxhodnota && $silicon > 0 )
 		{
 			$obsah[4]++;
 			$silicon--;
@@ -106,7 +106,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//copper
-		while ($hodnota + 3 <= $maxhodnota / 2 && $copper > 0 )
+		while ($hodnota + 3 <= $maxhodnota && $copper > 0 )
 		{
 			$obsah[2]++;
 			$copper--;
@@ -143,15 +143,14 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	//zamíchat
 	$pockuponu = count($kupony);
 	if ($pockuponu > 1)
-	for ($i = 0; $i < $pockuponu * 100; $i++)
+	for ($i = 0; $i < $pockuponu * 10000; $i++)
 	{
 		//měď za 3 železa
-		//$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
 		$a = $i % $pockuponu;
 		do {
 			$b = rand(0, $pockuponu - 1);
 		} while ($b == $a);
-		if ($kupony[$a][2] > 10 && $kupony[$b][1] > 30)
+		if ($kupony[$a][2] > 1 + $iron / ($pockuponu * 2) && $kupony[$b][1] > 3 + $copper / ($pockuponu * 2))
 		{
 			$kupony[$a][2] -= 1;
 			$kupony[$a][1] += 3;
@@ -160,11 +159,10 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//křemík za 10 měďi
-		$a = $i % $pockuponu;
 		do {
 			$b = rand(0, $pockuponu - 1);
 		} while ($b == $a);
-		if ($kupony[$a][4] > 10 && $kupony[$b][2] > 100)
+		if ($kupony[$a][4] > 1 + $silicon / ($pockuponu * 2) && $kupony[$b][2] > 10 + $copper / ($pockuponu * 2))
 		{
 			$kupony[$a][4] -= 1;
 			$kupony[$a][2] += 10;
@@ -173,11 +171,10 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//zlato za 3 křemíky
-		$a = $i % $pockuponu;
 		do {
 			$b = rand(0, $pockuponu - 1);
 		} while ($b == $a);
-		if ($kupony[$a][3] > 10 && $kupony[$b][4] > 30)
+		if ($kupony[$a][3] > 1 + $gold / ($pockuponu * 2) && $kupony[$b][4] > 3 + $silicon / ($pockuponu * 2))
 		{
 			$kupony[$a][3] -= 1;
 			$kupony[$a][4] += 3;
@@ -186,11 +183,10 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//90 železa za zlato
-		$a = $i % $pockuponu;
 		do {
 			$b = rand(0, $pockuponu - 1);
 		} while ($b == $a);
-		if ($kupony[$a][1] > 900 && $kupony[$b][3] > 10)
+		if ($kupony[$a][1] > 90 + $iron / ($pockuponu * 2) && $kupony[$b][3] > 1 + $gold / ($pockuponu * 2))
 		{
 			$kupony[$a][1] -= 90;
 			$kupony[$a][3] += 1;
@@ -202,37 +198,39 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	if ($_GET['pridelit'] == 1)
 	{
 		if ($celychkuponu < $_GET['prerozdelit'])
-			die ("Nejde rozdělit mezi všechny hráče.");
-
-		$dotaz = 'SELECT * FROM hraci WHERE idhrace>1';
-		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
-
-		while ($zaznam = mysql_fetch_array($vysledek))
+			echo "Nejde rozdělit mezi všechny hráče.";
+		else
 		{
-			if (count($kupony) < 1)
-				break;
-
-			$vlastnictvi = explode(';', $zaznam['vlastnictvi']);
-			$kupon = array_shift($kupony);
-			$velkuponu = count($kupon);
-
-			for ($i = 0; $i < $velkuponu; $i++)
-				$vlastnictvi[$i] += $kupon[$i];
-
-			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$zaznam['idhrace'].'"';
-			mysql_query($dotaz);
-
-			//log
-			$dotaz = 'SELECT * FROM veci';
-			$vysl = mysql_query($dotaz) or die(mysql_error($db));
-			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Pridelené rootom  ';
-			while ($zazn = mysql_fetch_array($vysl))
+			$dotaz = 'SELECT * FROM hraci WHERE idhrace>1';
+			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
+	
+			while ($zaznam = mysql_fetch_array($vysledek))
 			{
-				if ($obsah[$zazn['idveci']] > 0)
-					$dotaz .= '<kbd>'.$zazn['nazev'].'</kbd>('.$kupon[$zazn['idveci']].') ';
+				if (count($kupony) < 1)
+					break;
+	
+				$vlastnictvi = explode(';', $zaznam['vlastnictvi']);
+				$kupon = array_shift($kupony);
+				$velkuponu = count($kupon);
+	
+				for ($i = 0; $i < $velkuponu; $i++)
+					$vlastnictvi[$i] += $kupon[$i];
+	
+				$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$zaznam['idhrace'].'"';
+				mysql_query($dotaz);
+	
+				//log
+				$dotaz = 'SELECT * FROM veci';
+				$vysl = mysql_query($dotaz) or die(mysql_error($db));
+				$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Pridelené rootom  ';
+				while ($zazn = mysql_fetch_array($vysl))
+				{
+					if ($obsah[$zazn['idveci']] > 0)
+						$dotaz .= '<kbd>'.$zazn['nazev'].'</kbd>('.$kupon[$zazn['idveci']].') ';
+				}
+				$dotaz .= '")';
+				mysql_query($dotaz);
 			}
-			$dotaz .= '")';
-			mysql_query($dotaz);
 		}
 	}
 

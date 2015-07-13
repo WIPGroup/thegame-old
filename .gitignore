@@ -10,6 +10,7 @@ composer.lock
 # Jurovy testovaci soubory
 dotaz.php
 log.txt
+trh.sql
 
 # Project-specific ignores
 dblogin.php
