@@ -12,7 +12,11 @@
 				<li>Meď</li>
 				<li>Železo</li>
 			</ol>
-			<p>Dávajte si pozor na to, v akom kurze vytvoríte ponuku.</p>
+			<p>Dávajte si preto pozor na to, v akom kurze vytvoríte ponuku.</p>
+			<p>
+				Počítanie výkonu sa blíži realite, davájte si preto pozor na to, že niekedy môže mať výmena komponenty za lepšiu malý alebo dokonca žiadny efekt.
+				Výkon PC je ovplyvnený rôznymi komponentami inak. Správa sa podobne ako výkon pre "Herné" PC IRL.
+			</p>
 		</div>
 	</div>
 </div>

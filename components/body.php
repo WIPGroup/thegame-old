@@ -18,7 +18,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		$vyzkums += $zaznam['vykon'];
 }
 ?>
-<div class="col-xs-12 col-md-4">
+<div class="col-xs-12 col-md-6">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h1 class="panel-title">Body</h1>

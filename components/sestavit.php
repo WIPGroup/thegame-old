@@ -116,9 +116,9 @@ if (isset($_GET['mb']))
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
 			//$hddpwr = max($zaznam['vykon'], $hddpwr); TODO opravit
-			if ($zaznam['vykon'] < 10)
+			if ($zaznam['vykon'] < 5)
 				$hddtier = max($hddtier, $zaznam['vykon']);
-			if ($zaznam['vykon'] > 10)
+			if ($zaznam['vykon'] > 5)
 				$ssdsize += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
@@ -176,32 +176,32 @@ if (isset($_GET['mb']))
 		$ramkoe = 0;
 	}
 	if ($ssdsize > 0) {
-		if ($ssdsize  >= 512)
+		if ($ssdsize  >= 256)
 		{
 			$storagekoe = 2;
 		}
-		elseif ($ssdsize  >= 256)
+		elseif ($ssdsize  >= 128)
 		{
 			$storagekoe = 1.8;
 		}
-		elseif ($ssdsize  >= 128)
+		elseif ($ssdsize  >= 64)
 		{
 			$storagekoe = 1.6;
 		}
-		elseif ($ssdsize  >= 64)
+		elseif ($ssdsize  >= 32)
 		{
 			$storagekoe = 1.4;
 		}
-		elseif ($ssdsize  >= 32)
+		elseif ($ssdsize  >= 16)
 		{
 			$storagekoe = 1.2;
 		}
-		elseif ($ssdsize  >= 16)
+		elseif ($ssdsize  >= 8)
 		{
 			$storagekoe = 1;
 		}
 		else {
-			throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
+			die('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
 		}
 	} else {
 		if ($hddtier == 4){
@@ -217,7 +217,7 @@ if (isset($_GET['mb']))
 			$storagekoe = 0.2;
 		}
 		else {
-			throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
+			die('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
 		}
 	}
 	$vykon = min($cpupwr, $gpupwr) * 2 * $ramkoe * $storagekoe;
