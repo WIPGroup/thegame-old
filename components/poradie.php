@@ -5,7 +5,7 @@
 		</div>
 		<table id="poradie" class="table table-condensed table-hover table-bordered panel-collapse collapse in">
 			<?php
-			$dotaz = 'SELECT jmeno,body FROM hraci';
+			$dotaz = 'SELECT jmeno,body,vyzkum FROM hraci';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)){
 				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug'))
