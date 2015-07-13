@@ -90,7 +90,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 			$obsah[$i] = 0;
 
 		//gold
-		while ($hodnota + 90 <= $maxhodnota && $gold > 0 )
+		while ($hodnota + 90 <= $maxhodnota / 8 && $gold > 0 )
 		{
 			$obsah[3]++;
 			$gold--;
@@ -98,7 +98,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//silicon
-		while ($hodnota + 30 <= $maxhodnota && $silicon > 0 )
+		while ($hodnota + 30 <= $maxhodnota / 4 && $silicon > 0 )
 		{
 			$obsah[4]++;
 			$silicon--;
@@ -106,7 +106,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//copper
-		while ($hodnota + 3 <= $maxhodnota && $copper > 0 )
+		while ($hodnota + 3 <= $maxhodnota / 2 && $copper > 0 )
 		{
 			$obsah[2]++;
 			$copper--;
@@ -143,11 +143,15 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	//zamíchat
 	$pockuponu = count($kupony);
 	if ($pockuponu > 1)
-	for ($i = 0; $i < 1000; $i++)
+	for ($i = 0; $i < $pockuponu * 100; $i++)
 	{
 		//měď za 3 železa
-		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
-		if ($kupony[$a][2] > 1 && $kupony[$b][1] > 3)
+		//$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
+		$a = $i % $pockuponu;
+		do {
+			$b = rand(0, $pockuponu - 1);
+		} while ($b == $a);
+		if ($kupony[$a][2] > 10 && $kupony[$b][1] > 30)
 		{
 			$kupony[$a][2] -= 1;
 			$kupony[$a][1] += 3;
@@ -156,8 +160,11 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//křemík za 10 měďi
-		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
-		if ($kupony[$a][4] > 1 && $kupony[$b][2] > 10)
+		$a = $i % $pockuponu;
+		do {
+			$b = rand(0, $pockuponu - 1);
+		} while ($b == $a);
+		if ($kupony[$a][4] > 10 && $kupony[$b][2] > 100)
 		{
 			$kupony[$a][4] -= 1;
 			$kupony[$a][2] += 10;
@@ -166,8 +173,11 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//zlato za 3 křemíky
-		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
-		if ($kupony[$a][3] > 1 && $kupony[$b][4] > 3)
+		$a = $i % $pockuponu;
+		do {
+			$b = rand(0, $pockuponu - 1);
+		} while ($b == $a);
+		if ($kupony[$a][3] > 10 && $kupony[$b][4] > 30)
 		{
 			$kupony[$a][3] -= 1;
 			$kupony[$a][4] += 3;
@@ -176,8 +186,11 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 		}
 
 		//90 železa za zlato
-		$a = rand(0, $pockuponu - 1); $b = rand(0, $pockuponu - 1);
-		if ($kupony[$a][1] > 90 && $kupony[$b][3] > 1)
+		$a = $i % $pockuponu;
+		do {
+			$b = rand(0, $pockuponu - 1);
+		} while ($b == $a);
+		if ($kupony[$a][1] > 900 && $kupony[$b][3] > 10)
 		{
 			$kupony[$a][1] -= 90;
 			$kupony[$a][3] += 1;

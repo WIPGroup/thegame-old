@@ -42,6 +42,8 @@ if (isset($_GET['trade']))
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Uskutočnený nákup <kbd>'.$veci[$zaznam['nabizi']].'</kbd>('.$zaznam['mnoznabizi'].') za <kbd>'.$veci[$zaznam['chce']].'</kbd>('.$zaznam['mnozchce'].') od <kbd>'.$autor['jmeno'].'</kbd>")';
 			mysql_query($dotaz);
+			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_zaznam['hrac'].', "Predal si <kbd>'.$veci[$zaznam['nabizi']].'</kbd>('.$zaznam['mnoznabizi'].') za <kbd>'.$veci[$zaznam['chce']].'</kbd>('.$zaznam['mnozchce'].') hráčovi <kbd>'.$hrac['jmeno'].'</kbd>")';
+			mysql_query($dotaz);
 
 			echo 'Koupils '.$veci[$zaznam['nabizi']].'('.$zaznam['mnoznabizi'].') za '.$veci[$zaznam['chce']].'('.$zaznam['mnozchce'].') od '.$autor['jmeno'].'.';
 		}
