@@ -17,13 +17,15 @@ include '../vlastnictvi.php';
 
 		$dotaz = 'SELECT * FROM vyroba, recepty WHERE recept=idreceptu AND hrac='.$_SESSION['hrac'];
 		if ($_SESSION['hrac'] == 1)
-			$dotaz = 'SELECT * FROM vyroba, recepty WHERE recept=idreceptu';
+			$dotaz = 'SELECT * FROM vyroba, recepty, hraci WHERE recept=idreceptu AND hrac=idhrace ORDER BY jmeno';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		while ($zaznam = mysql_fetch_array($vysledek))
 		{
 			echo '<li class="list-group-item"><table style="width: 100%"><tr>';
 			echo '<td style="width: 250px; text-align: left">'.$zaznam['pocet'].'x ';
 			echo '<span class="label label-default">'.$veci[$zaznam['vyrobek']].'</span> hotovo v '.date('G:i:s j.n.Y', $zaznam['hotovo']);
+			if ($_SESSION['hrac'] == 1)
+				echo ' ('.$zaznam['jmeno'].')';
 			echo '</td><td>';
 			echo '<div class="progress" style="margin-top:auto; margin-bottom:auto">';
 			echo '<div class="progress-bar" data-zbyva="'.($zaznam['hotovo'] - time()).'" data-celkem="'.$zaznam['doba'].'" role="progressbar" style="width: '.(100 - 100 * ($zaznam['hotovo'] - time()) / $zaznam['doba']).'%"></div>';
