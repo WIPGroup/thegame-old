@@ -148,6 +148,9 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 	for ($i = 0; $i < $pockuponu * 1000; $i++)
 	{
 		$a = $i % $pockuponu;
+		
+		if ($kupony[$a][1] + $kupony[$a][2] * 3 + $kupony[$a][3] * 90 + $kupony[$a][4] * 30 < $maxhodnota)
+			continue;
 
 		//měď za 3 železa
 		do {
