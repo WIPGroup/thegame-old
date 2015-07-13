@@ -20,6 +20,12 @@
 			<p>
 				Veľmi by pomohlo, keby tý, čo nechcú hrať, išli za Ľubom a nechali si odstrániť účet.
 			</p>
+			<p>
+				Podporujeme iba <a href="http://www.google.com/chrome/">Google Chrome!</a>
+			</p>
+			<p>
+				Kupóny platia len do polnoci!
+			</p>
 		</div>
 	</div>
 </div>
