@@ -6,7 +6,7 @@
 //require "../login.php";
 
 if ($_SESSION['hrac'] != 1)
-	die('Nejsi admin.'); //TODO: pokud zbyde cas tak vic adminu
+	die('Nejsi admin.');
 
 if (isset($_GET['0']))
 {
@@ -225,7 +225,7 @@ else if (isset($_GET['prerozdelit']) && $_GET['prerozdelit'] > 0)
 				$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$zaznam['idhrace'].', "Pridelené rootom  ';
 				while ($zazn = mysql_fetch_array($vysl))
 				{
-					if ($obsah[$zazn['idveci']] > 0)
+					if (isset($kupon[$zazn['idveci']]) && $kupon[$zazn['idveci']] > 0)
 						$dotaz .= '<kbd>'.$zazn['nazev'].'</kbd>('.$kupon[$zazn['idveci']].') ';
 				}
 				$dotaz .= '")';
