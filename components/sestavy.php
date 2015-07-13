@@ -14,6 +14,8 @@ while ($zaznam = mysql_fetch_array($vysledek))
 }
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
+if ($_SESSION['hrac'] == 1)
+	$dotaz = 'SELECT * FROM sestavy';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
