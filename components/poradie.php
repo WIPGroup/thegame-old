@@ -14,7 +14,7 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		$dotaz = 'UPDATE hraci SET vyzkum=vyzkum+'.$zaznam['vykon'] * ($cas - $zaznam['sbercas']).' WHERE idhrace='.$zaznam['hrac'];
 		mysql_query($dotaz);
 	}
-	
+
 	$dotaz = 'UPDATE sestavy SET sbercas='.$cas.' WHERE idsestavy='.$zaznam['idsestavy'];
 	mysql_query($dotaz);
 }
@@ -30,9 +30,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)){
 				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug'))
-					echo'<tr data-body="'.$zaznam['body'].'"><td class="cislo"></td><td class="por-cis">'.$zaznam['body'].'</td><td class="por-name">'.$zaznam['jmeno'].'</td>';
+					echo'<tr data-body="'.$zaznam['body'].'"><td class="cislo"></td><td class="por-cis">'.number_format($zaznam['body'], 0, '', ' ').'</td><td class="por-name">'.$zaznam['jmeno'].'</td>';
 					if ($_SESSION['hrac'] == 1)
-						echo '<td class="por-cis">'.$zaznam['vyzkum'].'</td>';
+						echo '<td class="por-cis">'.number_format($zaznam['vyzkum'], 0, '', ' ').'</td>';
 					echo '</tr>';
 			}
 			?>
