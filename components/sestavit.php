@@ -201,7 +201,7 @@ if (isset($_GET['mb']))
 			$storagekoe = 1;
 		}
 		else {
-			throw new Exception('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
+			die('Chyba v pocitani vykonu, SSD je mensie ako 64GB, kontaktujte admina!');
 		}
 	} else {
 		if ($hddtier == 4){
@@ -217,7 +217,7 @@ if (isset($_GET['mb']))
 			$storagekoe = 0.2;
 		}
 		else {
-			throw new Exception('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
+			die('Chyba v pocitani vykonu, HDD nesedi, kontaktujte admina!');
 		}
 	}
 	$vykon = min($cpupwr, $gpupwr) * 2 * $ramkoe * $storagekoe;
