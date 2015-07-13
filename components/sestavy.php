@@ -15,12 +15,14 @@ while ($zaznam = mysql_fetch_array($vysledek))
 $pocveci = count($veci);
 $dotaz = 'SELECT * FROM sestavy WHERE hrac='.$_SESSION['hrac'];
 if ($_SESSION['hrac'] == 1)
-	$dotaz = 'SELECT * FROM sestavy';
+	$dotaz = 'SELECT * FROM sestavy, hraci WHERE hrac=idhrace ORDER BY jmeno';
 $vysledek = mysql_query($dotaz) or die(mysql_error($db));
 while ($zaznam = mysql_fetch_array($vysledek))
 {
 	echo '<div class="col-md-4 col-sm-6 col-xs-12"><div class="panel panel-primary"><div class="panel-heading"><h1 class="panel-title">';
 	echo 'Výkon: '.$zaznam['vykon'].', spotreba: '.$zaznam['spotreba'];
+	if ($_SESSION['hrac'] == 1)
+		echo ' ('.$zaznam['jmeno'].')';
 	echo '</h1></div><div class="panel-body">';
 
 	if ($zaznam['vyzkum'] == 1)
