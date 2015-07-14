@@ -137,11 +137,12 @@ th {
   .grid-craft-item .craft-vyzkum {
     top: 5px;
     right: 5px; }
-  .grid-craft-item .craft-vyzkum {
+  .grid-craft-item .craft-power {
     top: 25px;
-    right: 5px; }
+    right: 5px;
+    background-color: #f55; }
 
-.inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category, .wattage {
+.inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .grid-craft-item .craft-power, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category, .wattage {
   max-width: 50%;
   overflow: hidden;
   position: absolute;
