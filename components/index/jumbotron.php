@@ -26,6 +26,7 @@
 			<p>
 				Kupóny platia len do polnoci!
 			</p>
+			<h2><a href="napoveda.txt">Nápoveda</a></h2>
 		</div>
 	</div>
 </div>
