@@ -26,9 +26,9 @@ while ($zaznam = mysql_fetch_array($vysledek))
 		</div>
 		<table id="poradie" class="table table-condensed table-hover table-bordered panel-collapse collapse in">
 			<?php
-			$dotaz = 'SELECT jmeno,body,vyzkum FROM hraci';
+			$dotaz = 'SELECT jmeno,body,vyzkum FROM hraci ORDER BY body DESC';
 			if ($_SESSION['hrac'] == 1)
-				$dotaz .= ' ORDER BY vyzkum DESC';
+				$dotaz .= ', vyzkum DESC';
 			$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 			while ($zaznam = mysql_fetch_array($vysledek)) {
 				if(($zaznam['jmeno']!='root') and ($zaznam['jmeno']!='Debug')) {
