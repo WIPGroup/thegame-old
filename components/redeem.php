@@ -18,7 +18,7 @@ if (isset($_GET['kupon']))
 		$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
 		mysql_query($dotaz);
 
-		//smazat kupó
+		//smazat kupón
 		$dotaz = 'DELETE FROM kupony WHERE kod="'.mysql_real_escape_string($zaznam['kod']).'"';
 		mysql_query($dotaz);
 
@@ -40,7 +40,9 @@ if (isset($_GET['kupon']))
 		mysql_query($dotaz);
 	}
 	else
-		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "<span class="bg-danger">Použitý neplatný kupón <kbd>'.$zaznam['kod'].'</kbd>. Brute Force?</span>';
+	{
+		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "<span class=\"bg-danger\">Použitý neplatný kupón <kbd>'.strtolower(mysql_real_escape_string($_GET['kupon'])).'</kbd>. Brute Force?</span>")';
 		mysql_query($dotaz);
 		echo 'Tento kupón neexistuje.';
+	}
 }
