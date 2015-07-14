@@ -21,6 +21,12 @@ body {
 #poradie .por-name {
   text-align: center; }
 
+#poradie td {
+  min-width: 100px; }
+
+#poradie td:nth-child(3) {
+  width: 100%; }
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -180,9 +186,3 @@ th {
   margin-left: auto;
   display: block;
   width: 60px; }
-
-table#poradie td {
-  min-width: 100px; }
-
-table#poradie td:nth-child(3) {
-  width: 100%; }

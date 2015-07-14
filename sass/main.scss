@@ -25,6 +25,12 @@ text-align: right;
 	.por-name{
 		text-align: center;
 	}
+	td {
+		min-width:150px;
+	}
+	td:nth-child(3){
+		width:100%;
+	}
 }
 .material-icons {
 	font-family: 'Material Icons';
@@ -231,10 +237,4 @@ $power-color: #f55;
 	    display:block;
 		width:60px;
 	}
-}
-table#poradie td {
-	min-width:100px;
-}
-table#poradie td:nth-child(3){
-	width:100%;
 }
