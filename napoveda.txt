@@ -324,7 +324,7 @@ if ()
 	//log
 	$nazvy = "";
 	$obsah = explode(';', $zaznam['obsah']);
-	$dotaz = 'SELECT * FROM veci';
+	$dotaz = '';
 	$vysl = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zazn = mysql_fetch_array($vysl))
 	if ($obsah[$zazn['idveci']] > 0)
