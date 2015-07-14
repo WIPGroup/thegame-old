@@ -96,7 +96,7 @@ if (isset($_GET['mb']))
 		{
 			$vlastnictvi[$zaznam['idveci']]--;
 			$sestava[$zaznam['idveci']]++;
-			$gpupwr = $zaznam['vykon'];
+			$gpupwr += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
 		}
 		else
