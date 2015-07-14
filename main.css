@@ -22,7 +22,7 @@ body {
   text-align: center; }
 
 #poradie td {
-  min-width: 100px; }
+  min-width: 150px; }
 
 #poradie td:nth-child(3) {
   width: 100%; }
@@ -136,6 +136,9 @@ th {
     max-width: 100% !important; }
   .grid-craft-item .craft-vyzkum {
     top: 5px;
+    right: 5px; }
+  .grid-craft-item .craft-vyzkum {
+    top: 25px;
     right: 5px; }
 
 .inv-parts, .grid-craft-item .craft-time, .grid-craft-item .craft-vyzkum, .name, .grid-craft-item .craft-name, .count, .grid-craft-item .craft-vyrob, .power, .category, .wattage {

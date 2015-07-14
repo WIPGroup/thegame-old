@@ -175,6 +175,11 @@ $odsazeni: 5px;
 		top: $odsazeni;
 		right: $odsazeni;
 	}
+	.craft-vyzkum {
+		@extend .inv-parts;
+		top: 20 + $odsazeni;
+		right: $odsazeni;
+	}
 	.craft-vyrob {
 		@extend .count;
 	}
