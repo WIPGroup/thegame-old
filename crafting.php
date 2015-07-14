@@ -25,6 +25,7 @@ if ($prihlasen)
 		$veci[$zaznam['idveci']] = $zaznam['nazev'];
 		$typ[$zaznam['idveci']] = $zaznam['typ'];
 		$idveci[$zaznam['idveci']] = $zaznam['idveci'];
+		$vykon[$zaznam['idveci']] = $zaznam['vykon'];
 	}
 
 	//seznam receptů
@@ -50,15 +51,19 @@ if ($prihlasen)
 		}
 		echo '<div class="craft-suroviny"><span class="badge">'.$zaznam['doba'].'</span><span class="glyphicon glyphicon-time"></span><span class="label label-default">Sekundy</span></div>';
 		echo '<div class="craft-vyzkum label label-warning">'.$zaznam['nazev'].'</div>';
-
+		if ($zaznam['vykon'] <= 0)
+				$skryt = ' sr-only';
+		else
+				$skryt = '';
+		echo '<span class="badge power'.$skryt.'">'.$vykon[$zaznam['vyrobek']].'</span>';
 		echo '<div class="craft-vyrob"><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="1000">';
 
 		$splnuje = true;
 
 		for ($i = 0; $i < $pocsurovin; $i++){
-			if (!(isset($vlastnictvi[$i])) and ($suroviny[$i]>0)){ 
+			if (!(isset($vlastnictvi[$i])) and ($suroviny[$i]>0)){
 				$splnuje = false;
-			} else if ($vlastnictvi[$i] < $suroviny[$i]){					
+			} else if ($vlastnictvi[$i] < $suroviny[$i]){
 				$splnuje = false;
 			}
 		}
