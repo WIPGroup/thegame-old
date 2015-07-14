@@ -98,9 +98,12 @@ if ()
 			$sestava[$zaznam['idveci']]++;
 			$gpupwr += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
+			$gpucount++;
 		}
 		else
-		die('Takú grafiku nemáš.');
+			die('Takú grafiku nemáš.');
+
+		$gpupwr = $gpupwr * pow(0.9, $gpucount - 1);
 	}
 
 	//hdd
