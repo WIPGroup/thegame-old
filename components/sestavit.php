@@ -15,6 +15,8 @@ if (isset($_GET['mb']))
 	$hddtier = 0;
 	$ssdsize = 0;
 
+	$gpucount = 0;
+
 	//názvy věcí
 	$dotaz = 'SELECT * FROM veci';
 	$vysl = mysql_query($dotaz) or die(mysql_error($db));
@@ -88,7 +90,7 @@ if (isset($_GET['mb']))
 	for ($i = 1; $i <= $sloty[1]; $i++)
 	{
 		if (!isset($_GET['gpu'.$i]) || $_GET['gpu'.$i] < 0)
-		continue;
+			continue;
 		$dotaz = 'SELECT * FROM veci WHERE idveci='.mysql_real_escape_string($_GET['gpu'.$i]).' AND typ="gpu"';
 		$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 		$zaznam = mysql_fetch_array($vysledek);
@@ -98,9 +100,12 @@ if (isset($_GET['mb']))
 			$sestava[$zaznam['idveci']]++;
 			$gpupwr += $zaznam['vykon'];
 			$spotreba += $zaznam['spotreba'];
+			$gpucount++;
 		}
 		else
-		die('Takú grafiku nemáš.');
+			die('Takú grafiku nemáš.');
+
+		$gpupwr = $gpupwr * pow(0.9, $gpucount - 1);
 	}
 
 	//hdd
