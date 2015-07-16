@@ -43,6 +43,6 @@ if (isset($_GET['kupon']))
 	{
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "<span class=\"bg-danger\">Použitý neplatný kupón <kbd>'.strtolower(mysql_real_escape_string($_GET['kupon'])).'</kbd>. Brute Force?</span>")';
 		mysql_query($dotaz);
-		echo 'Tento kupón neexistuje.<br>V prípade že ste ho dostali od poverenej osoby, kontaktujte administrátorov.';
+		echo 'Tento kupón neexistuje. V prípade že ste ho dostali od poverenej osoby, kontaktujte administrátorov.';
 	}
 }
