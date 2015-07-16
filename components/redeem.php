@@ -29,7 +29,7 @@ if (isset($_GET['kupon']))
 		$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Použitý kupón <kbd>'.$zaznam['kod'].'</kbd> (';
 		while ($zazn = mysql_fetch_array($vysl))
 		{
-			if ($obsah[$zazn['idveci']] > 0)
+			if ($obsah[$zazn['idveci']] != 0)
 			{
 				$dotaz .= '<kbd>'.$zazn['nazev'].'</kbd>('.$obsah[$zazn['idveci']].') ';
 				echo '<li>'.$zazn['nazev'].'('.$obsah[$zazn['idveci']].')</li>';
