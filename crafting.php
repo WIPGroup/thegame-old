@@ -33,17 +33,39 @@ if ($prihlasen)
 	$vysledek = mysql_query($dotaz) or die(mysql_error($db));
 	while ($zaznam = mysql_fetch_array($vysledek))
 	{
+        $suroviny = explode(';', $zaznam['suroviny']);
+		$pocsurovin = count($suroviny);
+        $splnuje = true;
+
+		for ($i = 0; $i < $pocsurovin; $i++){
+			if (!(isset($vlastnictvi[$i])) and ($suroviny[$i]>0)){
+				$splnuje = false;
+			} else if ($vlastnictvi[$i] < $suroviny[$i]){
+				$splnuje = false;
+			}
+		}
+
 		//TODO: mobile  friendly
 		echo '<div class="grid-craft-item '.$typ[$zaznam['vyrobek']].' t'.$zaznam['vyzkum'].' ';
 		if ($hrac['vyzkum'] < $zaznam['body'])
 			echo 'no';
 		else
 			echo 'yes';
-		echo '" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)" data-type="'.$typ[$zaznam['vyrobek']].'" data-idveci="'.$idveci[$zaznam['vyrobek']].'" data-tier="'.$zaznam['vyzkum'].'">';
+
+		echo '" style="background-image: url(icons/'.$zaznam['vyrobek'].'.png)';
+
+        if ($hrac['vyzkum'] < $zaznam['body'])
+			echo 'opacity: 0.4; ';
+		else if (!$splnuje)
+			echo 'opacity: 0.4; ';
+        else
+            echo '';
+
+		echo '<button class="btn btn-xs btn-primary" onClick="craft('.$zaznam['idreceptu'].');">Vyrobit</button>';
+        echo '" data-type="'.$typ[$zaznam['vyrobek']].'" data-idveci="'.$idveci[$zaznam['vyrobek']].'" data-tier="'.$zaznam['vyzkum'].'">';
 		echo '<span class="label label-default craft-name">'.$veci[$zaznam['vyrobek']].'</span>';
 
-		$suroviny = explode(';', $zaznam['suroviny']);
-		$pocsurovin = count($suroviny);
+		
 		for ($i = 0; $i < $pocsurovin; $i++)
 		{
 			if ($suroviny[$i] > 0) //TODO html kdyz bude cas tak do tablu
@@ -58,15 +80,7 @@ if ($prihlasen)
 		echo '<span class="badge craft-power'.$skryt.'">'.$vykon[$zaznam['vyrobek']].'</span>';
 		echo '<div class="craft-vyrob"><input type="number" name="pocet" data-idreceptu="'.$zaznam['idreceptu'].'" value="1" min="1" max="1000">';
 
-		$splnuje = true;
-
-		for ($i = 0; $i < $pocsurovin; $i++){
-			if (!(isset($vlastnictvi[$i])) and ($suroviny[$i]>0)){
-				$splnuje = false;
-			} else if ($vlastnictvi[$i] < $suroviny[$i]){
-				$splnuje = false;
-			}
-		}
+		
 		if ($hrac['vyzkum'] < $zaznam['body'])
 			echo '<button class="btn btn-primary btn-xs" disabled="">Neuskutečněný výzkum</button>';
 		else if (!$splnuje)
