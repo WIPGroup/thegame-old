@@ -28,9 +28,11 @@ if (isset($_GET['trade']))
 			$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastautor).'" WHERE idhrace="'.$zaznam['hrac'].'"';
 			mysql_query($dotaz);
 
-			//odstranění nabídky
-			$dotaz = 'DELETE FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['trade']);
-			mysql_query($dotaz);
+			if ($zaznam['hrac']!=1)	{
+				//odstranění nabídky
+				$dotaz = 'DELETE FROM obchod WHERE idnab='.mysql_real_escape_string($_GET['trade']);
+				mysql_query($dotaz);
+			}
 
 			//názvy věcí pro log
 			$dotaz = 'SELECT * FROM veci WHERE idveci='.$zaznam['chce'].' OR idveci='.$zaznam['nabizi'];
