@@ -234,11 +234,11 @@ if (isset($_GET['mb']))
 
 	//poskládat hráči sestavu
 	$dotaz = 'INSERT INTO sestavy (hrac, vykon, spotreba, obsah, sbercas) VALUES ('.$_SESSION['hrac'].', '.$vykon.', '.$spotreba.', "'.join(';', $sestava).'", '.time().')';
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 
 	//odebrat hráči majetek
 	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace="'.$_SESSION['hrac'].'"';
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 
 	//log
 	$nazvy = "";
@@ -248,7 +248,7 @@ if (isset($_GET['mb']))
 	if ($sestava[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$sestava[$zazn['idveci']].'x) ';
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zložená zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$vykon.'</kbd> a spotrebe <kbd>'.$spotreba.' W</kbd>.")';
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 
 	echo $vykon;
 }
@@ -278,20 +278,20 @@ if (isset($_GET['switch']))
 		if ($zaznam['vyzkum'] == 1)    //přepnout na body
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=0 WHERE idsestavy='.$_GET['switch'];
-			mysql_query($dotaz);
+			mysql_query($dotaz) or die(mysql_error($db));
 
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd> prepnutá na body.")';
-			mysql_query($dotaz);
+			mysql_query($dotaz) or die(mysql_error($db));
 		}
 		else    //přepnout na výzkum
 		{
 			$dotaz = 'UPDATE sestavy SET vyzkum=1 WHERE idsestavy='.$_GET['switch'];
-			mysql_query($dotaz);
+			mysql_query($dotaz) or die(mysql_error($db));
 
 			//log
 			$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd> prepnutá na výzkum.")';
-			mysql_query($dotaz);
+			mysql_query($dotaz) or die(mysql_error($db));
 		}
 	}
 	else
@@ -321,10 +321,10 @@ if (isset($_GET['disass']))
 	}
 
 	$dotaz = 'UPDATE hraci SET vlastnictvi="'.join(';', $vlastnictvi).'" WHERE idhrace='.$_SESSION['hrac'];
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 
 	$dotaz = 'DELETE FROM sestavy WHERE idsestavy='.mysql_real_escape_string($_GET['disass']);
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 
 	//log
 	$nazvy = "";
@@ -335,5 +335,5 @@ if (isset($_GET['disass']))
 	if ($obsah[$zazn['idveci']] > 0)
 	$nazvy .= $zazn['nazev'].'('.$obsah[$zazn['idveci']].'x) ';
 	$dotaz = 'INSERT INTO log (cas, hrac, text) VALUES ('.time().', '.$_SESSION['hrac'].', "Rozobraná zostava <kbd>'.$nazvy.'</kbd> o výkone <kbd>'.$zaznam['vykon'].'</kbd> a spotrebe <kbd>'.$zaznam['spotreba'].' W</kbd>.")';
-	mysql_query($dotaz);
+	mysql_query($dotaz) or die(mysql_error($db));
 }
