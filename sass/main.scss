@@ -1,4 +1,5 @@
 /* WARNING: ZMENY V CSS BUDOU PREPSANY, navod v .scss */
+
 // NAVOD: npm install node-sass
 // zapnout sasswatch.bat
 // po kazde zmene v sass/main.scss se zmeny ulozi do main.css
@@ -9,8 +10,9 @@ body {
 	background-size: cover;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1280px;
+//	max-width: 1280px;
 }
+
 @font-face {
 	font-family: 'Material Icons';
 	font-style: normal;
@@ -19,20 +21,22 @@ body {
 	src: url("iconfont/MaterialIcons-Regular.eot");
 	src: local('Material Icons'), local('MaterialIcons-Regular'), url("iconfont/MaterialIcons-Regular.woff2") format('woff2'), url("iconfont/MaterialIcons-Regular.woff") format('woff'), url("iconfont/MaterialIcons-Regular.ttf") format('truetype');
 }
+
 #poradie {
-	.por-cis{
-text-align: right;
+	.por-cis {
+		text-align: right;
 	}
-	.por-name{
+	.por-name {
 		text-align: center;
 	}
 	td {
-		min-width:150px;
+		min-width: 150px;
 	}
-	td:nth-child(3){
-		width:100%;
+	td:nth-child(3) {
+		width: 100%;
 	}
 }
+
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
@@ -46,15 +50,12 @@ text-align: right;
 	text-transform: none;
 	letter-spacing: normal;
 	word-wrap: normal;
-
 	/* Support for all WebKit browsers. */
 	-webkit-font-smoothing: antialiased;
 	/* Support for Safari and Chrome. */
 	text-rendering: optimizeLegibility;
-
 	/* Support for Firefox. */
 	-moz-osx-font-smoothing: grayscale;
-
 	/* Support for IE. */
 	font-feature-settings: 'liga';
 }
@@ -63,16 +64,20 @@ text-align: right;
 #item {
 	width: 52px;
 }
+
 #item-sm {
 	width: 24px;
 }
+
 td {
 	text-align: center;
 	vertical-align: middle;
 }
+
 th {
 	text-align: center;
 }
+
 .tableimage {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -82,10 +87,12 @@ th {
 	vertical-align: bottom;
 	width: 52px;
 }
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 $active: linear-gradient(#6284ab, 50%, #2a4563);
 #main-nav {
 	.active {
@@ -96,6 +103,7 @@ $active: linear-gradient(#6284ab, 50%, #2a4563);
 		background-image: $active;
 	}
 }
+
 $screen-xs-max: 768px;
 $screen-sm-max: 992px;
 $screen-md-max: 1200px;
@@ -103,36 +111,41 @@ $screen-md-max: 1200px;
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+
 @media (max-width: $screen-xs-max) {
 	.col-xs-12 {
 		@include pad;
 	}
 }
+
 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
 	.col-sm-12 {
 		@include pad;
 	}
 }
+
 @media (min-width: $screen-sm-max) and (max-width: $screen-md-max) {
 	.col-md-12 {
 		@include pad;
 	}
-	#infoitemucontainer{
-		position:fixed;
-		bottom:0px;
-		right:0px;
+	#infoitemucontainer {
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
 	}
 }
+
 @media (min-width: $screen-md-max) {
 	.col-lg-12 {
 		@include pad;
 	}
-	#infoitemucontainer{
-		position:fixed;
-		bottom:0px;
-		right:0px;
+	#infoitemucontainer {
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
 	}
 }
+
 $inventory: #ddd;
 $selected: #8d8;
 $odsazeni: 5px;
@@ -146,12 +159,15 @@ $odsazeni: 5px;
 	min-height: 160px;
 	min-width: 160px;
 }
+
 .grid-item:hover {
 	background-color: $inventory;
 }
+
 .grid-item2 {
 	float: left;
 }
+
 .grid-craft-item {
 	@extend .grid-item;
 	min-height: 160px;
@@ -186,6 +202,7 @@ $odsazeni: 5px;
 		@extend .count;
 	}
 }
+
 .inv-parts {
 	max-width: 50%;
 	overflow: hidden;
@@ -193,6 +210,7 @@ $odsazeni: 5px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
 .name {
 	@extend .inv-parts;
 	bottom: $odsazeni;
@@ -201,6 +219,7 @@ $odsazeni: 5px;
 	right: $odsazeni;
 	text-align: right;
 }
+
 .count {
 	@extend .inv-parts;
 	font-size: 110%;
@@ -208,39 +227,45 @@ $odsazeni: 5px;
 	right: $odsazeni;
 	max-width: 100% !important;
 }
+
 .power {
 	@extend .inv-parts;
 	background-color: $power-color;
 	right: $odsazeni;
 	top: $odsazeni;
 }
+
 .category {
 	@extend .inv-parts;
 	font-size: 90%;
 	left: $odsazeni;
 	top: $odsazeni;
 }
+
 .wattage {
 	@extend .inv-parts;
 	right: $odsazeni;
 	top: ($odsazeni*2)+18;
 }
+
 .grid {
 	margin: 15px 0 0;
 	padding: 0;
 }
+
 .sestava {
-	ul{
-		list-style-type:none;
+	ul {
+		list-style-type: none;
 	}
-	img{
-		margin-right:10px;
+	img {
+		margin-right: 10px;
 	}
 }
-.craft-vyrob{
-	input{
-	    margin-left:auto;
-	    display:block;
-		width:60px;
+
+.craft-vyrob {
+	input {
+		margin-left: auto;
+		display: block;
+		width: 60px;
 	}
 }

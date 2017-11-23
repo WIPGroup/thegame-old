@@ -4,8 +4,7 @@ body {
   background-image: url("background.jpg");
   background-size: cover;
   margin-left: auto;
-  margin-right: auto;
-  max-width: 1280px; }
+  margin-right: auto; }
 
 @font-face {
   font-family: 'Material Icons';
@@ -14,16 +13,12 @@ body {
   /* For IE6-8 */
   src: url("iconfont/MaterialIcons-Regular.eot");
   src: local("Material Icons"), local("MaterialIcons-Regular"), url("iconfont/MaterialIcons-Regular.woff2") format("woff2"), url("iconfont/MaterialIcons-Regular.woff") format("woff"), url("iconfont/MaterialIcons-Regular.ttf") format("truetype"); }
-
 #poradie .por-cis {
   text-align: right; }
-
 #poradie .por-name {
   text-align: center; }
-
 #poradie td {
   min-width: 150px; }
-
 #poradie td:nth-child(3) {
   width: 100%; }
 
@@ -78,7 +73,6 @@ th {
 #main-nav .active {
   background-image: linear-gradient(#6284ab, 50%, #2a4563);
   font-weight: bold; }
-
 #main-nav li:hover {
   background-image: linear-gradient(#6284ab, 50%, #2a4563); }
 
@@ -86,30 +80,28 @@ th {
   .col-xs-12 {
     padding-left: 0 !important;
     padding-right: 0 !important; } }
-
 @media (min-width: 768px) and (max-width: 992px) {
   .col-sm-12 {
     padding-left: 0 !important;
     padding-right: 0 !important; } }
-
 @media (min-width: 992px) and (max-width: 1200px) {
   .col-md-12 {
     padding-left: 0 !important;
     padding-right: 0 !important; }
+
   #infoitemucontainer {
     position: fixed;
     bottom: 0px;
     right: 0px; } }
-
 @media (min-width: 1200px) {
   .col-lg-12 {
     padding-left: 0 !important;
     padding-right: 0 !important; }
+
   #infoitemucontainer {
     position: fixed;
     bottom: 0px;
     right: 0px; } }
-
 .grid-item, .grid-craft-item {
   background-position: center;
   background-repeat: no-repeat;
@@ -182,7 +174,6 @@ th {
 
 .sestava ul {
   list-style-type: none; }
-
 .sestava img {
   margin-right: 10px; }
 
@@ -190,3 +181,5 @@ th {
   margin-left: auto;
   display: block;
   width: 60px; }
+
+/*# sourceMappingURL=main.css.map */
